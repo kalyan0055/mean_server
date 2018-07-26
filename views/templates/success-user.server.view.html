@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <base href="{{baseUrl}}" >
+</head>
+<body>
+<table style="border:1px solid #CCCCCC;border-collapse: collapse; margin: auto;width: 600px;font-family: sans-serif;">
+    <tbody>
+    <tr>
+        <td>
+            {% include 'company-email-header.html' %}
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <img src="/modules/core/img/brand/nvc-email-registration-success.jpg" style="width: 100%;display: block;" alt="logo">
+        </td>
+    </tr>
+    <tr>
+        <td style="max-width: 95%;font-size: 16px; text-align: center;color: #252525;">
+            <p style="margin: 4px 0;">Your account has been successfully created</p>
+            <p style="margin: 4px 0;">Follow the below steps to experience</p>
+            <p style="margin: 4px 0;">how ease your business becomes.</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <table>
+                <tr>
+                    <td style="width: 250px;">
+                        <img src="/modules/core/img/brand/nvc-email-inventory.jpg" style="width: 150px; height: 150px; margin: auto; display: block;" alt="inventory">
+                    </td>
+                    <td style="width: 450px;vertical-align: top;">
+                        <p style="text-align: left;color: #299e26;font-size: 16px;margin:35px 0;font-weight: 600; ">
+                            1. Build your Inventory
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 250px;">
+                        <img src="/modules/core/img/brand/nvc-email-offers.jpg" style="width: 150px; height: 150px; margin: auto; display: block;" alt="inventory">
+                    </td>
+                    <td style="width: 450px;vertical-align: top;">
+                        <p style="text-align: left;color: #299e26;font-size: 16px;margin:35px 0;font-weight: 600; ">
+                            2. Publish your Offer
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 250px;">
+                        <img src="/modules/core/img/brand/nvc-email-orders.jpg" style="width: 150px; height: 150px; margin: auto; display: block;" alt="inventory">
+                    </td>
+                    <td style="width: 450px;vertical-align: top;">
+                        <p style="text-align: left;color: #299e26;font-size: 16px;margin:35px 0;font-weight: 600; ">
+                            3. Receive Orders
+                        </p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td style="background-color: #e9e9e9; text-align: center; font-size: 14px;">
+            {% include 'company-signature.html' %}
+        </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

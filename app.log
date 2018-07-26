@@ -1,0 +1,30 @@
+[2018-07-24 12:07:55.561] [DEBUG] USERS - requiresLogin - Request -{}
+[2018-07-24 12:07:55.567] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-07-24 12:07:55.572] [DEBUG] USERS - requiresLogin - req.headers[token] -undefined
+[2018-07-24 12:12:35.545] [DEBUG] USERS - requiresLogin - Request -{}
+[2018-07-24 12:12:35.552] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-07-24 12:12:35.555] [DEBUG] USERS - requiresLogin - req.headers[token] -undefined
+[2018-07-24 12:35:19.000] [DEBUG] USERS - requiresLogin - Request -{}
+[2018-07-24 12:35:19.007] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-07-24 12:35:19.010] [DEBUG] USERS - requiresLogin - req.headers[token] -undefined
+[2018-07-26 11:31:22.034] [DEBUG] USERS - Request Body-{"username":"krishna@gmail.com","password":"krishna"}
+[2018-07-26 11:31:22.144] [ERROR] USERS - Error Signin with username -krishna@gmail.com, -{"message":"Unknown UserName \"krishna@gmail.com\"","status":false}
+[2018-07-26 11:34:34.148] [ERROR] USERS - Error Signin with username -krishna@gmail.com, -{"message":"Unknown UserName \"krishna@gmail.com\"","status":false}
+[2018-07-26 11:41:54.262] [ERROR] USERS - Error Signin with username -krishanrame, -{"message":"Unknown UserName \"krishanrame\"","status":false}
+[2018-07-26 11:44:59.362] [ERROR] USERS - Error Signin with username -krishnarame, -{"message":"User is not in active state","status":false}
+[2018-07-26 11:47:26.813] [ERROR] USERS - Error Signin with username -krishnarame, -{"message":"User is not in active state","status":false}
+[2018-07-26 11:50:37.903] [ERROR] USERS - Error Signin with username -krishnarame, -{"message":"User is not in active state","status":false}
+[2018-07-26 11:51:49.220] [ERROR] USERS - Error Signin with username -krishnarame, -{"message":"User is not in active state","status":false}
+[2018-07-26 11:53:27.429] [ERROR] USERS - Error Signin with username -krishnarame, -{"message":"User is not in active state","status":false}
+[2018-07-26 12:02:48.082] [ERROR] USERS - Error rambabu with username -krishnarame, -{"message":"User is not in active state","status":false}
+[2018-07-26 12:03:55.449] [ERROR] USERS - Error rambabu with username -krishnarame, -{"message":"User is not in active state","status":false}
+[2018-07-26 12:05:20.679] [ERROR] USERS - Error rambabu with username -krishnarame, -{"message":"User is not in active state","status":false}
+[2018-07-26 12:07:27.558] [ERROR] USERS - Error rambabu with username -krishnarame, -{"message":"User is not in active state","status":false}
+[2018-07-26 12:09:20.118] [ERROR] USERS - Error rambabu with username -krishnarame, -{"message":"User is not in active state","status":false}
+[2018-07-26 12:09:58.623] [ERROR] USERS - Error rambabu with username -krishnarame, -{"message":"User is not in active state","status":false}
+[2018-07-26 12:10:28.979] [ERROR] USERS - Error rambabu with username -krishnarame, -{"message":"User is not in active state","status":false}
+[2018-07-26 12:40:07.201] [ERROR] USERS - Error rambabu with username -srinivasa rao, -{"message":"User is not in active state","userstatus":"","status":false}
+[2018-07-26 13:49:58.579] [ERROR] USERS - Error Signin with username -john westley, -{"message":"Unknown UserName \"john westley\"","status":false}
+[2018-07-26 13:50:24.903] [ERROR] USERS - Error Signin with username -john westly, -{"message":"Unknown UserName \"john westly\"","status":false}
+[2018-07-26 13:55:33.680] [ERROR] USERS - Error Signin with username -John westly, -{"message":"Invalid password","status":false}
+[2018-07-26 16:44:40.402] [ERROR] USERS - Error Signin with username -murthythotada, -{"message":"Unknown UserName \"murthythotada\"","status":false}
