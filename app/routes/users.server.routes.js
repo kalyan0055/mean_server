@@ -11,7 +11,7 @@ module.exports = function(app) {
 	 fileupload = require('../../app/controllers/utils/fileupload.util');
 
 
-	// Setting up the users profile api
+	// Setting up the users profile apis -- Practise 
 	app.route('/users/register').post(users.newregister);
 	app.route('/users/newuserslist').get(users.newuserslist);
 	app.route('/users/updateuser').post(users.updateuser);
