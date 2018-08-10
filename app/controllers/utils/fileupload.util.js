@@ -15,7 +15,6 @@ var fs = require('fs'),
 var resizedFilePath = function (filePath) {
 
     var fileName = filePath.lastIndexOf('.')>0 ? filePath.substring(0, filePath.lastIndexOf('.')):filePath;
-
     return fileName + '-resize-240-240.png';
 };
 /*var contactHeader={firstName:'First Name',lastName:'Last Name'};*/
@@ -29,6 +28,12 @@ function getSingleFileObject(files,done) {
     }
 }
 exports.fileUploadPath = function (req,res) {
+  
+    console.log(req.body.token,'body token');
+    console.log(req.headers.token,'header token');
+    console.log(req.files);
+   // config = require('../../../public/modules/users/img/profile/uploads/');
+    
     var imageImportPath= {
         users: './public/modules/users/img/profile/uploads/',
         businessprofile: './public/modules/companies/img/profile/uploads/',
@@ -52,6 +57,8 @@ exports.fileUploadPath = function (req,res) {
             if (token) {
                 logger.debug('Company Profile Picture [name:' + file.name + ', fieldname:' + file.fieldname + ', originalname:' + file.originalname + ']');
                 usersJWTUtil.findUserByToken(token, function (err, user) {
+                    console.log('user exit',user);
+                    
                     if (user) {
                         var path = imageImportPath[req.headers.uploadpath] + file.filename;
                         logger.debug('path:' + imagePath[req.headers.uploadpath] + file.filename);

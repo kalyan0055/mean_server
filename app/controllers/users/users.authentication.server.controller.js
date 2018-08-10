@@ -9,9 +9,9 @@ var _ = require('lodash'),
     passport = require('passport'),
     notp = require('notp'),
     usersJWTUtil = require('../utils/users.jwtutil'),
-   // companyUtil = require('../utils/common.company.util'),
-   // userUtil = require('../utils/common.users.util'),
-   // sms = require('../utils/sms.util'),
+    // companyUtil = require('../utils/common.company.util'),
+    userUtil = require('../utils/common.users.util'),
+    // sms = require('../utils/sms.util'),
     logger = require('../../../lib/log').getLogger('USERS', 'DEBUG'),
     User = mongoose.model('User'),
     nodemailer = require('nodemailer'),
@@ -25,9 +25,10 @@ var _ = require('lodash'),
     dbUtil = require('../utils/common.db.util'),
     // Offer = mongoose.model('Offer'),
     // Order = mongoose.model('Order'),
-    K = '12345678901234567890';
-  //  BusinessUnit = mongoose.model('BusinessUnit'),
- //   Contact = mongoose.model('Contact');
+    K = '12345678901234567890',
+    globalUtil = require('../../controllers/utils/common.global.util');
+//  BusinessUnit = mongoose.model('BusinessUnit'),
+//   Contact = mongoose.model('Contact');
 
 exports.update = function (req, res) {
     var user = req.user;
@@ -49,20 +50,20 @@ function createCompanyContactWhileRegister(user, done) {
     contact.lastName = user.lastName;
     contact.middleName = user.middleName;
     contact.emails = [];
-    if(user.email && user.email.length>0)
-    contact.emails.push({
-        email: user.email,
-        emailType: 'Work',
-        primary: true
-    });
- if(user.mobile && user.mobile.length>0)
-    contact.phones.push({
-        phoneNumber: user.mobile,
-        phoneType: 'Mobile',
-        primary: true
-    });
+    if (user.email && user.email.length > 0)
+        contact.emails.push({
+            email: user.email,
+            emailType: 'Work',
+            primary: true
+        });
+    if (user.mobile && user.mobile.length > 0)
+        contact.phones.push({
+            phoneNumber: user.mobile,
+            phoneType: 'Mobile',
+            primary: true
+        });
     contact.user = user._id;
-    contact.company=user.company;
+    contact.company = user.company;
     contact.addresses = user.addresses;
     contact.nVipaniCompany = user.company;
     contact.nVipaniRegContact = true;
@@ -103,14 +104,14 @@ exports.signup = function (req, res) {
                             message: errorHandler.getErrorMessage(err)
                         });
                     } else {
-                        createCompanyContactWhileRegister(user,function (contactErr) {
+                        createCompanyContactWhileRegister(user, function (contactErr) {
                             if (contactErr) {
                                 return res.status(400).send({
                                     status: false,
                                     message: errorHandler.getErrorMessage(contactErr)
                                 });
                             } else {
-                                res.json({status: true, token: usersJWTUtil.genToken(user.username, user.id)});
+                                res.json({ status: true, token: usersJWTUtil.genToken(user.username, user.id) });
 
                             }
                         });
@@ -192,8 +193,8 @@ exports.validateAcceptRegisterToken = function (req, res) {
                         });
 
                     } else {
-                        createCompanyContactWhileRegister(user,function (err) {
-                            if(err){
+                        createCompanyContactWhileRegister(user, function (err) {
+                            if (err) {
                                 res.render('templates/invalid-user', {
                                     url: req.headers.host,
                                     title: config.app.title,
@@ -202,7 +203,7 @@ exports.validateAcceptRegisterToken = function (req, res) {
                                     success: false,
                                     errorMessage: errorHandler.getErrorMessage(err) + user.username
                                 });
-                            }else{
+                            } else {
                                 userUtil.updateContactWithnVipaniUser(user, function (nVipaniUserUpdateErr) {
                                     if (nVipaniUserUpdateErr) {
                                         res.render('templates/invalid-user', {
@@ -273,7 +274,7 @@ exports.validateOTPAcceptRegisterToken = function (req, res) {
     var username = req.body.username;
     var token = req.query.statusToken;
     var otp = req.body.otp;
-    var array = {status: 'Register Request'};
+    var array = { status: 'Register Request' };
     if (token) {
         logger.debug('Status Token-' + req.query.statusToken);
         array.statusToken = req.query.statusToken;
@@ -303,13 +304,13 @@ exports.validateOTPAcceptRegisterToken = function (req, res) {
                             message: errorHandler.getErrorMessage(userUpdateErr)
                         });
                     } else {
-                        createCompanyContactWhileRegister(user,function (err) {
-                            if(err){
+                        createCompanyContactWhileRegister(user, function (err) {
+                            if (err) {
                                 return res.status(400).send({
                                     status: false,
                                     message: errorHandler.getErrorMessage(err)
                                 });
-                            }else {
+                            } else {
                                 userUtil.updateContactWithnVipaniUser(user, function (nVipaniUserUpdateErr) {
                                     if (nVipaniUserUpdateErr) {
                                         return res.status(400).send({
@@ -363,8 +364,8 @@ exports.validateOTPAcceptRegisterToken = function (req, res) {
 exports.forgotPasswordWithOtp = function (req, res) {
     var username = req.body.username;
     var token = req.query.statusToken;
-    var otpGenerated=req.body.otpGenerated;
-    var otpVerified=req.body.otpVerified;
+    var otpGenerated = req.body.otpGenerated;
+    var otpVerified = req.body.otpVerified;
     var otp = req.body.forgotPasswordOtp;
     if (req.body.otp) {
         otp = req.body.otp;
@@ -409,7 +410,7 @@ exports.forgotPasswordWithOtp = function (req, res) {
                     userstatus: user.status,
                     message: user.username + ' account is not Activated Yet'
                 });
-            } else if (otp && newPassword && newPassword !== null && otpVerified ) {
+            } else if (otp && newPassword && newPassword !== null && otpVerified) {
                 if (newPassword === verifyPassword && otp === user.forgotPasswordOtp) {
                     user.password = newPassword;
                     /* user.resetPasswordToken = undefined;
@@ -441,7 +442,7 @@ exports.forgotPasswordWithOtp = function (req, res) {
                             status: false,
                             message: 'OTP do not match'
                         });
-                    }else{
+                    } else {
                         return res.status(400).send({
                             status: false,
                             message: 'OTP do not match'
@@ -590,7 +591,7 @@ exports.resendOTP = function (req, res) {
     //
     var username = req.body.username;
     var token = req.query.statusToken;
-    var array = {status: 'Register Request'};
+    var array = { status: 'Register Request' };
     if (token) {
         logger.debug('Status Token-' + req.query.statusToken);
         array.statusToken = req.query.statusToken;
@@ -765,8 +766,8 @@ exports.signin = function (req, res, next) {
                         dbuser.devices = [];
                     }
                     if (deviceid && devicetoken && dbuser.devices.filter(function (device) {
-                            return device.deviceid === deviceid;
-                        }).length === 0) {
+                        return device.deviceid === deviceid;
+                    }).length === 0) {
                         dbuser.devices.push({
                             deviceid: deviceid,
                             name: devicename,
@@ -811,13 +812,13 @@ exports.signin = function (req, res, next) {
                                         });
                                     } else {
                                         BusinessSegments.find().populate('categories.category').exec(function (businessErr, businessSegments) {
-                                            companyUtil.findCompanyEmployeeBusinessUnits(user,function (userBusinessUnitsError,userBusinessUnits) {
-                                                if(userBusinessUnitsError){
+                                            companyUtil.findCompanyEmployeeBusinessUnits(user, function (userBusinessUnitsError, userBusinessUnits) {
+                                                if (userBusinessUnitsError) {
                                                     res.status(400).send({
                                                         status: false,
                                                         message: errorHandler.getErrorMessage(userBusinessUnitsError)
                                                     });
-                                                }else {
+                                                } else {
                                                     res.json({
                                                         status: true,
                                                         token: token,
@@ -835,7 +836,7 @@ exports.signin = function (req, res, next) {
 
                                 });
                             } else {
-                                companyUtil.findCompanyEmployeeBusinessUnits(user,logger,function (userBusinessUnitsError,userBusinessUnits) {
+                                companyUtil.findCompanyEmployeeBusinessUnits(user, logger, function (userBusinessUnitsError, userBusinessUnits) {
                                     if (userBusinessUnitsError) {
                                         res.status(400).send({
                                             status: false,
@@ -1146,7 +1147,7 @@ exports.removeOAuthProvider = function (req, res, next) {
                         message: errorHandler.getErrorMessage(err)
                     });
                 } else {
-                    res.json({status: true, token: usersJWTUtil.genToken(user.username, user.id)});
+                    res.json({ status: true, token: usersJWTUtil.genToken(user.username, user.id) });
                 }
             });
         }
@@ -1176,14 +1177,14 @@ exports.presignup = function (req, res, next) {
         function (token, otp, done) {
             if (req.body.username) {
                 var array = [];
-                array.push({username: req.body.username});
+                array.push({ username: req.body.username });
                 if (req.body.email) {
-                    array.push({email: req.body.email});
+                    array.push({ email: req.body.email });
                 }
                 if (req.body.mobile) {
-                    array.push({mobile: req.body.mobile});
+                    array.push({ mobile: req.body.mobile });
                 }
-                User.findOne({$or: array}, '-salt -password', function (err, user) {
+                User.findOne({ $or: array }, '-salt -password', function (err, user) {
                     if (user === null || !user.company) {
                         if (req.body.password === req.body.ConfirmPassword) {
                             if (!req.body.companyName) {
@@ -1473,7 +1474,7 @@ exports.presignup = function (req, res, next) {
     });
 };
 var getUserRegistrationCategory = function (done) {
-    RegistrationCategory.find({isDefault: true}).exec(function (registrationFindErr, registrationTypes) {
+    RegistrationCategory.find({ isDefault: true }).exec(function (registrationFindErr, registrationTypes) {
         if (registrationFindErr) {
             done(registrationFindErr);
         } else {
@@ -1486,7 +1487,7 @@ function getBusinessSegmentsCategories(done) {
         if (businessErr) {
             done(businessErr, null);
         } else {
-            dbUtil.findQueryByCategories([{type: 'SubCategory1'}], 1, function (errCat, categories) {
+            dbUtil.findQueryByCategories([{ type: 'SubCategory1' }], 1, function (errCat, categories) {
                 getUserRegistrationCategory(function (nVipaniUserRegistrationCategoryUpdateErr, registrationCategories) {
                     if (nVipaniUserRegistrationCategoryUpdateErr)
                         done(nVipaniUserRegistrationCategoryUpdateErr, businessSegments, categories, null);
@@ -1501,172 +1502,209 @@ function getBusinessSegmentsCategories(done) {
     });
 }
 
-function getUserInputValidation(data,done) {
-    if(!data){
-        done(new Error('Username (Email/Mobile) field must not be blank'),null);
-    }else if(data.issendotp) {
+function getUserInputValidation(data, done) {
+    var reg = /^(?:\d{10,11}|([_a-zA-Z0-9]+(\.[_a-zA-Z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})))$/;
+    console.log(data.issendemail, 'inputvlaidation');
+
+    if (!data) {
+        console.log(1, 'inputvlaidation');
+
+        done(new Error('Username (Email/Mobile) field must not be blank'), null);
+    } else if (data.issendotp && !data.issendemail) {
+        console.log(2, 'inputvlaidation');
         if (!data.username) {
             logger.error('username is empty :' + JSON.stringify(data));
             done(new Error('Username (Email/Mobile) field must not be blank'), null);
         } else {
-            var reg = /^(?:\d{10,11}|([_a-zA-Z0-9]+(\.[_a-zA-Z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})))$/;
             if (!reg.test(data.username)) {
                 logger.error('Username is not valid' + JSON.stringify(data));
                 done(new Error('Username is not valid, Enter valid Email/Phone'), null);
             } else {
                 logger.debug('Username is valid');
                 if (!data.password) {
-                    logger.error('Password is empty :'+ JSON.stringify(data));
-                    done(new Error('Password field must not be blank for the user :'+data.username),null);
+                    logger.error('Password is empty :' + JSON.stringify(data));
+                    done(new Error('Password field must not be blank for the user :' + data.username), null);
                 }
                 else {
-                    if(data.password.trim().length<8){
-                        logger.error('Password is not valid +'+ JSON.stringify(data));
-                        done(new Error('Password is less than 8 chars'),null);
+                    if (data.password.trim().length < 8) {
+                        logger.error('Password is not valid +' + JSON.stringify(data));
+                        done(new Error('Password is less than 8 chars'), null);
+                    } else if (data.password.trim() !== data.conf_password.trim()) {
+                        logger.error('Password and Confirm Password is not valid +' + JSON.stringify(data));
+                        done(new Error('Password and Confirm Password must be equal'), null);
                     }
                     else {
                         logger.debug('Password is valid');
-                        done(null,data);
+                        done(null, data);
                     }
                 }
             }
         }
-    }else if(data.isverifyotp){
-        if(!data.otp){
+    } else if (data.isverifyotp) {
+        console.log(3, 'inputvlaidation');
+        if (!data.otp) {
             logger.error('OTP field is empty');
-            done(new Error('OTP field is empty for user '+ data.username),null);
+            done(new Error('OTP field is empty for user ' + data.username), null);
+        } else if (data.password.trim().length < 8) {
+            logger.error('Password is not valid +' + JSON.stringify(data));
+            done(new Error('Password is less than 8 chars'), null);
+        } else if (data.password.trim() !== data.conf_password.trim()) {
+            logger.error('Password and Confirm Password is not valid +' + JSON.stringify(data));
+            done(new Error('Password and Confirm Password must be equal'), null);
         }
-        else{
-            done(null,data);
+        else {
+            done(null, data);
         }
-    }else if(data.ispassword){
-        if(!data.registrationCategory){
-            logger.error('No registration category found for the user :'+data.username);
-            done(new Error('No registration category found for the user :'+data.username),null);
+    } else if (data.ispassword) {
+        console.log(4, 'inputvlaidation');
+        if (!data.registrationCategory) {
+            logger.error('No registration category found for the user :' + data.username);
+            done(new Error('No registration category found for the user :' + data.username), null);
         }
-        else{
-            if(!data.selectedSegments || (data.selectedSegments && data.selectedSegments.length===0)){
-                logger.error('No segments found for the Registration category :'+ data.registrationCategory + 'for the user :' +data.username);
+        else {
+            if (!data.selectedSegments || (data.selectedSegments && data.selectedSegments.length === 0)) {
+                logger.error('No segments found for the Registration category :' + data.registrationCategory + 'for the user :' + data.username);
                 // done(new Error('No segments found for the category :'+ data.registrationCategory + 'for the user :' +data.username),null);
-                done(new Error('No segments found for the user :' +data.username),null);
-            }else if(data.selectedSegments &&data.selectedSegments.length>0 && data.selectedSegments.filter(function (eachSegment) {
-                    return  ((data.selectedSegments.length===1 && eachSegment.isSpecific) || !eachSegment.isSpecific) && (!eachSegment.categories || (eachSegment.categories && eachSegment.categories.length===0));
-                }).length>0){
-                logger.error('No Categories  found for the selected Segments for the user :' +data.username + ' with the registration Category :'+ data.registrationCategory);
+                done(new Error('No segments found for the user :' + data.username), null);
+            } else if (data.selectedSegments && data.selectedSegments.length > 0 && data.selectedSegments.filter(function (eachSegment) {
+                return ((data.selectedSegments.length === 1 && eachSegment.isSpecific) || !eachSegment.isSpecific) && (!eachSegment.categories || (eachSegment.categories && eachSegment.categories.length === 0));
+            }).length > 0) {
+                logger.error('No Categories  found for the selected Segments for the user :' + data.username + ' with the registration Category :' + data.registrationCategory);
                 // done(new Error('No segments found for the category :'+ data.registrationCategory + 'for the user :' +data.username),null);
-                done(new Error('No Categories  found for the selected Segments for the user :' +data.username),null);
+                done(new Error('No Categories  found for the selected Segments for the user :' + data.username), null);
             }
-            else{
-                done(null,data);
+            else {
+                done(null, data);
             }
         }
     }
+    else if (data.username && data.issendemail) {
+        console.log(5, 'inputvlaidation', reg.test(data.username));
+        if (!reg.test(data.username)) {
+            logger.error('Username is not valid' + JSON.stringify(data));
+            done(new Error('Username is not valid, Enter Valid Username'), null);
+        } else {
+            logger.debug('Username is valid');
+            done(null, data);
+        }
+    }
+
     else {
-        done(null,data);
+        done(null, data);
     }
 }
-function findUser(query,done) {
-    User.findOne({$or: query}).select('username email mobile emailVerified mobileVerified otp emailOtp company status').populate('company', 'categories segments registrationCategory').exec(function (err, user) {
-        done(err,user);
+function findUser(query, done) {
+    User.findOne({ $or: query }).select('username email mobile emailVerified mobileVerified otp emailOtp company status').populate('company', 'categories segments registrationCategory').exec(function (err, user) {
+        done(err, user);
 
     });
 }
-function findUsernameField(userName,done) {
-    if(userName){
+function findUsernameField(userName, done) {
+    if (userName) {
         var expMail = new RegExp(config.emailRegEx);
         var expPhone = new RegExp(config.phoneEx);
-        done(null,expMail.test(userName),expPhone.test(userName));
-    }else{
-        done(new Error('No proper user name type field'),false,false);
+        done(null, expMail.test(userName), expPhone.test(userName));
+    } else {
+        done(new Error('No proper user name type field'), false, false);
     }
 }
-function findOrRegisterUser(data,done) {
+function findOrRegisterUser(data, done) {
     if (data.username) {
-        var array=[];
-        array.push({username: data.username});
+        var array = [];
+        array.push({ username: data.username });
         logger.debug('Check whether user name is Email or phone number');
-        findUsernameField(data.username,function (err,isEmail,isPhone) {
-            if(err){
-                done(err,null,null);
-            }else if(isEmail || isPhone){
+        findUsernameField(data.username, function (err, isEmail, isPhone) {
+            if (err) {
+                done(err, null, null);
+            } else if (isEmail || isPhone) {
                 if (isEmail) {
-                    logger.debug('Email is :'+data.username);
-                    data.isEmail=true;
-                    array.push({email: data.username});
+                    logger.debug('Email is :' + data.username);
+                    data.isEmail = true;
+                    array.push({ email: data.username });
                 }
-                if (isPhone)
-                {
-                    logger.debug('Phone number is :'+data.username);
-                    array.push({mobile: data.username});
-                    data.isPhone=true;
+                if (isPhone) {
+                    logger.debug('Phone number is :' + data.username);
+                    array.push({ mobile: data.username });
+                    data.isPhone = true;
                 }
-                logger.debug('Fetch matched  user with user name :'+data.username);
-                userUtil.getQueryByUser({$or:array},2,function (err, user){
-                    if(err){
-                        logger.error('Failed to load user with the username : '+data.username+' Error'+errorHandler.getErrorMessage(err));
-                        done(err,data,user) ;
-                    }else if(!user) {
-                        logger.error('No user found with the username : '+data.username);
-                        done(err,data,user) ;
-                    }else{
-                        logger.debug('Found user with the username :'+data.username);
+                logger.debug('Fetch matched  user with user name :' + data.username);
+                userUtil.getQueryByUser({ $or: array }, 2, function (err, user) {
+                    if (err) {
+                        logger.error('Failed to load user with the username : ' + data.username + ' Error' + errorHandler.getErrorMessage(err));
+                        done(err, data, user);
+                    } else if (!user) {
+                        logger.error('No user found with the username : ' + data.username);
+                        done(err, data, user);
+                    } else {
+                        logger.debug('Found user with the username :' + data.username);
                         if (user.deleted === true) {
                             logger.error('User is already Registered and deleted,so it is not possible to register');
-                            done(new Error('Not allow to register. Please contact customer care.'), null,null);
-                        }else if (user.status === 'Register Request' && user.userType === 'Employee') {
+                            done(new Error('Not allow to register. Please contact customer care.'), null, null);
+                        } else if (user.status === 'Register Request' && user.userType === 'Employee') {
                             logger.error('User is already used for some other company as employee');
-                            done(new Error('User is already used for some other company as employee'), null,null);
-                        }else if (user.status === 'Registered') {
+                            done(new Error('User is already used for some other company as employee'), null, null);
+                        } else if (user.status === 'Registered') {
                             logger.error('User is already Registered');
-                            done(new Error('User is already Registered'), null,null);
+                            done(new Error('User is already Registered'), null, null);
                         } else {
                             done(err, data, user);
                         }
                     }
 
                 });
-            }else{
+            } else {
                 logger.error('Username  must be  valid Email/Mobile number ');
-                done(new Error('No proper username input username: '+data.username),null,null);
+                done(new Error('No proper username input username: ' + data.username), null, null);
             }
         });
     } else {
         logger.error('No Valid input for user Registration ' + JSON.stringify(data));
-        done(new Error('Username (Email/Mobile) field must not be blank'),null,null);
+        done(new Error('Username (Email/Mobile) field must not be blank'), null, null);
 
     }
 }
-function getEmailTemplate(user,type,req) {
-    if(type==='Registered') {
-        return {template:'templates/success-user',subject:'You are successfully Activated',options: {
+function getEmailTemplate(user, type, req) {
+    let a = '';
+    a = new Buffer(user.username).toString('base64');
+    console.log(user, type, 'from sendnotifcation fn');
+
+    if (type === 'Registered') {
+        return {
+            template: 'templates/success-user', subject: 'You are successfully Activated', options: {
                 name: 'Customer',
                 appName: config.app.title,
                 otp: user.emailOtp,
                 baseUrl: req.protocol + '://' + req.headers.host,
                 username: user.username
-            }};
-    }else if(type==='Register Request'){
-        return {template:'templates/user-registration',subject:'Registration Request',options: {
+            }
+        };
+    } else if (type === 'Register Request') {
+        return {
+            template: 'templates/user-registration', subject: 'Registration Request', options: {
                 name: 'Customer',
                 appName: config.app.title,
                 otp: user.emailOtp,
+                hyperlink: req.protocol + '://' + 'localhost:4200/confirm/true/' + a + '/' + user.emailOtp,  // Newly added
                 baseUrl: req.protocol + '://' + req.headers.host,
                 username: user.username
-            }};
-    }else{
-        return {template:'templates/user-registration',subject:'Activated',options:{}};
+            }
+        };
+    } else {
+        return { template: 'templates/user-registration', subject: 'Activated', options: {} };
     }
 }
 
-function sendRegistrationNotification(user,data,type,req,res,done){
+function sendRegistrationNotification(user, data, type, req, res, done) {
     logger.debug('Sending OTP Response');
-    if( (user && data.isEmail && config.sendEmail) || (data.isPhone &&config.sendSMS)){
+
+    if ((user && data.isEmail && config.sendEmail) || (data.isPhone && config.sendSMS)) {
         if (data.isEmail) {
-            var emailTemplate=getEmailTemplate(user,type,req);
+            var emailTemplate = getEmailTemplate(user, type, req);
+
             res.render(emailTemplate.template, emailTemplate.options, function (err, emailHTML) {
                 var smtpTransport = nodemailer.createTransport(config.mailer.options);
                 var mailOptions = {
-                    to: user.username,
+                    to: 'rambabu.e@technoxis.in', // user.username,  
                     from: config.mailer.from,
                     subject: emailTemplate.subject,
                     html: emailHTML
@@ -1674,7 +1712,7 @@ function sendRegistrationNotification(user,data,type,req,res,done){
                 if (config.production) {
                     mailOptions.bcc = config.nvipaniAdminUsers;
                 }
-                logger.debug('Sending OTP Response-' +user.emailOtp );
+                logger.debug('Sending OTP Response-' + user.emailOtp);
                 smtpTransport.sendMail(mailOptions, function (err) {
                     if (err) {
                         /*res.status(400).send({
@@ -1700,7 +1738,7 @@ function sendRegistrationNotification(user,data,type,req,res,done){
                     var mailOptions = {
                         to: config.nvipaniAdminUsers,
                         from: config.mailer.from,
-                        subject: user.status==='Registered'?'Activated '+user.username:'Registration Request for ' + user.username,
+                        subject: user.status === 'Registered' ? 'Activated ' + user.username : 'Registration Request for ' + user.username,
                         html: 'An OTP has been sent to ' + user.username + '. ' + user.otp + ' is your One Time Password (OTP)'
                     };
                     smtpTransport.sendMail(mailOptions, function (err) {
@@ -1719,18 +1757,24 @@ function sendRegistrationNotification(user,data,type,req,res,done){
             });
 
         }
-    }else{
-        done(null,user);
+    } else {
+        done(null, user);
     }
 }
-
-function userCompanyInformation(user,data,done) {
+function hashPassword(password, salt) {
+    if (password && salt) {
+        return crypto.pbkdf2Sync(password, salt, 10000, 64, 'sha1').toString('base64');
+    } else {
+        return password;
+    }
+}
+function userCompanyInformation(user, data, done) {
     Company.findOne({
         name: new RegExp(data.companyName ? data.companyName : user.username, 'i')
     }, function (errCompany, dbCompany) {
         if (dbCompany) {
-            logger.error('Some has already registered with the company name - '+dbCompany.name+'. Please contact info@nvipani.com');
-            done( new Error('Someone has already registered with the company name - ' + dbCompany.name + '. Please contact info@invipani.com'),null);
+            logger.error('Some has already registered with the company name - ' + dbCompany.name + '. Please contact info@nvipani.com');
+            done(new Error('Someone has already registered with the company name - ' + dbCompany.name + '. Please contact info@invipani.com'), null);
         } else {
             var company = new Company();
             company.segments = data.selectedSegments;
@@ -1740,7 +1784,7 @@ function userCompanyInformation(user,data,done) {
             company.profileUrl = str.replace(/\s+/g, '-').toLowerCase();
             company.user = user._id;
             company.registrationCategory = data.registrationCategory;
-            if (user.email && user.email.length>0) {
+            if (user.email && user.email.length > 0) {
                 company.emails = [];
                 company.emails.push({
                     email: user.email,
@@ -1748,7 +1792,7 @@ function userCompanyInformation(user,data,done) {
                     primary: true
                 });
             }
-            if (user.mobile && user.mobile.length>0) {
+            if (user.mobile && user.mobile.length > 0) {
                 company.phones = [];
                 company.phones.push({
                     phoneNumber: user.mobile,
@@ -1763,7 +1807,7 @@ function userCompanyInformation(user,data,done) {
             });
             company.save(function (companyErr) {
                 if (companyErr) {
-                    done(companyErr,null);
+                    done(companyErr, null);
                     /*return res.status(400).send({
                         status: false,
                         message: errorHandler.getErrorMessage(companyErr)
@@ -1772,7 +1816,7 @@ function userCompanyInformation(user,data,done) {
                     companyUtil.findUserGroupByName('Admin', function (groupErr, groupByName) {
                         if (groupErr) {
                             logger.error('Error while for user group Admin :' + errorHandler.getErrorMessage(groupErr));
-                            done(groupErr,null);
+                            done(groupErr, null);
                         } else {
                             user.status = 'Registered';
                             user.company = company._id;
@@ -1787,15 +1831,15 @@ function userCompanyInformation(user,data,done) {
                                          status: false,
                                          message: errorHandler.getErrorMessage(err)
                                      });*/
-                                    done(err,null);
+                                    done(err, null);
                                 } else {
-                                    createCompanyContactWhileRegister(user,function (err) {
-                                        if(err){
-                                            done(err,null);
-                                        }else {
+                                    createCompanyContactWhileRegister(user, function (err) {
+                                        if (err) {
+                                            done(err, null);
+                                        } else {
                                             userUtil.updateContactWithnVipaniUser(user, function (nVipaniUserUpdateErr) {
                                                 if (nVipaniUserUpdateErr) {
-                                                    done(nVipaniUserUpdateErr,null);
+                                                    done(nVipaniUserUpdateErr, null);
                                                 } else {
                                                     done(null, user);
                                                 }
@@ -1811,15 +1855,19 @@ function userCompanyInformation(user,data,done) {
         }
     });
 }
-function userRegistrationProcess(user,data,done) {
-    if(( data.isEmail || data.isPhone)) {
+function userRegistrationProcess(user, data, done) {
+    console.log(data);
+    console.log(user.emailOtp);
+    console.log(user.emailVerified);
+
+    if ((data.isEmail || data.isPhone)) {
         if (user.status === 'Register Request') {
             if (data.isverifyotp) {
                 logger.debug('Verifying OTP - ' + data.isverifyotp);
                 if ((data.isEmail && data.otp === user.emailOtp && !user.emailVerified) || (!user.mobileVerified && data.isPhone && data.otp === user.otp)) {
                     var dbuser = _.extend(user, {});
                     dbuser.updated = Date.now();
-                    dbuser.status = 'Verified';
+                    dbuser.status = 'Registered';
                     if (data.isEmail) {
                         logger.debug('Email - ' + dbuser.username + ' is verified');
                         dbuser.emailVerified = true;
@@ -1827,16 +1875,49 @@ function userRegistrationProcess(user,data,done) {
                         logger.debug('Mobile - ' + dbuser.username + ' is verified');
                         dbuser.mobileVerified = true;
                     }
-                    if(dbuser.allowRegistration) {
+                    if (dbuser.allowRegistration) {
                         dbuser.registerOption = false;
                     } else {
                         dbuser.registerOption = true;
                     }
+                    if (data.conf_password) {
+                     //   globalUtil.populateDisplayName(user, function (displayname) {
+
+                            dbuser.displayName = data.username;
+                            if (data.password && data.password.length > 6) {
+                                let salt;
+                                salt = new Buffer(crypto.randomBytes(16).toString('base64'), 'base64');
+                                dbuser.password = hashPassword(data.password, salt);
+                                dbuser.salt = salt;
+
+                                if (user.profileImageURL) {
+                                    var fileName = user.profileImageURL.substring(0, user.profileImageURL.lastIndexOf('.'));
+
+                                    var croppedProfileImageURL = fileName + '-resize-240-240.png';
+
+                                    if (user.croppedProfileImageURL !== croppedProfileImageURL) {
+                                        dbuser.croppedProfileImageURL = croppedProfileImageURL;
+                                    }
+                                }
+
+
+                                //this.userCategory.enumValues=this.fieldProperties('userCategory','enum');
+                            }
+                            
+                     //   });
+                         
+                    }
+                    /**
+                     * Create instance method for authenticating user
+                     */
+                    // UserSchema.methods.authenticate = function (password) {
+                    //     return this.password === this.hashPassword(password);
+                    // };
                     dbuser.save(function (userErr) {
                         if (userErr) {
-                            done(userErr,null);
+                            done(userErr, null);
                         } else {
-                            done(null,dbuser);
+                            done(null, dbuser);
                         }
                     });
 
@@ -1852,81 +1933,273 @@ function userRegistrationProcess(user,data,done) {
             } else if (data.ispassword) {
                 if (data.isEmail) {
                     done(new Error('OTP is not Verified for the Email: ' + user.username), null);
-                } else{
+                } else {
                     done(new Error('OTP is not Verified for the Mobile : ' + user.username), null);
                 }
-            } else if(data.issendotp){
-                done(null,user);
-            }else{
+            } else if (data.issendotp) {
+                done(null, user);
+            } else {
                 if (data.isEmail) {
                     done(new Error('OTP is not Verified for the Email: ' + user.username), null);
                 } else {
                     done(new Error('OTP is not Verified for the Mobile : ' + user.username), null);
                 }
             }
-        }else if (user.status === 'Verified') {
+        } else if (user.status === 'Verified') {
             if (data.ispassword) {
-                userCompanyInformation(user,data,function (companyErr,user) {
-                    done(companyErr,user);
+                userCompanyInformation(user, data, function (companyErr, user) {
+                    done(companyErr, user);
                 });
-            }else if(data.issendotp){
-                done(null,user);
-            }else{
-                done(null,user);
+            } else if (data.issendotp) {
+                done(null, user);
+            } else {
+                done(null, user);
             }
 
-        }else {
+        } else {
             logger.error('No Proper user input for Registration');
-            done(new Error('No Proper user input for Registration'),null);
+            done(new Error('No Proper user input for Registration'), null);
         }
-    }else{
+    } else {
         logger.error('No Proper user input for Registration');
-        done(new Error('No Proper user input for Registration'),null);
+        done(new Error('No Proper user input for Registration'), null);
     }
 
 }
-function getMessage(user,data) {
-    if(user.status === 'Register Request'){
-        if(data.isEmail){
+function getMessage(user, data) {
+    if (user.status === 'Register Request') {
+        if (data.isEmail) {
 
             /*isEmail ? (user.status === 'Register Request' ? 'An OTP has been sent to ' + user.username + '. ' + user.emailOtp + ' is your One Time Password (OTP)' : 'An OTP has been ' + user.status + ' for the ' + user.username) : user.status === 'Register Request' ? 'An OTP has been sent to ' + user.username + '. ' + otp + ' is your One Time Password (OTP)' : 'An OTP has been ' + user.status + ' for the ' + user.username
 */
-            if(config.sendEmail){
+            if (config.sendEmail) {
                 return 'An OTP has been sent to Email :' + user.username;
-            }else{
+            } else {
                 return 'An OTP has been sent to Email :' + user.username + '. ' + user.emailOtp + ' is your One Time Password (OTP)';
             }
-        }else {
+        } else {
 
             //     message: user.status === 'Register Request' ? 'An OTP has been sent to ' + user.username + '. ' + otp + ' is your One Time Password (OTP)' : 'An OTP has been ' + user.status + ' for the ' + user.username
 
-            if(config.sendSMS){
-                return 'An OTP has been sent to Phone : ' + user.username ;
-            }else{
+            if (config.sendSMS) {
+                return 'An OTP has been sent to Phone : ' + user.username;
+            } else {
                 return 'An OTP has been sent to Phone :' + user.username + '. ' + user.otp + ' is your One Time Password (OTP)';
             }
 
         }
-    }else if(user.status === 'Verified') {
-        if(data.issendotp) {
-            return 'User is already verified :'+user.username;
-        }else if(data.isverifyotp){
-            return 'User is verified :'+user.username;
+    } else if (user.status === 'Verified') {
+        if (data.issendotp) {
+            return 'User is already verified :' + user.username;
+        } else if (data.isverifyotp) {
+            return 'User is verified :' + user.username;
         }
     }
-    else if(user.status === 'Registered'){
-        if(user.company){
+    else if (user.status === 'Registered') {
+        if (user.company) {
             logger.debug('User is successfully registered');
             return 'User is successfully registered';
         }
     }
 
 }
-exports.userRegistration=function (req,res) {
-    logger.debug('Registration Request  - '+JSON.stringify(req.body));
-    var data=req.body;
-    var token,otp;
-    logger.debug('user registration input validation for the data :'+ JSON.stringify(data));
+// exports.userRegistration=function (req,res) {
+//     logger.debug('Registration Request  - '+JSON.stringify(req.body));
+//     var data=req.body;
+//     var token,otp;
+//     logger.debug('user registration input validation for the data :'+ JSON.stringify(data));
+//     getUserInputValidation(data, function (validError, data) {
+//         if (validError) {
+//             return res.status(400).send({
+//                 status: false,
+//                 message: errorHandler.getErrorMessage(validError)
+//             });
+//         } else {
+//             logger.debug('Fetching already created user with the same user name  :'+data.username);
+//             findOrRegisterUser(data,function (userRegErr,data,user) {
+//                 if(userRegErr){
+//                     return res.status(400).send({
+//                         status: false,
+//                         message: errorHandler.getErrorMessage(userRegErr)
+//                     });
+//                 }else{
+//                     if(user instanceof User) {
+//                         userRegistrationProcess(user, data, function (userErr, user) {
+//                             if (userErr) {
+//                                 return res.status(400).send({
+//                                     status: false,
+//                                     message: errorHandler.getErrorMessage(userErr)
+//                                 });
+//                             } else {
+//                                 if (user.status === 'Register Request') {
+//                                     if (data.issendotp) {
+//                                         sendRegistrationNotification(user, data,user.status, req, res, function (sendEmailErr, user) {
+//                                             if (sendEmailErr) {
+//                                                 return res.status(400).send({
+//                                                     status: false,
+//                                                     message: errorHandler.getErrorMessage(sendEmailErr)
+//                                                 });
+//                                             } else if (!user) {
+//                                                 return res.status(400).send({
+//                                                     status: false,
+//                                                     message: 'No user for send Mail'
+//                                                 });
+//                                             } else {
+//                                                 res.send({
+//                                                     status: true,
+//                                                     otp: data.isEmail ? user.emailOtp : user.otp,
+//                                                     user: user,
+//                                                     message: getMessage(user, data)
+
+//                                                 });
+
+//                                             }
+//                                         });
+//                                     }
+//                                 } else if (user.status === 'Verified') {
+//                                     getBusinessSegmentsCategories(function (nVipaniUserRegistrationCategoryUpdateErr, segments, categories, registrationCategories) {
+//                                         if (nVipaniUserRegistrationCategoryUpdateErr) {
+//                                             logger.error('Error in updating Registration Categories for user '+user.username);
+//                                             return res.status(400).send({
+//                                                 status: false,
+//                                                 message: errorHandler.getErrorMessage(nVipaniUserRegistrationCategoryUpdateErr)
+//                                             });
+//                                         } else {
+//                                             if (data.issendotp) {
+//                                                 return res.status(400).send({
+//                                                     status: false,
+//                                                     otp: data.isEmail ? user.emailOtp : user.otp,
+//                                                     user: user,
+//                                                     categories: categories,
+//                                                     segments: segments,
+//                                                     registrationCategories: registrationCategories,
+//                                                     message: getMessage(user, data)
+//                                                 });
+
+//                                             } else if (data.isverifyotp) {
+//                                                 res.send({
+//                                                     status: true,
+//                                                     otp: data.isEmail ? user.emailOtp : user.otp,
+//                                                     user: user,
+//                                                     categories: categories,
+//                                                     segments: segments,
+//                                                     registrationCategories: registrationCategories,
+//                                                     message: getMessage(user, data)
+//                                                 });
+//                                             }
+//                                         }
+
+//                                     });
+
+
+//                                 } else {
+//                                     sendRegistrationNotification(user, data,user.status, req, res, function (sendEmailErr, user) {
+//                                         if (sendEmailErr) {
+//                                             return res.status(400).send({
+//                                                 status: false,
+//                                                 message: errorHandler.getErrorMessage(sendEmailErr)
+//                                             });
+//                                         } else if (!user) {
+//                                             return res.status(400).send({
+//                                                 status: false,
+//                                                 message: 'No user for send Mail'
+//                                             });
+//                                         } else {
+//                                             res.send({
+//                                                 status: true,
+//                                                 user: user,
+//                                                 message: getMessage(user, data)
+
+//                                             });
+
+//                                         }
+//                                     });
+
+//                                 }
+//                             }
+//                         });
+
+//                     }else {
+//                         if(data.issendotp) {
+//                             var reqUser = new User(data);
+//                             crypto.randomBytes(20, function (err, buffer) {
+//                                 token = buffer.toString('hex');
+//                                 otp = notp.totp.gen(K, {});
+//                                 if (data.isEmail) {
+//                                     reqUser.email = data.username;
+//                                     reqUser.emailOtp = otp;
+
+//                                 }  if (data.isPhone) {
+//                                     reqUser.mobile = data.username;
+//                                     reqUser.otp = otp;
+//                                 }
+//                                 reqUser.username = data.username;
+//                                 /*reqUser.statusToken = token;*/
+//                                 reqUser.devices = [];
+//                                 reqUser.devices = [];
+//                                 reqUser.allowRegistration = true;
+//                                 /*reqUser.acceptTerms=data.user.acceptTerms;*/
+//                                 reqUser.serverUrl = req.protocol + '://' + req.headers.host;
+//                                 reqUser.provider = 'local';
+//                                 reqUser.status = 'Register Request';
+//                                 reqUser.updated = Date.now();
+//                                 reqUser.save(function (err) {
+//                                     if (err) {
+//                                         return res.status(400).send({
+//                                             status: false,
+//                                             message:errorHandler.getErrorMessage(err)
+//                                         });
+//                                     } else {
+//                                         sendRegistrationNotification(reqUser,data,'Register Request',req,res,function (sendEmailErr,user) {
+//                                             if(sendEmailErr){
+//                                                 return res.status(400).send({
+//                                                     status: false,
+//                                                     message:errorHandler.getErrorMessage(sendEmailErr)
+//                                                 });
+//                                             }else if(!user) {
+//                                                 return res.status(400).send({
+//                                                     status: false,
+//                                                     message:'No user for send Mail'
+//                                                 });
+//                                             }else{
+//                                                 res.send({
+//                                                     status: true,
+//                                                     otp: data.isEmail?user.emailOtp:user.otp,
+//                                                     user: user,
+//                                                     message: getMessage(user,data)
+
+//                                                 });
+
+//                                             }
+//                                         });
+//                                     }
+//                                 });
+
+//                             });
+
+
+//                         }else{
+//                             logger.error('User is not registered properly' + data);
+//                             return res.status(400).send({
+//                                 status: false,
+//                                 message:'User is not registered properly'
+//                             });
+//                         }
+//                     }
+//                 }
+
+//             });
+//         }
+//     });
+
+// };
+exports.userRegistration = function (req, res) {
+    logger.debug('Registration Request  - ' + JSON.stringify(req.body));
+    var data = req.body;
+    var token, otp;
+    console.log(data, 'before going to getUserInputValidation');
+
+    logger.debug('user registration input validation for the data :' + JSON.stringify(data));
     getUserInputValidation(data, function (validError, data) {
         if (validError) {
             return res.status(400).send({
@@ -1934,15 +2207,17 @@ exports.userRegistration=function (req,res) {
                 message: errorHandler.getErrorMessage(validError)
             });
         } else {
-            logger.debug('Fetching already created user with the same user name  :'+data.username);
-            findOrRegisterUser(data,function (userRegErr,data,user) {
-                if(userRegErr){
+            logger.debug('Fetching already created user with the same user name  :' + data.username);
+            findOrRegisterUser(data, function (userRegErr, data, user) {
+                if (userRegErr) {
+                    console.log('error occuered in findOrRegisterUser');
+
                     return res.status(400).send({
                         status: false,
                         message: errorHandler.getErrorMessage(userRegErr)
                     });
-                }else{
-                    if(user instanceof User) {
+                } else {
+                    if (user instanceof User) {
                         userRegistrationProcess(user, data, function (userErr, user) {
                             if (userErr) {
                                 return res.status(400).send({
@@ -1952,7 +2227,7 @@ exports.userRegistration=function (req,res) {
                             } else {
                                 if (user.status === 'Register Request') {
                                     if (data.issendotp) {
-                                        sendRegistrationNotification(user, data,user.status, req, res, function (sendEmailErr, user) {
+                                        sendRegistrationNotification(user, data, user.status, req, res, function (sendEmailErr, user) {
                                             if (sendEmailErr) {
                                                 return res.status(400).send({
                                                     status: false,
@@ -1975,10 +2250,12 @@ exports.userRegistration=function (req,res) {
                                             }
                                         });
                                     }
-                                } else if (user.status === 'Verified') {
+                                } 
+                                
+                                else if (user.status === 'Verified') {
                                     getBusinessSegmentsCategories(function (nVipaniUserRegistrationCategoryUpdateErr, segments, categories, registrationCategories) {
                                         if (nVipaniUserRegistrationCategoryUpdateErr) {
-                                            logger.error('Error in updating Registration Categories for user '+user.username);
+                                            logger.error('Error in updating Registration Categories for user ' + user.username);
                                             return res.status(400).send({
                                                 status: false,
                                                 message: errorHandler.getErrorMessage(nVipaniUserRegistrationCategoryUpdateErr)
@@ -2012,7 +2289,7 @@ exports.userRegistration=function (req,res) {
 
 
                                 } else {
-                                    sendRegistrationNotification(user, data,user.status, req, res, function (sendEmailErr, user) {
+                                    sendRegistrationNotification(user, data, user.status, req, res, function (sendEmailErr, user) {
                                         if (sendEmailErr) {
                                             return res.status(400).send({
                                                 status: false,
@@ -2038,8 +2315,8 @@ exports.userRegistration=function (req,res) {
                             }
                         });
 
-                    }else {
-                        if(data.issendotp) {
+                    } else {
+                        if (data.issendotp) {
                             var reqUser = new User(data);
                             crypto.randomBytes(20, function (err, buffer) {
                                 token = buffer.toString('hex');
@@ -2048,11 +2325,12 @@ exports.userRegistration=function (req,res) {
                                     reqUser.email = data.username;
                                     reqUser.emailOtp = otp;
 
-                                }  if (data.isPhone) {
+                                } if (data.isPhone) {
                                     reqUser.mobile = data.username;
                                     reqUser.otp = otp;
                                 }
                                 reqUser.username = data.username;
+                                reqUser.firstName = data.username;
                                 /*reqUser.statusToken = token;*/
                                 reqUser.devices = [];
                                 reqUser.devices = [];
@@ -2064,28 +2342,29 @@ exports.userRegistration=function (req,res) {
                                 reqUser.updated = Date.now();
                                 reqUser.save(function (err) {
                                     if (err) {
+                                        console.log('error occuered in saving');
                                         return res.status(400).send({
                                             status: false,
-                                            message:errorHandler.getErrorMessage(err)
+                                            message: errorHandler.getErrorMessage(err)
                                         });
                                     } else {
-                                        sendRegistrationNotification(reqUser,data,'Register Request',req,res,function (sendEmailErr,user) {
-                                            if(sendEmailErr){
+                                        sendRegistrationNotification(reqUser, data, 'Register Request', req, res, function (sendEmailErr, user) {
+                                            if (sendEmailErr) {
                                                 return res.status(400).send({
                                                     status: false,
-                                                    message:errorHandler.getErrorMessage(sendEmailErr)
+                                                    message: errorHandler.getErrorMessage(sendEmailErr)
                                                 });
-                                            }else if(!user) {
+                                            } else if (!user) {
                                                 return res.status(400).send({
                                                     status: false,
-                                                    message:'No user for send Mail'
+                                                    message: 'No user for send Mail'
                                                 });
-                                            }else{
+                                            } else {
                                                 res.send({
                                                     status: true,
-                                                    otp: data.isEmail?user.emailOtp:user.otp,
+                                                    otp: data.isEmail ? user.emailOtp : user.otp,
                                                     user: user,
-                                                    message: getMessage(user,data)
+                                                    message: getMessage(user, data)
 
                                                 });
 
@@ -2097,11 +2376,12 @@ exports.userRegistration=function (req,res) {
                             });
 
 
-                        }else{
+                        }
+                        else {
                             logger.error('User is not registered properly' + data);
                             return res.status(400).send({
                                 status: false,
-                                message:'User is not registered properly'
+                                message: 'User is not registered properly'
                             });
                         }
                     }
@@ -2112,7 +2392,6 @@ exports.userRegistration=function (req,res) {
     });
 
 };
-
 function addBusinessUnitUser(bUnit, user, units, done) {
     var found = false;
     var index = 0;
@@ -2151,19 +2430,19 @@ function saveBusinessUnit(bunit, done) {
  * @param units
  * @param done
  */
-function findOrCreateBUser(user, units,userGroup, done) {
-    var businessUnitNames=[];
+function findOrCreateBUser(user, units, userGroup, done) {
+    var businessUnitNames = [];
     async.forEach(units, function (unit, callback) {
         BusinessUnit.findOne({
             _id: (unit.businessUnit ? unit.businessUnit : unit)
         }).exec(function (unitErr, resUnit) {
             if (unitErr) {
-                logger.error('Fetching business unit error:'+unitErr);
+                logger.error('Fetching business unit error:' + unitErr);
                 callback(unitErr);
-            } else if(!resUnit) {
-                logger.error('Business unit is not found with business unit id'+unit.businessUnit ? unit.businessUnit : unit);
+            } else if (!resUnit) {
+                logger.error('Business unit is not found with business unit id' + unit.businessUnit ? unit.businessUnit : unit);
                 callback(new Error('Business unit is not found'));
-            }else {
+            } else {
                 businessUnitNames.push(resUnit.name);
                 if (resUnit.employees && resUnit.employees.length > 0) {
                     var found = false;
@@ -2172,7 +2451,7 @@ function findOrCreateBUser(user, units,userGroup, done) {
                             bunit.employees.push({
                                 user: user._id,
                                 userGroup: userGroup,
-                                fromDate:Date.now()
+                                fromDate: Date.now()
                             });
                         }
                         bunit.save(function (bunitErr) {
@@ -2184,7 +2463,7 @@ function findOrCreateBUser(user, units,userGroup, done) {
                         });
                     });
                 } else {
-                    logger.error('Business unit do not have default employee'+resUnit);
+                    logger.error('Business unit do not have default employee' + resUnit);
                     callback(new Error('Business unit do not have default employee'));
                 }
             }
@@ -2192,7 +2471,7 @@ function findOrCreateBUser(user, units,userGroup, done) {
             callback(err);
         });
     }, function (err) {
-        done(err, units,businessUnitNames);
+        done(err, units, businessUnitNames);
     });
 }
 
@@ -2206,11 +2485,11 @@ function findOrCreateBUser(user, units,userGroup, done) {
 function findOrCreateUser(userName, req, done) {
 
     var array = [];
-    array.push({username: userName});
-    array.push({email: userName});
+    array.push({ username: userName });
+    array.push({ email: userName });
 
     // we should skip the password as part of user fetch
-    User.findOne({$or: array}).select('username email mobile emailVerified mobileVerified otp emailOtp company status').exec(function (err, user) {
+    User.findOne({ $or: array }).select('username email mobile emailVerified mobileVerified otp emailOtp company status').exec(function (err, user) {
         if (err) {
             done(err, user, false);
         } else {
@@ -2220,7 +2499,7 @@ function findOrCreateUser(userName, req, done) {
                 reqUser = _.extend(user, req.body);
                 done(null, reqUser, false);
             } else {
-                reqUser._id= mongoose.Types.ObjectId();
+                reqUser._id = mongoose.Types.ObjectId();
                 reqUser.email = userName;
                 reqUser.username = userName;
                 var isNew = reqUser.isNew;
@@ -2267,23 +2546,23 @@ function getBusinessUnitNames(units, done) {
 
 }
 
-function getBusinessUnits(units,company,done) {
+function getBusinessUnits(units, company, done) {
     if (units && units.length > 0) {
-        if (units instanceof Array && typeof(units[0]) === 'string') {
-            done(null,units);
+        if (units instanceof Array && typeof (units[0]) === 'string') {
+            done(null, units);
         } else {
-            done(new Error('Should give business units id'),null);
+            done(new Error('Should give business units id'), null);
         }
     } else {
         Company.findOne({
             _id: company
         }, function (errCompany, dbCompany) {
-            if(errCompany){
-                done(errCompany,null);
-            }else if(!dbCompany) {
-                logger.error('Company not found'+company);
-                done(new Error('Company not found'),null);
-            }else {
+            if (errCompany) {
+                done(errCompany, null);
+            } else if (!dbCompany) {
+                logger.error('Company not found' + company);
+                done(new Error('Company not found'), null);
+            } else {
                 if (dbCompany && dbCompany.businessUnits.length > 0) {
                     var unitsObject = dbCompany.businessUnits.filter(function (eachUnit) {
                         return eachUnit.defaultBusinessUnit;
@@ -2292,7 +2571,7 @@ function getBusinessUnits(units,company,done) {
                         done(new Error('Should give business units id'), null);
                     } else {
                         units = [unitsObject[0].businessUnit.toString()];
-                        if (typeof(units[0]) === 'string') {
+                        if (typeof (units[0]) === 'string') {
                             done(null, units);
                         } else {
                             logger.error('Should give business unit id as string');
@@ -2309,8 +2588,8 @@ function getBusinessUnits(units,company,done) {
     }
 }
 
-function sendEmailForEmployeeActivation(owner,userName,userGroupName,url,businessUnitNames,template,res,req,done) {
-    logger.debug('Send activation url to email :'+userName);
+function sendEmailForEmployeeActivation(owner, userName, userGroupName, url, businessUnitNames, template, res, req, done) {
+    logger.debug('Send activation url to email :' + userName);
     res.render(template, {
         owner: owner,
         userGroup: userGroupName,
@@ -2331,7 +2610,7 @@ function sendEmailForEmployeeActivation(owner,userName,userGroupName,url,busines
         smtpTransport.sendMail(mailOptions, function (err) {
             if (err) {
                 done(err);
-            }else{
+            } else {
 
                 done(null);
             }
@@ -2339,46 +2618,46 @@ function sendEmailForEmployeeActivation(owner,userName,userGroupName,url,busines
     });
 }
 
-function createCompanyBusinessUser(user,userName,company,units,userGroup,req,res,done) {
-    getBusinessUnits(units,(company ? company : user.company),function (unitErr,selectedUnits) {
-        if(unitErr){
-            done(unitErr,null);
-        }else{
+function createCompanyBusinessUser(user, userName, company, units, userGroup, req, res, done) {
+    getBusinessUnits(units, (company ? company : user.company), function (unitErr, selectedUnits) {
+        if (unitErr) {
+            done(unitErr, null);
+        } else {
             findOrCreateUser(userName, req, function (err, currentuser, isNew) {
                 if (err) {
-                    done(err,null);
+                    done(err, null);
                 } else if (!isNew) {
-                    done(new Error('User is already used for some other company'),null);
+                    done(new Error('User is already used for some other company'), null);
                 } else {
-                    findOrCreateBUser(currentuser, selectedUnits,userGroup, function (bunitErr, units,businessUnitNames) {
+                    findOrCreateBUser(currentuser, selectedUnits, userGroup, function (bunitErr, units, businessUnitNames) {
                         if (bunitErr) {
                             logger.error('Error while add business user at business unit level');
-                            done(bunitErr,null);
+                            done(bunitErr, null);
                         } else {
                             logger.debug('added business user  at businessunit level');
                             companyUtil.findOrCreateCUser(currentuser, company, units, userGroup, currentuser.statusToken, false, true, false, false, false, function (companyErr, updatedCompany, foundEmployee) {
                                 if (companyErr) {
-                                    done(companyErr,null);
-                                } else if(!foundEmployee) {
+                                    done(companyErr, null);
+                                } else if (!foundEmployee) {
                                     logger.error('User is not added at company level');
-                                    done(new Error('User is not added at company level'),null);
-                                }else {
+                                    done(new Error('User is not added at company level'), null);
+                                } else {
                                     logger.debug('Sending Url -' + currentuser.username);
                                     var url = req.protocol + '://' + req.headers.host + '/auth/activeUser?token=' + currentuser.statusToken;
                                     companyUtil.findUserGroupById(userGroup, function (err, userGroupObject) {
                                         if (err) {
-                                            done(err,null);
+                                            done(err, null);
                                         } else {
-                                            var template='templates/business-user-activation';
-                                            sendEmailForEmployeeActivation(user.username,currentuser.username,userGroupObject.name,url,businessUnitNames,template,res,req,function (sendMailErr) {
-                                                if(sendMailErr){
-                                                    done(sendMailErr,null);
-                                                }else{
-                                                    Company.populate(updatedCompany,{path: 'employees.user employees.userGroup'},function (err, populateCompany) {
-                                                        if(err){
-                                                            done(err,null);
-                                                        }else{
-                                                            done(null,populateCompany.employees,url);
+                                            var template = 'templates/business-user-activation';
+                                            sendEmailForEmployeeActivation(user.username, currentuser.username, userGroupObject.name, url, businessUnitNames, template, res, req, function (sendMailErr) {
+                                                if (sendMailErr) {
+                                                    done(sendMailErr, null);
+                                                } else {
+                                                    Company.populate(updatedCompany, { path: 'employees.user employees.userGroup' }, function (err, populateCompany) {
+                                                        if (err) {
+                                                            done(err, null);
+                                                        } else {
+                                                            done(null, populateCompany.employees, url);
                                                         }
                                                     });
                                                 }
@@ -2407,7 +2686,7 @@ exports.addBusinessUser = function (req, res) {
                 message: errorHandler.getErrorMessage(err)
             });
         } else {
-            if(!req.body.isResendLink) {
+            if (!req.body.isResendLink) {
                 var userName = req.body.username ? req.body.username : req.body.userName;
                 if (!req.body.userGroup && !userName) {
                     return res.status(400).send({
@@ -2429,7 +2708,7 @@ exports.addBusinessUser = function (req, res) {
                         status: false,
                         message: 'Should give proper user name i.e email id'
                     });
-                } else if (typeof(req.body.userGroup) !== 'string') {
+                } else if (typeof (req.body.userGroup) !== 'string') {
                     return res.status(400).send({
                         status: false,
                         message: 'Should give userGroup id as string'
@@ -2438,7 +2717,7 @@ exports.addBusinessUser = function (req, res) {
                     var units = req.body.bunits;
                     var company = req.body.company;
 
-                    if (company && typeof(company) !== 'string') {
+                    if (company && typeof (company) !== 'string') {
                         return res.status(400).send({
                             status: false,
                             message: 'Should give Company id as string'
@@ -2453,7 +2732,7 @@ exports.addBusinessUser = function (req, res) {
                                 });
                             } else {
                                 if (config.production) {
-                                    res.send({businessUser: businessUser});
+                                    res.send({ businessUser: businessUser });
                                 } else {
                                     res.send({
                                         businessUser: businessUser,
@@ -2465,20 +2744,20 @@ exports.addBusinessUser = function (req, res) {
                     }
 
                 }
-            }else{
-                var template='templates/business-user-activation';
-                var url= req.protocol + '://' + req.headers.host + '/auth/activeUser?token=' + req.body.user.statusToken;
-                sendEmailForEmployeeActivation(user.username,req.body.user.username,req.body.userGroup.name,url,req.body.businessUnitNames,template,res,req,function (sendMailErr) {
-                    if(sendMailErr){
+            } else {
+                var template = 'templates/business-user-activation';
+                var url = req.protocol + '://' + req.headers.host + '/auth/activeUser?token=' + req.body.user.statusToken;
+                sendEmailForEmployeeActivation(user.username, req.body.user.username, req.body.userGroup.name, url, req.body.businessUnitNames, template, res, req, function (sendMailErr) {
+                    if (sendMailErr) {
                         return res.status(400).send({
                             status: false,
                             message: errorHandler.getErrorMessage(sendMailErr)
                         });
-                    }else{
-                        if(config.sendEmail) {
-                            res.send({message: 'Sent link to ' + req.body.user.username + ' for activation.'});
-                        }else{
-                            res.send({message: 'Sent link to ' + req.body.user.username + ' for activation. Activation URL :'+url});
+                    } else {
+                        if (config.sendEmail) {
+                            res.send({ message: 'Sent link to ' + req.body.user.username + ' for activation.' });
+                        } else {
+                            res.send({ message: 'Sent link to ' + req.body.user.username + ' for activation. Activation URL :' + url });
                         }
                     }
                 });
@@ -2487,7 +2766,7 @@ exports.addBusinessUser = function (req, res) {
     });
 };
 
-function updateUsersInCompany(user,employees,businessUnit,req,res,done) {
+function updateUsersInCompany(user, employees, businessUnit, req, res, done) {
     Company.findOne({
         _id: user.company,
         'deleted': false
@@ -2505,18 +2784,18 @@ function updateUsersInCompany(user,employees,businessUnit,req,res,done) {
                 if (companyEmployee && companyEmployee.length === 1) {
                     company.employees[company.employees.indexOf(companyEmployee[0])]
                         .businessUnits.push({
-                        businessUnit: businessUnit._id,
-                        status: businessUnit.disabled ? 'Inactive' : 'Active'
-                    });
+                            businessUnit: businessUnit._id,
+                            status: businessUnit.disabled ? 'Inactive' : 'Active'
+                        });
                     logger.debug('Sending email notification while add business user to business unit');
-                    var url=req.protocol + '://' + req.headers.host + '#!/signin';
-                    var template='templates/business-user-add-notification';
-                    var businessUnitNames=[];
+                    var url = req.protocol + '://' + req.headers.host + '#!/signin';
+                    var template = 'templates/business-user-add-notification';
+                    var businessUnitNames = [];
                     businessUnitNames.push(businessUnit.name);
-                    sendEmailForEmployeeActivation(user.username,companyEmployee[0].user.username,companyEmployee[0].userGroup.name,url,businessUnitNames,template,res,req,function (emailErr) {
-                        if(emailErr){
+                    sendEmailForEmployeeActivation(user.username, companyEmployee[0].user.username, companyEmployee[0].userGroup.name, url, businessUnitNames, template, res, req, function (emailErr) {
+                        if (emailErr) {
                             callback(emailErr);
-                        }else{
+                        } else {
                             callback();
                         }
                     });
@@ -2542,31 +2821,31 @@ function updateUsersInCompany(user,employees,businessUnit,req,res,done) {
     });
 }
 
-function updateUsersInBusinessUnit(unitId,employees,done) {
-    if(!unitId ){
-        done(new Error('Business unit id is required to add user to business unit'),null);
-    }else if(unitId && typeof(unitId) !== 'string'){
-        done(new Error('Business unit id is required as string to add user to business unit'),null);
-    }else {
+function updateUsersInBusinessUnit(unitId, employees, done) {
+    if (!unitId) {
+        done(new Error('Business unit id is required to add user to business unit'), null);
+    } else if (unitId && typeof (unitId) !== 'string') {
+        done(new Error('Business unit id is required as string to add user to business unit'), null);
+    } else {
         BusinessUnit.findOne({
             _id: unitId.toString()
         }).exec(function (unitErr, businessUnit) {
             if (unitErr) {
                 done(unitErr, null);
             } else if (!businessUnit) {
-                done(new Error('Business unit is not found with id' + unitId),null);
+                done(new Error('Business unit is not found with id' + unitId), null);
             } else {
                 if (!employees) {
-                    done(new Error('Employees object is required to add'),null);
+                    done(new Error('Employees object is required to add'), null);
                 } else if (employees && employees.length === 0) {
-                    done(new Error('At least one employees object is required to add'),null);
+                    done(new Error('At least one employees object is required to add'), null);
                 } else {
                     async.forEachSeries(employees, function (eachEmployee, callback) {
                         businessUnit.employees.push(eachEmployee);
                         callback();
                     }, function (err) {
                         if (err) {
-                            done(new Error('Employee model is not correct'),null);
+                            done(new Error('Employee model is not correct'), null);
                         } else {
                             businessUnit.save(function (updateErr) {
                                 if (updateErr) {
@@ -2583,29 +2862,29 @@ function updateUsersInBusinessUnit(unitId,employees,done) {
     }
 }
 
-exports.addMassEmployeesToBusinessUnit=function (req,res) {
+exports.addMassEmployeesToBusinessUnit = function (req, res) {
     var token = req.body.token || req.headers.token;
-    var unitId=req.body.unitId;
-    var employees=req.body.employees;
+    var unitId = req.body.unitId;
+    var employees = req.body.employees;
     usersJWTUtil.findUserByToken(token, function (err, user) {
         if (err) {
             return res.status(400).send({
                 message: errorHandler.getErrorMessage(err)
             });
         } else {
-            updateUsersInBusinessUnit(unitId,employees,function (unitUpdateErr,businessUnit) {
-                if(unitUpdateErr){
+            updateUsersInBusinessUnit(unitId, employees, function (unitUpdateErr, businessUnit) {
+                if (unitUpdateErr) {
                     return res.status(400).send({
                         message: errorHandler.getErrorMessage(unitUpdateErr)
                     });
-                }else{
-                    updateUsersInCompany(user,employees,businessUnit,req,res,function (companyUpdateErr, company) {
-                        if(companyUpdateErr){
+                } else {
+                    updateUsersInCompany(user, employees, businessUnit, req, res, function (companyUpdateErr, company) {
+                        if (companyUpdateErr) {
                             return res.status(400).send({
                                 message: errorHandler.getErrorMessage(companyUpdateErr)
                             });
-                        }else{
-                            BusinessUnit.populate(businessUnit, {path: 'employees.user employees.userGroup'}, function (err, populateUnit) {
+                        } else {
+                            BusinessUnit.populate(businessUnit, { path: 'employees.user employees.userGroup' }, function (err, populateUnit) {
                                 if (err) {
                                     return res.status(400).send({
                                         message: errorHandler.getErrorMessage(err)
@@ -2636,22 +2915,22 @@ exports.getRegisterRequestBusinessUser = function (req, res) {
                 return res.status(400).send({
                     message: errorHandler.getErrorMessage(err)
                 });
-            }else if(!user){
-                logger.error('User not found with status token'+statusToken);
+            } else if (!user) {
+                logger.error('User not found with status token' + statusToken);
                 return res.status(400).send({
-                    message:'User is not found'
+                    message: 'User is not found'
                 });
             } else {
                 if (user.userType === 'Employee') {
                     // checking user status at company employees
                     if (user.status === 'Register Request') {
                         var currentCompanyEmployee = getCompanyEmployeeStatus(user.company, statusToken);
-                        if((!currentCompanyEmployee) || (currentCompanyEmployee.length === 0)){
+                        if ((!currentCompanyEmployee) || (currentCompanyEmployee.length === 0)) {
                             logger.error('Failed to activate the user because No user at the company with status token' + statusToken);
                             return res.status(400).send({
                                 message: 'User is not found in the company'
                             });
-                        }else if(currentCompanyEmployee.length > 1){
+                        } else if (currentCompanyEmployee.length > 1) {
                             logger.error('More than one user is found in the company with status token' + statusToken);
                             return res.status(400).send({
                                 message: 'More than one User is found in the company'
@@ -2665,7 +2944,7 @@ exports.getRegisterRequestBusinessUser = function (req, res) {
                                 });
                             } else if (currentCompanyEmployee.status === 'Request') {
                                 logger.debug('Employee is Request state so take password from user to activate');
-                                return res.redirect('/#!/company/userActivate/'+statusToken);
+                                return res.redirect('/#!/company/userActivate/' + statusToken);
                             } else {
                                 logger.error('Failed to activate because Employee is already used ');
                                 return res.status(400).send({
@@ -2674,15 +2953,15 @@ exports.getRegisterRequestBusinessUser = function (req, res) {
                             }
                         }
                     } else {
-                        var companyUser=user.company.employees.filter(function (eachEmployee) {
+                        var companyUser = user.company.employees.filter(function (eachEmployee) {
                             return eachEmployee.user.toString() === user._id.toString();
                         });
-                        if(companyUser && companyUser.length>0){
-                            logger.error('Failed to activate user because User is already employee in the '+user.company.name);
+                        if (companyUser && companyUser.length > 0) {
+                            logger.error('Failed to activate user because User is already employee in the ' + user.company.name);
                             return res.status(400).send({
-                                message: 'User is already employee in the '+user.company.name
+                                message: 'User is already employee in the ' + user.company.name
                             });
-                        }else {
+                        } else {
                             logger.error('Failed to activate user because User is already used for some other company ');
                             return res.status(400).send({
                                 message: 'User is already used for some other company'
@@ -2706,27 +2985,27 @@ exports.getRegisterRequestBusinessUser = function (req, res) {
     }
 };
 
-exports.getEmployeeDetailsForActivate=function (req, res) {
-    var statusToken=req.params.statusToken;
-    if(statusToken) {
-        logger.debug('Getting employee details to display on the screen for activation'+statusToken);
+exports.getEmployeeDetailsForActivate = function (req, res) {
+    var statusToken = req.params.statusToken;
+    if (statusToken) {
+        logger.debug('Getting employee details to display on the screen for activation' + statusToken);
         usersJWTUtil.findUserByStatusToken(statusToken, function (err, user) {
             if (err) {
-                logger.error('Error while find user with status token'+statusToken+'Error:'+err);
+                logger.error('Error while find user with status token' + statusToken + 'Error:' + err);
                 return res.status(400).send({
                     message: errorHandler.getErrorMessage(err)
                 });
             } else if (!user) {
-                logger.error('User is not found while getting employee details'+statusToken);
+                logger.error('User is not found while getting employee details' + statusToken);
                 return res.status(400).send({
                     message: 'User is not found'
                 });
             } else {
-                logger.debug('Send employee details for display'+user);
+                logger.debug('Send employee details for display' + user);
                 return res.send(user);
             }
         });
-    }else{
+    } else {
         logger.error('Status token is required to get employee details');
         return res.status(400).send({
             message: 'Status token is required'
@@ -2736,19 +3015,19 @@ exports.getEmployeeDetailsForActivate=function (req, res) {
 
 exports.activateBusinessUser = function (req, res) {
     var businessUser = req.body;
-    var statusToken=req.params.statusToken?req.params.statusToken:businessUser.statusToken;
+    var statusToken = req.params.statusToken ? req.params.statusToken : businessUser.statusToken;
     if (statusToken) {
-        logger.debug('Request to get user with status token to activate'+statusToken);
+        logger.debug('Request to get user with status token to activate' + statusToken);
         usersJWTUtil.findUserByStatusToken(statusToken, function (err, user) {
             if (err) {
-                logger.error('Error while getting user for activation'+statusToken+'Error:'+err);
+                logger.error('Error while getting user for activation' + statusToken + 'Error:' + err);
                 return res.status(400).send({
                     message: errorHandler.getErrorMessage(err)
                 });
-            }else if(!user){
-                logger.error('User is not found to activate'+statusToken);
+            } else if (!user) {
+                logger.error('User is not found to activate' + statusToken);
                 return res.status(400).send({
-                    message:'User is not found'
+                    message: 'User is not found'
                 });
             } else {
                 logger.debug('Get user object to activate');
@@ -2757,55 +3036,55 @@ exports.activateBusinessUser = function (req, res) {
                     user.status = 'Registered';
                     user.save(function (err) {
                         if (err) {
-                            logger.error('Error while save user'+user+'Error:'+err);
+                            logger.error('Error while save user' + user + 'Error:' + err);
                             return res.status(400).send({
                                 message: errorHandler.getErrorMessage(err)
                             });
                         } else {
-                            logger.debug('User saved successfully'+user);
-                            createCompanyContactWhileRegister(user,function (contactErr) {
+                            logger.debug('User saved successfully' + user);
+                            createCompanyContactWhileRegister(user, function (contactErr) {
                                 if (contactErr) {
-                                    logger.error('Error while creating nvipani company contact'+user);
+                                    logger.error('Error while creating nvipani company contact' + user);
                                     return res.status(400).send({
                                         status: false,
                                         message: errorHandler.getErrorMessage(contactErr)
                                     });
                                 } else {
-                                    logger.debug('nVipani conatact created successfully'+user);
+                                    logger.debug('nVipani conatact created successfully' + user);
                                     Company.findById(user.company, function (err, company) {
                                         if (err) {
-                                            logger.error('Error while getting company at activation of user'+user);
+                                            logger.error('Error while getting company at activation of user' + user);
                                             return res.status(400).send({
                                                 message: err.message
                                             });
-                                        }else if(!company) {
-                                            logger.error('Company object is null at activation of user'+user);
+                                        } else if (!company) {
+                                            logger.error('Company object is null at activation of user' + user);
                                             return res.status(400).send({
-                                                message:'Company is not found'
+                                                message: 'Company is not found'
                                             });
-                                        }else {
-                                            logger.debug('Get company details of user'+company);
+                                        } else {
+                                            logger.debug('Get company details of user' + company);
                                             var companyEmployee = getCompanyEmployeeStatus(company, user.statusToken);
-                                            if((!companyEmployee) || (companyEmployee.length === 0)){
-                                                logger.error('Employee is not found in the company'+company);
+                                            if ((!companyEmployee) || (companyEmployee.length === 0)) {
+                                                logger.error('Employee is not found in the company' + company);
                                                 return res.status(400).send({
-                                                    message:'Employee is not found in the company '
+                                                    message: 'Employee is not found in the company '
                                                 });
-                                            }else if(companyEmployee.length > 1){
-                                                logger.error('More than one Employee is found in the company'+company);
+                                            } else if (companyEmployee.length > 1) {
+                                                logger.error('More than one Employee is found in the company' + company);
                                                 return res.status(400).send({
-                                                    message:'More than one Employee is found in the company'
+                                                    message: 'More than one Employee is found in the company'
                                                 });
-                                            }else {
+                                            } else {
                                                 company.employees[company.employees.indexOf(companyEmployee[0])].status = 'Active';
                                                 company.save(function (err) {
-                                                    if(err){
-                                                        logger.error('Error while save company at activate employee'+company);
+                                                    if (err) {
+                                                        logger.error('Error while save company at activate employee' + company);
                                                         return res.status(400).send({
-                                                            message:errorHandler.getErrorMessage(err)
+                                                            message: errorHandler.getErrorMessage(err)
                                                         });
-                                                    }else {
-                                                        logger.debug('Company save at activate employee'+company);
+                                                    } else {
+                                                        logger.debug('Company save at activate employee' + company);
                                                         res.jsonp(user);
                                                     }
                                                 });
@@ -2818,14 +3097,14 @@ exports.activateBusinessUser = function (req, res) {
                         }
                     });
                 } else {
-                    logger.error('Should not able to activate as employee'+user);
+                    logger.error('Should not able to activate as employee' + user);
                     return res.status(400).send({
                         message: 'Should not able to activate as employee'
                     });
                 }
             }
         });
-    }else{
+    } else {
         logger.error('Status token is required to activate employee');
         return res.status(400).send({
             message: 'Status token is required'
@@ -2838,7 +3117,7 @@ function getCompanyEmployee(removeEmployee, companyEmployees, done) {
         return eachEmployee.user._id.toString() === removeEmployee.toString();
     }));
 }
-function findUserById(userId,done){
+function findUserById(userId, done) {
     User.findOne({
         _id: userId,
         'deleted': false
@@ -2850,34 +3129,34 @@ function findUserById(userId,done){
             logger.error('Employee user is not found in users ' + userId);
             done(new Error('Employee user is not found in users'), null);
         } else {
-            done(null,user);
+            done(null, user);
         }
     });
 }
-function getCompanyEmployeeByUserId(eachCompanyEmployee,company,done) {
-    findUserById(eachCompanyEmployee,function (userError,user){
+function getCompanyEmployeeByUserId(eachCompanyEmployee, company, done) {
+    findUserById(eachCompanyEmployee, function (userError, user) {
         if (userError) {
             logger.error('Employee is not found in users ' + eachCompanyEmployee);
-            done(userError,null,null);
+            done(userError, null, null);
         } else {
             getCompanyEmployee(eachCompanyEmployee, company.employees, function (companyEmployee) {
-                if ((!companyEmployee) || (companyEmployee.length === 0) ) {
+                if ((!companyEmployee) || (companyEmployee.length === 0)) {
                     logger.error('Employee not found in the company with employee id' + eachCompanyEmployee);
-                    done(new Error('Employee not found in the company'),null);
+                    done(new Error('Employee not found in the company'), null);
                 } else if (companyEmployee.length > 1) {
                     logger.error('More than one Employee in the company with employee id' + eachCompanyEmployee);
                     done(new Error('More than one Employee in the company'));
-                }else{
-                    done(null,companyEmployee[0]);
+                } else {
+                    done(null, companyEmployee[0]);
                 }
 
             });
         }
     });
 }
-function companyEmployeeActions(company,companyEmployee,isRemove ,isEnable,isDisable,done) {
+function companyEmployeeActions(company, companyEmployee, isRemove, isEnable, isDisable, done) {
     if (isRemove) {
-        if(companyEmployee.user.userType === 'Employee') {
+        if (companyEmployee.user.userType === 'Employee') {
             async.forEachSeries(companyEmployee.businessUnits, function (eachUnit, unitCallBack) {
                 BusinessUnit.findOne({
                     _id: eachUnit.businessUnit.toString()
@@ -2952,16 +3231,16 @@ function companyEmployeeActions(company,companyEmployee,isRemove ,isEnable,isDis
                     });
                 }
             });
-        }else{
-            logger.error( 'Default business user should not deleted '+companyEmployee.user.username);
-            done(new Error('Default business user should not deleted '+companyEmployee.user.username));
+        } else {
+            logger.error('Default business user should not deleted ' + companyEmployee.user.username);
+            done(new Error('Default business user should not deleted ' + companyEmployee.user.username));
         }
     }
     else if (isEnable || isDisable) {
-        if(companyEmployee.user.status === 'Register Request') {
-            logger.error(companyEmployee.user.username +' user not registered');
-            done(new Error(companyEmployee.user.username +' user needs to be registered'));
-        }else {
+        if (companyEmployee.user.status === 'Register Request') {
+            logger.error(companyEmployee.user.username + ' user not registered');
+            done(new Error(companyEmployee.user.username + ' user needs to be registered'));
+        } else {
             company.employees[company.employees.indexOf(companyEmployee)].status = isEnable ? 'Active' : 'Inactive';
             company.save(function (companyUpdateErr) {
                 if (companyUpdateErr) {
@@ -2983,7 +3262,7 @@ exports.massActionsOnCompanyEmployees = function (req, res) {
     var isEnable = req.body.isEnable;
     var isDisable = req.body.isDisable;
     var token = req.body.token || req.headers.token;
-    if(data.companyEmployees && data.companyEmployees.length > 0) {
+    if (data.companyEmployees && data.companyEmployees.length > 0) {
         usersJWTUtil.findUserByToken(token, function (errFetch, getUser) {
             if (errFetch) {
                 return res.status(400).send({
@@ -3011,9 +3290,9 @@ exports.massActionsOnCompanyEmployees = function (req, res) {
                             message: 'No company with company id :' + getUser.company
                         });
                     } else {
-                        var results = {success: [], failure: []};
+                        var results = { success: [], failure: [] };
                         async.forEachSeries(data.companyEmployees, function (eachCompanyEmployee, callback) {
-                            if (typeof(eachCompanyEmployee) !== 'string') {
+                            if (typeof (eachCompanyEmployee) !== 'string') {
                                 logger.error('Company employee id is required', eachCompanyEmployee);
                                 results.failure.push({
                                     _id: eachCompanyEmployee,
@@ -3074,7 +3353,7 @@ exports.massActionsOnCompanyEmployees = function (req, res) {
                 });
             }
         });
-    }else{
+    } else {
         logger.error('Company employee ids are required for perform operations');
         return res.status(400).send({
             status: false,
@@ -3083,10 +3362,10 @@ exports.massActionsOnCompanyEmployees = function (req, res) {
     }
 };
 
-function businessUnitEmployeeActions(businessUnit,businessUnitEmployee,eachUnitEmployee,isRemove,done) {
+function businessUnitEmployeeActions(businessUnit, businessUnitEmployee, eachUnitEmployee, isRemove, done) {
     if (isRemove) {
-        if(!businessUnitEmployee.incharge) {
-            businessUnit.employees.splice(businessUnit.employees.indexOf(businessUnitEmployee),1);
+        if (!businessUnitEmployee.incharge) {
+            businessUnit.employees.splice(businessUnit.employees.indexOf(businessUnitEmployee), 1);
             businessUnit.save(function (businessUnitUpdateErr) {
                 if (businessUnitUpdateErr) {
                     logger.error('Error while remove the employee from business units' + businessUnit);
@@ -3099,20 +3378,20 @@ function businessUnitEmployeeActions(businessUnit,businessUnitEmployee,eachUnitE
                     }).exec(function (companyErr, company) {
                         if (companyErr) {
                             logger.error('Error while fetching company using company id of business unit' + businessUnit.company);
-                            done(companyErr,null);
+                            done(companyErr, null);
                         } else {
                             var companyEmployee = company.employees.filter(function (eachCompanyEmployee) {
                                 return eachCompanyEmployee.user && eachCompanyEmployee.user.toString() === eachUnitEmployee.toString();
                             });
                             if (!companyEmployee) {
                                 logger.error('Employee is not found in company with company id ' + businessUnit.company);
-                                done(new Error('Employee is not found in company'),null);
-                            } else if(companyEmployee.length === 0) {
+                                done(new Error('Employee is not found in company'), null);
+                            } else if (companyEmployee.length === 0) {
                                 logger.error('Employee is not found in company with company id ' + businessUnit.company);
-                                done(new Error('Employee is not found in company'),null);
-                            }else if (companyEmployee.length > 1) {
+                                done(new Error('Employee is not found in company'), null);
+                            } else if (companyEmployee.length > 1) {
                                 logger.error('More than one Employee is found in company with company id ' + businessUnit.company);
-                                done(new Error('More than one Employee is found in company'),null);
+                                done(new Error('More than one Employee is found in company'), null);
                             } else {
                                 var companyEmployeeBunit = companyEmployee[0].businessUnits.filter(function (eachCompanyEmployeeUnit) {
                                     return eachCompanyEmployeeUnit.businessUnit && eachCompanyEmployeeUnit.businessUnit.toString() === businessUnit._id.toString();
@@ -3120,22 +3399,22 @@ function businessUnitEmployeeActions(businessUnit,businessUnitEmployee,eachUnitE
                                 var employeeIndex = company.employees.indexOf(companyEmployee[0]);
                                 if (!companyEmployeeBunit) {
                                     logger.error('Business unit is not found in company with company id ' + businessUnit.company);
-                                    done(new Error('Business unit is not found in company'),null);
-                                } else if(companyEmployee.length === 0) {
+                                    done(new Error('Business unit is not found in company'), null);
+                                } else if (companyEmployee.length === 0) {
                                     logger.error('Business unit is not found in company with company id  ' + businessUnit.company);
-                                    done(new Error('Business unit is not found in company'),null);
-                                }else if (companyEmployeeBunit.length > 1) {
+                                    done(new Error('Business unit is not found in company'), null);
+                                } else if (companyEmployeeBunit.length > 1) {
                                     logger.error('More than one Business unit is found in company with same business unit with company id ' + businessUnit.company);
-                                    done(new Error('More than one Business unit is  found in company'),null);
+                                    done(new Error('More than one Business unit is  found in company'), null);
                                 } else {
                                     var unitIndex = company.employees[employeeIndex].businessUnits.indexOf(companyEmployeeBunit[0]);
                                     company.employees[employeeIndex].businessUnits.splice(unitIndex, 1);
                                     company.save(function (companyUpdateErr) {
                                         if (companyUpdateErr) {
                                             logger.error('Error while remove the employee at company' + companyEmployee[0] + ' Error' + errorHandler.getErrorMessage(companyUpdateErr));
-                                            done(companyUpdateErr,null);
+                                            done(companyUpdateErr, null);
                                         } else {
-                                            done(null,businessUnit);
+                                            done(null, businessUnit);
                                         }
                                     });
                                 }
@@ -3144,7 +3423,7 @@ function businessUnitEmployeeActions(businessUnit,businessUnitEmployee,eachUnitE
                     });
                 }
             });
-        }else {
+        } else {
             logger.error('Error while remove the employee from business units bez employee is incharge' + businessUnit);
             done(new Error('Incharge employee should not deleted'), null);
         }
@@ -3164,7 +3443,7 @@ function businessUnitEmployeeActions(businessUnit,businessUnitEmployee,eachUnitE
                 });
             }*/
     } else {
-        done(new Error('No BusinessUnit user Operation'),null);
+        done(new Error('No BusinessUnit user Operation'), null);
     }
 }
 
@@ -3194,12 +3473,12 @@ exports.massActionsOnUnitEmployees = function (req, res) {
                 message: 'At least one employee of business unit is required'
             });
         } else {
-            BusinessUnit.findOne({_id: businessUnitId},'employees company').populate('employees.user').exec(function (unitErr, businessUnit) {
+            BusinessUnit.findOne({ _id: businessUnitId }, 'employees company').populate('employees.user').exec(function (unitErr, businessUnit) {
                 if (unitErr) {
                     logger.error('no business unit with business unit id' + businessUnitId);
                     return res.status(400).send({
-                        status:false,
-                        message:errorHandler.getErrorMessage(unitErr)
+                        status: false,
+                        message: errorHandler.getErrorMessage(unitErr)
                     });
                 } else if (!businessUnit) {
                     logger.error('no business unit with business unit id' + businessUnitId);
@@ -3208,9 +3487,9 @@ exports.massActionsOnUnitEmployees = function (req, res) {
                         message: 'no business unit with business unit id'
                     });
                 } else {
-                    var results = {success: [], failure: []};
+                    var results = { success: [], failure: [] };
                     async.forEachSeries(unitEmployees, function (eachUnitEmployee, callback) {
-                        findUserById(eachUnitEmployee,function (userError,user){
+                        findUserById(eachUnitEmployee, function (userError, user) {
                             if (userError) {
                                 logger.error('Employee is not found in users ' + eachUnitEmployee);
                                 results.failure.push({
@@ -3218,7 +3497,7 @@ exports.massActionsOnUnitEmployees = function (req, res) {
                                     message: 'Employee is not found in users'
                                 });
                                 callback(new Error('Employee is not found in users'));
-                            }else{
+                            } else {
                                 var businessUnitEmployee = businessUnit.employees.filter(function (eachBusinessUnitEmployee) {
                                     return eachBusinessUnitEmployee.user._id && eachBusinessUnitEmployee.user._id.toString() === eachUnitEmployee.toString();
                                 });
@@ -3229,7 +3508,7 @@ exports.massActionsOnUnitEmployees = function (req, res) {
                                         message: 'Employee is not found in business unit'
                                     });
                                     callback(new Error('Employee is not found in business unit'));
-                                } else if(businessUnitEmployee.length === 0){
+                                } else if (businessUnitEmployee.length === 0) {
                                     logger.error('Employee is not found in business unit ' + businessUnit);
                                     results.failure.push({
                                         _id: eachUnitEmployee,
@@ -3244,15 +3523,15 @@ exports.massActionsOnUnitEmployees = function (req, res) {
                                     });
                                     callback(new Error('More than one Employee is found in business unit'));
                                 } else {
-                                    businessUnitEmployeeActions(businessUnit,businessUnitEmployee[0],eachUnitEmployee,isRemove,function (updateUnitErr,updateUnit) {
-                                        if(updateUnitErr){
-                                            logger.error('Error while perform the businessUnit user operations ' + businessUnit+'Error:'+updateUnitErr);
+                                    businessUnitEmployeeActions(businessUnit, businessUnitEmployee[0], eachUnitEmployee, isRemove, function (updateUnitErr, updateUnit) {
+                                        if (updateUnitErr) {
+                                            logger.error('Error while perform the businessUnit user operations ' + businessUnit + 'Error:' + updateUnitErr);
                                             results.failure.push({
                                                 _id: eachUnitEmployee,
                                                 message: errorHandler.getErrorMessage(updateUnitErr)
                                             });
                                             callback(updateUnitErr);
-                                        }else{
+                                        } else {
                                             results.success.push({
                                                 _id: eachUnitEmployee,
                                                 unitEmployee: updateUnit
@@ -3290,44 +3569,44 @@ exports.massActionsOnUnitEmployees = function (req, res) {
 
 exports.updateBusinessUser = function (req, res, next) {
     var data = req.body;
-    if(!data.user){
+    if (!data.user) {
         logger.error('Company employee id should required to update employee');
         return res.status(400).send({
             status: false,
             message: 'Company employee id should required to update employee'
         });
-    }else if(typeof(data.user) !== 'string'){
+    } else if (typeof (data.user) !== 'string') {
         logger.error('Company employee id should required as string to update employee');
         return res.status(400).send({
             status: false,
             message: 'Company employee id should required as string to update employee'
         });
-    }else if(!data.company){
+    } else if (!data.company) {
         logger.error('Company id should required to update employee');
         return res.status(400).send({
             status: false,
             message: 'Company id should required to update employee'
         });
-    }else if(typeof (data.company) !== 'string'){
+    } else if (typeof (data.company) !== 'string') {
         logger.error('Company id should required as string to update employee');
         return res.status(400).send({
             status: false,
             message: 'Company id should required as string to update employee'
         });
-    }else if(data.isGroup && !data.group){
+    } else if (data.isGroup && !data.group) {
         logger.error('Employee group id should required to update employee');
         return res.status(400).send({
             status: false,
             message: 'Employee group id should required to update employee'
         });
-    }else if(data.isGroup && data.group && typeof (data.group) !== 'string'){
+    } else if (data.isGroup && data.group && typeof (data.group) !== 'string') {
         logger.error('Employee group id should required as string to update employee');
         return res.status(400).send({
             status: false,
             message: 'Employee group id should required as string to update employee'
         });
-    }else {
-        User.findOne({_id: data.user, 'deleted': false}, '-salt -password', function (errFetch, getUser) {
+    } else {
+        User.findOne({ _id: data.user, 'deleted': false }, '-salt -password', function (errFetch, getUser) {
             if (errFetch) {
                 logger.error('Failed to load user for update employee' + data + 'Error' + errFetch);
                 return res.status(400).send({
@@ -3351,7 +3630,7 @@ exports.updateBusinessUser = function (req, res, next) {
                         });
                     } else {
                         logger.debug('Successfully update user details' + getUser);
-                        Company.populate(companyUserUpdate, {path: 'employees.user employees.userGroup'}, function (companyErr, company) {
+                        Company.populate(companyUserUpdate, { path: 'employees.user employees.userGroup' }, function (companyErr, company) {
                             if (companyErr) {
                                 logger.error('Error while populate user and userGroups' + companyUserUpdate);
                                 return res.status(400).send({

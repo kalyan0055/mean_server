@@ -16,8 +16,10 @@ var _ = require('lodash'),
     User = mongoose.model('User'),
     NewUser = mongoose.model('Newuser'),
     newuserJWTUtil = require('../utils/newusers.jwtutil'),
-    async = require('async');
-   
+    async = require('async'),
+    config = require('../../../config/config'),
+    
+    nodemailer = require('nodemailer');
     // User = require('../models/user');
     // bCrypt = require('bcrypt-nodejs');;
      
@@ -61,25 +63,7 @@ exports.newuserslist =  function(req, res) {
         
     });  
 
-  
-// NewUser.find({}, function (errContact, contact) {
-//     console.log(errContact,'error related');
-//     console.log(contact,'contactt');
-
-    
-//     if (errContact) {
-//         logger.error('Error while loading the contact for the registration user id  after saving the company details with Company name ' );
-//         return res.status(400).json({
-//             message: errorHandler.getErrorMessage(errContact)
-//         });
-//     }
-
-//     if (contact) {
-//         res.json({contactExists: contact});
-//     }else{
-//         res.json({contactExists: contact});
-//     }
-// });
+ 
 };
 
 exports.updateuser = async function(req, res){
@@ -103,8 +87,75 @@ exports.updateuser = async function(req, res){
         })
     })
 };
+function getEmailTemplate(user,type,req) {
+    console.log(req.protocol + '://' + req.headers.host);
+   
+     
+    let a ='';
+    a= new Buffer(user).toString('base64');
+     
+    if(type==='Registered') {
+        return {template:'templates/success-user',subject:'You are successfully Activated',options: {
+                name: 'Customer',
+                appName: config.app.title,
+                otp: user.emailOtp,
+                baseUrl: req.protocol + '://' + req.headers.host,
+                username: user.username
+            }};
+    }else if(type==='Register Request'){
+        return {template:'templates/user-registration',subject:'Registration Request',options: {
+                name: 'Customer',
+                appName:'Technical',
+                otp: '125463',
+                hyperlink: req.protocol + '://' + 'localhost:4200/confirm/true/'+a,
+                baseUrl: req.protocol + '://' + req.headers.host,
+                username: user
+            }};
+    }else{
+        return {template:'templates/user-registration',subject:'Activated',options:{}};
+    }
+}
+exports.registervialink = function(req,res,done){
 
+    console.log(req.body.username,'resssdfsf'); 
+    var emailTemplate= getEmailTemplate(req.body.username,'Register Request',req);
+    
+    
+        res.render(emailTemplate.template, emailTemplate.options, function (err, emailHTML) {
+            console.log(err);
+            
+        var smtpTransport = nodemailer.createTransport(config.mailer.options);
+        var mailOptions = {
+            to: 'rambabu.e@technoxis.in',
+            from: config.mailer.from,
+            subject: emailTemplate.subject,
+            html: emailHTML
+        };
+        // if (config.production) {
+        //     mailOptions.bcc = config.nvipaniAdminUsers;
+        // }
+        logger.debug('Sending OTP Response-' );
+        smtpTransport.sendMail(mailOptions, function (err) {
+            if (err) {
+                /*res.status(400).send({
+                    status: false,
+                    message: errorHandler.getErrorMessage(err)
+                });*/
+                done(err, null);
+            }
+            if (!err) {
+                res.json({
+                    success:true,
+                    data:req.body.username
+                })
+            }
 
+        });
+    })
+  
+}
+ 
+ 
 exports.login =  function(req, res,next){
    console.log('hello',req.body);
    
@@ -118,14 +169,14 @@ exports.login =  function(req, res,next){
                     //logger.debug('Error Message-'+JSON.stringify(info));
                     res.status(400).send(info);
                 }else{
-                    NewUser.findOne({ 'username' :  user.username }, 
+                    NewUser.findOne({ 'username' :  user.username },'username email mobile status', 
                     function(err, user) {
                         // In case of any error, return using the done method
                         if (err)
                         res.json({success:false,token:'',data:err})
                         // Username does not exist, log the error and redirect back
                         if (!user){
-                            console.log('User Not Found with username '+username);
+                            console.log('User Not Found with username '+req.body.username);
                             res.json({success:false,token:'token',data:err})               
                         }
                         if(user){
@@ -156,7 +207,11 @@ exports.login =  function(req, res,next){
      console.log('Request Body-'+JSON.stringify(req.body));
      logger.debug('Request Body-'+JSON.stringify(req.body));
     passport.authenticate('local', function (err, user, info) {
+    console.log(user.username,'after passport');
+    
         if (err || !user) {
+            console.log('it is come else part');
+            
             info.status = false;
             logger.error('Error Signin with username -' + req.body.username + ', -' + JSON.stringify(info));
             //logger.debug('Error Message-'+JSON.stringify(info));
@@ -165,6 +220,8 @@ exports.login =  function(req, res,next){
             User.findOne({
                 username: user.username
             }).select('-salt -password').populate('company', 'category segments registrationCategory').exec(function (err, dbuser) {
+               console.log(dbuser,'query executed');
+               
                 if (dbuser) {
                     var devicename;
                     var devicedescription;

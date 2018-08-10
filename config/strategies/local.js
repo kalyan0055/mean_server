@@ -5,7 +5,8 @@
  */
 var passport = require('passport'),
 	LocalStrategy = require('passport-local').Strategy,
-	newUser = require('mongoose').model('Newuser');
+	newUser = require('mongoose').model('Newuser'),
+	User = require('mongoose').model('User');
 	 
 module.exports = function() {
 	// Use local strategy
@@ -14,11 +15,12 @@ module.exports = function() {
 			passwordField: 'password'
 		},
 		function(username, password, done) {
-			console.log(username,password,'dddddddddddd');
-			
-			newUser.findOne({
+ 
+			User.findOne({
 				username: username
 			}, function(err, user) {
+			 
+				
 				if (err) {
 					return done(err);
 				}

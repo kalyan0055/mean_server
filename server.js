@@ -2,8 +2,8 @@
 /**
  * Module dependencies.
  */
-//init = require('./config/init')(),
-var config = require('./config/config'),
+var init = require('./config/init')(),
+    config = require('./config/config'),
 	mongoose = require('mongoose'),
 	express = require('express'),
 

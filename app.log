@@ -1,30 +1,184 @@
-[2018-07-24 12:07:55.561] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-07-24 12:07:55.567] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-07-24 12:07:55.572] [DEBUG] USERS - requiresLogin - req.headers[token] -undefined
-[2018-07-24 12:12:35.545] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-07-24 12:12:35.552] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-07-24 12:12:35.555] [DEBUG] USERS - requiresLogin - req.headers[token] -undefined
-[2018-07-24 12:35:19.000] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-07-24 12:35:19.007] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-07-24 12:35:19.010] [DEBUG] USERS - requiresLogin - req.headers[token] -undefined
-[2018-07-26 11:31:22.034] [DEBUG] USERS - Request Body-{"username":"krishna@gmail.com","password":"krishna"}
-[2018-07-26 11:31:22.144] [ERROR] USERS - Error Signin with username -krishna@gmail.com, -{"message":"Unknown UserName \"krishna@gmail.com\"","status":false}
-[2018-07-26 11:34:34.148] [ERROR] USERS - Error Signin with username -krishna@gmail.com, -{"message":"Unknown UserName \"krishna@gmail.com\"","status":false}
-[2018-07-26 11:41:54.262] [ERROR] USERS - Error Signin with username -krishanrame, -{"message":"Unknown UserName \"krishanrame\"","status":false}
-[2018-07-26 11:44:59.362] [ERROR] USERS - Error Signin with username -krishnarame, -{"message":"User is not in active state","status":false}
-[2018-07-26 11:47:26.813] [ERROR] USERS - Error Signin with username -krishnarame, -{"message":"User is not in active state","status":false}
-[2018-07-26 11:50:37.903] [ERROR] USERS - Error Signin with username -krishnarame, -{"message":"User is not in active state","status":false}
-[2018-07-26 11:51:49.220] [ERROR] USERS - Error Signin with username -krishnarame, -{"message":"User is not in active state","status":false}
-[2018-07-26 11:53:27.429] [ERROR] USERS - Error Signin with username -krishnarame, -{"message":"User is not in active state","status":false}
-[2018-07-26 12:02:48.082] [ERROR] USERS - Error rambabu with username -krishnarame, -{"message":"User is not in active state","status":false}
-[2018-07-26 12:03:55.449] [ERROR] USERS - Error rambabu with username -krishnarame, -{"message":"User is not in active state","status":false}
-[2018-07-26 12:05:20.679] [ERROR] USERS - Error rambabu with username -krishnarame, -{"message":"User is not in active state","status":false}
-[2018-07-26 12:07:27.558] [ERROR] USERS - Error rambabu with username -krishnarame, -{"message":"User is not in active state","status":false}
-[2018-07-26 12:09:20.118] [ERROR] USERS - Error rambabu with username -krishnarame, -{"message":"User is not in active state","status":false}
-[2018-07-26 12:09:58.623] [ERROR] USERS - Error rambabu with username -krishnarame, -{"message":"User is not in active state","status":false}
-[2018-07-26 12:10:28.979] [ERROR] USERS - Error rambabu with username -krishnarame, -{"message":"User is not in active state","status":false}
-[2018-07-26 12:40:07.201] [ERROR] USERS - Error rambabu with username -srinivasa rao, -{"message":"User is not in active state","userstatus":"","status":false}
-[2018-07-26 13:49:58.579] [ERROR] USERS - Error Signin with username -john westley, -{"message":"Unknown UserName \"john westley\"","status":false}
-[2018-07-26 13:50:24.903] [ERROR] USERS - Error Signin with username -john westly, -{"message":"Unknown UserName \"john westly\"","status":false}
-[2018-07-26 13:55:33.680] [ERROR] USERS - Error Signin with username -John westly, -{"message":"Invalid password","status":false}
-[2018-07-26 16:44:40.402] [ERROR] USERS - Error Signin with username -murthythotada, -{"message":"Unknown UserName \"murthythotada\"","status":false}
+[2018-08-10 12:46:24.610] [DEBUG] USERS - Fetching already created user with the same user name  :test12345@nvipani.com
+[2018-08-10 12:46:24.611] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-08-10 12:46:24.611] [DEBUG] USERS - Email is :test12345@nvipani.com
+[2018-08-10 12:46:24.612] [DEBUG] USERS - Fetch matched  user with user name :test12345@nvipani.com
+[2018-08-10 12:46:24.616] [DEBUG] USERS - Found user with the username :test12345@nvipani.com
+[2018-08-10 12:46:24.624] [DEBUG] USERS - Verifying OTP - true
+[2018-08-10 12:46:24.625] [ERROR] USERS - Incorrect otp for the Email: test12345@nvipani.com
+[2018-08-10 12:51:36.202] [DEBUG] USERS - Registration Request  - {"username":"test12345@nvipani.com","password":"12345678","conf_password":"12345678","isverifyotp":true,"otp":543374}
+[2018-08-10 12:51:36.206] [DEBUG] USERS - user registration input validation for the data :{"username":"test12345@nvipani.com","password":"12345678","conf_password":"12345678","isverifyotp":true,"otp":543374}
+[2018-08-10 12:51:36.209] [DEBUG] USERS - Fetching already created user with the same user name  :test12345@nvipani.com
+[2018-08-10 12:51:36.210] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-08-10 12:51:36.211] [DEBUG] USERS - Email is :test12345@nvipani.com
+[2018-08-10 12:51:36.212] [DEBUG] USERS - Fetch matched  user with user name :test12345@nvipani.com
+[2018-08-10 12:51:36.233] [DEBUG] USERS - Found user with the username :test12345@nvipani.com
+[2018-08-10 12:51:36.237] [DEBUG] USERS - Verifying OTP - true
+[2018-08-10 12:51:36.238] [ERROR] USERS - Incorrect otp for the Email: test12345@nvipani.com
+[2018-08-10 12:53:46.495] [DEBUG] USERS - Registration Request  - {"username":"test12345@nvipani.com","password":"12345678","conf_password":"12345678","isverifyotp":true,"otp":543374}
+[2018-08-10 12:53:46.502] [DEBUG] USERS - user registration input validation for the data :{"username":"test12345@nvipani.com","password":"12345678","conf_password":"12345678","isverifyotp":true,"otp":543374}
+[2018-08-10 12:53:46.511] [DEBUG] USERS - Fetching already created user with the same user name  :test12345@nvipani.com
+[2018-08-10 12:53:46.512] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-08-10 12:53:46.514] [DEBUG] USERS - Email is :test12345@nvipani.com
+[2018-08-10 12:53:46.515] [DEBUG] USERS - Fetch matched  user with user name :test12345@nvipani.com
+[2018-08-10 12:53:46.538] [DEBUG] USERS - Found user with the username :test12345@nvipani.com
+[2018-08-10 12:53:46.546] [DEBUG] USERS - Verifying OTP - true
+[2018-08-10 12:53:46.546] [ERROR] USERS - Incorrect otp for the Email: test12345@nvipani.com
+[2018-08-10 12:56:29.071] [DEBUG] USERS - Registration Request  - {"username":"test12345@nvipani.com","password":"12345678","conf_password":"12345678","isverifyotp":true,"otp":"543374"}
+[2018-08-10 12:56:29.073] [DEBUG] USERS - user registration input validation for the data :{"username":"test12345@nvipani.com","password":"12345678","conf_password":"12345678","isverifyotp":true,"otp":"543374"}
+[2018-08-10 12:56:29.081] [DEBUG] USERS - Fetching already created user with the same user name  :test12345@nvipani.com
+[2018-08-10 12:56:29.084] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-08-10 12:56:29.089] [DEBUG] USERS - Email is :test12345@nvipani.com
+[2018-08-10 12:56:29.092] [DEBUG] USERS - Fetch matched  user with user name :test12345@nvipani.com
+[2018-08-10 12:56:29.100] [DEBUG] USERS - Found user with the username :test12345@nvipani.com
+[2018-08-10 12:56:29.105] [DEBUG] USERS - Verifying OTP - true
+[2018-08-10 12:56:29.109] [DEBUG] USERS - Email - test12345@nvipani.com is verified
+[2018-08-10 14:05:53.437] [DEBUG] USERS - Registration Request  - {"username":"technoxis@nvipani.com","issendotp":true,"issendemail":true}
+[2018-08-10 14:05:53.440] [DEBUG] USERS - user registration input validation for the data :{"username":"technoxis@nvipani.com","issendotp":true,"issendemail":true}
+[2018-08-10 14:05:53.444] [DEBUG] USERS - Username is valid
+[2018-08-10 14:05:53.446] [DEBUG] USERS - Fetching already created user with the same user name  :technoxis@nvipani.com
+[2018-08-10 14:05:53.448] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-08-10 14:05:53.449] [DEBUG] USERS - Email is :technoxis@nvipani.com
+[2018-08-10 14:05:53.450] [DEBUG] USERS - Fetch matched  user with user name :technoxis@nvipani.com
+[2018-08-10 14:05:53.456] [ERROR] USERS - No user found with the username : technoxis@nvipani.com
+[2018-08-10 14:05:53.486] [DEBUG] USERS - Sending OTP Response
+[2018-08-10 14:05:53.877] [DEBUG] USERS - Sending OTP Response-109337
+[2018-08-10 14:10:37.991] [DEBUG] USERS - Registration Request  - {"username":"technoxis@nvipani.com","password":"12345678","conf_password":"12345678","isverifyotp":true,"otp":"109337"}
+[2018-08-10 14:10:37.993] [DEBUG] USERS - user registration input validation for the data :{"username":"technoxis@nvipani.com","password":"12345678","conf_password":"12345678","isverifyotp":true,"otp":"109337"}
+[2018-08-10 14:10:37.996] [DEBUG] USERS - Fetching already created user with the same user name  :technoxis@nvipani.com
+[2018-08-10 14:10:37.996] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-08-10 14:10:37.999] [DEBUG] USERS - Email is :technoxis@nvipani.com
+[2018-08-10 14:10:38.001] [DEBUG] USERS - Fetch matched  user with user name :technoxis@nvipani.com
+[2018-08-10 14:10:38.015] [DEBUG] USERS - Found user with the username :technoxis@nvipani.com
+[2018-08-10 14:28:24.459] [DEBUG] USERS - Registration Request  - {"username":"technoxis@nvipani.com","password":"sachin12","conf_password":"sachin12","isverifyotp":true,"otp":"109337"}
+[2018-08-10 14:28:24.465] [DEBUG] USERS - user registration input validation for the data :{"username":"technoxis@nvipani.com","password":"sachin12","conf_password":"sachin12","isverifyotp":true,"otp":"109337"}
+[2018-08-10 14:28:24.472] [DEBUG] USERS - Fetching already created user with the same user name  :technoxis@nvipani.com
+[2018-08-10 14:28:24.473] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-08-10 14:29:40.782] [DEBUG] USERS - Registration Request  - {"username":"technoxis@nvipani.com","password":"sachin12","conf_password":"sachin12","isverifyotp":true,"otp":"109337"}
+[2018-08-10 14:29:40.786] [DEBUG] USERS - user registration input validation for the data :{"username":"technoxis@nvipani.com","password":"sachin12","conf_password":"sachin12","isverifyotp":true,"otp":"109337"}
+[2018-08-10 14:29:40.791] [DEBUG] USERS - Fetching already created user with the same user name  :technoxis@nvipani.com
+[2018-08-10 14:29:40.795] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-08-10 14:29:40.797] [DEBUG] USERS - Email is :technoxis@nvipani.com
+[2018-08-10 14:29:40.797] [DEBUG] USERS - Fetch matched  user with user name :technoxis@nvipani.com
+[2018-08-10 14:29:40.820] [DEBUG] USERS - Found user with the username :technoxis@nvipani.com
+[2018-08-10 14:29:40.827] [DEBUG] USERS - Verifying OTP - true
+[2018-08-10 14:38:02.102] [DEBUG] USERS - Registration Request  - {"username":"technoxs@nvipani.com","issendotp":true,"issendemail":true}
+[2018-08-10 14:38:02.148] [DEBUG] USERS - user registration input validation for the data :{"username":"technoxs@nvipani.com","issendotp":true,"issendemail":true}
+[2018-08-10 14:38:02.152] [DEBUG] USERS - Username is valid
+[2018-08-10 14:38:02.155] [DEBUG] USERS - Fetching already created user with the same user name  :technoxs@nvipani.com
+[2018-08-10 14:38:02.156] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-08-10 14:38:02.158] [DEBUG] USERS - Email is :technoxs@nvipani.com
+[2018-08-10 14:38:02.160] [DEBUG] USERS - Fetch matched  user with user name :technoxs@nvipani.com
+[2018-08-10 14:38:02.167] [ERROR] USERS - No user found with the username : technoxs@nvipani.com
+[2018-08-10 14:38:02.195] [DEBUG] USERS - Sending OTP Response
+[2018-08-10 14:38:02.253] [DEBUG] USERS - Sending OTP Response-778121
+[2018-08-10 14:43:16.365] [DEBUG] USERS - Registration Request  - {"username":"technoxis@nvipani.com","issendotp":true,"issendemail":true}
+[2018-08-10 14:43:16.368] [DEBUG] USERS - user registration input validation for the data :{"username":"technoxis@nvipani.com","issendotp":true,"issendemail":true}
+[2018-08-10 14:43:16.377] [DEBUG] USERS - Username is valid
+[2018-08-10 14:43:16.377] [DEBUG] USERS - Fetching already created user with the same user name  :technoxis@nvipani.com
+[2018-08-10 14:43:16.378] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-08-10 14:43:16.383] [DEBUG] USERS - Email is :technoxis@nvipani.com
+[2018-08-10 14:43:16.384] [DEBUG] USERS - Fetch matched  user with user name :technoxis@nvipani.com
+[2018-08-10 14:43:16.389] [DEBUG] USERS - Found user with the username :technoxis@nvipani.com
+[2018-08-10 14:43:30.867] [DEBUG] USERS - Registration Request  - {"username":"technoxis@nvipani.com","issendotp":true,"issendemail":true}
+[2018-08-10 14:43:30.872] [DEBUG] USERS - user registration input validation for the data :{"username":"technoxis@nvipani.com","issendotp":true,"issendemail":true}
+[2018-08-10 14:44:12.337] [DEBUG] USERS - Registration Request  - {"username":"technoxis@nvipani.com","issendotp":true,"issendemail":true}
+[2018-08-10 14:44:12.350] [DEBUG] USERS - user registration input validation for the data :{"username":"technoxis@nvipani.com","issendotp":true,"issendemail":true}
+[2018-08-10 14:44:12.351] [DEBUG] USERS - Username is valid
+[2018-08-10 14:44:12.351] [DEBUG] USERS - Fetching already created user with the same user name  :technoxis@nvipani.com
+[2018-08-10 14:48:14.299] [DEBUG] USERS - Registration Request  - {"username":"technoxis@nvipani.com","issendotp":true,"issendemail":true}
+[2018-08-10 14:48:14.304] [DEBUG] USERS - user registration input validation for the data :{"username":"technoxis@nvipani.com","issendotp":true,"issendemail":true}
+[2018-08-10 14:48:14.308] [DEBUG] USERS - Username is valid
+[2018-08-10 14:48:14.309] [DEBUG] USERS - Fetching already created user with the same user name  :technoxis@nvipani.com
+[2018-08-10 14:48:14.310] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-08-10 14:48:14.311] [DEBUG] USERS - Email is :technoxis@nvipani.com
+[2018-08-10 14:48:14.312] [DEBUG] USERS - Fetch matched  user with user name :technoxis@nvipani.com
+[2018-08-10 14:48:14.318] [ERROR] USERS - No user found with the username : technoxis@nvipani.com
+[2018-08-10 14:48:14.348] [DEBUG] USERS - Sending OTP Response
+[2018-08-10 14:48:14.410] [DEBUG] USERS - Sending OTP Response-592868
+[2018-08-10 14:49:10.842] [DEBUG] USERS - Registration Request  - {"username":"technoxis@nvipani.com","password":"sachin12","conf_password":"sachin12","isverifyotp":true,"otp":"592868"}
+[2018-08-10 14:49:10.843] [DEBUG] USERS - user registration input validation for the data :{"username":"technoxis@nvipani.com","password":"sachin12","conf_password":"sachin12","isverifyotp":true,"otp":"592868"}
+[2018-08-10 14:49:10.843] [DEBUG] USERS - Fetching already created user with the same user name  :technoxis@nvipani.com
+[2018-08-10 14:55:52.993] [DEBUG] USERS - Registration Request  - {"username":"technoxis@nvipani.com","issendotp":true,"issendemail":true}
+[2018-08-10 14:55:52.997] [DEBUG] USERS - user registration input validation for the data :{"username":"technoxis@nvipani.com","issendotp":true,"issendemail":true}
+[2018-08-10 14:55:53.001] [DEBUG] USERS - Username is valid
+[2018-08-10 14:55:53.003] [DEBUG] USERS - Fetching already created user with the same user name  :technoxis@nvipani.com
+[2018-08-10 14:55:53.006] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-08-10 14:55:53.007] [DEBUG] USERS - Email is :technoxis@nvipani.com
+[2018-08-10 14:55:53.009] [DEBUG] USERS - Fetch matched  user with user name :technoxis@nvipani.com
+[2018-08-10 14:55:53.023] [ERROR] USERS - No user found with the username : technoxis@nvipani.com
+[2018-08-10 14:55:53.057] [DEBUG] USERS - Sending OTP Response
+[2018-08-10 14:55:53.109] [DEBUG] USERS - Sending OTP Response-896504
+[2018-08-10 14:58:31.670] [DEBUG] USERS - Registration Request  - {"username":"technoxis@nvipani.com","password":"sachin12","conf_password":"sachin12","isverifyotp":true,"otp":"896504"}
+[2018-08-10 14:58:31.673] [DEBUG] USERS - user registration input validation for the data :{"username":"technoxis@nvipani.com","password":"sachin12","conf_password":"sachin12","isverifyotp":true,"otp":"896504"}
+[2018-08-10 14:58:31.679] [DEBUG] USERS - Fetching already created user with the same user name  :technoxis@nvipani.com
+[2018-08-10 15:04:53.778] [DEBUG] USERS - Registration Request  - {"username":"technoxis@nvipani.com","password":"sachin12","conf_password":"sachin12","isverifyotp":true,"otp":"896504"}
+[2018-08-10 15:04:53.784] [DEBUG] USERS - user registration input validation for the data :{"username":"technoxis@nvipani.com","password":"sachin12","conf_password":"sachin12","isverifyotp":true,"otp":"896504"}
+[2018-08-10 15:04:53.788] [DEBUG] USERS - Fetching already created user with the same user name  :technoxis@nvipani.com
+[2018-08-10 15:04:53.789] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-08-10 15:07:46.473] [DEBUG] USERS - Registration Request  - {"username":"technoxis@nvipani.com","issendotp":true,"issendemail":true}
+[2018-08-10 15:07:46.475] [DEBUG] USERS - user registration input validation for the data :{"username":"technoxis@nvipani.com","issendotp":true,"issendemail":true}
+[2018-08-10 15:07:46.478] [DEBUG] USERS - Username is valid
+[2018-08-10 15:07:46.479] [DEBUG] USERS - Fetching already created user with the same user name  :technoxis@nvipani.com
+[2018-08-10 15:07:46.480] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-08-10 15:07:46.482] [DEBUG] USERS - Email is :technoxis@nvipani.com
+[2018-08-10 15:07:46.484] [DEBUG] USERS - Fetch matched  user with user name :technoxis@nvipani.com
+[2018-08-10 15:07:46.500] [ERROR] USERS - No user found with the username : technoxis@nvipani.com
+[2018-08-10 15:07:46.534] [DEBUG] USERS - Sending OTP Response
+[2018-08-10 15:07:46.594] [DEBUG] USERS - Sending OTP Response-582688
+[2018-08-10 15:09:02.377] [DEBUG] USERS - Registration Request  - {"username":"technoxis@nvipani.com","password":"12345678","conf_password":"12345678","isverifyotp":true,"otp":"582688"}
+[2018-08-10 15:09:02.385] [DEBUG] USERS - user registration input validation for the data :{"username":"technoxis@nvipani.com","password":"12345678","conf_password":"12345678","isverifyotp":true,"otp":"582688"}
+[2018-08-10 15:09:02.388] [DEBUG] USERS - Fetching already created user with the same user name  :technoxis@nvipani.com
+[2018-08-10 15:09:02.389] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-08-10 15:09:02.389] [DEBUG] USERS - Email is :technoxis@nvipani.com
+[2018-08-10 15:09:02.390] [DEBUG] USERS - Fetch matched  user with user name :technoxis@nvipani.com
+[2018-08-10 15:09:02.399] [DEBUG] USERS - Found user with the username :technoxis@nvipani.com
+[2018-08-10 15:10:07.145] [ERROR] USERS - Error Signin with username -technoxis@nvipani.com, -{"message":"User is not in active state","userstatus":"Verified","status":false}
+[2018-08-10 15:43:35.451] [DEBUG] USERS - Registration Request  - {"username":"technoxis@nvipani.com","issendotp":true,"issendemail":true}
+[2018-08-10 15:43:35.455] [DEBUG] USERS - user registration input validation for the data :{"username":"technoxis@nvipani.com","issendotp":true,"issendemail":true}
+[2018-08-10 15:43:51.517] [DEBUG] USERS - Registration Request  - {"username":"technoxis@nvipani.com","issendotp":true,"issendemail":true}
+[2018-08-10 15:43:51.522] [DEBUG] USERS - user registration input validation for the data :{"username":"technoxis@nvipani.com","issendotp":true,"issendemail":true}
+[2018-08-10 15:43:51.531] [DEBUG] USERS - Username is valid
+[2018-08-10 15:44:28.119] [DEBUG] USERS - Registration Request  - {"username":"technoxis@nvipani.com","issendotp":true,"issendemail":true}
+[2018-08-10 15:44:28.121] [DEBUG] USERS - user registration input validation for the data :{"username":"technoxis@nvipani.com","issendotp":true,"issendemail":true}
+[2018-08-10 15:44:28.124] [DEBUG] USERS - Username is valid
+[2018-08-10 15:44:28.125] [DEBUG] USERS - Fetching already created user with the same user name  :technoxis@nvipani.com
+[2018-08-10 15:44:28.127] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-08-10 15:44:28.128] [DEBUG] USERS - Email is :technoxis@nvipani.com
+[2018-08-10 15:44:28.131] [DEBUG] USERS - Fetch matched  user with user name :technoxis@nvipani.com
+[2018-08-10 15:44:28.144] [ERROR] USERS - No user found with the username : technoxis@nvipani.com
+[2018-08-10 15:44:28.178] [DEBUG] USERS - Sending OTP Response
+[2018-08-10 15:44:28.462] [DEBUG] USERS - Sending OTP Response-901457
+[2018-08-10 15:45:28.643] [DEBUG] USERS - Registration Request  - {"username":"technoxis@nvipani.com","password":"sachin12","conf_password":"sachin12","isverifyotp":true,"otp":"901457"}
+[2018-08-10 15:45:28.645] [DEBUG] USERS - user registration input validation for the data :{"username":"technoxis@nvipani.com","password":"sachin12","conf_password":"sachin12","isverifyotp":true,"otp":"901457"}
+[2018-08-10 15:45:28.648] [DEBUG] USERS - Fetching already created user with the same user name  :technoxis@nvipani.com
+[2018-08-10 15:45:28.649] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-08-10 15:45:28.652] [DEBUG] USERS - Email is :technoxis@nvipani.com
+[2018-08-10 15:45:28.653] [DEBUG] USERS - Fetch matched  user with user name :technoxis@nvipani.com
+[2018-08-10 15:45:28.662] [DEBUG] USERS - Found user with the username :technoxis@nvipani.com
+[2018-08-10 15:45:28.672] [DEBUG] USERS - Verifying OTP - true
+[2018-08-10 15:45:28.674] [DEBUG] USERS - Email - technoxis@nvipani.com is verified
+[2018-08-10 15:45:28.804] [DEBUG] USERS - Sending OTP Response
+[2018-08-10 15:45:28.834] [DEBUG] USERS - Sending OTP Response-901457
+[2018-08-10 15:46:41.834] [ERROR] USERS - Error Signin with username -technoxis@nvipani.com, -{"message":"Invalid password","status":false}
+[2018-08-10 15:46:54.938] [ERROR] USERS - Error Signin with username -technoxis@nvipani.com, -{"message":"Invalid password","status":false}
+[2018-08-10 15:48:01.594] [DEBUG] USERS - Registration Request  - {"username":"technoxis@nvipani.com","issendotp":true,"issendemail":true}
+[2018-08-10 15:48:01.597] [DEBUG] USERS - user registration input validation for the data :{"username":"technoxis@nvipani.com","issendotp":true,"issendemail":true}
+[2018-08-10 15:48:01.600] [DEBUG] USERS - Username is valid
+[2018-08-10 15:48:01.601] [DEBUG] USERS - Fetching already created user with the same user name  :technoxis@nvipani.com
+[2018-08-10 15:48:01.602] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-08-10 15:48:01.603] [DEBUG] USERS - Email is :technoxis@nvipani.com
+[2018-08-10 15:48:01.604] [DEBUG] USERS - Fetch matched  user with user name :technoxis@nvipani.com
+[2018-08-10 15:48:01.608] [ERROR] USERS - No user found with the username : technoxis@nvipani.com
+[2018-08-10 15:48:01.616] [DEBUG] USERS - Sending OTP Response
+[2018-08-10 15:48:01.627] [DEBUG] USERS - Sending OTP Response-761831
+[2018-08-10 15:49:13.746] [DEBUG] USERS - Registration Request  - {"username":"technoxis@nvipani.com","password":"sachin12","conf_password":"sachin12","isverifyotp":true,"otp":"761831"}
+[2018-08-10 15:49:13.749] [DEBUG] USERS - user registration input validation for the data :{"username":"technoxis@nvipani.com","password":"sachin12","conf_password":"sachin12","isverifyotp":true,"otp":"761831"}
+[2018-08-10 15:49:13.751] [DEBUG] USERS - Fetching already created user with the same user name  :technoxis@nvipani.com
+[2018-08-10 15:49:13.751] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-08-10 15:49:13.755] [DEBUG] USERS - Email is :technoxis@nvipani.com
+[2018-08-10 15:49:13.755] [DEBUG] USERS - Fetch matched  user with user name :technoxis@nvipani.com
+[2018-08-10 15:49:13.760] [DEBUG] USERS - Found user with the username :technoxis@nvipani.com
+[2018-08-10 15:49:13.763] [DEBUG] USERS - Verifying OTP - true
+[2018-08-10 15:49:13.766] [DEBUG] USERS - Email - technoxis@nvipani.com is verified
+[2018-08-10 15:49:13.852] [DEBUG] USERS - Sending OTP Response
+[2018-08-10 15:49:13.865] [DEBUG] USERS - Sending OTP Response-761831

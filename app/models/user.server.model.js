@@ -76,7 +76,8 @@ var UserSchema = new Schema({
         type: String,
         trim: true,
         default: '',
-        validate: [validateLength256, 'Please fill in your first name']
+        validate: [validateLength256, 'Please fill in your first name'],
+        required:true
     },
     middleName: {
         type: String,

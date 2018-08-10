@@ -68,15 +68,18 @@ module.exports = function(db) {
 
 	// Showing stack errors
 	app.set('showStackError', true);
-	app.use(express.static(__dirname + '/public'));
+	//   app.use(express.static(__dirname + '/public'));
+	// app.use(express.static(path.join(__dirname, '/public')));
+	// app.use(express.static(__dirname+'public'))
+	//app.use('/public', express.static(__dirname + "/public"));
 //  app.set('view engine', 'html');
  
-	// Set swig as the template engine
-	// app.engine('server.view.html', consolidate[config.templateEngine]);
+	//Set swig as the template engine
+	app.engine('server.view.html', consolidate[config.templateEngine]);
 
-	// Set views path and view engine
-	// app.set('view engine', 'server.view.html');
-	// app.set('views', './app/views');
+	//Set views path and view engine
+	app.set('view engine', 'server.view.html');
+	app.set('views', './app/views');
 
 	// Initialize favicon middleware
 	//app.use(favicon('./public/modules/core/img/brand/nvipani_favicon.ico'));
@@ -151,8 +154,8 @@ module.exports = function(db) {
 	app.disable('x-powered-by');
 
 	// Setting the app router and static folder
-	//app.use(express.static(path.resolve('./public')));
-
+	app.use(express.static(path.resolve('./public')));
+ 
 	// Globbing routing files
 	config.getGlobbedFiles('./app/routes/**/*.js').forEach(function(routePath) {
 		require(path.resolve(routePath))(app);

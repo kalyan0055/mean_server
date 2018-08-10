@@ -18,6 +18,10 @@ module.exports = function(app) {
 	//app.route('/users/login').post(users.login);
 	app.route('/users/deleteuser').post(users.deleteuser);
 	app.route('/users/login').post(users.login);
+	// app.route('/users/login').post(users.userRegistration);
+
+	
+	app.route('/users/registervialink').post(users.registervialink);
 
 	 
 	app.route('/users/me').post(users.me);

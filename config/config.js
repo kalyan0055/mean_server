@@ -79,6 +79,18 @@ module.exports.nvipaniAdminUsers = 'admin@nvipani.com';
 module.exports.bbapikey='nvipaniandroid';
 module.exports.versionNumber='1.0.10';
 module.pageOption='10';
+module.exports.app='New Registration link on Nvipani';
+module.exports.mailer = {
+	from: 'nVipani <rambabuemandi77@gmail.com>',
+	options: {
+		service: 'gmail',
+		auth: {
+			user: 'rambabuemandi77@gmail.com',
+			pass: 'sachintendulkar'
+		}
+	}
+};
+module.exports.sendEmail = true;
 /**
  * Get the modules CSS files
  */

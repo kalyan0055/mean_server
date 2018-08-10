@@ -101,7 +101,17 @@ module.exports = {
     //             pass: 'BBooster@1298'
     //         }
     //     }
-    // },
+	// },rambabuemandi77@gmail.com
+	mailer: {
+        from: 'nVipani <rambabuemandi77@gmail.com>',
+        options: {
+            service: 'gmail',
+            auth: {
+                user: 'rambabuemandi77@gmail.com',
+                pass: 'sachintendulkar'
+            }
+        }
+    },
     // mail : {
     //     host: 'smtp.gmail.com',
     //     port: 587,
