@@ -1684,7 +1684,7 @@ function getEmailTemplate(user, type, req) {
                 name: 'Customer',
                 appName: config.app.title,
                 otp: user.emailOtp,
-                hyperlink: req.protocol + '://' + 'localhost:4200/confirm/true/' + a + '/' + user.emailOtp,  // Newly added
+                hyperlink: req.protocol + '://' + 'localhost:4200/confirm/true/' + user.username + '/' + user.emailOtp,  // Newly added
                 baseUrl: req.protocol + '://' + req.headers.host,
                 username: user.username
             }
@@ -1882,7 +1882,7 @@ function userRegistrationProcess(user, data, done) {
                     }
                     if (data.conf_password) {
                      //   globalUtil.populateDisplayName(user, function (displayname) {
-
+                         
                             dbuser.displayName = data.username;
                             if (data.password && data.password.length > 6) {
                                 let salt;

@@ -340,6 +340,8 @@ UserSchema.methods.fieldProperties=function (fieldName, propertyName) {
  * Create instance method for hashing a password
  */
 UserSchema.methods.hashPassword = function(password) {
+    
+    
     if (this.salt && password) {
         return crypto.pbkdf2Sync(password, this.salt, 10000, 64,'sha1').toString('base64');
     } else {
@@ -351,7 +353,14 @@ UserSchema.methods.hashPassword = function(password) {
  * Create instance method for authenticating user
  */
 UserSchema.methods.authenticate = function(password) {
-    return this.password === this.hashPassword(password);
+    console.log('authenticate calling',password);
+    console.log(this.password);
+    console.log(this.hashPassword(password));
+    
+     
+     console.log(this.password === this.hashPassword(password));
+
+     return this.password === this.hashPassword(password);;
 };
 
 /**

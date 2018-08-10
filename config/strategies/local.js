@@ -19,8 +19,8 @@ module.exports = function() {
 			User.findOne({
 				username: username
 			}, function(err, user) {
-			 
-				
+			 console.log(user,'local js ');
+						
 				if (err) {
 					return done(err);
 				}
