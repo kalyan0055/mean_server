@@ -1,6 +1,8 @@
 'use strict';
 var mongoose = require('mongoose'),
-    User = mongoose.model('User'),
+    // User = mongoose.model('User'),
+    User = mongoose.model('Newuser'),
+
     //Contact = mongoose.model('Contact'),
     async = require('async'),
     //Offer = mongoose.model('Offer'),

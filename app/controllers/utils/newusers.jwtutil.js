@@ -5,10 +5,10 @@
  */
 var mongoose = require('mongoose'),
 	jwt = require('jwt-simple'),
-	User = mongoose.model('User'),
-	newUser = mongoose.model('Newuser'),
-	token_secret = 'nVipani-software-solutions';
-	
+	// User = mongoose.model('User'),
+	User = mongoose.model('Newuser'),
+	token_secret = 'nVipani-software-solutions',
+	logger = require('../../../lib/log').getLogger('USERS', 'DEBUG');
 exports.TOKEN_SECRET = token_secret;
 
 
@@ -48,7 +48,7 @@ exports.findUserByToken = function(token, done) {
 	console.log(token, 'nothing but ui data');
 	
 	if(token) {
-		newUser.findOne({'_id': token._id}, '-salt -password', function (err, user) {
+		User.findOne({'_id': token._id}, '-salt -password', function (err, user) {
 			if (err) {
 				done(err);
 			}
@@ -71,7 +71,7 @@ exports.findUserByEmail_Password = function(token, done) {
 	console.log(token.username,token.password, 'nothing but ui data');
 	
 	if(token) {
-		newUser.findOne({'email': token.username,'password':token.password}, '-salt -password', function (err, user) {
+		User.findOne({'email': token.username,'password':token.password}, '-salt -password', function (err, user) {
 			if (err) {
 				done(err);
 			}
@@ -132,5 +132,22 @@ exports.findUserByStatusToken = function(satusToken, done) {
         done(new Error('Invalid Token.'));
     }
 };
+
+exports.findUserById = function(userId, done) {
+    User.findOne({
+        _id: userId,
+        'deleted': false
+    }).select('-salt -password').exec(function (userErr, user) {
+        if (userErr) {
+            logger.error('Error while fetch employee user in users ' + userId + 'Error:' + userErr);
+            done(userErr, null);
+        } else if (!user) {
+            logger.error('Employee user is not found in users ' + userId);
+            done(new Error('Employee user is not found in users'), null);
+        } else {
+            done(null, user);
+        }
+    });
+}
 
 

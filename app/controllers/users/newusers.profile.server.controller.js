@@ -54,7 +54,7 @@ exports.newuserslist =  function(req, res) {
     // Init Variables
     console.log(req.body,'sended data');
     
-    NewUser.find({},'username mobile email status',function(err,res2){  
+    NewUser.find({},'-password -salt',function(err,res2){  
         if(res2){
             res.json({success:true,data:res2})
         }else{
@@ -71,7 +71,8 @@ exports.updateuser = async function(req, res){
    await newuserJWTUtil.findUserByToken(req.body,function(err,result){
         console.log(result.mobile,result.email,'tttt');
         
-        NewUser.update({_id:result._id},{$set:{username:req.body.username,mobile:req.body.mobile,email:req.body.email}},
+        NewUser.update({_id:result._id},{$set:{username:req.body.username,
+            mobile:req.body.mobile,email:req.body.email}},
         function(err,update) {
             console.log(update,'returned form util & update');
             
@@ -154,7 +155,36 @@ exports.registervialink = function(req,res,done){
     })
   
 }
- 
+
+exports.disableUser = function (req,res){
+    let data= req.body;
+    newuserJWTUtil.findUserById(data.id,function(err,user){
+        console.log(user);
+        
+        if(err || !user){
+            info.status = false;
+          logger.error('Something went wrong with -' + req.body.id + ', -' + JSON.stringify(info));
+        logger.debug('Error Message-'+JSON.stringify(info));
+            res.status(400).send(info);
+        }else{
+            NewUser.updateOne({_id:data.id},{$set:{disabled:true}},function(err,result){
+            console.log(result);
+            
+                if(err){
+                    return res.json({
+                        status:false,
+                        message:'Unable to Disable User'
+                    })
+                }else{
+                    return res.json({
+                        status:true,
+                        message:'User Successfully Disabled'
+                    })
+                }
+            })
+        }
+    })
+}
  
 exports.login =  function(req, res,next){
    console.log('hello',req.body);
@@ -373,13 +403,46 @@ exports.login =  function(req, res,next){
 };
 exports.deleteuser =  function(req, res){
 
-     NewUser.deleteOne({ _id: req.body._id }, function (err, user) {
-             if(err){
-                res.json({success:false,data:'Unable to Delete'})
-             }
-             res.json({success:true,data:'Deleted Successfully'})
-          });
- }
+    //  NewUser.deleteOne({ _id: req.body._id }, function (err, user) {
+    //          if(err){
+    //             res.json({success:false,data:'Unable to Delete'})
+    //          }
+    //          res.json({success:true,data:'Deleted Successfully'})
+    //       });
+
+    let data= req.body;
+    console.log(data._id);
+    
+    newuserJWTUtil.findUserById(data._id,function(err,user){
+        if(err || !user){
+            logger.error('Something went wrong with -' + req.body.id + ', -' + JSON.stringify(err));
+            logger.debug('Error Message-'+JSON.stringify(err));
+            res.status(400).send({
+                status: false,
+                message: 'Error updating the user with username -' + req.body._id
+            });
+        }else{
+            if(user){
+                console.log(user);
+                
+                NewUser.updateOne({_id:user._id},{$set:{deleted:true}},function(err,result){                      
+                    if(err || !result){
+                        res.json({
+                            status:false,
+                            message:'Unable to Delete'
+                        })
+                    }else{
+                        res.json({
+                            status:true,
+                            message:'Successfully Deleted',
+                            data:result
+                        })  
+                    }
+                })
+            }
+        }
+    })
+ };
 
 
 /**

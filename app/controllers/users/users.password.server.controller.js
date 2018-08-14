@@ -7,7 +7,9 @@ var _ = require('lodash'),
     errorHandler = require('../errors.server.controller'),
     mongoose = require('mongoose'),
     passport = require('passport'),
-    User = mongoose.model('User'),
+    // User = mongoose.model('User'),
+    User = mongoose.model('Newuser'),
+
     config = require('../../../config/config'),
     nodemailer = require('nodemailer'),
     async = require('async'),
@@ -188,19 +190,22 @@ exports.validateResetToken = function (req, res) {
 exports.reset = function (req, res, next) {
     // Init Variables
     var passwordDetails = req.body;
-    var mobileAppKey=req.headers.apikey;
+   // var mobileAppKey=req.headers.apikey;
     async.waterfall([
 
         function (done) {
             User.findOne({
-                resetPasswordToken: req.query.token,
+                resetPasswordToken:passwordDetails.otp,
                 resetPasswordExpires: {
                     $gt: Date.now()
                 }
             }, function (err, user) {
                 if (!err && user) {
                     if (passwordDetails.newPassword === passwordDetails.verifyPassword) {
-                        user.password = passwordDetails.newPassword;
+                        let salt;
+                        salt = (crypto.randomBytes(16));
+                        user.salt = salt;
+                        user.password = user.hashPassword(passwordDetails.newPassword);
                         user.resetPasswordToken = undefined;
                         user.resetPasswordExpires = undefined;
 
@@ -210,18 +215,22 @@ exports.reset = function (req, res, next) {
                                     status: false,
                                     message: errorHandler.getErrorMessage(err)
                                 });
-                            } else {
+                            } 
+                            //else {
+                                 
                                 //res.json({token:usersJWTUtil.genToken(user.username, user.id)});
-                                if(mobileAppKey===config.bbapikey){
-                                    res.send({
-                                        status: true,
-                                        message: 'Successfully Changed Password'
-                                    });
-                                }else {
-                                    res.redirect('/#!/signin');
-                                }
-                                done(err, user);
-                            }
+                              //  if(mobileAppKey===config.bbapikey){
+
+                                   // res.send({
+                                    //    status: true,
+                                   //     message: 'Successfully Changed Password'
+                                   // });
+
+                                // }else {
+                                //     res.redirect('/#!/signin');
+                                // }
+                                // done(err, user);
+                           // }
                         });
                     } else {
                         return res.status(400).send({
@@ -230,7 +239,7 @@ exports.reset = function (req, res, next) {
                         });
                     }
                 } else {
-                    return res.status(400).send({
+                    return res.json({
                         status: false,
                         message: 'Password reset token is invalid or has expired.'
                     });
@@ -249,7 +258,7 @@ exports.reset = function (req, res, next) {
         function (emailHTML, user, done) {
             var smtpTransport = nodemailer.createTransport(config.mailer.options);
             var mailOptions = {
-                to: user.email,
+                to: 'rambabu.e@technoxis.in',
                 from: config.mailer.from,
                 subject: 'Your password has been changed',
                 html: emailHTML
@@ -260,7 +269,12 @@ exports.reset = function (req, res, next) {
             });
         }
     ], function (err) {
-        if (err) return next(err);
+        if (err) {return next(err)}else{
+             res.send({
+                                       status: true,
+                                       message: 'Successfully Changed Password'
+                                   });
+        } ;
     });
 };
 

@@ -283,6 +283,7 @@ var UserSchema = new Schema({
         required: 'Please set deleted flag',
         default: false
     }
+   
 });
 
 /**
@@ -340,9 +341,11 @@ UserSchema.methods.fieldProperties=function (fieldName, propertyName) {
  * Create instance method for hashing a password
  */
 UserSchema.methods.hashPassword = function(password) {
-    
-    
+      
     if (this.salt && password) {
+        console.log('if part hashpass funt',this.salt);
+        console.log( crypto.pbkdf2Sync(password, this.salt, 10000, 64,'sha1').toString('base64'));
+        
         return crypto.pbkdf2Sync(password, this.salt, 10000, 64,'sha1').toString('base64');
     } else {
         return password;
@@ -353,14 +356,9 @@ UserSchema.methods.hashPassword = function(password) {
  * Create instance method for authenticating user
  */
 UserSchema.methods.authenticate = function(password) {
-    console.log('authenticate calling',password);
-    console.log(this.password);
-    console.log(this.hashPassword(password));
+    console.log(password,'coming from passport js');
     
-     
-     console.log(this.password === this.hashPassword(password));
-
-     return this.password === this.hashPassword(password);;
+      return this.password === this.hashPassword(password);;
 };
 
 /**

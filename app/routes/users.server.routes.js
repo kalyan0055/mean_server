@@ -22,8 +22,13 @@ module.exports = function(app) {
 
 	
 	app.route('/users/registervialink').post(users.registervialink);
+	app.route('/users/sendPasswordLink').post(users.sendPasswordLink);
+	app.route('/users/disableUser').post(users.disableUser);
 
-	 
+	
+
+
+	
 	app.route('/users/me').post(users.me);
 	app.route('/users/myhome').get(users.requiresLogin, users.myhome);
 	app.route('/users/profilePicture').post(users.changeProfilePicture);
@@ -42,7 +47,8 @@ module.exports = function(app) {
     app.route('/user/resendotp/:statusToken').post(users.resendOTP);
 	app.route('/user/resendotpuser').post(users.resendOTP);
 	app.route('/auth/reset/:token').get(users.validateResetToken);
-	app.route('/auth/reset/:token').post(users.reset);
+	//app.route('/auth/reset/:token').post(users.reset);
+	app.route('/auth/reset').post(users.reset);
 
 	// Setting up the users authentication api
 	app.route('/user/presignup').post(users.presignup);
