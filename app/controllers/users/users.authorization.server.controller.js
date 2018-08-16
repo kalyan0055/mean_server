@@ -34,33 +34,33 @@ exports.requiresLogin = function (req, res, next) {
     logger.debug('requiresLogin - req.body.token -' + req.body.token);
     logger.debug('requiresLogin - req.headers[token] -' + req.headers.token);
     var token = req.body.token || req.headers.token;
-    // if (token  && token!=='null') {
-    //     usersJWTUtil.findUserByToken(token, function (err, user) {
-    //         if (err) {
-    //             return res.status(401).send({
-    //                 status: false,
-    //                 message: errorHandler.getErrorMessage(err)
-    //             });
-    //         } else {
-    //             req.body.authenticated = true;
-    //             /*res.status(200).send({
-    //              message: 'Successfully Logged Out'
-    //              });*/
-    //             next();
-    //         }
-    //     });
-    // } else {
-    //     req.body.authenticated = false;
-    //     res.status(401).send({
-    //         status: false,
-    //         message: 'User is not logged in'
-    //     });
-    // }
-    res.status(200).send({
-                status: true,
-                message: 'User is not logged in'
-            });
-    console.log('finally testing working');
+    if (token  && token!=='null') {
+        usersJWTUtil.findUserByToken(token, function (err, user) {
+            if (err) {
+                return res.status(401).send({
+                    status: false,
+                    message: errorHandler.getErrorMessage(err)
+                });
+            } else {
+                req.body.authenticated = true;
+                /*res.status(200).send({
+                 message: 'Successfully Logged Out'
+                 });*/
+                next();
+            }
+        });
+    } else {
+        req.body.authenticated = false;
+        res.status(401).send({
+            status: false,
+            message: 'User is not logged in'
+        });
+    }
+    // res.status(200).send({
+    //             status: true,
+    //             message: 'User is not logged in'
+    //         });
+    // console.log('finally testing working');
     
 
 };

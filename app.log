@@ -136,3 +136,66 @@
 [2018-08-16 12:31:54.103] [DEBUG] USERS - Started otp:745706
 [2018-08-16 12:36:32.420] [ERROR] USERS - Error Signin with username -techno1@nvipani.com, -{"message":"Invalid password","status":false}
 [2018-08-16 12:39:03.774] [DEBUG] USERS - Started otp:717448
+[2018-08-16 16:47:13.898] [DEBUG] USERS - requiresLogin - Request -{"name":"samspfassa","symbl":"llsk;fsaf;l","uqcCode":"3903495384","description":"sldkfasl;","quantityType":"test","type":"Compound"}
+[2018-08-16 16:47:13.900] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-08-16 16:47:13.902] [DEBUG] USERS - requiresLogin - req.headers[token] -undefined
+[2018-08-16 16:49:39.051] [DEBUG] USERS - requiresLogin - Request -{"name":"sadasdasda","symbl":"sasdasas","uqcCode":"9898989898","description":"asdas","quantityType":"tset","type":"Compound"}
+[2018-08-16 16:49:39.053] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-08-16 16:49:39.056] [DEBUG] USERS - requiresLogin - req.headers[token] -undefined
+[2018-08-16 16:50:27.413] [ERROR] USERS - Error Signin with username -emandi1@nvipani.com, -{"message":"Invalid password","status":false}
+[2018-08-16 16:50:41.668] [ERROR] USERS - Error Signin with username -rambabu@nvipani.com, -{"message":"Invalid password","status":false}
+[2018-08-16 16:54:09.887] [DEBUG] USERS - requiresLogin - Request -{"name":"tests","symbl":"testss","uqcCode":"3223423242","description":"saasfasfasfasf","quantityType":"safkasjf","type":"Compound"}
+[2018-08-16 16:54:09.888] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-08-16 16:54:09.890] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJyYW1iYWJ1QG52aXBhbmkuY29tIiwiaWQiOiI1Yjc1MWQyMDZkZjQ5ZDA5ZDRlMzkxNjUifSwiZXhwIjoiMjAxOC0wOC0yM1QxMToyMTowNi45NjFaIn0.hL9fob5hAkKE1QsmPYl_viZC6Q319OGftr0sasZesxg
+[2018-08-16 16:57:17.516] [DEBUG] USERS - requiresLogin - Request -{"name":"tests","symbl":"testss","uqcCode":"3223423242","description":"saasfasfasfasf","quantityType":"safkasjf","type":"Compound"}
+[2018-08-16 16:57:17.524] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-08-16 16:57:17.526] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJyYW1iYWJ1QG52aXBhbmkuY29tIiwiaWQiOiI1Yjc1MWQyMDZkZjQ5ZDA5ZDRlMzkxNjUifSwiZXhwIjoiMjAxOC0wOC0yM1QxMToyMTowNi45NjFaIn0.hL9fob5hAkKE1QsmPYl_viZC6Q319OGftr0sasZesxg
+[2018-08-16 16:57:17.558] [DEBUG] UNITOFMEASURE - Creating UnitOfMeasure -{"name":"tests","symbol":"","uqcCode":"3223423242","quantityType":"safkasjf","description":"saasfasfasfasf","numberOfDecimalPlaces":0,"conversion":0,"type":"Compound","disabled":false,"deleted":false,"_id":"5b755f959605aa034c75e0a5","created":"2018-08-16T11:27:17.558Z","lastUpdated":"2018-08-16T11:27:17.558Z"}
+[2018-08-16 16:57:17.614] [ERROR] UNITOFMEASURE - Error while creating UnitOfMeasure. { ValidationError: UnitOfMeasure validation failed: symbol: Please fill Unit Of Measure Symbol
+    at ValidationError.inspect (E:\Ram Working Folder\nvipani-master\demo_server\node_modules\mongoose\lib\error\validation.js:56:24)
+    at formatValue (util.js:400:38)
+    at inspect (util.js:294:10)
+    at Object.format (util.js:161:12)
+    at Object.inspect (E:\Ram Working Folder\nvipani-master\demo_server\node_modules\log4js\lib\layouts.js:34:23)
+    at formatValue (util.js:400:38)
+    at inspect (util.js:294:10)
+    at Object.format (util.js:223:18)
+    at formatLogData (E:\Ram Working Folder\nvipani-master\demo_server\node_modules\log4js\lib\layouts.js:47:22)
+    at basicLayout (E:\Ram Working Folder\nvipani-master\demo_server\node_modules\log4js\lib\layouts.js:109:7)
+    at Logger.<anonymous> (E:\Ram Working Folder\nvipani-master\demo_server\node_modules\log4js\lib\appenders\file.js:68:19)
+    at emitOne (events.js:121:20)
+    at Logger.emit (events.js:211:7)
+    at Logger._log (E:\Ram Working Folder\nvipani-master\demo_server\node_modules\log4js\lib\logger.js:100:8)
+    at Logger.(anonymous function) [as error] (E:\Ram Working Folder\nvipani-master\demo_server\node_modules\log4js\lib\logger.js:93:12)
+    at E:\Ram Working Folder\nvipani-master\demo_server\app\controllers\unitofmeasures.server.controller.js:44:24
+    at E:\Ram Working Folder\nvipani-master\demo_server\node_modules\mongoose\lib\model.js:3958:16
+    at $__save.error (E:\Ram Working Folder\nvipani-master\demo_server\node_modules\mongoose\lib\model.js:344:16)
+    at E:\Ram Working Folder\nvipani-master\demo_server\node_modules\kareem\index.js:246:48
+    at next (E:\Ram Working Folder\nvipani-master\demo_server\node_modules\kareem\index.js:167:27)
+    at Kareem.execPost (E:\Ram Working Folder\nvipani-master\demo_server\node_modules\kareem\index.js:217:3)
+    at _handleWrapError (E:\Ram Working Folder\nvipani-master\demo_server\node_modules\kareem\index.js:245:21)
+  errors: 
+   { symbol: 
+      { ValidatorError: Please fill Unit Of Measure Symbol
+    at new ValidatorError (E:\Ram Working Folder\nvipani-master\demo_server\node_modules\mongoose\lib\error\validator.js:25:11)
+    at validate (E:\Ram Working Folder\nvipani-master\demo_server\node_modules\mongoose\lib\schematype.js:805:13)
+    at E:\Ram Working Folder\nvipani-master\demo_server\node_modules\mongoose\lib\schematype.js:854:11
+    at Array.forEach (<anonymous>)
+    at SchemaString.SchemaType.doValidate (E:\Ram Working Folder\nvipani-master\demo_server\node_modules\mongoose\lib\schematype.js:814:19)
+    at E:\Ram Working Folder\nvipani-master\demo_server\node_modules\mongoose\lib\document.js:1645:9
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)
+    at process._tickCallback (internal/process/next_tick.js:180:9)
+        message: 'Please fill Unit Of Measure Symbol',
+        name: 'ValidatorError',
+        properties: [Object],
+        kind: 'required',
+        path: 'symbol',
+        value: '',
+        reason: undefined,
+        '$isValidatorError': true } },
+  _message: 'UnitOfMeasure validation failed',
+  name: 'ValidationError' }
+[2018-08-16 17:00:59.694] [DEBUG] USERS - requiresLogin - Request -{"name":"sample","symbol":"sample symbol","uqcCode":"324223423","description":"sample descr","quantityType":"sample quantity","type":"Simple"}
+[2018-08-16 17:00:59.695] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-08-16 17:00:59.698] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJyYW1iYWJ1QG52aXBhbmkuY29tIiwiaWQiOiI1Yjc1MWQyMDZkZjQ5ZDA5ZDRlMzkxNjUifSwiZXhwIjoiMjAxOC0wOC0yM1QxMToyMTowNi45NjFaIn0.hL9fob5hAkKE1QsmPYl_viZC6Q319OGftr0sasZesxg
+[2018-08-16 17:00:59.703] [DEBUG] UNITOFMEASURE - Creating UnitOfMeasure -{"name":"sample","symbol":"sample symbol","uqcCode":"324223423","quantityType":"sample quantity","description":"sample descr","numberOfDecimalPlaces":0,"conversion":0,"type":"Simple","disabled":false,"deleted":false,"_id":"5b7560739605aa034c75e0a6","created":"2018-08-16T11:30:59.703Z","lastUpdated":"2018-08-16T11:30:59.703Z"}
