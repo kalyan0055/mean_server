@@ -185,10 +185,9 @@ var NewUserSchema = new Schema({
 
 NewUserSchema.methods.hashPassword = function (password) {
     console.log('is it coming',this.salt);
-    
     if (this.salt && password) {
-        return crypto.pbkdf2Sync(password, this.salt, 10000, 64, 'sha512').toString('base64');
-    } else {
+        return crypto.pbkdf2Sync(password, this.salt, 10000, 64, 'sha1').toString('base64');
+     } else {
         return password;
     }
 };

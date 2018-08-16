@@ -203,34 +203,34 @@ exports.reset = function (req, res, next) {
                 if (!err && user) {
                     if (passwordDetails.newPassword === passwordDetails.verifyPassword) {
                         let salt;
-                        salt = (crypto.randomBytes(16));
+                        salt = new Buffer(crypto.randomBytes(16).toString('base64'), 'base64');
                         user.salt = salt;
                         user.password = user.hashPassword(passwordDetails.newPassword);
                         user.resetPasswordToken = undefined;
                         user.resetPasswordExpires = undefined;
 
-                        user.save(function (err) {
+                        user.save(function (err,user) {
                             if (err) {
                                 return res.status(400).send({
                                     status: false,
                                     message: errorHandler.getErrorMessage(err)
                                 });
                             } 
-                            //else {
+                            else {
                                  
                                 //res.json({token:usersJWTUtil.genToken(user.username, user.id)});
                               //  if(mobileAppKey===config.bbapikey){
 
-                                   // res.send({
-                                    //    status: true,
-                                   //     message: 'Successfully Changed Password'
-                                   // });
+                                //    res.send({
+                                //        status: true,
+                                //        message: 'Successfully Changed Password'
+                                //    });
 
                                 // }else {
                                 //     res.redirect('/#!/signin');
                                 // }
-                                // done(err, user);
-                           // }
+                                 done(err, user);
+                            }
                         });
                     } else {
                         return res.status(400).send({
@@ -247,7 +247,7 @@ exports.reset = function (req, res, next) {
             });
         },
         function (user, done) {
-            res.render('templates/reset-password-confirm-email', {
+                res.render('templates/reset-password-confirm-email', {
                 name: user.displayName,
                 appName: config.app.title
             }, function (err, emailHTML) {
@@ -269,11 +269,12 @@ exports.reset = function (req, res, next) {
             });
         }
     ], function (err) {
+        console.log('function4');
         if (err) {return next(err)}else{
              res.send({
-                                       status: true,
-                                       message: 'Successfully Changed Password'
-                                   });
+                status: true,
+                message: 'Successfully Changed Password'
+                });
         } ;
     });
 };

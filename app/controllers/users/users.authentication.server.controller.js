@@ -1892,7 +1892,9 @@ function userRegistrationProcess(user, data, done) {
                             dbuser.displayName = data.username;
                             if (data.password && data.password.length > 6) {
                                 let salt;
-                                salt = (crypto.randomBytes(16));
+                               // salt = (crypto.randomBytes(16));
+                               salt = new Buffer(crypto.randomBytes(16).toString('base64'), 'base64');
+
                                 dbuser.salt = salt;
                                 dbuser.password = dbuser.hashPassword(data.password);
                                
@@ -2419,7 +2421,7 @@ findUserById(data.id, function (userError, user) {
                     res.send({
                         status: false,
                         //resetPasswordToken: user.resetPasswordToken,
-                        message: 'Unable to send email to ' + user.email
+                        message: 'Unable to send email to ' + err
                     });
                 }else {
                     var smtpTransport = nodemailer.createTransport(config.mailer.options);
