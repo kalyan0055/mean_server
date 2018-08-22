@@ -8,7 +8,10 @@ module.exports = function (app) {
     app.route('/hsncodes')
         .get(hsncodes.list)
         .post(users.requiresLogin, hsncodes.createHsnCodes);
-     
+    app.route('/hsnupdate')
+        .post(users.requiresLogin, hsncodes.updateHsnCode);
+    app.route('/hsndelete')
+        .post(users.requiresLogin, hsncodes.deletehsn);    
     // app.route('/massunitofmeasures')
     //     .get(users.requiresLogin, unitofmeasures.list)
     //     .post(users.requiresLogin, unitofmeasures.createMassInsert);

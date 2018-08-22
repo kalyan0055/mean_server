@@ -32,19 +32,7 @@ var _ = require('lodash'),
 //  BusinessUnit = mongoose.model('BusinessUnit'),
 //   Contact = mongoose.model('Contact');
 
-exports.update = function (req, res) {
-    var user = req.user;
-    user = _.extend(user, req.body);
-    user.save(function (err) {
-        if (err) {
-            return res.status(400).send({
-                message: errorHandler.getErrorMessage(err)
-            });
-        } else {
-            res.jsonp(user);
-        }
-    });
-};
+ 
 
 function createCompanyContactWhileRegister(user, done) {
     var contact = new Contact();
@@ -1666,7 +1654,6 @@ function findOrRegisterUser(data, done) {
     } else {
         logger.error('No Valid input for user Registration ' + JSON.stringify(data));
         done(new Error('Username (Email/Mobile) field must not be blank'), null, null);
-
     }
 }
 function getEmailTemplate(user, type, req) {

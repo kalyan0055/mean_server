@@ -7,10 +7,10 @@ var _ = require('lodash'),
     errorHandler = require('../errors.server.controller.js'),
     mongoose = require('mongoose'),
     fs = require('fs'),
-    logger  = require('../../../lib/log').getLogger('USERS', 'DEBUG'),
+    logger = require('../../../lib/log').getLogger('USERS', 'DEBUG'),
     passport = require('passport'),
-    usersJWTUtil   = require('../utils/users.jwtutil'),
-   // businessUnitUtil =require('../utils/common.businessunit.util'),
+    usersJWTUtil = require('../utils/users.jwtutil'),
+    // businessUnitUtil =require('../utils/common.businessunit.util'),
     dbUtil = require('../utils/common.db.util'),
     // Notification = mongoose.model('Notification'),
     // UserGroup = mongoose.model('UserGroup'),
@@ -18,12 +18,14 @@ var _ = require('lodash'),
     // Category = mongoose.model('Category'),
     // Order = mongoose.model('Order'),
     // Todo = mongoose.model('Todo'),
-    User = mongoose.model('User'),
+    // User = mongoose.model('User'),
+    User = mongoose.model('Newuser'),
+
     async = require('async');
 /**
  * Update user details
  */
-exports.update = function(req, res) {
+exports.update = function (req, res) {
     // Init Variables
 
     var message = null;
@@ -34,7 +36,7 @@ exports.update = function(req, res) {
     delete req.body.salt;
     var token = req.body.token || req.headers.token;
 
-    usersJWTUtil.findUserByToken(token, function(err, user) {
+    usersJWTUtil.findUserByToken(token, function (err, user) {
         if (err) {
             return res.status(400).send({
                 status: false,
@@ -44,13 +46,13 @@ exports.update = function(req, res) {
 
         User.findOne({
             username: user.username
-        }, '-salt -password', function(err, dbuser) {
+        }, '-salt -password', function (err, dbuser) {
             if (dbuser) {
                 var versionKey = dbuser.userVersionKey;
                 dbuser = _.extend(dbuser, req.body);
-                dbuser.userVersionKey=versionKey;
+                dbuser.userVersionKey = versionKey;
                 dbuser.updated = Date.now();
-                if(dbuser.firstName || dbuser.lastName || dbuser.middleName) {
+                if (dbuser.firstName || dbuser.lastName || dbuser.middleName) {
                     dbuser.displayName = dbuser.firstName + (dbuser.middleName ? ' ' + dbuser.middleName : '') + (dbuser.lastName ? ' ' + dbuser.lastName : '');
                 }
 
@@ -82,6 +84,8 @@ exports.update = function(req, res) {
  * Update profile picture
  */
 exports.changeProfilePicture = function (req, res) {
+ 
+    
     var token = req.body.token || req.headers.token;
     if (token) {
         logger.debug('Profile Picture [name:' + req.files.file.name + ', fieldname:' + req.files.file.fieldname + ', originalname:' + req.files.file.originalname + ']');
@@ -136,7 +140,7 @@ exports.changeProfilePicture = function (req, res) {
 /**
  * Send User
  */
-exports.me = function(req, res) {
+exports.me = function (req, res) {
     /*logger.debug('req.token-'+req.token);
     logger.debug('req.body-'+JSON.stringify(req.body));
     logger.debug('req.body.token-'+req.body.token);*/
@@ -160,10 +164,10 @@ exports.me = function(req, res) {
     //     });
     // }
     console.log('finally testing');
-    
+
 };
 
-exports.register= function(req, res) {
+exports.register = function (req, res) {
 
     /*logger.debug('req.token-'+req.token);
     logger.debug('req.body-'+JSON.stringify(req.body));
@@ -182,19 +186,19 @@ exports.register= function(req, res) {
 
     //     });
     // } else {
-        res.status(400).send({
-            status: false,
-            message: 'User is not signed in',
-            data:req.body
-        });
-     
+    res.status(400).send({
+        status: false,
+        message: 'User is not signed in',
+        data: req.body
+    });
+
     console.log('finally testing');
-    
+
 };
 
-function removeDuplicates(businessUnitArray,done){
+function removeDuplicates(businessUnitArray, done) {
     var unique_array = [];
-    if(businessUnitArray && businessUnitArray.length>0) {
+    if (businessUnitArray && businessUnitArray.length > 0) {
         businessUnitArray.forEach(function (eachUnit) {
             if (unique_array.indexOf(eachUnit) === -1) {
                 unique_array.push(eachUnit);
@@ -203,7 +207,7 @@ function removeDuplicates(businessUnitArray,done){
         });
 
     }
-        done(unique_array);
+    done(unique_array);
 
 
 }
@@ -215,7 +219,7 @@ exports.myhome = function (req, res) {
      logger.debug('req.body-'+JSON.stringify(req.body));
      logger.debug('req.body.token-'+req.body.token);*/
     var token = req.body.token || req.headers.token;
-    var version =req.query.version;
+    var version = req.query.version;
     var businessUnitId = req.query.businessUnitId;
     if (token) {
         usersJWTUtil.findUserByToken(token, function (err, user) {
@@ -231,64 +235,64 @@ exports.myhome = function (req, res) {
             // Order Summary
             // Sales Summary
             Company.findById(user.company).exec(function (err, company) {
-                businessUnitUtil.findEmployeeBusinessUnits(user,function(errBunits,businessUnitArray) {
-                    if(errBunits){
+                businessUnitUtil.findEmployeeBusinessUnits(user, function (errBunits, businessUnitArray) {
+                    if (errBunits) {
                         logger.debug('Business Units');
                         return res.status(400).send({
                             status: false,
                             message: errorHandler.getErrorMessage(errBunits)
                         });
-                    }else {
+                    } else {
                         var query = {};
-                        removeDuplicates(businessUnitArray,function (businessUnitsArray) {
-                        logger.debug('Business Units length :'+JSON.stringify(businessUnitsArray));
-                        query = (businessUnitsArray && businessUnitsArray.length > 0) ? {$or: businessUnitsArray} : {};
-                        query.deleted = false;
-                        query.disabled = false;
-                        query.viewed = false;
+                        removeDuplicates(businessUnitArray, function (businessUnitsArray) {
+                            logger.debug('Business Units length :' + JSON.stringify(businessUnitsArray));
+                            query = (businessUnitsArray && businessUnitsArray.length > 0) ? { $or: businessUnitsArray } : {};
+                            query.deleted = false;
+                            query.disabled = false;
+                            query.viewed = false;
 
-                        Notification.find(query).populate('user', 'displayName').sort('-created').exec(function (err, notifications) {
-                            if (err) {
-                                logger.debug('Notifications');
-                                return res.status(400).send({
-                                    status: false,
-                                    message: errorHandler.getErrorMessage(err)
-                                });
-                            } else {
-                                logger.debug('Notifications Successful');
-                                dbUtil.findQueryByCategories([{type: 'SubCategory1'}], 1, function (categories) {
-                                    if (categories instanceof Error) {
-                                        return res.status(400).send({
-                                            status: false,
-                                            message: errorHandler.getErrorMessage(categories)
-                                        });
-                                    } else {
-                                        Todo.find({
-                                            target: user._id,
-                                            completed: false
-                                        }).sort('-created').populate('user', 'displayName').exec(function (err, todos) {
-                                            if (err) {
-                                                return res.status(400).send({
-                                                    status: false,
-                                                    message: errorHandler.getErrorMessage(err)
-                                                });
-                                            } else {
-                                                res.jsonp({
-                                                    status: true,
-                                                    'notifications': notifications,
-                                                    'offers': categories,
-                                                    'todos': todos,
-                                                    'companySegments': company.segments,
-                                                    'isforceupdate': version ? false : true
-                                                });
-                                            }
-                                        });
-                                        /*  }*/
+                            Notification.find(query).populate('user', 'displayName').sort('-created').exec(function (err, notifications) {
+                                if (err) {
+                                    logger.debug('Notifications');
+                                    return res.status(400).send({
+                                        status: false,
+                                        message: errorHandler.getErrorMessage(err)
+                                    });
+                                } else {
+                                    logger.debug('Notifications Successful');
+                                    dbUtil.findQueryByCategories([{ type: 'SubCategory1' }], 1, function (categories) {
+                                        if (categories instanceof Error) {
+                                            return res.status(400).send({
+                                                status: false,
+                                                message: errorHandler.getErrorMessage(categories)
+                                            });
+                                        } else {
+                                            Todo.find({
+                                                target: user._id,
+                                                completed: false
+                                            }).sort('-created').populate('user', 'displayName').exec(function (err, todos) {
+                                                if (err) {
+                                                    return res.status(400).send({
+                                                        status: false,
+                                                        message: errorHandler.getErrorMessage(err)
+                                                    });
+                                                } else {
+                                                    res.jsonp({
+                                                        status: true,
+                                                        'notifications': notifications,
+                                                        'offers': categories,
+                                                        'todos': todos,
+                                                        'companySegments': company.segments,
+                                                        'isforceupdate': version ? false : true
+                                                    });
+                                                }
+                                            });
+                                            /*  }*/
 
-                                    }
-                                });
-                            }
-                        });
+                                        }
+                                    });
+                                }
+                            });
                         });
                     }
                 });
@@ -306,14 +310,14 @@ exports.myhome = function (req, res) {
  */
 exports.listUserGroups = function (req, res) {
     var token = req.body.token || req.headers.token;
-    if(token) {
+    if (token) {
         usersJWTUtil.findUserByToken(token, function (err, user) {
             if (err) {
                 return res.status(400).send({
                     message: errorHandler.getErrorMessage(err)
                 });
             }
-            UserGroup.find({$and: [{deleted: false}, {disabled: false}, {$or: [{user: user.id}, {$and: [{$or: [{user: {$exists: false}}, {user: {$exists: true}}]}, {user: null}]}]}]}).exec(function (err, userGroups) {
+            UserGroup.find({ $and: [{ deleted: false }, { disabled: false }, { $or: [{ user: user.id }, { $and: [{ $or: [{ user: { $exists: false } }, { user: { $exists: true } }] }, { user: null }] }] }] }).exec(function (err, userGroups) {
                 if (err) {
                     return res.status(400).send({
                         message: errorHandler.getErrorMessage(err)
@@ -323,7 +327,7 @@ exports.listUserGroups = function (req, res) {
                 }
             });
         });
-    }else{
+    } else {
         return res.status(400).send({
             message: 'Not authorized user'
         });

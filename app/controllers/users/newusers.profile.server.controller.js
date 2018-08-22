@@ -13,8 +13,8 @@ var _ = require('lodash'),
     usersJWTUtil   = require('../utils/users.jwtutil'),
    // businessUnitUtil =require('../utils/common.businessunit.util'),
     dbUtil = require('../utils/common.db.util'),
-    User = mongoose.model('User'),
-    NewUser = mongoose.model('Newuser'),
+    // User = mongoose.model('User'),
+    User = mongoose.model('Newuser'),
     newuserJWTUtil = require('../utils/newusers.jwtutil'),
     async = require('async'),
     config = require('../../../config/config'),
@@ -54,7 +54,7 @@ exports.newuserslist =  function(req, res) {
     // Init Variables
     console.log(req.body,'sended data');
     
-    NewUser.find({},'-password -salt',function(err,res2){  
+    User.find({},'-password -salt',function(err,res2){  
         if(res2){
             res.json({success:true,data:res2})
         }else{
@@ -167,7 +167,7 @@ exports.disableUser = function (req,res){
         logger.debug('Error Message-'+JSON.stringify(info));
             res.status(400).send(info);
         }else{
-            NewUser.updateOne({_id:data.id},{$set:{disabled:true}},function(err,result){
+            User.updateOne({_id:data.id},{$set:{disabled:true}},function(err,result){
             console.log(result);
             
                 if(err){
@@ -234,14 +234,14 @@ exports.login =  function(req, res,next){
  };
  exports.signin = function (req, res, next) {
 
-     console.log('Request Body-'+JSON.stringify(req.body));
-     logger.debug('Request Body-'+JSON.stringify(req.body));
+    console.log('Request Body-'+JSON.stringify(req.body));
+    logger.debug('Request Body-'+JSON.stringify(req.body));
     passport.authenticate('local', function (err, user, info) {
     console.log(user.username,'after passport');
     
         if (err || !user) {
             console.log('it is come else part');
-            
+  
             info.status = false;
             logger.error('Error Signin with username -' + req.body.username + ', -' + JSON.stringify(info));
             //logger.debug('Error Message-'+JSON.stringify(info));
@@ -449,23 +449,38 @@ exports.deleteuser =  function(req, res){
  * Update profile picture
  */
 exports.changeProfilePicture = function (req, res) {
+    console.log(req.files,'ttttttttttttttttttttttt');
+    
     var token = req.body.token || req.headers.token;
     if (token) {
-        logger.debug('Profile Picture [name:' + req.files.file.name + ', fieldname:' + req.files.file.fieldname + ', originalname:' + req.files.file.originalname + ']');
+        logger.debug('Profile Picture [name:' + req.files[0].filename + ', fieldname:' + req.files[0].fieldname + ', originalname:' + req.files[0].originalname + ']');
         usersJWTUtil.findUserByToken(token, function (err, user) {
             if (user) {
-                fs.writeFile('./public/modules/users/img/profile/uploads/' + req.files.file.name, req.files.file.buffer, function (uploadError) {
-                    if (uploadError) {
+                // fs.writeFile('./public/modules/users/img/profile/uploads/' + req.files[0].filename, req.body.buffer, function (uploadError) {
+                //     if (uploadError) {
+                //         return res.status(400).send({
+                //             status: false,
+                //             message: 'Error occurred while uploading profile picture'
+                //         });
+                //     } 
+                console.log(user.profileImageURL);
+                
+                var exist_image = './public/'+user.profileImageURL;
+                var path = './public/modules/users/img/profile/uploads/' + req.files[0].filename;
+                logger.debug('path:' + './public/modules/users/img/profile/uploads/' + req.files[0].filename);
+
+                fs.rename( req.files[0].path,path, function (uploadError) {
+                    if (uploadError || ! req.files[0].mimetype) {
                         return res.status(400).send({
-                            status: false,
-                            message: 'Error occurred while uploading profile picture'
+                            message: 'Error occurred while uploading file at ' + req.headers.uploadpath
                         });
-                    } else {
+                    }                   
+                    else {
                         User.findOne({
                             username: user.username
                         }, '-salt -password', function (err, dbuser) {
                             if (dbuser) {
-                                dbuser.profileImageURL = 'modules/users/img/profile/uploads/' + req.files.file.name;
+                                dbuser.profileImageURL = 'modules/users/img/profile/uploads/' + req.files[0].filename;
 
                                 dbuser.save(function (saveError) {
                                     if (saveError) {
@@ -474,11 +489,22 @@ exports.changeProfilePicture = function (req, res) {
                                             message: errorHandler.getErrorMessage(saveError)
                                         });
                                     } else {
-                                        res.json({
-                                            status: true,
-                                            token: usersJWTUtil.genToken(dbuser.username, dbuser.id),
-                                            user: dbuser
-                                        });
+                                        fs.unlink(exist_image,function(err,result){
+                                            if(err){
+                                                return res.status(400).send({
+                                                    status: false,
+                                                    message: errorHandler.getErrorMessage(err)
+                                                });
+                                            }else{
+                                                res.json({
+                                                    status: true,
+                                                    token: usersJWTUtil.genToken(dbuser.username, dbuser.id),
+                                                    user: dbuser,
+                                                    path: req.files[0].filename
+                                                });
+                                            }
+                                        })
+                                       
                                     }
                                 });
                             }

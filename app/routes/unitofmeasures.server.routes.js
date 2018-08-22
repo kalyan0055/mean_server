@@ -18,6 +18,5 @@ module.exports = function (app) {
         /*.delete(users.requiresLogin, unitofmeasures.hasAuthorization, unitofmeasures.delete)*/;
     app.route('/uomSearch')
         .get(users.requiresLogin,unitofmeasures.UOMSearch);
-
     app.param('unitofmeasureId', unitofmeasures.unitOfMeasureByID);
 };

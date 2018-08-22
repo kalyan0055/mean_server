@@ -244,7 +244,7 @@ var UserSchema = new Schema({
     ],
     userType: {
         type: String,
-        enum: ['User', 'Employee', 'Other'],
+        enum: ['User', 'Employee', 'Other','Superadmin','Admin'],
         default: 'User'
     },
     registerOption:{
