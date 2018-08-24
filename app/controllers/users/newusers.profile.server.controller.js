@@ -52,18 +52,48 @@ exports.newregister = function(req, res) {
 
 exports.newuserslist =  function(req, res) {
     // Init Variables
-    console.log(req.body,'sended data');
-    
-    User.find({},'-password -salt',function(err,res2){  
-        if(res2){
-            res.json({success:true,data:res2})
-        }else{
-            res.json({success:false,data:''})
-        }
+    console.log(req.params.userid,'sended data');
+    // User.find().populate('created_by',null,{username:'demoadmin@nvipani.com'}).exec(function(err,res2){  
+    //     console.log(err);
+    //     console.log(res2);
+   //  User.populate('created_by','firstName',{'username':'demoadmin@nvipani.com'}).exec(function(err,res2){   
         
-    });  
-
- 
+    //     if(res2){
+    //         res.json({success:true,data:res2})
+    //     }else{
+    //         res.json({success:false,data:''})
+    //     }
+     
+    // })
+    newuserJWTUtil.findUserById(req.params.userid,function(err,result){
+        if(err || !result){
+            res.status(400).send({
+                status:false,
+                message: errorHandler.getErrorMessage(err),
+                data:null
+            })
+        }else{
+            User.find({'created_by':req.params.userid}).populate('created_by','username').exec(function(err, users) {
+                if (err) { res.status(400).send({
+                    status: false,
+                    message: errorHandler.getErrorMessage(err),
+                    data:null
+                }); }
+                else if (!users) {  res.status(401).send({
+                    status: false,
+                    message: 'No Data Found',
+                    data:null
+                })}
+                else{
+                    res.status(200).send({
+                        status: true,
+                        message: 'List of Users by Id',
+                        data:users
+                    });;
+                }    
+            });
+        } 
+})
 };
 
 exports.updateuser = async function(req, res){
@@ -159,19 +189,16 @@ exports.registervialink = function(req,res,done){
 exports.disableUser = function (req,res){
     let data= req.body;
     newuserJWTUtil.findUserById(data.id,function(err,user){
-        console.log(user);
-        
-        if(err || !user){
-            info.status = false;
-          logger.error('Something went wrong with -' + req.body.id + ', -' + JSON.stringify(info));
+    if(err || !user){
+        info.status = false;
+        logger.error('Something went wrong with -' + req.body.id + ', -' + JSON.stringify(info));
         logger.debug('Error Message-'+JSON.stringify(info));
-            res.status(400).send(info);
-        }else{
-            User.updateOne({_id:data.id},{$set:{disabled:true}},function(err,result){
-            console.log(result);
-            
-                if(err){
-                    return res.json({
+        res.status(400).send(info);
+    }else{
+        User.updateOne({_id:data.id},{$set:{disabled:true}},function(err,result){
+        console.log(result);
+        if(err){
+                return res.json({
                         status:false,
                         message:'Unable to Disable User'
                     })
@@ -425,7 +452,7 @@ exports.deleteuser =  function(req, res){
             if(user){
                 console.log(user);
                 
-                NewUser.updateOne({_id:user._id},{$set:{deleted:true}},function(err,result){                      
+                User.updateOne({_id:user._id},{$set:{deleted:true}},function(err,result){                      
                     if(err || !result){
                         res.json({
                             status:false,

@@ -1502,7 +1502,6 @@ function getUserInputValidation(data, done) {
 
     if (!data) {
         console.log(1, 'inputvlaidation');
-
         done(new Error('Username (Email/Mobile) field must not be blank'), null);
     } else if (data.issendotp && !data.issendemail) {
         console.log(2, 'inputvlaidation');
@@ -1523,7 +1522,7 @@ function getUserInputValidation(data, done) {
                     if (data.password.trim().length < 8) {
                         logger.error('Password is not valid +' + JSON.stringify(data));
                         done(new Error('Password is less than 8 chars'), null);
-                    } else if (data.password.trim() !== data.conf_password.trim()) {
+                    } else if (data.password !== data.conf_password) {
                         logger.error('Password and Confirm Password is not valid +' + JSON.stringify(data));
                         done(new Error('Password and Confirm Password must be equal'), null);
                     }
@@ -2189,6 +2188,28 @@ function getMessage(user, data) {
 //     });
 
 // };
+ 
+  
+function hasAuthorization(token, done) {
+    var token = token;
+console.log('hasAuthorization called');
+
+    usersJWTUtil.findUserByToken(token, function (err, user) {
+        if (err) {
+            done(new Error('User is not authorized'), false, false);
+        } else {
+            if(user.userType == config.authType || user.userType == config.authType1){
+                done(null,user)
+            }else{
+                 done(new Error('User is not authorized'), false, false);  
+            }
+            
+        }
+    });
+
+};
+
+
 exports.userRegistration = function (req, res) {
     logger.debug('Registration Request  - ' + JSON.stringify(req.body));
     var data = req.body;
@@ -2312,74 +2333,96 @@ exports.userRegistration = function (req, res) {
                         });
 
                     } else {
-                        if (data.issendotp) {
-                            var reqUser = new User(data);
-                            crypto.randomBytes(20, function (err, buffer) {
-                                token = buffer.toString('hex');
-                                otp = notp.totp.gen(K, {});
-                                if (data.isEmail) {
-                                    reqUser.email = data.username;
-                                    reqUser.emailOtp = otp;
+                        var usertoken = req.body.token || req.headers.token;
+                        hasAuthorization(usertoken,function(err,result){
+                            if(err){
+                                return res.status(400).send({
+                                    status: false,
+                                    message: 'User is not Authorized'
+                                });
+                            }else{
+                                logger.debug('user registered wiht valid authoenticaiton :' + result.username);
+                                if (data.issendotp) {
+                                    var reqUser = new User(data);
+                                    crypto.randomBytes(20, function (err, buffer) {
+                                        token = buffer.toString('hex');
+                                        otp = notp.totp.gen(K, {});
+                                        if (data.isEmail) {
+                                            reqUser.email = data.username;
+                                            reqUser.emailOtp = otp;
+        
+                                        } if (data.isPhone) {
+                                            reqUser.mobile = data.username;
+                                            reqUser.otp = otp;
+                                        }
+                                        reqUser.username = data.username;
+                                        //reqUser.firstName = data.username;
+                                        /*reqUser.statusToken = token;*/
+                                        reqUser.devices = [];
+                                        reqUser.devices = [];
+                                        reqUser.allowRegistration = true;
+                                        /*reqUser.acceptTerms=data.user.acceptTerms;*/
+                                        reqUser.serverUrl = req.protocol + '://' + req.headers.host;
+                                        reqUser.provider = 'local';
+                                        reqUser.status = 'Register Request';
+                                        reqUser.updated = Date.now();
+                                        if( result.userType === 'Adminuser'){
+                                         reqUser.userType = 'User';
+                                        }else if(result.userType === 'Admin'){
+                                         reqUser.userType = 'Adminuser';
+                                        }else{
 
-                                } if (data.isPhone) {
-                                    reqUser.mobile = data.username;
-                                    reqUser.otp = otp;
-                                }
-                                reqUser.username = data.username;
-                                reqUser.firstName = data.username;
-                                /*reqUser.statusToken = token;*/
-                                reqUser.devices = [];
-                                reqUser.devices = [];
-                                reqUser.allowRegistration = true;
-                                /*reqUser.acceptTerms=data.user.acceptTerms;*/
-                                reqUser.serverUrl = req.protocol + '://' + req.headers.host;
-                                reqUser.provider = 'local';
-                                reqUser.status = 'Register Request';
-                                reqUser.updated = Date.now();
-                                reqUser.save(function (err) {
-                                    if (err) {
-                                        console.log('error occuered in saving');
-                                        return res.status(400).send({
-                                            status: false,
-                                            message: errorHandler.getErrorMessage(err)
-                                        });
-                                    } else {
-                                        sendRegistrationNotification(reqUser, data, 'Register Request', req, res, function (sendEmailErr, user) {
-                                            if (sendEmailErr) {
+                                        }
+                                        reqUser.created_by = result._id;
+                                        
+                                        reqUser.save(function (err) {
+                                            if (err) {
+                                                console.log('error occuered in saving');
                                                 return res.status(400).send({
                                                     status: false,
-                                                    message: errorHandler.getErrorMessage(sendEmailErr)
-                                                });
-                                            } else if (!user) {
-                                                return res.status(400).send({
-                                                    status: false,
-                                                    message: 'No user for send Mail'
+                                                    message: errorHandler.getErrorMessage(err)
                                                 });
                                             } else {
-                                                res.send({
-                                                    status: true,
-                                                    otp: data.isEmail ? user.emailOtp : user.otp,
-                                                    user: user,
-                                                    message: getMessage(user, data)
-
+                                                sendRegistrationNotification(reqUser, data, 'Register Request', req, res, function (sendEmailErr, user) {
+                                                    if (sendEmailErr) {
+                                                        return res.status(400).send({
+                                                            status: false,
+                                                            message: errorHandler.getErrorMessage(sendEmailErr)
+                                                        });
+                                                    } else if (!user) {
+                                                        return res.status(400).send({
+                                                            status: false,
+                                                            message: 'No user for send Mail'
+                                                        });
+                                                    } else {
+                                                        res.send({
+                                                            status: true,
+                                                            otp: data.isEmail ? user.emailOtp : user.otp,
+                                                            user: user,
+                                                            message: getMessage(user, data)
+        
+                                                        });
+        
+                                                    }
                                                 });
-
                                             }
                                         });
-                                    }
-                                });
-
-                            });
-
-
-                        }
-                        else {
-                            logger.error('User is not registered properly' + data);
-                            return res.status(400).send({
-                                status: false,
-                                message: 'User is not registered properly'
-                            });
-                        }
+        
+                                    });
+        
+        
+                                }
+                                else {
+                                    logger.error('User is not registered properly' + data);
+                                    return res.status(400).send({
+                                        status: false,
+                                        message: 'User is not registered properly'
+                                    });
+                                }
+                            }
+                           
+                        })
+                       
                     }
                 }
 

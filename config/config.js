@@ -91,6 +91,9 @@ module.exports.mailer = {
 	}
 };
 module.exports.sendEmail = true;
+module.exports.authType1='Adminuser';
+module.exports.authType='Admin';
+
 /**
  * Get the modules CSS files
  */

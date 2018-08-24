@@ -44,9 +44,7 @@ exports.getUserByToken = function(token, done) {
  * Send User
  */
 exports.findUserByToken = function(token, done) {
-	//var reqUser = this.isValidToken(token);
-	console.log(token, 'nothing but ui data');
-	
+	//var reqUser = this.isValidToken(token);	
 	if(token) {
 		User.findOne({'_id': token._id}, '-salt -password', function (err, user) {
 			if (err) {

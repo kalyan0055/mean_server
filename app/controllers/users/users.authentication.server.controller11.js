@@ -1144,7 +1144,7 @@ exports.userRegistration = function (req, res) {
                                     reqUser.otp = otp;
                                 }
                                 reqUser.username = data.username;
-                                reqUser.firstName = data.username;
+                                //reqUser.firstName = data.username;
                                 /*reqUser.statusToken = token;*/
                              
                                 reqUser.allowRegistration = true;

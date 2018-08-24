@@ -13,7 +13,7 @@ module.exports = function(app) {
 
 	// Setting up the users profile apis -- Practise 
 	app.route('/users/register').post(users.newregister);
-	app.route('/users/newuserslist').get(users.newuserslist);
+	app.route('/users/newuserslist/:userid').get(users.newuserslist);
 	app.route('/users/updateuser').post(users.updateuser);
 	//app.route('/users/login').post(users.login);
 	app.route('/users/deleteuser').post(users.deleteuser);

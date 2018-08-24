@@ -37,7 +37,7 @@ var NewUserSchema = new Schema({
         trim: true,
         default: '',
         validate: [validateLength256, 'Please fill in your first name'],
-        required:true
+         
     },
     middleName: {
         type: String,
@@ -111,7 +111,10 @@ var NewUserSchema = new Schema({
         type: Date,
         default: Date.now
     },
- 
+    created_by: {
+        type: Schema.ObjectId,
+        ref: 'Newuser'
+    },
     otp: {
         type: String
     },
@@ -121,7 +124,7 @@ var NewUserSchema = new Schema({
  
     userType: {
         type: String,
-        enum: ['User', 'Employee', 'Other','Adminuser'],
+    enum: ['User', 'Employee', 'Other','Admin','Adminuser'],
         default: 'User'
     },
  
@@ -160,7 +163,8 @@ var NewUserSchema = new Schema({
     },
     resetPasswordExpires: {
         type: Date
-    },// 1 hour
+    }// 1 hour
+   
 })
 
 

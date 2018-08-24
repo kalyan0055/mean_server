@@ -52,6 +52,8 @@ exports.update = function (req, res) {
                 dbuser = _.extend(dbuser, req.body);
                 dbuser.userVersionKey = versionKey;
                 dbuser.updated = Date.now();
+                console.log(dbuser);
+                
                 if (dbuser.firstName || dbuser.lastName || dbuser.middleName) {
                     dbuser.displayName = dbuser.firstName + (dbuser.middleName ? ' ' + dbuser.middleName : '') + (dbuser.lastName ? ' ' + dbuser.lastName : '');
                 }
@@ -105,7 +107,7 @@ exports.changeProfilePicture = function (req, res) {
                                 dbuser.profileImageURL = 'modules/users/img/profile/uploads/' + req.files.file.name;
 
                                 dbuser.save(function (saveError) {
-                                    if (saveError) {
+                                    if (saveError) {    
                                         return res.status(400).send({
                                             status: false,
                                             message: errorHandler.getErrorMessage(saveError)

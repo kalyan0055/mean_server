@@ -133,8 +133,7 @@ exports.deletehsn = function(req,res){
  * List of Categories
  */
  exports.list =   function  (req, res) {
-    console.log(req.query.pageSize);
-    console.log(req.query.page);
+
        var pageSize = +req.query.pageSize;
     var page = +req.query.page;
     var token = req.body.token || req.headers.token;
@@ -142,17 +141,14 @@ exports.deletehsn = function(req,res){
          usersJWTUtil.getUserByToken(token, function (err, loginuser) {  
             if (loginuser) { 
                 var query;
-                query = Hsncodes.find({$or: [{$and: [{deleted: false}]}  ]}).skip(pageSize * (page - 1) ).limit(pageSize).sort('-hsncode').populate('unitofmeasures', 'uqcCode').exec( async function (err, hsncodes) {
+                query = Hsncodes.find({$or: [{$and: [{deleted: false}]}  ]}).skip(pageSize * (page - 1) ).limit(pageSize).populate('unitofmeasures', 'uqcCode').sort('-_id').exec( async function (err, hsncodes) {
                     if (err) {
                          return res.status(400).send({
                             message: errorHandler.getErrorMessage(err)
                         });
                     } else {
-                        console.log('else');
                         let total ;
                         const number = await Hsncodes.count();
-                        console.log(number);
-                                                //   res.status(hsncodes).jsonp(d) 
                         res.json({hsncodes:hsncodes,count:number});
                     }
                 });    

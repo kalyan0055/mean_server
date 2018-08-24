@@ -14,7 +14,7 @@ var mongoose = require('mongoose'),
     // Contact = mongoose.model('Contact'),
     User = mongoose.model('User'),
     // UnitOfMeasure = mongoose.model('UnitOfMeasure'),
-    // Category = mongoose.model('Category'),
+     Category = mongoose.model('Category'),
     _this = this;
 /*
  Add global Code for Categories
