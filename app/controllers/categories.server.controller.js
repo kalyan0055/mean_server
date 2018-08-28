@@ -7,9 +7,11 @@ var mongoose = require('mongoose'),
     errorHandler = require('./errors.server.controller'),
     dbUtil = require('./utils/common.db.util'),
     Category = mongoose.model('Category'),
-    Hsncodes=mongoose.model('Hsncodes'),
+    Hsncodes = mongoose.model('Hsncodes'),
     usersJWTUtil = require('./utils/users.jwtutil'),
-    logger  = require('../../lib/log').getLogger('CATEGORIES', 'DEBUG'),
+    newuserJWTUtil = require('./utils/newusers.jwtutil'),
+    logger = require('../../lib/log').getLogger('CATEGORIES', 'DEBUG'),
+    fieleupload = require('../controllers/utils/fileupload.util'),
     _ = require('lodash'),
     fs = require('fs');
 
@@ -61,10 +63,10 @@ function findCategoryById(id,done){
     });
 };*/
 
-function getSingleFileObject(files,done) {
-    if(files instanceof  Array && files.length>0){
+function getSingleFileObject(files, done) {
+    if (files instanceof Array && files.length > 0) {
         done(files[0]);
-    }else {
+    } else {
         done(null);
     }
 }
@@ -79,73 +81,68 @@ exports.create = function (req, res) {
             });
         }
         category.user = user;
-        var query={};
+        var query = {};
         if (category.type !== 'SubCategory4') {
-            if(category.type !== 'MainCategory')
-            query=[{name: 'Other', type: 'SubCategory1'}];
-            if(category.type !== 'SubCategory1')
-                query=[{name: 'Other', type: 'SubCategory2'}];
-            if(category.type !== 'SubCategory2')
-                query={name: 'Other', type: 'SubCategory3'};
-            if(category.type !== 'SubCategory3')
-                query=[{name: 'Other', type: 'SubCategory4'}];
-            dbUtil.findQueryByCategories(query,0,function (err ,categories) {
+            if (category.type !== 'MainCategory')
+                query = [{ name: 'Other', type: 'SubCategory1' }];
+            if (category.type !== 'SubCategory1')
+                query = [{ name: 'Other', type: 'SubCategory2' }];
+            if (category.type !== 'SubCategory2')
+                query = { name: 'Other', type: 'SubCategory3' };
+            if (category.type !== 'SubCategory3')
+                query = [{ name: 'Other', type: 'SubCategory4' }];
+            console.log(query, 'queryyyyyyy');
+
+            dbUtil.findQueryByCategories(query, 0, function (err, categories) {
                 if (err) {
                     return res.status(400).send({
                         message: errorHandler.getErrorMessage(err)
                     });
                 } else {
-                    getSingleFileObject(req.files,function(file){
+                    getSingleFileObject(req.files, function (file) {
                         console.log(file);
-                        
-                        var path='./public/modules/categories/img/profile/'+file.filename; 
+
+                        var path = './public/modules/categories/img/profile/' + file.filename;
                         logger.debug('path:' + './public/modules/categories/img/profile/' + file.filename);
-                        fs.rename(file.path,path, function (uploadError) {
+                        fs.rename(file.path, path, function (uploadError) {
                             if (uploadError || !file.mimetype) {
                                 return res.status(400).send({
                                     message: 'Error occurred while uploading file at ' + req.headers.uploadpath
                                 });
                             }
-                        // fs.writeFile('./public/modules/categories/img/profile/' + req.files.file.name, req.files.file.buffer, function (uploadError) {
-                        //     if (uploadError) {
-                        //         return res.status(400).send({
-                        //             status: false,
-                        //             message: 'Error occurred while uploading profile picture'
-                        //         });
-                        //     }
-                            else{
-                                category.children=categories;
-                                category.categoryImageURL1= 'modules/categories/img/profile/'+file.filename;
+                            else {
+                                category.children = categories;
+                                category.categoryImageURL1 = 'modules/categories/img/profile/' + file.filename;
                                 category.save(function (saveErr) {
                                     if (saveErr) {
                                         return res.status(400).send({
                                             message: errorHandler.getErrorMessage(saveErr)
                                         });
                                     } else {
-                                        dbUtil.findCategoryById(category._id,function (errCategory,populateCategory) {
+                                        dbUtil.findCategoryById(category._id, function (errCategory, populateCategory) {
                                             if (errCategory) {
                                                 return res.status(400).send({
                                                     message: errorHandler.getErrorMessage(errCategory)
                                                 });
                                             } else {
                                                 res.jsonp(populateCategory);
-                                            }          
+                                            }
                                         });
                                     }
                                 });
                             }
-                    })
+                        })
                     })
                 }
             });
-        }else{
+        } else {
             category.save(function (saveErr) {
                 if (saveErr) {
                     return res.status(400).send({
                         message: errorHandler.getErrorMessage(saveErr)
                     });
                 } else {
-                    dbUtil.findCategoryById(category._id,function (errFetch,populateCategory) {
+                    dbUtil.findCategoryById(category._id, function (errFetch, populateCategory) {
                         if (errFetch) {
                             return res.status(400).send({
                                 message: errorHandler.getErrorMessage(errFetch)
@@ -169,7 +166,7 @@ exports.create = function (req, res) {
  */
 exports.createHsnCodes = function (req, res) {
     var hsncode = new Hsncodes(req.body);
-    var subcategory= req.body.subcategory;
+    var subcategory = req.body.subcategory;
     var token = req.body.token || req.headers.token;
     usersJWTUtil.findUserByToken(token, function (err, user) {
         if (err) {
@@ -186,19 +183,19 @@ exports.createHsnCodes = function (req, res) {
             } else {
 
                 Category.findOneAndUpdate(
-                    {_id: subcategory},
-                    {$addToSet: {'hsncodes': {hsncode: hsncode._id}}},
-                    function (err,category) {
+                    { _id: subcategory },
+                    { $addToSet: { 'hsncodes': { hsncode: hsncode._id } } },
+                    function (err, category) {
                         if (err) {
                             return res.status(400).send({
                                 message: errorHandler.getErrorMessage(err)
                             });
-                        } else if(!category || !category._id){
+                        } else if (!category || !category._id) {
                             return res.status(400).send({
                                 message: 'No subcategory'
                             });
-                        }else{
-                            dbUtil.findCategoryById(category._id,function (errFetch,populateCategory) {
+                        } else {
+                            dbUtil.findCategoryById(category._id, function (errFetch, populateCategory) {
                                 if (errFetch) {
                                     return res.status(400).send({
                                         message: errorHandler.getErrorMessage(errFetch)
@@ -219,37 +216,118 @@ exports.createHsnCodes = function (req, res) {
  * Show the current Category
  */
 exports.read = function (req, res) {
-    console.log(req.category,'what is this.');
-        res.jsonp(req.category);
+    console.log(req.category, 'what is this.');
+    res.jsonp(req.category);
 };
 
 /**
  * Update a Category
  */
-exports.update = function (req, res) {
-    console.log(req.body,req,'ttttttttttttttt');
-    
-    var category = req.category;
+exports.update = async function (req, res) {
 
-    category = _.extend(category, req.body);
-
-    category.save(function (err) {
-        if (err) {
+    // filedata= await fieleupload.fileUploadPath(req,res);
+    Category.findOne({ _id: req.body._id }, function (err, category) {
+        if (err || !category) {
             return res.status(400).send({
-                message: errorHandler.getErrorMessage(err)
+                message: 'No Categories found'
             });
-        } else {
-                dbUtil.findCategoryById(category._id,function (errFetch,populateCategory) {
-                    if(errFetch)
+        }
+        else {
+            var exist_image = './public/' + category.categoryImageURL1;
+            getSingleFileObject(req.files, function (file) {
+                var path = './public/modules/categories/img/profile/' + file.filename;
+                logger.debug('path:' + './public/modules/categories/img/profile/' + file.filename);
+                fs.rename(file.path, path, function (uploadError) {
+                    if (uploadError || !file.mimetype) {
                         return res.status(400).send({
-                            message: errorHandler.getErrorMessage(errFetch)
+                            message: 'Error occurred while uploading file at ' + req.headers.uploadpath
                         });
-                    else  res.jsonp(populateCategory);
+                    }
+                    else {
+                        let update = {};
+                        update = req.body;
+                        update.categoryImageURL1 = 'modules/categories/img/profile/' + file.filename;
 
-                });
-            }
-    });
+                        //{_id:req.body._id},{$set:subset},
+                        console.log(update, 'pefect');
+
+                        Category.updateOne({ _id: req.body._id }, { $set: update }, function (saveErr, categry) {
+                            if (saveErr) {
+                                return res.status(400).send({
+                                    message: errorHandler.getErrorMessage(saveErr)
+                                });
+                            } else {
+                                dbUtil.findCategoryById(category._id, function (errCategory, populateCategory) {
+                                    if (errCategory) {
+                                        return res.status(400).send({
+                                            message: errorHandler.getErrorMessage(errCategory)
+                                        });
+                                    } else {
+                                        res.jsonp(populateCategory);
+                                    }
+                                });
+                            }
+                        });
+                    }
+                })
+            })
+        }
+    })
 };
+
+exports.disable = function (req, res) {
+   
+    var token = req.body.token || req.headers.token;  
+    let data = req.body;
+    usersJWTUtil.findUserByToken(token, function (err, user) {
+        if (err || !user) {
+             
+            logger.error('Something went wrong with -' + req.body.id + ', -' + JSON.stringify(err));
+            logger.debug('Error Message-' + JSON.stringify(err));
+          return  res.status(400).send(err);
+        } else {
+            let type = null;
+            (data.type === 'Disabled') ? type = true : type = false;
+            Category.updateOne({ _id: data.id }, { $set: { disabled: type } }, function (err, result) {
+                if (err) {
+                    return res.json({
+                        status: false,
+                        message: `Unable to ${data.type} Main Category`
+                    })
+                } else {
+                    return res.json({
+                        status: true,
+                        message: `Main Category Successfully ${data.type}`
+                    })
+                }
+            })
+        }
+    })
+};
+// var subset = _.pick(req.body, ['name','code','type','_id']);
+
+// category = _.extend
+
+// console.log(exist_image,'existing image');
+
+
+// category.save(function (err) {
+//     if (err) {
+//         return res.status(400).send({
+//             message: errorHandler.getErrorMessage(err)
+//         });
+//     } else {
+//             dbUtil.findCategoryById(category._id,function (errFetch,populateCategory) {
+//                 if(errFetch)
+//                     return res.status(400).send({
+//                         message: errorHandler.getErrorMessage(errFetch)
+//                     });
+//                 else  res.jsonp(populateCategory);
+
+//             });
+//         }
+// });
+
 
 /**
  * Delete an Category
@@ -272,7 +350,7 @@ exports.delete = function (req, res) {
  * List of Categories
  */
 exports.list = function (req, res) {
-    dbUtil.findQueryByCategories([],1,function (err,categories) {
+    dbUtil.findQueryByCategories([], 1, function (err, categories) {
         if (err) {
             return res.status(400).send({
                 message: errorHandler.getErrorMessage(err)
@@ -287,7 +365,7 @@ exports.list = function (req, res) {
  * List of MainCategories
  */
 exports.listMainCategories = function (req, res) {
-    dbUtil.findQueryByCategories([{type: 'MainCategory'}],1,function (err,categories) {
+    dbUtil.findQueryByCategories([{ type: 'MainCategory' }], 1, function (err, categories) {
         if (err) {
             return res.status(400).send({
                 message: errorHandler.getErrorMessage(err)
@@ -298,7 +376,7 @@ exports.listMainCategories = function (req, res) {
     });
 };
 exports.listMainCategoriesWithSearch = function (req, res) {
-    dbUtil.findQueryByCategories([{type: 'MainCategory'}],2,function (err,categories) {
+    dbUtil.findQueryByCategories([{ type: 'MainCategory' }], 2, function (err, categories) {
         if (err) {
             return res.status(400).send({
                 message: errorHandler.getErrorMessage(err)
@@ -308,13 +386,13 @@ exports.listMainCategoriesWithSearch = function (req, res) {
         }
     });
 
-    };
+};
 
 /**
  * List of SubCategories of type SubCategory1 with Search
  */
-exports.listSubCategories1Search= function (req, res) {
-    dbUtil.findQueryByCategories([{type: 'SubCategory1'}],1,function (err,categories) {
+exports.listSubCategories1Search = function (req, res) {
+    dbUtil.findQueryByCategories([{ type: 'SubCategory1' }], 1, function (err, categories) {
         if (err) {
             return res.status(400).send({
                 message: errorHandler.getErrorMessage(err)
@@ -328,7 +406,7 @@ exports.listSubCategories1Search= function (req, res) {
  * List of SubCategories of type SubCategory1
  */
 exports.listSubCategories1 = function (req, res) {
-    dbUtil.findQueryByCategories([{type: 'SubCategory1'}],1,function (err,categories) {
+    dbUtil.findQueryByCategories([{ type: 'SubCategory1' }], 1, function (err, categories) {
         if (err) {
             return res.status(400).send({
                 message: errorHandler.getErrorMessage(err)
@@ -343,7 +421,7 @@ exports.listSubCategories1 = function (req, res) {
  * List of SubCategories of type SubCategory2
  */
 exports.listSubCategories2 = function (req, res) {
-    dbUtil.findQueryByCategories([{type: 'SubCategory2'}],1,function (err,categories) {
+    dbUtil.findQueryByCategories([{ type: 'SubCategory2' }], 1, function (err, categories) {
         if (err) {
             return res.status(400).send({
                 message: errorHandler.getErrorMessage(err)
@@ -358,7 +436,7 @@ exports.listSubCategories2 = function (req, res) {
  * List of SubCategories of type SubCategory3
  */
 exports.listSubCategories3 = function (req, res) {
-    dbUtil.findQueryByCategories([{type: 'SubCategory3'}],1,function (err,categories) {
+    dbUtil.findQueryByCategories([{ type: 'SubCategory3' }], 1, function (err, categories) {
         if (err) {
             return res.status(400).send({
                 message: errorHandler.getErrorMessage(err)
@@ -373,7 +451,7 @@ exports.listSubCategories3 = function (req, res) {
  * Category middleware
  */
 exports.categoryByID = function (req, res, next, id) {
-    dbUtil.findCategoryById(id,function (err,populateCategory) {
+    dbUtil.findCategoryById(id, function (err, populateCategory) {
         if (err) return next(err);
         if (!populateCategory) return next(new Error('Failed to load Category ' + id));
         req.category = populateCategory;
@@ -406,51 +484,51 @@ exports.productCategorySearch = function (req, res) {
     var token = req.body.token || req.headers.token;
     var productKey = req.query.productKey;
     var lastSyncTime = req.headers.lastsynctime;
-    var word=req.query.searchKey;
+    var word = req.query.searchKey;
 
     var queryArray = [];
-    var regExp={'$regex': productKey };
+    var regExp = { '$regex': productKey };
     for (var property in Category.schema.paths) {
-        if (Category.schema.paths.hasOwnProperty(property)  && Category.schema.paths[property].instance === 'String') {
-            var eachproduct={};
+        if (Category.schema.paths.hasOwnProperty(property) && Category.schema.paths[property].instance === 'String') {
+            var eachproduct = {};
             eachproduct[property] = regExp;
             queryArray.push(eachproduct);
         }
 
     }
- /*   var queryArrayHsnCode = [];
-    for (var property in Hsncodes.schema.paths) {
-        if (Hsncodes.schema.paths.hasOwnProperty(property)  && Hsncodes.schema.paths[property].instance === 'String') {
-            var eachproduct={};
-            eachproduct[property] = regExp;
-            queryArrayHsnCode.push(eachproduct);
-        }
+    /*   var queryArrayHsnCode = [];
+       for (var property in Hsncodes.schema.paths) {
+           if (Hsncodes.schema.paths.hasOwnProperty(property)  && Hsncodes.schema.paths[property].instance === 'String') {
+               var eachproduct={};
+               eachproduct[property] = regExp;
+               queryArrayHsnCode.push(eachproduct);
+           }
+   
+       }
+   
+       var queryArrayBrand = [];
+       for (var property in Hsncodes.schema.paths) {
+           if (Hsncodes.schema.paths.hasOwnProperty(property)  && Hsncodes.schema.paths[property].instance === 'String') {
+               var eachproduct={};
+               eachproduct[property] = regExp;
+               queryArrayBrand.push(eachproduct);
+           }
+   
+       }*/
 
-    }
 
-    var queryArrayBrand = [];
-    for (var property in Hsncodes.schema.paths) {
-        if (Hsncodes.schema.paths.hasOwnProperty(property)  && Hsncodes.schema.paths[property].instance === 'String') {
-            var eachproduct={};
-            eachproduct[property] = regExp;
-            queryArrayBrand.push(eachproduct);
-        }
-
-    }*/
-
-
-   /* queryArray.push({'hsnCodes.hsncode':{'$regex': productKey }});
-    queryArray.push({'productBrands.name':{'$regex': productKey }});*/
-    var query=[{$or:queryArray},{type:'SubCategory2'}];
-   /* dbUtil.findQueryByCategories([query],0,function (err ,products) {*/
-    Category.find({type:'SubCategory2'}).populate([{
+    /* queryArray.push({'hsnCodes.hsncode':{'$regex': productKey }});
+     queryArray.push({'productBrands.name':{'$regex': productKey }});*/
+    var query = [{ $or: queryArray }, { type: 'SubCategory2' }];
+    /* dbUtil.findQueryByCategories([query],0,function (err ,products) {*/
+    Category.find({ type: 'SubCategory2' }).populate([{
         path: 'hsnCodes',
         match: {
-            hsncode: {'$regex': productKey }
+            hsncode: { '$regex': productKey }
         }
     }]).exec(function (err, categories) {
         if (err) {
-            logger.error('Error while fetching products with value: :'+productKey+' Details :'+errorHandler.getErrorMessage(err));
+            logger.error('Error while fetching products with value: :' + productKey + ' Details :' + errorHandler.getErrorMessage(err));
             return res.status(400).send({
                 message: errorHandler.getErrorMessage(err)
             });
@@ -465,14 +543,14 @@ exports.productCategorySearch = function (req, res) {
                     model: 'ProductBrand'/!*,
                     match:{'name':{'$regex': productKey }}*!/
             }]);*/
-            categories.filter(function(doc){
+            categories.filter(function (doc) {
                 return doc;
             });
 
         }
     });
 };
-exports.fetchProducts=function (req, res) {
+exports.fetchProducts = function (req, res) {
     var token = req.body.token || req.headers.token;
     usersJWTUtil.findUserByToken(token, function (err, user) {
         if (err) {
@@ -480,12 +558,12 @@ exports.fetchProducts=function (req, res) {
                 message: errorHandler.getErrorMessage(err)
             });
         } else {
-            dbUtil.findByCategorySelectionProduct(req.body.categories,req.body.businessUnit,user,function (categoryErr,matchedProducts) {
-                if(categoryErr){
+            dbUtil.findByCategorySelectionProduct(req.body.categories, req.body.businessUnit, user, function (categoryErr, matchedProducts) {
+                if (categoryErr) {
                     return res.status(400).send({
                         message: errorHandler.getErrorMessage(categoryErr)
                     });
-                }else{
+                } else {
                     res.jsonp(matchedProducts);
                 }
 
@@ -493,7 +571,7 @@ exports.fetchProducts=function (req, res) {
         }
     });
 };
-exports.fetchSubCategoryByName=function (req, res) {
+exports.fetchSubCategoryByName = function (req, res) {
     var token = req.body.token || req.headers.token;
     usersJWTUtil.findUserByToken(token, function (err, user) {
         if (err) {
@@ -501,13 +579,13 @@ exports.fetchSubCategoryByName=function (req, res) {
                 message: errorHandler.getErrorMessage(err)
             });
         } else {
-            var subCategories=[];
-            dbUtil.findByCategoryAndSubCategoryName(req.body,subCategories,user,function (categoryErr,subcategory) {
-                if(categoryErr){
+            var subCategories = [];
+            dbUtil.findByCategoryAndSubCategoryName(req.body, subCategories, user, function (categoryErr, subcategory) {
+                if (categoryErr) {
                     return res.status(400).send({
                         message: errorHandler.getErrorMessage(categoryErr)
                     });
-                }else{
+                } else {
                     res.jsonp(subcategory);
                 }
 
@@ -515,7 +593,7 @@ exports.fetchSubCategoryByName=function (req, res) {
         }
     });
 };
-exports.fetchProductImport=function (req, res) {
+exports.fetchProductImport = function (req, res) {
     var token = req.body.token || req.headers.token;
     usersJWTUtil.findUserByToken(token, function (err, user) {
         if (err) {
@@ -523,13 +601,13 @@ exports.fetchProductImport=function (req, res) {
                 message: errorHandler.getErrorMessage(err)
             });
         } else {
-            var itemMasters=[];
-            dbUtil.findByProductNames(req.body,itemMasters,user,function (categoryErr,subcategories) {
-                if(categoryErr){
+            var itemMasters = [];
+            dbUtil.findByProductNames(req.body, itemMasters, user, function (categoryErr, subcategories) {
+                if (categoryErr) {
                     return res.status(400).send({
                         message: errorHandler.getErrorMessage(categoryErr)
                     });
-                }else{
+                } else {
                     res.jsonp(subcategories);
                 }
 

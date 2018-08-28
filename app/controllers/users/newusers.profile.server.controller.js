@@ -195,7 +195,10 @@ exports.disableUser = function (req,res){
         logger.debug('Error Message-'+JSON.stringify(info));
         res.status(400).send(info);
     }else{
-        User.updateOne({_id:data.id},{$set:{disabled:true}},function(err,result){
+        let type = '';
+        (data.type ==='disable')?type=true:type=false;
+
+        User.updateOne({_id:data.id},{$set:{disabled:type}},function(err,result){
         console.log(result);
         if(err){
                 return res.json({

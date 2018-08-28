@@ -13,8 +13,14 @@ module.exports = function (app) {
         .get(categories.list)
         .post(users.requiresLogin, categories.create);
 
-    app.route('/createMainCategory/:categoryId')
-        .put(users.requiresLogin,categories.update);
+    app.route('/createMainCategory/update')
+        .post(users.requiresLogin,categories.update);
+
+        // app.route('/createMainCategory/:categoryId')
+        // .put(users.requiresLogin,categories.update);sss
+
+    app.route('/categories/disable').
+    post(users.requiresLogin,categories.disabsle);
 
     app.route('/queryMainCategories')
         .get(categories.listMainCategories);

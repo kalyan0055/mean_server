@@ -40,7 +40,8 @@ exports.fileUploadPath = function (req,res) {
         product: './public/modules/products/img/profile/uploads/',
         inventory: './public/modules/inventories/img/profile/uploads/',
         contact:'./public/modules/contacts/img/profile/uploads/',
-        group:'./public/modules/groups/img/profile/uploads/'
+        group:'./public/modules/groups/img/profile/uploads/',
+        maincategory:'./public/modules/categories/img/profile/',
     };
     var imagePath= {
         users: 'modules/users/img/profile/uploads/',
@@ -48,7 +49,8 @@ exports.fileUploadPath = function (req,res) {
         product: 'modules/products/img/profile/uploads/',
         inventory: 'modules/inventories/img/profile/uploads/',
         contact:'modules/contacts/img/profile/uploads/',
-        group:'modules/groups/img/profile/uploads/'
+        group:'modules/groups/img/profile/uploads/',
+        maincategory:'modules/categories/img/profile/',
     };
     getSingleFileObject(req.files,function (file) {
         if(file) {
