@@ -71,8 +71,38 @@ function getSingleFileObject(files, done) {
     }
 }
 
+function UpdateMainCategory(parentId, ChildId, done) {
+    console.log(parentId, 'parent');
+    console.log(ChildId, 'Child');
+    Category.findOne({ "_id": parentId}, function (err, MainCategory) {
+        console.log(MainCategory,'hellpo');
+        if (err) {
+            done(err, MainCategory)
+        } else {
+            Category.findOneAndUpdate({ "_id": parentId }, { $addToSet: { 'children': ChildId } },{ new: true }, function (err, UpdateMainCategory) {
+                console.log(err, UpdateMainCategory,'haaikk');
+         
+                done(err, UpdateMainCategory)
+            });
+            
+        }
+    })
+}
 exports.create = function (req, res) {
     var category = new Category(req.body);
+    // var category = {}
+    // category = req.body;
+    if(!req.files){
+        createCategories(req,function(err,categories){
+            if(err){
+                return res.status(400).send({
+                    message:errorHandler.getErrorMessage(err)
+                })
+            }else{
+                res.jsonp(categories)
+            }
+        })
+    }else{
     var token = req.body.token || req.headers.token;
     usersJWTUtil.findUserByToken(token, function (err, user) {
         if (err) {
@@ -92,7 +122,6 @@ exports.create = function (req, res) {
             if (category.type !== 'SubCategory3')
                 query = [{ name: 'Other', type: 'SubCategory4' }];
             console.log(query, 'queryyyyyyy');
-
             dbUtil.findQueryByCategories(query, 0, function (err, categories) {
                 if (err) {
                     return res.status(400).send({
@@ -100,10 +129,18 @@ exports.create = function (req, res) {
                     });
                 } else {
                     getSingleFileObject(req.files, function (file) {
-                        console.log(file);
-
-                        var path = './public/modules/categories/img/profile/' + file.filename;
-                        logger.debug('path:' + './public/modules/categories/img/profile/' + file.filename);
+                        var imageImportPath = {
+                            maincategory: './public/modules/categories/img/profile/',
+                            subcategory1: './public/modules/categories/img/subcategory1/',
+                            subcategory2: './public/modules/categories/img/subcategory2/',
+                        };
+                        var imagePath = {
+                            maincategory: 'modules/categories/img/profile/',
+                            subcategory1: 'modules/categories/img/subcategory1/',
+                            subcategory2: 'modules/categories/img/subcategory2/',
+                        };
+                        var path = imageImportPath[req.headers.uploadpath] + file.filename;
+                        logger.debug('path:' + path + file.filename);
                         fs.rename(file.path, path, function (uploadError) {
                             if (uploadError || !file.mimetype) {
                                 return res.status(400).send({
@@ -112,22 +149,45 @@ exports.create = function (req, res) {
                             }
                             else {
                                 category.children = categories;
-                                category.categoryImageURL1 = 'modules/categories/img/profile/' + file.filename;
+                                category.categoryImageURL1 = imagePath[req.headers.uploadpath] + file.filename;
+                                // Category.create(category,function(saveErr){
                                 category.save(function (saveErr) {
                                     if (saveErr) {
                                         return res.status(400).send({
                                             message: errorHandler.getErrorMessage(saveErr)
                                         });
                                     } else {
-                                        dbUtil.findCategoryById(category._id, function (errCategory, populateCategory) {
-                                            if (errCategory) {
-                                                return res.status(400).send({
-                                                    message: errorHandler.getErrorMessage(errCategory)
-                                                });
-                                            } else {
-                                                res.jsonp(populateCategory);
-                                            }
-                                        });
+                                        console.log(category._id, 'after insert');
+
+                                        if (category.type === 'SubCategory1') {
+                                            UpdateMainCategory(category.parent, category._id, function (err, MainCategory) {
+                                                if (err || !MainCategory) {
+                                                    return res.status(400).send({
+                                                        message: errorHandler.getErrorMessage(err)
+                                                    })
+                                                } else {
+                                                    dbUtil.findCategoryById(category._id, function (errFetch, populateCategory) {
+                                                        if (errFetch) {
+                                                            return res.status(400).send({
+                                                                message: errorHandler.getErrorMessage(errFetch)
+                                                            });
+                                                        } else {
+                                                            res.jsonp(populateCategory);
+                                                        }
+                                                    });
+                                                }
+                                            });
+                                        } else {
+                                            dbUtil.findCategoryById(category._id, function (errCategory, populateCategory) {
+                                                if (errCategory) {
+                                                    return res.status(400).send({
+                                                        message: errorHandler.getErrorMessage(errCategory)
+                                                    });
+                                                } else {
+                                                    res.jsonp(populateCategory);
+                                                }
+                                            });
+                                        }
                                     }
                                 });
                             }
@@ -150,16 +210,113 @@ exports.create = function (req, res) {
                         } else {
                             res.jsonp(populateCategory);
                         }
-
-
                     });
                 }
             });
         }
 
     });
+    }
 };
 
+function createCategories(req,done){
+    var category = new Category(req.body);
+    var token = req.body.token || req.headers.token;
+    usersJWTUtil.findUserByToken(token, function (err, user) {
+        if (err) {
+            return res.status(400).send({
+                message: errorHandler.getErrorMessage(err)
+            });
+        }
+        category.user = user;
+        var query = {};
+        if (category.type !== 'SubCategory4') {
+            if (category.type !== 'MainCategory')
+                query = [{ name: 'Other', type: 'SubCategory1' }];
+            if (category.type !== 'SubCategory1')
+                query = [{ name: 'Other', type: 'SubCategory2' }];
+            if (category.type !== 'SubCategory2')
+                query = { name: 'Other', type: 'SubCategory3' };
+            if (category.type !== 'SubCategory3')
+                query = [{ name: 'Other', type: 'SubCategory4' }];
+            console.log(query, 'queryyyyyyy');
+            dbUtil.findQueryByCategories(query, 0, function (err, categories) {
+                if (err) {
+                    // return res.status(400).send({
+                    //     message: errorHandler.getErrorMessage(err)
+                    // });
+                    done(err)
+                } else {
+                            category.children = categories;
+                               // Category.create(category,function(saveErr){
+                                category.save(function (saveErr) {
+                                    if (saveErr) {
+                                        // return res.status(400).send({
+                                        //     message: errorHandler.getErrorMessage(saveErr)
+                                        // });
+                                        done(saveErr)
+                                    } else {
+                                        console.log(category._id, 'after insert');
+                                        if (category.type === 'SubCategory1') {
+                                            UpdateMainCategory(category.parent, category._id, function (err, MainCategory) {
+                                                if (err || !MainCategory) {
+                                                    // return res.status(400).send({
+                                                    //     message: errorHandler.getErrorMessage(err)
+                                                    // })
+                                                    done(err);
+                                                } else {
+                                                    dbUtil.findCategoryById(category._id, function (errFetch, populateCategory) {
+                                                        if (errFetch) {
+                                                            // return res.status(400).send({
+                                                            //     message: errorHandler.getErrorMessage(errFetch)
+                                                            // });
+                                                            done(errFetch);
+                                                        } else {
+                                                          //  res.jsonp(populateCategory);
+                                                            done(err,populateCategory);
+                                                        }
+                                                    });
+                                                }
+                                            });
+                                        } else {
+                                            dbUtil.findCategoryById(category._id, function (errCategory, populateCategory) {
+                                                if (errCategory) {
+                                                    // return res.status(400).send({
+                                                    //     message: errorHandler.getErrorMessage(errCategory)
+                                                    // });
+                                                    done(err)
+                                                } else {
+                                                    // res.jsonp(populateCategory);
+                                                    done(err,populateCategory)
+                                                }
+                                            });
+                                        }
+                                    }
+                                });
+                }
+            });
+        } else {
+            category.save(function (saveErr) {
+                if (saveErr) {
+                    return res.status(400).send({
+                        message: errorHandler.getErrorMessage(saveErr)
+                    });
+                } else {
+                    dbUtil.findCategoryById(category._id, function (errFetch, populateCategory) {
+                        if (errFetch) {
+                            return res.status(400).send({
+                                message: errorHandler.getErrorMessage(errFetch)
+                            });
+                        } else {
+                            res.jsonp(populateCategory);
+                        }
+                    });
+                }
+            });
+        }
+
+    });
+}
 
 /**
  * create Hsncodes
@@ -224,7 +381,6 @@ exports.read = function (req, res) {
  * Update a Category
  */
 exports.update = async function (req, res) {
-
     // filedata= await fieleupload.fileUploadPath(req,res);
     Category.findOne({ _id: req.body._id }, function (err, category) {
         if (err || !category) {
@@ -233,58 +389,86 @@ exports.update = async function (req, res) {
             });
         }
         else {
-            var exist_image = './public/' + category.categoryImageURL1;
-            getSingleFileObject(req.files, function (file) {
-                var path = './public/modules/categories/img/profile/' + file.filename;
-                logger.debug('path:' + './public/modules/categories/img/profile/' + file.filename);
-                fs.rename(file.path, path, function (uploadError) {
-                    if (uploadError || !file.mimetype) {
-                        return res.status(400).send({
-                            message: 'Error occurred while uploading file at ' + req.headers.uploadpath
-                        });
-                    }
-                    else {
-                        let update = {};
-                        update = req.body;
-                        update.categoryImageURL1 = 'modules/categories/img/profile/' + file.filename;
 
-                        //{_id:req.body._id},{$set:subset},
-                        console.log(update, 'pefect');
-
-                        Category.updateOne({ _id: req.body._id }, { $set: update }, function (saveErr, categry) {
-                            if (saveErr) {
-                                return res.status(400).send({
-                                    message: errorHandler.getErrorMessage(saveErr)
-                                });
-                            } else {
-                                dbUtil.findCategoryById(category._id, function (errCategory, populateCategory) {
-                                    if (errCategory) {
-                                        return res.status(400).send({
-                                            message: errorHandler.getErrorMessage(errCategory)
-                                        });
-                                    } else {
-                                        res.jsonp(populateCategory);
-                                    }
-                                });
-                            }
-                        });
-                    }
+            if(!req.files){
+                           let update = {};
+                            update = req.body;
+                           // update.categoryImageURL1 = 'modules/categories/img/subcategory1/' + file.filename;
+                           
+                            //{_id:req.body._id},{$set:subset},
+                            console.log(update, 'pefect');
+                            Category.updateOne({ _id: req.body._id }, { $set: update }, function (saveErr, categry) {
+                                if (saveErr) {
+                                    return res.status(400).send({
+                                        message: errorHandler.getErrorMessage(saveErr)
+                                    });
+                                } else {
+                                    dbUtil.findCategoryById(category._id, function (errCategory, populateCategory) {
+                                        if (errCategory) {
+                                            return res.status(400).send({
+                                                message: errorHandler.getErrorMessage(errCategory)
+                                            });
+                                        } else {
+                                            res.jsonp(populateCategory);
+                                        }
+                                    });
+                                }
+                            });
+            }else{
+                var exist_image = './public/' + category.categoryImageURL1;
+                getSingleFileObject(req.files, function (file) {
+                    var path = './public/modules/categories/img/profile/' + file.filename;
+                    logger.debug('path:' + './public/modules/categories/img/profile/' + file.filename);
+                    fs.rename(file.path, path, function (uploadError) {
+                        if (uploadError || !file.mimetype) {
+                            return res.status(400).send({
+                                message: 'Error occurred while uploading file at ' + req.headers.uploadpath
+                            });
+                        }
+                        else {
+                            let update = {};
+                            update = req.body;
+                            update.categoryImageURL1 = 'modules/categories/img/profile/' + file.filename;
+    
+                            //{_id:req.body._id},{$set:subset},
+                            console.log(update, 'pefect');
+    
+                            Category.updateOne({ _id: req.body._id }, { $set: update }, function (saveErr, categry) {
+                                if (saveErr) {
+                                    return res.status(400).send({
+                                        message: errorHandler.getErrorMessage(saveErr)
+                                    });
+                                } else {
+                                    dbUtil.findCategoryById(category._id, function (errCategory, populateCategory) {
+                                        if (errCategory) {
+                                            return res.status(400).send({
+                                                message: errorHandler.getErrorMessage(errCategory)
+                                            });
+                                        } else {
+                                            res.jsonp(populateCategory);
+                                        }
+                                    });
+                                }
+                            });
+                        }
+                    })
                 })
-            })
+            }
+            
         }
     })
 };
 
 exports.disable = function (req, res) {
-   
-    var token = req.body.token || req.headers.token;  
+
+    var token = req.body.token || req.headers.token;
     let data = req.body;
     usersJWTUtil.findUserByToken(token, function (err, user) {
         if (err || !user) {
-             
+
             logger.error('Something went wrong with -' + req.body.id + ', -' + JSON.stringify(err));
             logger.debug('Error Message-' + JSON.stringify(err));
-          return  res.status(400).send(err);
+            return res.status(400).send(err);
         } else {
             let type = null;
             (data.type === 'Disabled') ? type = true : type = false;

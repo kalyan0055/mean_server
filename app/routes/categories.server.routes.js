@@ -10,17 +10,17 @@ module.exports = function (app) {
         .get(categories.list);
         // .post(users.requiresLogin, products.createProduct);
     app.route('/createMainCategory')
-        .get(categories.list)
+        .get(categories.listMainCategories)
         .post(users.requiresLogin, categories.create);
 
     app.route('/createMainCategory/update')
         .post(users.requiresLogin,categories.update);
 
         // app.route('/createMainCategory/:categoryId')
-        // .put(users.requiresLogin,categories.update);sss
+        // .put(users.requiresLogin,categories.update);
 
     app.route('/categories/disable').
-    post(users.requiresLogin,categories.disabsle);
+    post(users.requiresLogin,categories.disable);
 
     app.route('/queryMainCategories')
         .get(categories.listMainCategories);
