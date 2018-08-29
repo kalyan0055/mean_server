@@ -429,10 +429,7 @@ exports.update = async function (req, res) {
                             let update = {};
                             update = req.body;
                             update.categoryImageURL1 = 'modules/categories/img/profile/' + file.filename;
-    
-                            //{_id:req.body._id},{$set:subset},
                             console.log(update, 'pefect');
-    
                             Category.updateOne({ _id: req.body._id }, { $set: update }, function (saveErr, categry) {
                                 if (saveErr) {
                                     return res.status(400).send({
