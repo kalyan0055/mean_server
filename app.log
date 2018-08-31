@@ -1,271 +1,293 @@
-[2018-08-29 10:21:33.010] [ERROR] USERS - Error Signin with username -info@nvipani.com, -{"message":"Invalid password","status":false}
-[2018-08-29 10:25:02.079] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 10:25:02.083] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 10:25:02.085] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwNDo1MTozNy43MTVaIn0.b_fn6JOgMc89BioiQrRWG-eV6HJa2iKBgj-YMN4n7M4
-[2018-08-29 10:47:02.586] [DEBUG] USERS - requiresLogin - Request -{"length":"1","name":"Footwear","code":"FT","type":"MainCategory"}
-[2018-08-29 10:47:02.587] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 10:47:02.587] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwNDo1MTozNy43MTVaIn0.b_fn6JOgMc89BioiQrRWG-eV6HJa2iKBgj-YMN4n7M4
-[2018-08-29 10:56:59.748] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 10:56:59.750] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 10:56:59.750] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwNDo1MTozNy43MTVaIn0.b_fn6JOgMc89BioiQrRWG-eV6HJa2iKBgj-YMN4n7M4
-[2018-08-29 10:57:41.963] [DEBUG] USERS - requiresLogin - Request -{"length":"1","name":"Footwear","code":"Fw","type":"MainCategory"}
-[2018-08-29 10:57:41.975] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 10:57:41.977] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwNDo1MTozNy43MTVaIn0.b_fn6JOgMc89BioiQrRWG-eV6HJa2iKBgj-YMN4n7M4
-[2018-08-29 11:04:06.233] [DEBUG] USERS - requiresLogin - Request -{"length":"1","name":"Home Appliances","code":"HA","type":"MainCategory"}
-[2018-08-29 11:04:06.243] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 11:04:06.245] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwNDo1MTozNy43MTVaIn0.b_fn6JOgMc89BioiQrRWG-eV6HJa2iKBgj-YMN4n7M4
-[2018-08-29 11:09:05.168] [DEBUG] USERS - requiresLogin - Request -{"length":"1","name":"sfsdf","code":"sfsadf","type":"sdf"}
-[2018-08-29 11:09:05.178] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 11:09:05.179] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwNDo1MTozNy43MTVaIn0.b_fn6JOgMc89BioiQrRWG-eV6HJa2iKBgj-YMN4n7M4
-[2018-08-29 11:09:19.643] [DEBUG] USERS - requiresLogin - Request -{"length":"1","name":"sfsdf","code":"sfsadf","type":"sdf"}
-[2018-08-29 11:09:19.662] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 11:09:19.664] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwNDo1MTozNy43MTVaIn0.b_fn6JOgMc89BioiQrRWG-eV6HJa2iKBgj-YMN4n7M4
-[2018-08-29 11:10:38.774] [DEBUG] USERS - requiresLogin - Request -{"length":"1","name":"gdf","code":"dfgdfd","type":"gdgg"}
-[2018-08-29 11:10:38.784] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 11:10:38.786] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwNDo1MTozNy43MTVaIn0.b_fn6JOgMc89BioiQrRWG-eV6HJa2iKBgj-YMN4n7M4
-[2018-08-29 11:11:36.407] [DEBUG] USERS - requiresLogin - Request -{"length":"1","name":"gdf","code":"dfgdfd","type":"gdgg"}
-[2018-08-29 11:11:36.413] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 11:11:36.415] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwNDo1MTozNy43MTVaIn0.b_fn6JOgMc89BioiQrRWG-eV6HJa2iKBgj-YMN4n7M4
-[2018-08-29 11:14:30.516] [DEBUG] USERS - requiresLogin - Request -{"length":"1","name":"gdf","code":"dfgdfd","type":"gdgg"}
-[2018-08-29 11:14:30.526] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 11:14:30.528] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwNDo1MTozNy43MTVaIn0.b_fn6JOgMc89BioiQrRWG-eV6HJa2iKBgj-YMN4n7M4
-[2018-08-29 11:14:57.404] [DEBUG] USERS - requiresLogin - Request -{"length":"1","name":"fsfs","code":"dfs","type":"sdf"}
-[2018-08-29 11:14:57.408] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 11:14:57.411] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwNDo1MTozNy43MTVaIn0.b_fn6JOgMc89BioiQrRWG-eV6HJa2iKBgj-YMN4n7M4
-[2018-08-29 11:15:20.755] [DEBUG] USERS - requiresLogin - Request -{"length":"1","name":"fsfs","code":"dfs","type":"MainCategory"}
-[2018-08-29 11:15:20.756] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 11:15:20.757] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwNDo1MTozNy43MTVaIn0.b_fn6JOgMc89BioiQrRWG-eV6HJa2iKBgj-YMN4n7M4
-[2018-08-29 11:16:00.802] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 11:16:00.803] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 11:16:00.805] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwNDo1MTozNy43MTVaIn0.b_fn6JOgMc89BioiQrRWG-eV6HJa2iKBgj-YMN4n7M4
-[2018-08-29 11:18:28.372] [DEBUG] USERS - requiresLogin - Request -{"length":"1","name":"Mens Fashion","code":"MF","type":"SubCategory1","parent":"5b855af7b1c4023108bdea41"}
-[2018-08-29 11:18:28.372] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 11:18:28.376] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwNDo1MTozNy43MTVaIn0.b_fn6JOgMc89BioiQrRWG-eV6HJa2iKBgj-YMN4n7M4
-[2018-08-29 11:26:22.503] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 11:26:22.504] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 11:26:22.505] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwNDo1MTozNy43MTVaIn0.b_fn6JOgMc89BioiQrRWG-eV6HJa2iKBgj-YMN4n7M4
-[2018-08-29 12:50:59.719] [DEBUG] USERS - requiresLogin - Request -{"length":"1","name":"Kitchen","code":"Kitch","type":"SubCategory1","parent":"5b86304e1e47a32de486659e"}
-[2018-08-29 12:50:59.730] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 12:50:59.731] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwNDo1MTozNy43MTVaIn0.b_fn6JOgMc89BioiQrRWG-eV6HJa2iKBgj-YMN4n7M4
-[2018-08-29 14:22:01.933] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 14:22:01.935] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 14:22:01.936] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 14:23:39.391] [DEBUG] USERS - requiresLogin - Request -{"length":"1","name":"Plastic Mugs","code":"PM","type":"SubCategory1","parent":"5b86304e1e47a32de486659e"}
-[2018-08-29 14:23:39.399] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 14:23:39.400] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 14:57:23.779] [DEBUG] USERS - requiresLogin - Request -{"length":"1","name":"Plastic Mugs-1","code":"PM","type":"SubCategory1","parent":"5b86304e1e47a32de486659e"}
-[2018-08-29 14:57:23.790] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 14:57:23.792] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 15:03:04.197] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 15:03:04.200] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 15:03:04.201] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 15:04:29.933] [DEBUG] USERS - requiresLogin - Request -{"length":"1","name":"Plastic Mugs","code":"PM","type":"SubCategory1","parent":"5b86304e1e47a32de486659e"}
-[2018-08-29 15:04:29.943] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 15:04:29.943] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 15:08:54.853] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 15:08:54.854] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 15:08:54.855] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 15:10:10.974] [DEBUG] USERS - requiresLogin - Request -{"length":"1","name":"Plastic Mugs-1","code":"PM1","type":"SubCategory1","parent":"5b86304e1e47a32de486659e"}
-[2018-08-29 15:10:10.982] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 15:10:10.994] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 15:16:30.266] [DEBUG] USERS - requiresLogin - Request -{"length":"1","name":"Plastic Mugs-2","code":"PM2","type":"SubCategory1","parent":"5b86304e1e47a32de486659e"}
-[2018-08-29 15:16:30.300] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 15:16:30.300] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 15:25:10.627] [DEBUG] USERS - requiresLogin - Request -{"length":"1","name":"Plastic Mugs-2","code":"PM2","type":"SubCategory1","parent":"5b86304e1e47a32de486659e"}
-[2018-08-29 15:25:10.639] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 15:25:10.641] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 15:48:38.679] [DEBUG] USERS - requiresLogin - Request -{"length":"1","name":"Plastic Mugs-4","code":"PM2","type":"SubCategory1","parent":"5b86304e1e47a32de486659e"}
-[2018-08-29 15:48:38.691] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 15:48:38.691] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 15:52:00.501] [DEBUG] USERS - requiresLogin - Request -{"length":"1","name":"Plastic Mugs-5","code":"PM2","type":"SubCategory1","parent":"5b86304e1e47a32de486659e"}
-[2018-08-29 15:52:00.504] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 15:52:00.504] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 15:53:23.589] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 15:53:23.590] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 15:53:23.591] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 15:55:37.000] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 15:55:37.001] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 15:55:37.002] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 15:59:12.000] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 15:59:12.002] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 15:59:12.002] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 16:00:08.308] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 16:00:08.335] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 16:00:08.340] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 16:00:36.392] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 16:00:36.393] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 16:00:36.394] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 16:01:18.386] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 16:01:18.389] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 16:01:18.392] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 16:01:30.196] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 16:01:30.200] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 16:01:30.202] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 16:15:11.063] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 16:15:11.064] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 16:15:11.065] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 16:31:45.321] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 16:31:45.322] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 16:31:45.323] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 16:34:08.729] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 16:34:08.770] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 16:34:08.904] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 16:35:54.579] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 16:35:54.604] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 16:35:54.607] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 16:36:32.431] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 16:36:32.432] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 16:36:32.433] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 16:44:52.323] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 16:44:52.324] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 16:44:52.324] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 16:45:43.260] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 16:45:43.261] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 16:45:43.262] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 16:46:04.423] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 16:46:04.424] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 16:46:04.426] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 16:46:48.801] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 16:46:48.855] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 16:46:48.857] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 16:59:00.687] [DEBUG] USERS - requiresLogin - Request -{"name":"Plastic Mugs-6","code":"PM2","type":"SubCategory1","_id":"5b8673c8b314e82becf2d04d"}
-[2018-08-29 16:59:00.693] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 16:59:00.695] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 16:59:12.202] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 16:59:12.203] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 16:59:12.219] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 17:05:53.594] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 17:05:53.655] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 17:05:53.714] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 17:06:32.153] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 17:06:32.156] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 17:06:32.157] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 17:07:56.707] [DEBUG] USERS - requiresLogin - Request -{"length":"1","name":"Plastic Mugs7","code":"PM7","type":"SubCategory1","parent":"5b86304e1e47a32de486659e"}
-[2018-08-29 17:07:56.725] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 17:07:56.725] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 17:08:45.532] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 17:08:45.534] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 17:08:45.536] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 17:09:26.885] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 17:09:26.887] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 17:09:26.890] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 17:42:16.542] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 17:42:16.542] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 17:42:16.543] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 17:42:59.252] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 17:42:59.253] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 17:42:59.254] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 17:43:09.690] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 17:43:09.690] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 17:43:09.691] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 17:43:57.082] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 17:43:57.083] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 17:43:57.083] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 17:46:14.958] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 17:46:14.960] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 17:46:14.961] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 17:47:18.665] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 17:47:18.666] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 17:47:18.666] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 17:48:28.011] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 17:48:28.012] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 17:48:28.012] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 17:48:38.172] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 17:48:38.173] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 17:48:38.173] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 17:49:17.847] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 17:49:17.848] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 17:49:17.849] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 17:52:02.202] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 17:52:02.202] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 17:52:02.203] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 17:52:20.509] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 17:52:20.510] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 17:52:20.510] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 17:55:37.004] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 17:55:37.005] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 17:55:37.006] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 18:01:17.055] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 18:01:17.056] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 18:01:17.057] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 18:10:19.818] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 18:10:19.819] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 18:10:19.819] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 18:14:31.663] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 18:14:31.663] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 18:14:31.664] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 18:15:12.611] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 18:15:12.612] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 18:15:12.613] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 18:19:29.981] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 18:19:29.981] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 18:19:29.982] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 18:24:07.367] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 18:24:07.368] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 18:24:07.368] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 18:25:06.105] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 18:25:06.105] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 18:25:06.106] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 18:29:16.840] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 18:29:16.840] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 18:29:16.841] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 18:29:45.836] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 18:29:45.836] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 18:29:45.837] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 18:31:28.196] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 18:31:28.197] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 18:31:28.198] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 18:32:36.018] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 18:32:36.018] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 18:32:36.019] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 18:37:01.123] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 18:37:01.124] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 18:37:01.125] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 18:37:33.352] [DEBUG] USERS - requiresLogin - Request -{"length":"1","name":"TEST CATEGORY","code":"tc","type":"MainCategory"}
-[2018-08-29 18:37:33.361] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 18:37:33.363] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 18:58:32.218] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 18:58:32.222] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 18:58:32.223] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 18:59:16.538] [DEBUG] USERS - requiresLogin - Request -{"name":"Plastic Mugs8","code":"pm8","type":"SubCategory1","parent":"5b869a95cd42742cd0ef8ba8"}
-[2018-08-29 18:59:16.539] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 18:59:16.540] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 19:08:51.897] [DEBUG] USERS - requiresLogin - Request -{"name":"Plastic Mugs9","code":"pm9","type":"SubCategory1","parent":"5b869a95cd42742cd0ef8ba8"}
-[2018-08-29 19:08:51.901] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 19:08:51.902] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 19:19:15.449] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 19:19:15.524] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 19:19:15.537] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 19:20:03.972] [DEBUG] USERS - requiresLogin - Request -{"length":"1","name":"Fileupload","code":"FP","type":"SubCategory1","parent":"5b869a95cd42742cd0ef8ba8"}
-[2018-08-29 19:20:03.983] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 19:20:03.986] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 19:25:11.488] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 19:25:11.488] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 19:25:11.520] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 19:26:39.182] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 19:26:39.184] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 19:26:39.185] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 19:26:49.668] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 19:26:49.669] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 19:26:49.669] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 19:27:27.821] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 19:27:27.822] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 19:27:27.823] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 19:28:44.867] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 19:28:44.869] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 19:28:44.870] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 19:49:51.591] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 19:49:51.593] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 19:49:51.596] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 19:51:09.987] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 19:51:09.988] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 19:51:09.989] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 19:51:31.336] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 19:51:31.338] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 19:51:31.339] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 19:56:05.225] [DEBUG] USERS - requiresLogin - Request -{}
-[2018-08-29 19:56:05.227] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 19:56:05.230] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
-[2018-08-29 19:56:05.298] [DEBUG] USERS - requiresLogin - Request -{"name":"Fileupload-UPL","code":"FPPP","type":"SubCategory1","parent":"5b86304e1e47a32de486659e","_id":"5b86a48b72bacb30e48e43b6"}
-[2018-08-29 19:56:05.301] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-08-29 19:56:05.303] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wNVQwODo1MTo1Ny41NjBaIn0.Zwpi9S-GWMI1Rd1_pd_-FLx979XRtE495-2R_lSJFwo
+[2018-08-31 19:52:40.601] [DEBUG] USERS - Fetching already created user with the same user name  :adminuser6@nvipani.com
+[2018-08-31 19:52:40.602] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-08-31 19:52:40.605] [DEBUG] USERS - Email is :adminuser6@nvipani.com
+[2018-08-31 19:52:40.606] [DEBUG] USERS - Fetch matched  user with user name :adminuser6@nvipani.com
+[2018-08-31 19:52:42.540] [DEBUG] USERS - Found user with the username :adminuser6@nvipani.com
+[2018-08-31 19:52:42.545] [DEBUG] USERS - instance of user  :{ firstName: '',
+  middleName: '',
+  lastName: '',
+  allowRegistration: true,
+  email: 'adminuser6@nvipani.com',
+  profileImageURL: 'modules/users/img/profile/default.png',
+  croppedProfileImageURL: 'modules/users/img/profile/default-resize-240-240.png',
+  roles: [ 'user' ],
+  mobile: '',
+  userType: 'Adminuser',
+  emailVerified: false,
+  mobileVerified: false,
+  status: 'Register Request',
+  disabled: false,
+  deleted: false,
+  reset_password: false,
+  _id: 5b8902117ea8b7174c0f1fdc,
+  username: 'adminuser6@nvipani.com',
+  created: 2018-08-31T08:53:37.712Z,
+  emailOtp: '498490',
+  updated: 2018-08-31T08:53:37.714Z,
+  created_by: 5b7d1e9f1583471f04217595,
+  __v: 0 }
+[2018-08-31 19:52:42.557] [DEBUG] USERS - Verifying OTP - true
+[2018-08-31 19:52:42.558] [ERROR] USERS - Incorrect otp for the Email: adminuser6@nvipani.com
+[2018-08-31 19:52:42.560] [DEBUG] USERS - user registered  :null
+[2018-08-31 19:52:42.574] [DEBUG] USERS - Registration Request  - {"username":"adminuser6@nvipani.com","password":"","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-08-31 19:52:42.577] [DEBUG] USERS - user registration input validation for the data :{"username":"adminuser6@nvipani.com","password":"","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-08-31 19:52:42.579] [ERROR] USERS - Password is empty : {"username":"adminuser6@nvipani.com","password":"","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-08-31 19:52:42.587] [DEBUG] USERS - Registration Request  - {"username":"adminuser6@nvipani.com","password":"test123","conf_password":"test114","otp":123456,"isverifyotp":true}
+[2018-08-31 19:52:42.588] [DEBUG] USERS - user registration input validation for the data :{"username":"adminuser6@nvipani.com","password":"test123","conf_password":"test114","otp":123456,"isverifyotp":true}
+[2018-08-31 19:52:42.590] [ERROR] USERS - Password is not valid +{"username":"adminuser6@nvipani.com","password":"test123","conf_password":"test114","otp":123456,"isverifyotp":true}
+[2018-08-31 19:52:42.599] [DEBUG] USERS - Registration Request  - {"username":"adminuser6@nvipani.com","password":"test1234","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-08-31 19:52:42.600] [DEBUG] USERS - user registration input validation for the data :{"username":"adminuser6@nvipani.com","password":"test1234","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-08-31 19:52:42.604] [DEBUG] USERS - Fetching already created user with the same user name  :adminuser6@nvipani.com
+[2018-08-31 19:52:42.605] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-08-31 19:52:42.606] [DEBUG] USERS - Email is :adminuser6@nvipani.com
+[2018-08-31 19:52:42.607] [DEBUG] USERS - Fetch matched  user with user name :adminuser6@nvipani.com
+[2018-08-31 19:52:44.575] [DEBUG] USERS - Found user with the username :adminuser6@nvipani.com
+[2018-08-31 19:52:44.578] [DEBUG] USERS - instance of user  :{ firstName: '',
+  middleName: '',
+  lastName: '',
+  allowRegistration: true,
+  email: 'adminuser6@nvipani.com',
+  profileImageURL: 'modules/users/img/profile/default.png',
+  croppedProfileImageURL: 'modules/users/img/profile/default-resize-240-240.png',
+  roles: [ 'user' ],
+  mobile: '',
+  userType: 'Adminuser',
+  emailVerified: false,
+  mobileVerified: false,
+  status: 'Register Request',
+  disabled: false,
+  deleted: false,
+  reset_password: false,
+  _id: 5b8902117ea8b7174c0f1fdc,
+  username: 'adminuser6@nvipani.com',
+  created: 2018-08-31T08:53:37.712Z,
+  emailOtp: '498490',
+  updated: 2018-08-31T08:53:37.714Z,
+  created_by: 5b7d1e9f1583471f04217595,
+  __v: 0 }
+[2018-08-31 19:52:44.584] [DEBUG] USERS - Verifying OTP - true
+[2018-08-31 19:52:44.589] [ERROR] USERS - Incorrect otp for the Email: adminuser6@nvipani.com
+[2018-08-31 19:52:44.591] [DEBUG] USERS - user registered  :null
+[2018-08-31 19:53:11.863] [DEBUG] USERS - Registration Request  - {"username":"","issendotp":true,"issendemail":true}
+[2018-08-31 19:53:11.868] [DEBUG] USERS - user registration input validation for the data :{"username":"","issendotp":true,"issendemail":true}
+[2018-08-31 19:53:11.870] [ERROR] USERS - username is empty :{"username":"","issendotp":true,"issendemail":true}
+[2018-08-31 19:53:11.893] [DEBUG] USERS - Registration Request  - {"username":"somevalue","issendotp":true,"issendemail":true}
+[2018-08-31 19:53:11.896] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue","issendotp":true,"issendemail":true}
+[2018-08-31 19:53:11.898] [ERROR] USERS - Username is not valid{"username":"somevalue","issendotp":true,"issendemail":true}
+[2018-08-31 19:53:11.909] [DEBUG] USERS - Registration Request  - {"username":"adminuser6@nvipani.com","otp":"","password":"passwrod","isverifyotp":true}
+[2018-08-31 19:53:11.910] [DEBUG] USERS - user registration input validation for the data :{"username":"adminuser6@nvipani.com","otp":"","password":"passwrod","isverifyotp":true}
+[2018-08-31 19:53:11.915] [ERROR] USERS - OTP field is empty
+[2018-08-31 19:53:11.924] [DEBUG] USERS - Registration Request  - {"username":"adminuser6@nvipani.com","password":"test1234","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-08-31 19:53:11.926] [DEBUG] USERS - user registration input validation for the data :{"username":"adminuser6@nvipani.com","password":"test1234","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-08-31 19:53:11.928] [DEBUG] USERS - Fetching already created user with the same user name  :adminuser6@nvipani.com
+[2018-08-31 19:53:11.929] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-08-31 19:53:11.930] [DEBUG] USERS - Email is :adminuser6@nvipani.com
+[2018-08-31 19:53:11.933] [DEBUG] USERS - Fetch matched  user with user name :adminuser6@nvipani.com
+[2018-08-31 19:53:13.872] [DEBUG] USERS - Found user with the username :adminuser6@nvipani.com
+[2018-08-31 19:53:13.878] [DEBUG] USERS - instance of user  :{ firstName: '',
+  middleName: '',
+  lastName: '',
+  allowRegistration: true,
+  email: 'adminuser6@nvipani.com',
+  profileImageURL: 'modules/users/img/profile/default.png',
+  croppedProfileImageURL: 'modules/users/img/profile/default-resize-240-240.png',
+  roles: [ 'user' ],
+  mobile: '',
+  userType: 'Adminuser',
+  emailVerified: false,
+  mobileVerified: false,
+  status: 'Register Request',
+  disabled: false,
+  deleted: false,
+  reset_password: false,
+  _id: 5b8902117ea8b7174c0f1fdc,
+  username: 'adminuser6@nvipani.com',
+  created: 2018-08-31T08:53:37.712Z,
+  emailOtp: '498490',
+  updated: 2018-08-31T08:53:37.714Z,
+  created_by: 5b7d1e9f1583471f04217595,
+  __v: 0 }
+[2018-08-31 19:53:13.889] [DEBUG] USERS - Verifying OTP - true
+[2018-08-31 19:53:13.890] [ERROR] USERS - Incorrect otp for the Email: adminuser6@nvipani.com
+[2018-08-31 19:53:13.891] [DEBUG] USERS - user registered  :null
+[2018-08-31 19:53:13.901] [DEBUG] USERS - Registration Request  - {"username":"adminuser6@nvipani.com","password":"","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-08-31 19:53:13.903] [DEBUG] USERS - user registration input validation for the data :{"username":"adminuser6@nvipani.com","password":"","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-08-31 19:53:13.904] [ERROR] USERS - Password is empty : {"username":"adminuser6@nvipani.com","password":"","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-08-31 19:53:13.913] [DEBUG] USERS - Registration Request  - {"username":"adminuser6@nvipani.com","password":"test123","conf_password":"test114","otp":123456,"isverifyotp":true}
+[2018-08-31 19:53:13.915] [DEBUG] USERS - user registration input validation for the data :{"username":"adminuser6@nvipani.com","password":"test123","conf_password":"test114","otp":123456,"isverifyotp":true}
+[2018-08-31 19:53:13.919] [ERROR] USERS - Password is not valid +{"username":"adminuser6@nvipani.com","password":"test123","conf_password":"test114","otp":123456,"isverifyotp":true}
+[2018-08-31 19:53:13.926] [DEBUG] USERS - Registration Request  - {"username":"adminuser6@nvipani.com","password":"test1234","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-08-31 19:53:13.930] [DEBUG] USERS - user registration input validation for the data :{"username":"adminuser6@nvipani.com","password":"test1234","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-08-31 19:53:13.932] [DEBUG] USERS - Fetching already created user with the same user name  :adminuser6@nvipani.com
+[2018-08-31 19:53:13.932] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-08-31 19:53:13.933] [DEBUG] USERS - Email is :adminuser6@nvipani.com
+[2018-08-31 19:53:13.934] [DEBUG] USERS - Fetch matched  user with user name :adminuser6@nvipani.com
+[2018-08-31 19:53:15.904] [DEBUG] USERS - Found user with the username :adminuser6@nvipani.com
+[2018-08-31 19:53:15.907] [DEBUG] USERS - instance of user  :{ firstName: '',
+  middleName: '',
+  lastName: '',
+  allowRegistration: true,
+  email: 'adminuser6@nvipani.com',
+  profileImageURL: 'modules/users/img/profile/default.png',
+  croppedProfileImageURL: 'modules/users/img/profile/default-resize-240-240.png',
+  roles: [ 'user' ],
+  mobile: '',
+  userType: 'Adminuser',
+  emailVerified: false,
+  mobileVerified: false,
+  status: 'Register Request',
+  disabled: false,
+  deleted: false,
+  reset_password: false,
+  _id: 5b8902117ea8b7174c0f1fdc,
+  username: 'adminuser6@nvipani.com',
+  created: 2018-08-31T08:53:37.712Z,
+  emailOtp: '498490',
+  updated: 2018-08-31T08:53:37.714Z,
+  created_by: 5b7d1e9f1583471f04217595,
+  __v: 0 }
+[2018-08-31 19:53:15.918] [DEBUG] USERS - Verifying OTP - true
+[2018-08-31 19:53:15.919] [ERROR] USERS - Incorrect otp for the Email: adminuser6@nvipani.com
+[2018-08-31 19:53:15.920] [DEBUG] USERS - user registered  :null
+[2018-08-31 19:59:01.010] [DEBUG] USERS - Registration Request  - {"username":"","issendotp":true,"issendemail":true}
+[2018-08-31 19:59:01.012] [DEBUG] USERS - user registration input validation for the data :{"username":"","issendotp":true,"issendemail":true}
+[2018-08-31 19:59:01.013] [ERROR] USERS - username is empty :{"username":"","issendotp":true,"issendemail":true}
+[2018-08-31 19:59:01.037] [DEBUG] USERS - Registration Request  - {"username":"somevalue","issendotp":true,"issendemail":true}
+[2018-08-31 19:59:01.039] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue","issendotp":true,"issendemail":true}
+[2018-08-31 19:59:01.041] [ERROR] USERS - Username is not valid{"username":"somevalue","issendotp":true,"issendemail":true}
+[2018-08-31 19:59:01.051] [DEBUG] USERS - Registration Request  - {"username":"adminuser6@nvipani.com","otp":"","password":"passwrod","isverifyotp":true}
+[2018-08-31 19:59:01.053] [DEBUG] USERS - user registration input validation for the data :{"username":"adminuser6@nvipani.com","otp":"","password":"passwrod","isverifyotp":true}
+[2018-08-31 19:59:01.059] [ERROR] USERS - OTP field is empty
+[2018-08-31 19:59:01.067] [DEBUG] USERS - Registration Request  - {"username":"adminuser6@nvipani.com","password":"test1234","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-08-31 19:59:01.069] [DEBUG] USERS - user registration input validation for the data :{"username":"adminuser6@nvipani.com","password":"test1234","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-08-31 19:59:01.072] [DEBUG] USERS - Fetching already created user with the same user name  :adminuser6@nvipani.com
+[2018-08-31 19:59:01.073] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-08-31 19:59:01.074] [DEBUG] USERS - Email is :adminuser6@nvipani.com
+[2018-08-31 19:59:01.076] [DEBUG] USERS - Fetch matched  user with user name :adminuser6@nvipani.com
+[2018-08-31 19:59:03.015] [DEBUG] USERS - Found user with the username :adminuser6@nvipani.com
+[2018-08-31 19:59:03.018] [DEBUG] USERS - instance of user  :{ firstName: '',
+  middleName: '',
+  lastName: '',
+  allowRegistration: true,
+  email: 'adminuser6@nvipani.com',
+  profileImageURL: 'modules/users/img/profile/default.png',
+  croppedProfileImageURL: 'modules/users/img/profile/default-resize-240-240.png',
+  roles: [ 'user' ],
+  mobile: '',
+  userType: 'Adminuser',
+  emailVerified: false,
+  mobileVerified: false,
+  status: 'Register Request',
+  disabled: false,
+  deleted: false,
+  reset_password: false,
+  _id: 5b8902117ea8b7174c0f1fdc,
+  username: 'adminuser6@nvipani.com',
+  created: 2018-08-31T08:53:37.712Z,
+  emailOtp: '498490',
+  updated: 2018-08-31T08:53:37.714Z,
+  created_by: 5b7d1e9f1583471f04217595,
+  __v: 0 }
+[2018-08-31 19:59:03.030] [DEBUG] USERS - Verifying OTP - true
+[2018-08-31 19:59:03.031] [ERROR] USERS - Incorrect otp for the Email: adminuser6@nvipani.com
+[2018-08-31 19:59:03.032] [DEBUG] USERS - user registered  :null
+[2018-08-31 19:59:03.043] [DEBUG] USERS - Registration Request  - {"username":"adminuser6@nvipani.com","password":"","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-08-31 19:59:03.045] [DEBUG] USERS - user registration input validation for the data :{"username":"adminuser6@nvipani.com","password":"","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-08-31 19:59:03.047] [ERROR] USERS - Password is empty : {"username":"adminuser6@nvipani.com","password":"","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-08-31 19:59:03.056] [DEBUG] USERS - Registration Request  - {"username":"adminuser6@nvipani.com","password":"test123","conf_password":"test114","otp":123456,"isverifyotp":true}
+[2018-08-31 19:59:03.058] [DEBUG] USERS - user registration input validation for the data :{"username":"adminuser6@nvipani.com","password":"test123","conf_password":"test114","otp":123456,"isverifyotp":true}
+[2018-08-31 19:59:03.062] [ERROR] USERS - Password is not valid +{"username":"adminuser6@nvipani.com","password":"test123","conf_password":"test114","otp":123456,"isverifyotp":true}
+[2018-08-31 19:59:03.069] [DEBUG] USERS - Registration Request  - {"username":"adminuser6@nvipani.com","password":"test1234","conf_password":"test1234","otp":"498490","isverifyotp":true}
+[2018-08-31 19:59:03.072] [DEBUG] USERS - user registration input validation for the data :{"username":"adminuser6@nvipani.com","password":"test1234","conf_password":"test1234","otp":"498490","isverifyotp":true}
+[2018-08-31 19:59:03.075] [DEBUG] USERS - Fetching already created user with the same user name  :adminuser6@nvipani.com
+[2018-08-31 19:59:03.076] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-08-31 19:59:03.077] [DEBUG] USERS - Email is :adminuser6@nvipani.com
+[2018-08-31 19:59:03.079] [DEBUG] USERS - Fetch matched  user with user name :adminuser6@nvipani.com
+[2018-08-31 19:59:05.014] [DEBUG] USERS - Found user with the username :adminuser6@nvipani.com
+[2018-08-31 19:59:05.017] [DEBUG] USERS - instance of user  :{ firstName: '',
+  middleName: '',
+  lastName: '',
+  allowRegistration: true,
+  email: 'adminuser6@nvipani.com',
+  profileImageURL: 'modules/users/img/profile/default.png',
+  croppedProfileImageURL: 'modules/users/img/profile/default-resize-240-240.png',
+  roles: [ 'user' ],
+  mobile: '',
+  userType: 'Adminuser',
+  emailVerified: false,
+  mobileVerified: false,
+  status: 'Register Request',
+  disabled: false,
+  deleted: false,
+  reset_password: false,
+  _id: 5b8902117ea8b7174c0f1fdc,
+  username: 'adminuser6@nvipani.com',
+  created: 2018-08-31T08:53:37.712Z,
+  emailOtp: '498490',
+  updated: 2018-08-31T08:53:37.714Z,
+  created_by: 5b7d1e9f1583471f04217595,
+  __v: 0 }
+[2018-08-31 19:59:05.029] [DEBUG] USERS - Verifying OTP - true
+[2018-08-31 19:59:05.034] [DEBUG] USERS - Email - adminuser6@nvipani.com is verified
+[2018-08-31 19:59:05.093] [DEBUG] USERS - user registered  :{ firstName: '',
+  middleName: '',
+  lastName: '',
+  allowRegistration: true,
+  email: 'adminuser6@nvipani.com',
+  profileImageURL: 'modules/users/img/profile/default.png',
+  croppedProfileImageURL: 'modules/users/img/profile/default-resize-240-240.png',
+  roles: [ 'user' ],
+  mobile: '',
+  userType: 'Adminuser',
+  emailVerified: true,
+  mobileVerified: false,
+  status: 'Registered',
+  disabled: false,
+  deleted: false,
+  reset_password: false,
+  _id: 5b8902117ea8b7174c0f1fdc,
+  username: 'adminuser6@nvipani.com',
+  created: 2018-08-31T08:53:37.712Z,
+  emailOtp: '498490',
+  updated: 2018-08-31T14:29:05.030Z,
+  created_by: 5b7d1e9f1583471f04217595,
+  __v: 0,
+  displayName: 'adminuser6@nvipani.com',
+  salt: '\u0010~\u0001y�Xx��\u001d3�K�hn',
+  password: 'wEND+FvgN9s2VAgI1080jaihj5oOBsAmvEAEr/8B/jCAXPVDpjfkIIylASfkEnUSBMlYbteMJ1Ixg3u8S1KC3w==' }
+[2018-08-31 19:59:05.098] [DEBUG] USERS - Sending OTP Response
+[2018-08-31 19:59:05.149] [DEBUG] USERS - Sending OTP Response-498490
+[2018-08-31 20:08:04.703] [DEBUG] USERS - Registration Request  - {"username":"","issendotp":true,"issendemail":true}
+[2018-08-31 20:08:04.707] [DEBUG] USERS - user registration input validation for the data :{"username":"","issendotp":true,"issendemail":true}
+[2018-08-31 20:08:04.711] [ERROR] USERS - username is empty :{"username":"","issendotp":true,"issendemail":true}
+[2018-08-31 20:08:04.736] [DEBUG] USERS - Registration Request  - {"username":"somevalue","issendotp":true,"issendemail":true}
+[2018-08-31 20:08:04.739] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue","issendotp":true,"issendemail":true}
+[2018-08-31 20:08:04.741] [ERROR] USERS - Username is not valid{"username":"somevalue","issendotp":true,"issendemail":true}
+[2018-08-31 20:08:04.753] [DEBUG] USERS - Registration Request  - {"username":"adminuser6@nvipani.com","otp":"","password":"passwrod","isverifyotp":true}
+[2018-08-31 20:08:04.757] [DEBUG] USERS - user registration input validation for the data :{"username":"adminuser6@nvipani.com","otp":"","password":"passwrod","isverifyotp":true}
+[2018-08-31 20:08:04.759] [ERROR] USERS - OTP field is empty
+[2018-08-31 20:08:04.768] [DEBUG] USERS - Registration Request  - {"username":"adminuser6@nvipani.com","password":"test1234","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-08-31 20:08:04.769] [DEBUG] USERS - user registration input validation for the data :{"username":"adminuser6@nvipani.com","password":"test1234","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-08-31 20:08:04.771] [DEBUG] USERS - Fetching already created user with the same user name  :adminuser6@nvipani.com
+[2018-08-31 20:08:04.772] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-08-31 20:08:04.774] [DEBUG] USERS - Email is :adminuser6@nvipani.com
+[2018-08-31 20:08:04.775] [DEBUG] USERS - Fetch matched  user with user name :adminuser6@nvipani.com
+[2018-08-31 20:08:06.702] [DEBUG] USERS - Found user with the username :adminuser6@nvipani.com
+[2018-08-31 20:08:06.704] [ERROR] USERS - User is already Registered
+[2018-08-31 20:13:59.376] [DEBUG] USERS - Registration Request  - {"username":"","issendotp":true,"issendemail":true}
+[2018-08-31 20:13:59.380] [DEBUG] USERS - user registration input validation for the data :{"username":"","issendotp":true,"issendemail":true}
+[2018-08-31 20:13:59.383] [ERROR] USERS - username is empty :{"username":"","issendotp":true,"issendemail":true}
+[2018-08-31 20:13:59.405] [DEBUG] USERS - Registration Request  - {"username":"somevalue","issendotp":true,"issendemail":true}
+[2018-08-31 20:13:59.408] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue","issendotp":true,"issendemail":true}
+[2018-08-31 20:13:59.411] [ERROR] USERS - Username is not valid{"username":"somevalue","issendotp":true,"issendemail":true}
+[2018-08-31 20:13:59.422] [DEBUG] USERS - Registration Request  - {"username":"adminuser6@nvipani.com","otp":"","password":"passwrod","isverifyotp":true}
+[2018-08-31 20:13:59.424] [DEBUG] USERS - user registration input validation for the data :{"username":"adminuser6@nvipani.com","otp":"","password":"passwrod","isverifyotp":true}
+[2018-08-31 20:13:59.426] [ERROR] USERS - OTP field is empty
+[2018-08-31 20:13:59.435] [DEBUG] USERS - Registration Request  - {"username":"adminuser6@nvipani.com","password":"test1234","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-08-31 20:13:59.437] [DEBUG] USERS - user registration input validation for the data :{"username":"adminuser6@nvipani.com","password":"test1234","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-08-31 20:13:59.441] [DEBUG] USERS - Fetching already created user with the same user name  :adminuser6@nvipani.com
+[2018-08-31 20:13:59.442] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-08-31 20:13:59.443] [DEBUG] USERS - Email is :adminuser6@nvipani.com
+[2018-08-31 20:13:59.443] [DEBUG] USERS - Fetch matched  user with user name :adminuser6@nvipani.com
+[2018-08-31 20:14:01.380] [DEBUG] USERS - Found user with the username :adminuser6@nvipani.com
+[2018-08-31 20:14:01.383] [ERROR] USERS - User is already Registered

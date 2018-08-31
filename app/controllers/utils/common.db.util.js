@@ -63,8 +63,8 @@ exports.findQueryByCategories =function(cQuery,populateLevels, done) {
 /**
  * find a Category with id with populate fields
  */
-exports.findCategoryById = function(id,done){
-    Category.findById(id).populate('user', 'displayName').populate('children parent grandParent', 'name code type categoryImageURL1 description children parent grandParent').populate('hsnCodes unitOfMeasures productBrands taxGroups').exec(function (err, populatedcategory) {
+exports.findCategoryById =   function(id,done){
+     Category.findById(id).populate('user', 'displayName').populate('children parent grandParent', 'name code type categoryImageURL1 description children parent grandParent').populate('hsnCodes unitOfMeasures productBrands taxGroups').exec(function (err, populatedcategory) {
         done(err,populatedcategory);
     });
 };

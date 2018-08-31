@@ -1503,42 +1503,35 @@ function getUserInputValidation(data, done) {
     if (!data) {
         console.log(1, 'inputvlaidation');
         done(new Error('Username (Email/Mobile) field must not be blank'), null);
-    } else if (data.issendotp && !data.issendemail) {
-        console.log(2, 'inputvlaidation');
+    }
+    else if (data.issendotp && data.issendemail) {
+        console.log(2, 'inputvlaidation', !reg.test(data.username));
         if (!data.username) {
             logger.error('username is empty :' + JSON.stringify(data));
             done(new Error('Username (Email/Mobile) field must not be blank'), null);
-        } else {
-            if (!reg.test(data.username)) {
+        } else if(data.username && data.issendotp && data.issendemail) {
+            if(!reg.test(data.username)){
                 logger.error('Username is not valid' + JSON.stringify(data));
                 done(new Error('Username is not valid, Enter valid Email/Phone'), null);
-            } else {
+            }else{
+                console.log('come here finallyss');
+                
                 logger.debug('Username is valid');
-                if (!data.password) {
-                    logger.error('Password is empty :' + JSON.stringify(data));
-                    done(new Error('Password field must not be blank for the user :' + data.username), null);
-                }
-                else {
-                    if (data.password.trim().length < 8) {
-                        logger.error('Password is not valid +' + JSON.stringify(data));
-                        done(new Error('Password is less than 8 chars'), null);
-                    } else if (data.password !== data.conf_password) {
-                        logger.error('Password and Confirm Password is not valid +' + JSON.stringify(data));
-                        done(new Error('Password and Confirm Password must be equal'), null);
-                    }
-                    else {
-                        logger.debug('Password is valid');
-                        done(null, data);
-                    }
-                }
-            }
+                done(null, data);
+            }           
         }
-    } else if (data.isverifyotp) {
+    } 
+     else if (data.isverifyotp) {
         console.log(3, 'inputvlaidation');
         if (!data.otp) {
             logger.error('OTP field is empty');
             done(new Error('OTP field is empty for user ' + data.username), null);
-        } else if (data.password.trim().length < 8) {
+        } 
+        else if (!data.password || !data.conf_password) {
+            logger.error('Password is empty : ' + JSON.stringify(data));
+            done(new Error('Password field must not be blank'), null);
+        }
+        else if (data.password.trim().length < 8) {
             logger.error('Password is not valid +' + JSON.stringify(data));
             done(new Error('Password is less than 8 chars'), null);
         } else if (data.password.trim() !== data.conf_password.trim()) {
@@ -1548,43 +1541,68 @@ function getUserInputValidation(data, done) {
         else {
             done(null, data);
         }
-    } else if (data.ispassword) {
-        console.log(4, 'inputvlaidation');
-        if (!data.registrationCategory) {
-            logger.error('No registration category found for the user :' + data.username);
-            done(new Error('No registration category found for the user :' + data.username), null);
-        }
-        else {
-            if (!data.selectedSegments || (data.selectedSegments && data.selectedSegments.length === 0)) {
-                logger.error('No segments found for the Registration category :' + data.registrationCategory + 'for the user :' + data.username);
-                // done(new Error('No segments found for the category :'+ data.registrationCategory + 'for the user :' +data.username),null);
-                done(new Error('No segments found for the user :' + data.username), null);
-            } else if (data.selectedSegments && data.selectedSegments.length > 0 && data.selectedSegments.filter(function (eachSegment) {
-                return ((data.selectedSegments.length === 1 && eachSegment.isSpecific) || !eachSegment.isSpecific) && (!eachSegment.categories || (eachSegment.categories && eachSegment.categories.length === 0));
-            }).length > 0) {
-                logger.error('No Categories  found for the selected Segments for the user :' + data.username + ' with the registration Category :' + data.registrationCategory);
-                // done(new Error('No segments found for the category :'+ data.registrationCategory + 'for the user :' +data.username),null);
-                done(new Error('No Categories  found for the selected Segments for the user :' + data.username), null);
-            }
-            else {
-                done(null, data);
-            }
-        }
     }
-    else if (data.username && data.issendemail) {
-        console.log(5, 'inputvlaidation', reg.test(data.username));
-        if (!reg.test(data.username)) {
-            logger.error('Username is not valid' + JSON.stringify(data));
-            done(new Error('Username is not valid, Enter Valid Username'), null);
-        } else {
-            logger.debug('Username is valid');
-            done(null, data);
-        }
-    }
+    // else {
+    //     done(null, data);
+    // }
+    // else if (data.issendotp && !data.issendemail) {
+    //     console.log(2, 'inputvlaidation');
+    //     if (!data.username) {
+    //         logger.error('username is empty :' + JSON.stringify(data));
+    //         done(new Error('Username (Email/Mobile) field must not be blank'), null);
+    //     } else {
+    //         if (!reg.test(data.username)) {
+    //             logger.error('Username is not valid' + JSON.stringify(data));
+    //             done(new Error('Username is not valid, Enter valid Email/Phone'), null);
+    //         } else {
+    //             logger.debug('Username is valid');
+    //             if (!data.password) {
+    //                 logger.error('Password is empty :' + JSON.stringify(data));
+    //                 done(new Error('Password field must not be blank for the user :' + data.username), null);
+    //             }
+    //             else {
+    //                 if (data.password.trim().length < 8) {
+    //                     logger.error('Password is not valid +' + JSON.stringify(data));
+    //                     done(new Error('Password is less than 8 chars'), null);
+    //                 } else if (data.password !== data.conf_password) {
+    //                     logger.error('Password and Confirm Password is not valid +' + JSON.stringify(data));
+    //                     done(new Error('Password and Confirm Password must be equal'), null);
+    //                 }
+    //                 else {
+    //                     logger.debug('Password is valid');
+    //                     done(null, data);
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+   
+    // else if (data.ispassword) {
+    //     console.log(4, 'inputvlaidation');
+    //     if (!data.registrationCategory) {
+    //         logger.error('No registration category found for the user :' + data.username);
+    //         done(new Error('No registration category found for the user :' + data.username), null);
+    //     }
+    //     else {
+    //         if (!data.selectedSegments || (data.selectedSegments && data.selectedSegments.length === 0)) {
+    //             logger.error('No segments found for the Registration category :' + data.registrationCategory + 'for the user :' + data.username);
+    //             // done(new Error('No segments found for the category :'+ data.registrationCategory + 'for the user :' +data.username),null);
+    //             done(new Error('No segments found for the user :' + data.username), null);
+    //         } else if (data.selectedSegments && data.selectedSegments.length > 0 && data.selectedSegments.filter(function (eachSegment) {
+    //             return ((data.selectedSegments.length === 1 && eachSegment.isSpecific) || !eachSegment.isSpecific) && (!eachSegment.categories || (eachSegment.categories && eachSegment.categories.length === 0));
+    //         }).length > 0) {
+    //             logger.error('No Categories  found for the selected Segments for the user :' + data.username + ' with the registration Category :' + data.registrationCategory);
+    //             // done(new Error('No segments found for the category :'+ data.registrationCategory + 'for the user :' +data.username),null);
+    //             done(new Error('No Categories  found for the selected Segments for the user :' + data.username), null);
+    //         }
+    //         else {
+    //             done(null, data);
+    //         }
+    //     }
+    // }
+   
 
-    else {
-        done(null, data);
-    }
+    
 }
 function findUser(query, done) {
     User.findOne({ $or: query }).select('username email mobile emailVerified mobileVerified otp emailOtp company status').populate('company', 'categories segments registrationCategory').exec(function (err, user) {
@@ -1622,11 +1640,12 @@ function findOrRegisterUser(data, done) {
                 }
                 logger.debug('Fetch matched  user with user name :' + data.username);
                 userUtil.getQueryByUser({ $or: array }, 2, function (err, user) {
-                    if (err) {
+                      if (err) {
                         logger.error('Failed to load user with the username : ' + data.username + ' Error' + errorHandler.getErrorMessage(err));
                         done(err, data, user);
                     } else if (!user) {
                         logger.error('No user found with the username : ' + data.username);
+                        logger.error('No user found with the username : ' + err, data, user);
                         done(err, data, user);
                     } else {
                         logger.debug('Found user with the username :' + data.username);
@@ -1848,7 +1867,7 @@ function userCompanyInformation(user, data, done) {
     });
 }
 function userRegistrationProcess(user, data, done) {
-    console.log(data);
+    console.log(data,'userRegistrationProcess function called');
     console.log(user.emailOtp);
     console.log(user.emailVerified);
 
@@ -1968,7 +1987,7 @@ function getMessage(user, data) {
             /*isEmail ? (user.status === 'Register Request' ? 'An OTP has been sent to ' + user.username + '. ' + user.emailOtp + ' is your One Time Password (OTP)' : 'An OTP has been ' + user.status + ' for the ' + user.username) : user.status === 'Register Request' ? 'An OTP has been sent to ' + user.username + '. ' + otp + ' is your One Time Password (OTP)' : 'An OTP has been ' + user.status + ' for the ' + user.username
 */
             if (config.sendEmail) {
-                return 'An OTP has been sent to Email :' + user.username;
+                return 'An OTP has been sent to Email :' + user.username + '. ' + user.emailOtp + ' is your One Time Password (OTP)';
             } else {
                 return 'An OTP has been sent to Email :' + user.username + '. ' + user.emailOtp + ' is your One Time Password (OTP)';
             }
@@ -1994,201 +2013,13 @@ function getMessage(user, data) {
         if (user.company) {
             logger.debug('User is successfully registered');
             return 'User is successfully registered';
+        }else{
+            // logger.debug('User is successfully registered');
+            // return 'User is successfully registered';
         }
     }
 
 }
-// exports.userRegistration=function (req,res) {
-//     logger.debug('Registration Request  - '+JSON.stringify(req.body));
-//     var data=req.body;
-//     var token,otp;
-//     logger.debug('user registration input validation for the data :'+ JSON.stringify(data));
-//     getUserInputValidation(data, function (validError, data) {
-//         if (validError) {
-//             return res.status(400).send({
-//                 status: false,
-//                 message: errorHandler.getErrorMessage(validError)
-//             });
-//         } else {
-//             logger.debug('Fetching already created user with the same user name  :'+data.username);
-//             findOrRegisterUser(data,function (userRegErr,data,user) {
-//                 if(userRegErr){
-//                     return res.status(400).send({
-//                         status: false,
-//                         message: errorHandler.getErrorMessage(userRegErr)
-//                     });
-//                 }else{
-//                     if(user instanceof User) {
-//                         userRegistrationProcess(user, data, function (userErr, user) {
-//                             if (userErr) {
-//                                 return res.status(400).send({
-//                                     status: false,
-//                                     message: errorHandler.getErrorMessage(userErr)
-//                                 });
-//                             } else {
-//                                 if (user.status === 'Register Request') {
-//                                     if (data.issendotp) {
-//                                         sendRegistrationNotification(user, data,user.status, req, res, function (sendEmailErr, user) {
-//                                             if (sendEmailErr) {
-//                                                 return res.status(400).send({
-//                                                     status: false,
-//                                                     message: errorHandler.getErrorMessage(sendEmailErr)
-//                                                 });
-//                                             } else if (!user) {
-//                                                 return res.status(400).send({
-//                                                     status: false,
-//                                                     message: 'No user for send Mail'
-//                                                 });
-//                                             } else {
-//                                                 res.send({
-//                                                     status: true,
-//                                                     otp: data.isEmail ? user.emailOtp : user.otp,
-//                                                     user: user,
-//                                                     message: getMessage(user, data)
-
-//                                                 });
-
-//                                             }
-//                                         });
-//                                     }
-//                                 } else if (user.status === 'Verified') {
-//                                     getBusinessSegmentsCategories(function (nVipaniUserRegistrationCategoryUpdateErr, segments, categories, registrationCategories) {
-//                                         if (nVipaniUserRegistrationCategoryUpdateErr) {
-//                                             logger.error('Error in updating Registration Categories for user '+user.username);
-//                                             return res.status(400).send({
-//                                                 status: false,
-//                                                 message: errorHandler.getErrorMessage(nVipaniUserRegistrationCategoryUpdateErr)
-//                                             });
-//                                         } else {
-//                                             if (data.issendotp) {
-//                                                 return res.status(400).send({
-//                                                     status: false,
-//                                                     otp: data.isEmail ? user.emailOtp : user.otp,
-//                                                     user: user,
-//                                                     categories: categories,
-//                                                     segments: segments,
-//                                                     registrationCategories: registrationCategories,
-//                                                     message: getMessage(user, data)
-//                                                 });
-
-//                                             } else if (data.isverifyotp) {
-//                                                 res.send({
-//                                                     status: true,
-//                                                     otp: data.isEmail ? user.emailOtp : user.otp,
-//                                                     user: user,
-//                                                     categories: categories,
-//                                                     segments: segments,
-//                                                     registrationCategories: registrationCategories,
-//                                                     message: getMessage(user, data)
-//                                                 });
-//                                             }
-//                                         }
-
-//                                     });
-
-
-//                                 } else {
-//                                     sendRegistrationNotification(user, data,user.status, req, res, function (sendEmailErr, user) {
-//                                         if (sendEmailErr) {
-//                                             return res.status(400).send({
-//                                                 status: false,
-//                                                 message: errorHandler.getErrorMessage(sendEmailErr)
-//                                             });
-//                                         } else if (!user) {
-//                                             return res.status(400).send({
-//                                                 status: false,
-//                                                 message: 'No user for send Mail'
-//                                             });
-//                                         } else {
-//                                             res.send({
-//                                                 status: true,
-//                                                 user: user,
-//                                                 message: getMessage(user, data)
-
-//                                             });
-
-//                                         }
-//                                     });
-
-//                                 }
-//                             }
-//                         });
-
-//                     }else {
-//                         if(data.issendotp) {
-//                             var reqUser = new User(data);
-//                             crypto.randomBytes(20, function (err, buffer) {
-//                                 token = buffer.toString('hex');
-//                                 otp = notp.totp.gen(K, {});
-//                                 if (data.isEmail) {
-//                                     reqUser.email = data.username;
-//                                     reqUser.emailOtp = otp;
-
-//                                 }  if (data.isPhone) {
-//                                     reqUser.mobile = data.username;
-//                                     reqUser.otp = otp;
-//                                 }
-//                                 reqUser.username = data.username;
-//                                 /*reqUser.statusToken = token;*/
-//                                 reqUser.devices = [];
-//                                 reqUser.devices = [];
-//                                 reqUser.allowRegistration = true;
-//                                 /*reqUser.acceptTerms=data.user.acceptTerms;*/
-//                                 reqUser.serverUrl = req.protocol + '://' + req.headers.host;
-//                                 reqUser.provider = 'local';
-//                                 reqUser.status = 'Register Request';
-//                                 reqUser.updated = Date.now();
-//                                 reqUser.save(function (err) {
-//                                     if (err) {
-//                                         return res.status(400).send({
-//                                             status: false,
-//                                             message:errorHandler.getErrorMessage(err)
-//                                         });
-//                                     } else {
-//                                         sendRegistrationNotification(reqUser,data,'Register Request',req,res,function (sendEmailErr,user) {
-//                                             if(sendEmailErr){
-//                                                 return res.status(400).send({
-//                                                     status: false,
-//                                                     message:errorHandler.getErrorMessage(sendEmailErr)
-//                                                 });
-//                                             }else if(!user) {
-//                                                 return res.status(400).send({
-//                                                     status: false,
-//                                                     message:'No user for send Mail'
-//                                                 });
-//                                             }else{
-//                                                 res.send({
-//                                                     status: true,
-//                                                     otp: data.isEmail?user.emailOtp:user.otp,
-//                                                     user: user,
-//                                                     message: getMessage(user,data)
-
-//                                                 });
-
-//                                             }
-//                                         });
-//                                     }
-//                                 });
-
-//                             });
-
-
-//                         }else{
-//                             logger.error('User is not registered properly' + data);
-//                             return res.status(400).send({
-//                                 status: false,
-//                                 message:'User is not registered properly'
-//                             });
-//                         }
-//                     }
-//                 }
-
-//             });
-//         }
-//     });
-
-// };
- 
   
 function hasAuthorization(token, done) {
     var token = token;
@@ -2228,14 +2059,18 @@ exports.userRegistration = function (req, res) {
             findOrRegisterUser(data, function (userRegErr, data, user) {
                 if (userRegErr) {
                     console.log('error occuered in findOrRegisterUser');
-
+ 
                     return res.status(400).send({
                         status: false,
                         message: errorHandler.getErrorMessage(userRegErr)
                     });
                 } else {
                     if (user instanceof User) {
+                        logger.debug('instance of user  :' + user);
+                        console.log('no error occuered in findOrRegisterUser');
                         userRegistrationProcess(user, data, function (userErr, user) {
+                            logger.debug('user registered  :' + user);
+                            console.log('user registered  :' + user);
                             if (userErr) {
                                 return res.status(400).send({
                                     status: false,
@@ -2383,6 +2218,7 @@ exports.userRegistration = function (req, res) {
                                                     message: errorHandler.getErrorMessage(err)
                                                 });
                                             } else {
+                                                
                                                 sendRegistrationNotification(reqUser, data, 'Register Request', req, res, function (sendEmailErr, user) {
                                                     if (sendEmailErr) {
                                                         return res.status(400).send({
