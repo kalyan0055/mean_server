@@ -28,27 +28,7 @@ var _ = require('lodash'),
 /**
  * Update user details
  */
-exports.newregister = function(req, res) {
-    // Init Variables
-    console.log(req.body,'sended data');
-    
-    var message = null;
-    const user = new NewUser({
-       username : req.body.username,
-       mobile : req.body.mobile,
-       password : req.body.password,
-       email : req.body.email,
-       salt : req.body.password,
-    })
  
-    user.save(function(err,res2){
-        console.log(err,res2);
-        if(err){
-            res.json({success:false,data:err})
-        }
-        res.json({success:true,data:'success'})
-    });  
-};
 
 exports.newuserslist =  function(req, res) {
     // Init Variables
@@ -216,52 +196,7 @@ exports.disableUser = function (req,res){
     })
 }
  
-exports.login =  function(req, res,next){
-   console.log('hello',req.body);
-   
-        passport.authenticate('local', function(err,user,info) { 
-            console.log(err,user);
-            
-                // check in mongo if a user with username exists or not
-                if (err || !user) {
-                    info.status = false;
-                    logger.error('Error Signin with username -' + req.body.username + ', -' + JSON.stringify(info));
-                    //logger.debug('Error Message-'+JSON.stringify(info));
-                    res.status(400).send(info);
-                }else{
-                    NewUser.findOne({ 'username' :  user.username },'username email mobile status', 
-                    function(err, user) {
-                        // In case of any error, return using the done method
-                        if (err)
-                        res.json({success:false,token:'',data:err})
-                        // Username does not exist, log the error and redirect back
-                        if (!user){
-                            console.log('User Not Found with username '+req.body.username);
-                            res.json({success:false,token:'token',data:err})               
-                        }
-                        if(user){
-                            var token = usersJWTUtil.genToken(user.username, user._id);
-                            res.json({success:true,token:token,data:user})
-                        }
-                        // User exists but wrong password, log the error 
-                        // if (!isValidPassword(user, password)){
-                        //     console.log('Invalid Password');
-                        //     return done(null, false, req.flash('message', 'Invalid Password')); // redirect back to login page
-                        // }
-                        // User and password both match, return user from done method
-                        // which will be treated like success
-                         
-                    }
-                );
-                }   
-            })(req,res,next)
-
-        // var isValidPassword = function(user, password){
-        //     return bCrypt.compareSync(password, user.password);
-        // }
-        
-   
- };
+ 
  exports.signin = function (req, res, next) {
 
     console.log('Request Body-'+JSON.stringify(req.body));

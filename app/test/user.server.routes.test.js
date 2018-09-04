@@ -127,7 +127,7 @@ describe('User Model Unit Tests:', function() {
                 should.not.exist(validusernameErr);
                 validusernameRes.body.status.should.equal(false);
                 validusernameRes.body.message.should.equal('Username is not valid, Enter valid Email/Phone');
-                done();
+                // done();
                 // commonUserUtil.createEachStepUser(valusers[2],400,agent,function (blankpassErr, blankpassRes) {
                 //     should.not.exist(blankpassErr);
                 //     blankpassRes.body.status.should.equal(false);
@@ -136,15 +136,15 @@ describe('User Model Unit Tests:', function() {
                 //         should.not.exist(validpassErr);
                 //         validpassRes.body.status.should.equal(false);
                 //         validpassRes.body.message.should.equal('Password is less than 8 chars');
-                        // commonUserUtil.createEachStepUser(valusers[2],200,agent,function (sendotpErr, sendotpRes) {
+                        commonUserUtil.createEachStepUser(valusers[2],200,agent,function (sendotpErr, sendotpRes) {
  
-                        //     should.not.exist(sendotpErr);
-                        //     sendotpRes.body.status.should.equal(true);
-                        //     var otp = sendotpRes.body.otp;
-                        //     sendotpRes.body.message.should.equal('An OTP has been sent to Email :' + valusers[2].username + '. ' + otp + ' is your One Time Password (OTP)');
-                        //    done();
+                            should.not.exist(sendotpErr);
+                            sendotpRes.body.status.should.equal(true);
+                            var otp = sendotpRes.body.otp;
+                            sendotpRes.body.message.should.equal('An OTP has been sent to Email :' + valusers[2].username + '. ' + otp + ' is your One Time Password (OTP)');
+                           done();
                           
-                        // });
+                        });
                 //     });
                 // });
             });
@@ -157,38 +157,38 @@ describe('User Model Unit Tests:', function() {
     * */
    
    it('should be able accept the generated OTP and verify the user', function(done){
-        commonUserUtil.createEachStepUser({username:'adminuser6@nvipani.com',otp:'',password:'passwrod',isverifyotp:true},400,agent,function(presignupotpErr, presignupotpRes){         
+        commonUserUtil.createEachStepUser({username:'adminuser5@nvipani.com',otp:'',password:'passwrod',isverifyotp:true},400,agent,function(presignupotpErr, presignupotpRes){         
             should.not.exist(presignupotpErr);
             presignupotpRes.body.status.should.equal(false);
-            presignupotpRes.body.message.should.equal('OTP field is empty for user adminuser6@nvipani.com');
-            // message: 'OTP field is empty for user adminuser6@nvipani.com' },
+            presignupotpRes.body.message.should.equal('OTP field is empty for user adminuser5@nvipani.com');
+            // message: 'OTP field is empty for user adminuser5@nvipani.com' },
             // var otp = presignupotpRes.body.otp;
              var otpFalse = 123456;
            
-            commonUserUtil.createEachStepUser({username:'adminuser6@nvipani.com',password:'test1234',conf_password:'test1234',otp:otpFalse,isverifyotp:true},400,agent,function(presignupotpverErr, presignupotpverRes){
+            commonUserUtil.createEachStepUser({username:'adminuser5@nvipani.com',password:'test1234',conf_password:'test1234',otp:otpFalse,isverifyotp:true},400,agent,function(presignupotpverErr, presignupotpverRes){
                 should.not.exist(presignupotpverErr);
                 presignupotpverRes.body.status.should.equal(false);
-                presignupotpverRes.body.message.should.equal('Incorrect otp for the Email: adminuser6@nvipani.com');
+                presignupotpverRes.body.message.should.equal('Incorrect otp for the Email: adminuser5@nvipani.com');
                
-                commonUserUtil.createEachStepUser({username:'adminuser6@nvipani.com',password:'',conf_password:'test1234',otp:otpFalse,isverifyotp:true},400,agent,function (blankpassErr, blankpassRes) {
+                commonUserUtil.createEachStepUser({username:'adminuser5@nvipani.com',password:'',conf_password:'test1234',otp:otpFalse,isverifyotp:true},400,agent,function (blankpassErr, blankpassRes) {
                     should.not.exist(blankpassErr);
                     blankpassRes.body.status.should.equal(false);
                     blankpassRes.body.message.should.equal('Password field must not be blank');
                     
-                    commonUserUtil.createEachStepUser({username:'adminuser6@nvipani.com',password:'test123',conf_password:'test114',otp:otpFalse,isverifyotp:true},400,agent,function (validpassErr, validpassRes) {
+                    commonUserUtil.createEachStepUser({username:'adminuser5@nvipani.com',password:'test123',conf_password:'test114',otp:otpFalse,isverifyotp:true},400,agent,function (validpassErr, validpassRes) {
                         should.not.exist(validpassErr);
                         validpassRes.body.status.should.equal(false);
                         validpassRes.body.message.should.equal('Password is less than 8 chars');
-                         commonUserUtil.createEachStepUser({username:'adminuser6@nvipani.com',password:'test1234',conf_password:'test1234',otp:'498490',isverifyotp:true},200,agent,function (sendotpErr, sendotpRes) {
-                            console.log(sendotpErr,'otperr');
-                            console.log(sendotpRes.body.user.emailOtp,'body');                          
-                            should.not.exist(sendotpErr);
-                            sendotpRes.body.status.should.equal(true);
+                        //  commonUserUtil.createEachStepUser({username:'adminuser6@nvipani.com',password:'test1234',conf_password:'test1234',otp:'498490',isverifyotp:true},200,agent,function (sendotpErr, sendotpRes) {
+                        //     console.log(sendotpErr,'otperr');
+                        //     console.log(sendotpRes.body.user.emailOtp,'body');                          
+                        //     should.not.exist(sendotpErr);
+                        //     sendotpRes.body.status.should.equal(true);
                         //     var otp = sendotpRes.body.emailOtp;
                         //     sendotpRes.body.message.should.equal('An OTP has been sent to Email :' + 'adminuser6@nvipani.com' + '. ' + otp + ' is your One Time Password (OTP)');
                            done();
                           
-                        });
+                       // });
                     });
                 });
 

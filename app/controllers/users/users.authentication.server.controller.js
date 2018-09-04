@@ -1497,7 +1497,8 @@ function getBusinessSegmentsCategories(done) {
 }
 
 function getUserInputValidation(data, done) {
-    var reg = /^(?:\d{10,11}|([_a-zA-Z0-9]+(\.[_a-zA-Z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})))$/;
+    // var reg = /^(?:\d{10,11}|([_a-zA-Z0-9]+(\.[_a-zA-Z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})))$/;
+    var reg = /^\w+([\.-]?\w+)*@(nvipani.com)/;
     console.log(data.issendemail, 'inputvlaidation');
 
     if (!data) {

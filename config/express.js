@@ -10,7 +10,7 @@ var fs = require('fs'),
 	http = require('http'),
 	https = require('https'),
 	express = require('express'),
- 	cors = require('cors'),
+	cors = require('cors'),
 	morgan = require('morgan'),
 	bodyParser = require('body-parser'),
 	session = require('express-session'),
@@ -28,15 +28,16 @@ var fs = require('fs'),
 	config = require('./config'),
 	consolidate = require('consolidate'),
 	path = require('path');
+	
 
-module.exports = function(db) {
+module.exports = function (db) {
 	// Initialize express app
 	console.log('express js files s');
-	
+
 	var app = express();
 	app.use(cors())
 	// Globbing model files
-	config.getGlobbedFiles('./app/models/**/*.js').forEach(function(modelPath) {
+	config.getGlobbedFiles('./app/models/**/*.js').forEach(function (modelPath) {
 		require(path.resolve(modelPath));
 	});
 
@@ -50,17 +51,17 @@ module.exports = function(db) {
 	// app.locals.cssFiles = config.getCSSAssets();
 
 	// Passing the request url to environment locals
-	app.use(function(req, res, next) {
+	app.use(function (req, res, next) {
 		res.locals.url = req.protocol + '://' + req.headers.host + req.url;
 		console.log(res.locals.url);
-		
-        req.setTimeout(0);
+		 
+		req.setTimeout(0);
 		next();
 	});
 
 	// Should be placed before express.static
 	app.use(compress({
-		filter: function(req, res) {
+		filter: function (req, res) {
 			return (/json|text|javascript|css/).test(res.getHeader('Content-Type'));
 		},
 		level: 9
@@ -68,12 +69,6 @@ module.exports = function(db) {
 
 	// Showing stack errors
 	app.set('showStackError', true);
-	//   app.use(express.static(__dirname + '/public'));
-	// app.use(express.static(path.join(__dirname, '/public')));
-	// app.use(express.static(__dirname+'public'))
-	//app.use('/public', express.static(__dirname + "/public"));
-//  app.set('view engine', 'html');
- 
 	//Set swig as the template engine
 	app.engine('server.view.html', consolidate[config.templateEngine]);
 
@@ -86,7 +81,7 @@ module.exports = function(db) {
 	// Environment dependent middleware
 	if (process.env.NODE_ENV === 'development') {
 		console.log('dev mode');
-		
+
 		/*app.use(morgan(logger.getFormat(), logger.getOptions()));*/
 		// Enable logger (morgan)
 		app.use(morgan('dev'));
@@ -113,10 +108,11 @@ module.exports = function(db) {
 	}
 
 	// Request body parsing middleware should be above methodOverride
-	app.use(bodyParser.urlencoded({limit: config.limit,
+	app.use(bodyParser.urlencoded({
+		limit: config.limit,
 		extended: true
 	}));
-	app.use(bodyParser.json({limit: config.limit}));
+	app.use(bodyParser.json({ limit: config.limit }));
 	app.use(methodOverride());
 
 	// CookieParser should be above session
@@ -139,13 +135,13 @@ module.exports = function(db) {
 	// use passport session
 	app.use(passport.initialize());
 	app.use(passport.session());
-// Initialize Passport
-// var initPassport = require('./../app/controllers/passport/passport');
-// initPassport(passport);
+	// Initialize Passport
+	// var initPassport = require('./../app/controllers/passport/passport');
+	// initPassport(passport);
 	// connect flash for flash messages
 	app.use(flash());
 	// Add multipart handling middleware
-	app.use(multer({dest:__dirname+'/uploads/',inMemory: true}).any());
+	app.use(multer({ dest: __dirname + '/uploads/', inMemory: true }).any());
 	// Use helmet to secure Express headers
 	app.use(helmet.frameguard());
 	app.use(helmet.xssFilter());
@@ -155,20 +151,18 @@ module.exports = function(db) {
 
 	// Setting the app router and static folder
 	app.use(express.static(path.resolve('./public')));
- 
+	app.use(express.static('./dist'));
 	// Globbing routing files
-	config.getGlobbedFiles('./app/routes/**/*.js').forEach(function(routePath) {
+	config.getGlobbedFiles('./app/routes/**/*.js').forEach(function (routePath) {
 		require(path.resolve(routePath))(app);
 	});
 
 	// Assume 'not found' in the error msgs is a 404. this is somewhat silly, but valid, you can do whatever you like, set properties, use instanceof etc.
-	app.use(function(err, req, res, next) {
+	app.use(function (err, req, res, next) {
 		// If the error object doesn't exists
 		if (!err) return next();
-
 		// Log it
 		console.error(err.stack);
-
 		// Error page
 		res.status(500).render('500', {
 			error: err.stack
@@ -176,7 +170,7 @@ module.exports = function(db) {
 	});
 
 	// Assume 404 since no middleware responded
-	app.use(function(req, res) {
+	app.use(function (req, res) {
 		res.status(404).render('404', {
 			url: req.originalUrl,
 			error: 'Not Found'

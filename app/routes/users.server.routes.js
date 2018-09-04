@@ -4,21 +4,46 @@
  * Module dependencies.
  */
 var passport = require('passport');
- 
+var swaggerUi = require('swagger-ui-express'),
+swaggerDocument = require('../../dist/api-docs.json');
+var express = require('express');
+var router = express.Router();
 module.exports = function(app) {
 	// User Routes
 	var users = require('../../app/controllers/users.server.controller'),
 	 fileupload = require('../../app/controllers/utils/fileupload.util');
+	 
+	var test;
+	 app.use(function (req, res, next) {
+		res.locals.url = req.protocol + '://' + req.headers.host + req.url;
+		var regexp = new RegExp('/api/v1/');
+		test = regexp.test(res.locals.url);
+		console.log(test,'testing');
+		
+		req.setTimeout(0);
+		next();
+	});
 
+	//if(test){
+		console.log('if part');
+		
+		router.route('/users/newuserslist/:userid').get(users.newuserslist);
+		router.route('/user/sendpresignupotp').post(users.userRegistration);
+		router.route('/user/verifypresignupotp').post(users.userRegistration);
+		app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+		app.use('/api/v1', router);
+	// }else{
+	// 	console.log('else part');
+	 
+	 app.route('/users/newuserslist/:userid').get(users.newuserslist);
 
 	// Setting up the users profile apis -- Practise 
-	app.route('/users/register').post(users.newregister);
-	app.route('/users/newuserslist/:userid').get(users.newuserslist);
+ 
+	// app.route('/users/newuserslist/:userid').get(users.newuserslist);
 	app.route('/users/updateuser').post(users.updateuser);
 	//app.route('/users/login').post(users.login);
 	app.route('/users/deleteuser').post(users.deleteuser);
-	app.route('/users/login').post(users.login);
-	// app.route('/users/login').post(users.userRegistration);
+ 
 
 	
 	app.route('/users/registervialink').post(users.registervialink);
@@ -115,4 +140,5 @@ module.exports = function(app) {
 
 	// Finish by binding the user middleware
 	app.param('userId', users.userByID);
+//}
 };
