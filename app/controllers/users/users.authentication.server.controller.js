@@ -1542,6 +1542,9 @@ function getUserInputValidation(data, done) {
         else {
             done(null, data);
         }
+    }else if(!data.issendotp || !data.issendemail){
+        logger.error('Invalida data supplied +' + JSON.stringify(data));
+        done(new Error('Invalid Data'), null);
     }
     // else {
     //     done(null, data);
@@ -2269,60 +2272,86 @@ exports.userRegistration = function (req, res) {
 
 };
 
-exports.sendPasswordLink = function (req,res){
-let data = req.body;
-findUserById(data.id, function (userError, user) {
-    if (userError) {
-        logger.error('Employee is not found in users ' + eachCompanyEmployee);
-        done(userError, null, null);
-    } else {
-         
-            var K = '12345678901234567890';
-            var otp= notp.totp.gen(K, {});
-            logger.debug('Started otp:'+otp);
-            
-            user.resetPasswordToken = otp;
-            user.resetPasswordExpires = Date.now() + 120000; // 1 hour -3600000
-            user.save(function (err,user1) {
-                if(err){
-                    res.send({
-                        status: false,
-                        //resetPasswordToken: user.resetPasswordToken,
-                        message: 'Unable to send email to ' + err
-                    });
-                }else {
-                    var smtpTransport = nodemailer.createTransport(config.mailer.options);
-                    res.render('templates/reset-password-email', {
-                        name: user.displayName,
-                        appName: config.app.title,
-                      // url: req.protocol + '://' + req.headers.host + '/auth/reset/' + user.resetPasswordToken,
-                        url: req.protocol + '://' + 'localhost:4200/reset/' + user1.username+'/'+user1.resetPasswordToken+'/'+user1.resetPasswordExpires  // Newly added
-                      
-                    }, function (err, emailHTML) {
-                        var mailOptions = {
-                            to: 'rambabu.e@technoxis.in',
-                            from: config.mailer.from,
-                            subject: 'Password Reset',
-                            html: emailHTML
-                        };
-                        smtpTransport.sendMail(mailOptions, function (err) {
-                            if (!err) {
-                                res.send({
-                                    status: true,
-                                    //resetPasswordToken: user.resetPasswordToken,
-                                    message: 'An email has been sent to ' + user.email + ' with further instructions.'
-                                });
-                            }
-            
-                            // done(err);
-                        });
-                    });
-                }
-            });
 
-       
+
+exports.resetPasswordRequest = function (req,res){
+let data = req.body;
+let token = req.body.token || req.headers.token;
+hasAuthorization(token,function(err,valid){
+    if(err){
+        res.status(400).send({
+            status:false,
+            message:errorHandler.getErrorMessage(err)
+        })
+    }else{
+        findUserById(data.id, function (userError, user) {
+            if (userError) {
+                logger.error('Employee is not found in users ' + data.id);
+                res.status(400).send({
+                    status:false,
+                    message:errorHandler.getErrorMessage(userError)
+                })
+            } else {
+                if(data.reset_password === true){
+                    res.status(400).send({
+                        status:false,
+                        message:'Invalid Input Data'
+                    })
+                }
+                if(data.username !== user.username){
+                    res.status(400).send({
+                        status:false,
+                        message:'Invalid Username'
+                    })
+                }else{
+                    var K = '12345678901234567890';
+                    var otp= notp.totp.gen(K, {});
+                    logger.debug('Started otp:'+otp);
+                    
+                    user.resetPasswordToken = otp;
+                    user.resetPasswordExpires = Date.now() + 120000; // 1 hour -3600000
+                    user.save(function (err,user1) {
+                        if(err){
+                            res.send({
+                                status: false,
+                                //resetPasswordToken: user.resetPasswordToken,
+                                message: 'Unable to send email to ' + err
+                            });
+                        }else {
+                            var smtpTransport = nodemailer.createTransport(config.mailer.options);
+                            res.render('templates/reset-password-email', {
+                                name: user.displayName,
+                                appName: config.app.title,
+                              // url: req.protocol + '://' + req.headers.host + '/auth/reset/' + user.resetPasswordToken,
+                                url: req.protocol + '://' + 'localhost:4200/reset/' + user1.username+'/'+user1.resetPasswordToken+'/'+user1.resetPasswordExpires  // Newly added
+                              
+                            }, function (err, emailHTML) {
+                                var mailOptions = {
+                                    to: 'rambabu.e@technoxis.in',
+                                    from: config.mailer.from,
+                                    subject: 'Password Reset',
+                                    html: emailHTML
+                                };
+                                smtpTransport.sendMail(mailOptions, function (err) {
+                                    if (!err) {
+                                        res.send({
+                                            status: true,
+                                            //resetPasswordToken: user.resetPasswordToken,
+                                            message: 'An email has been sent to ' + user.email + ' with further instructions.'
+                                        });
+                                    }
+                    
+                                    // done(err);
+                                });
+                            });
+                        }
+                    }); 
+                }             
+            }
+        });
     }
-});
+})
+
 }
 
  

@@ -25,39 +25,34 @@ module.exports = function(app) {
 	});
 
 	//if(test){
-		console.log('if part');
+	 
 		
 		router.route('/users/newuserslist/:userid').get(users.newuserslist);
 		router.route('/user/sendpresignupotp').post(users.userRegistration);
 		router.route('/user/verifypresignupotp').post(users.userRegistration);
+		router.route('/users/deleteuser/:userid').delete(users.deleteuser);
+		router.route('/users/update').put(users.update);
+		router.route('/users/disableOrEnableUser').post(users.disableUser);
+		router.route('/users/resetPasswordRequest').post(users.resetPasswordRequest);
+		router.route('/users/resetPassword').post(users.reset);
 		app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 		app.use('/api/v1', router);
-	// }else{
-	// 	console.log('else part');
-	 
-	 app.route('/users/newuserslist/:userid').get(users.newuserslist);
-
-	// Setting up the users profile apis -- Practise 
- 
-	// app.route('/users/newuserslist/:userid').get(users.newuserslist);
-	app.route('/users/updateuser').post(users.updateuser);
-	//app.route('/users/login').post(users.login);
-	app.route('/users/deleteuser').post(users.deleteuser);
- 
-
 	
-	app.route('/users/registervialink').post(users.registervialink);
-	app.route('/users/sendPasswordLink').post(users.sendPasswordLink);
+		
+	app.route('/user/sendpresignupotp').post(users.userRegistration);
+	app.route('/users/newuserslist/:userid').get(users.newuserslist);
+	app.route('/users/deleteuser/:userid').delete(users.deleteuser);
+ 	app.route('/users/registervialink').post(users.registervialink);
+	app.route('/users/resetPasswordRequest').post(users.resetPasswordRequest);
 	app.route('/users/disableUser').post(users.disableUser);
+	app.route('/users/profilePicture').post(users.changeProfilePicture);
+	app.route('/users/update').put(users.update);
+	app.route('/auth/reset').post(users.reset);
 
-	
 
-
-	
 	app.route('/users/me').post(users.me);
 	app.route('/users/myhome').get(users.requiresLogin, users.myhome);
-	app.route('/users/profilePicture').post(users.changeProfilePicture);
-	app.route('/users').put(users.update);
+	
 	app.route('/users/accounts').delete(users.removeOAuthProvider);
 	app.route('/fileupload').post(fileupload.fileUploadPath);
 	// Setting up the users password api
@@ -73,11 +68,11 @@ module.exports = function(app) {
 	app.route('/user/resendotpuser').post(users.resendOTP);
 	app.route('/auth/reset/:token').get(users.validateResetToken);
 	//app.route('/auth/reset/:token').post(users.reset);
-	app.route('/auth/reset').post(users.reset);
+	
 
 	// Setting up the users authentication api
 	app.route('/user/presignup').post(users.presignup);
-    app.route('/user/sendpresignupotp').post(users.userRegistration);
+   
 	app.route('/signup/:registerToken').get(users.findByUserStatusToken);
 
 	app.route('/userregister/:registerToken').get(users.findByUserStatusToken);

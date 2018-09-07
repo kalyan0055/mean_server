@@ -41,13 +41,14 @@ describe('User Model Unit Tests:', function() {
             issendotp:true,
             issendemail:true,
         },{
-            username:'somevalue@some.com',
+            username:'somevalue@nvipani.com',
             issendotp:true,
             issendemail:true,
-            token:'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wN1QxMjo1OTozOS4yMjVaIn0.KYNyfY_J7BgBTf9ZtkJ0MhsOherAZZ02bYUDeOsBTPM'
+            otp:'087303',
+            token:'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0xM1QxMzoyNjo0Ny41MjlaIn0.QAXFeUH__DMgIr302fFSg2yEhjABb45hrUqnUxkKVbg'
          } // }           eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wN1QxMjo1OTozOS4yMjVaIn0.KYNyfY_J7BgBTf9ZtkJ0MhsOherAZZ02bYUDeOsBTPM
         ,{
-            username:'somevalue@some.com',
+            username:'somevalue@nvipani.com',
             otp:'',
             password:'s',
             isverifyotp:true
@@ -137,7 +138,8 @@ describe('User Model Unit Tests:', function() {
                 //         validpassRes.body.status.should.equal(false);
                 //         validpassRes.body.message.should.equal('Password is less than 8 chars');
                         commonUserUtil.createEachStepUser(valusers[2],200,agent,function (sendotpErr, sendotpRes) {
- 
+                            console.log(sendotpErr);
+                            
                             should.not.exist(sendotpErr);
                             sendotpRes.body.status.should.equal(true);
                             var otp = sendotpRes.body.otp;
@@ -207,6 +209,11 @@ describe('User Model Unit Tests:', function() {
         });
    });
 
+   it('should be delete by id only',function(done){
+       commonUserUtil.findId("3232130slfkaslfks",400,agent,function(err,result){
+           done();
+       })
+   })
     /*
     * Case 1:Show information for not registered user -ve test case;
     * case 2:Register without category -ve test case;

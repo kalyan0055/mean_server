@@ -202,7 +202,9 @@ exports.createContactUser = function (contact,agent,done) {
         });
 
     }else if(contact.phones.length>0){
-        createUser({username:contact.phones[0].phoneNumber,password:'password','registrationCategory': 'Retailer',
+        
+        
+        ({username:contact.phones[0].phoneNumber,password:'password','registrationCategory': 'Retailer',
             'selectedSegments': ['Other'],
             'categories':['COFFE']},agent,function (userErr,user) {
             done(userErr,user);
@@ -220,3 +222,12 @@ exports.getUser=function (user,agent,done) {
         });
 
 };
+
+exports.findId = function(id,serverRes,agent,done){
+    agent.delete(`/users/deleteuser/:${id}`).
+    send()
+    .expect(serverRes).
+    end(function(err,result){
+        done(err,result)
+    }); 
+}

@@ -2,8 +2,8 @@
     "swagger": "2.0",
     "info": {
       "version": "1.0.0",
-      "title": "Yet Another Node.js Blogg Application API",
-      "description": "Yet Another Node.js Blogg Application API",
+      "title": "Nvipani Application",
+      "description": "Nvipani Application APIs",
       "license": {
         "name": "MIT",
         "url": "https://opensource.org/licenses/MIT"
@@ -60,6 +60,7 @@
               }
             }
           ],
+          "summary": "Send Otp to E-Mail for User Registraiton",
           "produces": [
             "application/json"
           ],
@@ -109,6 +110,7 @@
               }
             }
           ],
+          "summary": "Verify E-Mail Otp for User Registraiton",
           "produces": [
             "application/json"
           ],
@@ -136,7 +138,7 @@
           "tags": [
             "Users"
           ],
-          "summary": "Get users with given ID",
+          "summary": "Get users associated with ID",
           "responses": {
             "200": {
               "description": "Users are found",
@@ -151,21 +153,35 @@
               }
             }
           }
-        },
+        }
+      },
+      "/users/deleteuser/{userId}": {
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "description": "Delet User by User ID ",
+            "type": "string"
+          }
+        ],
+       
         "delete": {
-          "summary": "Delete user with given ID",
+          "summary": "Delete user by User ID",
           "tags": [
             "Users"
           ],
           "responses": {
             "200": {
               "description": "User is deleted",
-              "schema": {
-                "$ref": "#/definitions/Newuser"
-              }
+              "message": "User Successfully Deleted"
+               
             }
           }
-        },
+        }
+       
+      },
+      "/users/update": {
         "put": {
           "summary": "Update user with give ID",
           "tags": [
@@ -177,15 +193,155 @@
               "in": "body",
               "description": "User with new values of properties",
               "schema": {
-                "$ref": "#/definitions/Newuser"
+                "$ref": "#/definitions/Updateuser"
               }
+            },
+            {
+              "name": "token",
+              "in": "header",
+              "description": "Authorization Token to Create User"          
             }
           ],
           "responses": {
             "200": {
               "description": "User is updated",
               "schema": {
-                "$ref": "#/definitions/Newuser"
+                "$ref": "#/definitions/Updateuser"
+              }
+            }
+          }
+        }
+      },
+      "/users/disableOrEnableUser": {
+        "post": {
+          "tags": [
+            "Users"
+          ],
+          "description": "Disable OR Enable User",
+          "parameters": [
+
+            {
+              "name": "user",
+              "in": "body",
+              "description": "User that we want to Enable/Disable",
+              "schema": {
+                "type": "object",
+                "properties": {            
+                  "id": {
+                    "type": "string" 
+                  },
+                  "type":{
+                    "type": "string",
+                    "enum":["enable","disable"]
+                  } 
+                }
+              }
+            }
+          ],
+          "summary": "Disable OR Enable User",
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "User is Enabled/Disabled",
+              "schema": {
+                "status":true,
+                "message":"User is Successfully Enabled/Disabled"
+              }
+            }
+          }
+        }
+      },
+      "/users/resetPasswordRequest": {
+        "post": {
+          "tags": [
+            "Users"
+          ],
+          "description": "Send Password Reset link to User E-Mail",
+          "parameters": [
+            {
+              "name": "token",
+              "in": "header",
+              "description": "Authorization Token Needed to reset Password"          
+            },
+            {
+              "name": "user",
+              "in": "body",
+              "description": "User that we want to Enable/Disable",
+              "schema": {
+                "type": "object",
+                "properties": {            
+                  "id": {
+                    "type": "string" 
+                  },
+                  "username":{
+                    "type": "string"
+                  },
+                  "reset_password":{
+                    "type": "boolean",
+                    "default":false
+                  } 
+                }
+              }
+            }
+          ],
+          "summary": "Send Password Reset link to User E-Mail",
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "E-Mail has been sent to given email",
+              "schema": {
+                "status":true,
+                "message":"An email has been sent with further instructions."
+              }
+            }
+          }
+        }
+      },
+      "/users/resetPassword": {
+        "post": {
+          "tags": [
+            "Users"
+          ],
+          "description": "Set Password ",
+          "parameters": [
+            
+            {
+              "name": "user",
+              "in": "body",
+              "description": "Set new Pasword",
+              "schema": {
+                "type": "object",
+                "properties": {            
+                  "verifyPassword": {
+                    "type": "string" 
+                  },
+                  "username":{
+                    "type": "string"
+                  },
+                  "newPassword":{
+                    "type": "string"
+                  },
+                  "otp":{
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          ],
+          "summary": "Set New Password to your E-Mail",
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "Password has been Successfuly Changed",
+              "schema": {
+                "status":true,
+                "message":"Password has been Successfuly Changed."
               }
             }
           }
@@ -214,8 +370,30 @@
             "type": "string"
           }
         }
+      },
+      "Updateuser": {
+        "required": [
+          "username"
+        ],
+        "properties": {
+          "username": {
+            "type": "string",
+            "uniqueItems": true
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "middleName": {
+            "type": "string"
+          },
+          "mobile": {
+            "type": "string"
+          } 
+        }
       } 
-      
     }
   }
   

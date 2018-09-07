@@ -25,6 +25,32 @@ var _ = require('lodash'),
 /**
  * Update user details
  */
+
+function InputValidation(data, done) {
+    var reg = /^\w+([\.-]?\w+)*@(nvipani.com)/;
+    var mobile = /^[0-9]{10,11}$/;
+    if (!data) {
+        done(new Error('Username must not be blank'), null);
+    }
+    else if (data.username) {
+        if (!reg.test(data.username)) {
+            logger.error('Username is not valid' + JSON.stringify(data));
+            done(new Error('Username is not valid, Enter valid Username'), null);
+        } else if (!mobile.test(data.mobile)) {
+            logger.error('Mobile is not valid' + JSON.stringify(data));
+            logger.debug('Mobile is valid');
+            done(new Error('Mobile is not valid, Enter valid Mobile No'), null);
+        } else {
+            done(null, data);
+        }
+
+    }
+
+
+
+
+}
+
 exports.update = function (req, res) {
     // Init Variables
 
@@ -37,48 +63,57 @@ exports.update = function (req, res) {
     var token = req.body.token || req.headers.token;
 
     usersJWTUtil.findUserByToken(token, function (err, user) {
+        console.log(err);
         if (err) {
             return res.status(400).send({
                 status: false,
-                message: errorHandler.getErrorMessage(err)
+                message: 'No User Found with the given token/username' + req.body.username
             });
         }
-
-        User.findOne({
-            username: user.username
-        }, '-salt -password', function (err, dbuser) {
-            if (dbuser) {
-                var versionKey = dbuser.userVersionKey;
-                dbuser = _.extend(dbuser, req.body);
-                dbuser.userVersionKey = versionKey;
-                dbuser.updated = Date.now();
-                console.log(dbuser);
-                
-                if (dbuser.firstName || dbuser.lastName || dbuser.middleName) {
-                    dbuser.displayName = dbuser.firstName + (dbuser.middleName ? ' ' + dbuser.middleName : '') + (dbuser.lastName ? ' ' + dbuser.lastName : '');
-                }
-
-                dbuser.save(function (err) {
-                    if (err) {
-                        return res.status(400).send({
-                            status: false,
-                            message: errorHandler.getErrorMessage(err)
-                        });
-                    } else {
-                        res.json({
-                            status: true,
-                            token: usersJWTUtil.genToken(dbuser.username, dbuser.id),
-                            user: dbuser
-                        });
-                    }
-                });
-            } else {
-                res.status(400).send({
+        InputValidation(req.body, function (err, data) {
+            if (err) {
+                return res.status(400).send({
                     status: false,
-                    message: 'User is not signed in'
+                    message: errorHandler.getErrorMessage(err)
                 });
             }
-        });
+            User.findOne({
+                username: req.body.username
+            }, '-salt -password', function (err, dbuser) {
+                if (dbuser) {
+                    var versionKey = dbuser.userVersionKey;
+                    dbuser = _.extend(dbuser, req.body);
+                    dbuser.userVersionKey = versionKey;
+                    dbuser.updated = Date.now();
+                    console.log(dbuser);
+
+                    if (dbuser.firstName || dbuser.lastName || dbuser.middleName) {
+                        dbuser.displayName = dbuser.firstName + (dbuser.middleName ? ' ' + dbuser.middleName : '') + (dbuser.lastName ? ' ' + dbuser.lastName : '');
+                    }
+
+                    dbuser.save(function (err) {
+                        if (err) {
+                            return res.status(400).send({
+                                status: false,
+                                message: errorHandler.getErrorMessage(err)
+                            });
+                        } else {
+                            res.json({
+                                status: true,
+                                token: usersJWTUtil.genToken(dbuser.username, dbuser.id),
+                                user: dbuser
+                            });
+                        }
+                    });
+                } else {
+                    res.status(400).send({
+                        status: false,
+                        message: 'User is not signed in'
+                    });
+                }
+            });
+        })
+
     });
 };
 
@@ -86,8 +121,8 @@ exports.update = function (req, res) {
  * Update profile picture
  */
 exports.changeProfilePicture = function (req, res) {
- 
-    
+
+
     var token = req.body.token || req.headers.token;
     if (token) {
         logger.debug('Profile Picture [name:' + req.files.file.name + ', fieldname:' + req.files.file.fieldname + ', originalname:' + req.files.file.originalname + ']');
@@ -107,7 +142,7 @@ exports.changeProfilePicture = function (req, res) {
                                 dbuser.profileImageURL = 'modules/users/img/profile/uploads/' + req.files.file.name;
 
                                 dbuser.save(function (saveError) {
-                                    if (saveError) {    
+                                    if (saveError) {
                                         return res.status(400).send({
                                             status: false,
                                             message: errorHandler.getErrorMessage(saveError)

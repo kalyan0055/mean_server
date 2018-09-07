@@ -53,7 +53,11 @@ exports.newuserslist =  function(req, res) {
                 data:null
             })
         }else{
-            User.find({'created_by':req.params.userid}).populate('created_by','username').exec(function(err, users) {
+            let query ={};
+           (result.userType==='Admin')?query={}:query={'created_by':req.params.userid}
+           console.log(query);
+           
+            User.find(query).populate('created_by','username').exec(function(err, users) {
                 if (err) { res.status(400).send({
                     status: false,
                     message: errorHandler.getErrorMessage(err),
@@ -76,28 +80,7 @@ exports.newuserslist =  function(req, res) {
 })
 };
 
-exports.updateuser = async function(req, res){
-
-   await newuserJWTUtil.findUserByToken(req.body,function(err,result){
-        console.log(result.mobile,result.email,'tttt');
-        
-        NewUser.update({_id:result._id},{$set:{username:req.body.username,
-            mobile:req.body.mobile,email:req.body.email}},
-        function(err,update) {
-            console.log(update,'returned form util & update');
-            
-        if(err){
-            res.json({success:false,data:err})
-        }  
-        if(!update){
-            res.json({success:false,data:update})
-        }
-        if(update){
-            res.json({success:true,data:'success'})
-        }         
-        })
-    })
-};
+ 
 function getEmailTemplate(user,type,req) {
     console.log(req.protocol + '://' + req.headers.host);
    
@@ -170,11 +153,17 @@ exports.disableUser = function (req,res){
     let data= req.body;
     newuserJWTUtil.findUserById(data.id,function(err,user){
     if(err || !user){
-        info.status = false;
-        logger.error('Something went wrong with -' + req.body.id + ', -' + JSON.stringify(info));
-        logger.debug('Error Message-'+JSON.stringify(info));
-        res.status(400).send(info);
+        logger.error('Something went wrong with -' + req.body.id + ', -' + JSON.stringify(data));
+        logger.debug('Error Message-'+JSON.stringify(data));
+        res.status(400).send({status:false,message:errorHandler.getErrorMessage(err)});
     }else{
+        let types =['enable','disable'];
+        if(!types.includes(data.type)){
+            return res.status(400).send({
+                status: false,
+                message: `Invalid type ${data.type} - it should be enable or disable`
+            });
+        }
         let type = '';
         (data.type ==='disable')?type=true:type=false;
 
@@ -188,7 +177,7 @@ exports.disableUser = function (req,res){
                 }else{
                     return res.json({
                         status:true,
-                        message:'User Successfully Disabled'
+                        message:`User Successfully ${data.type}`
                     })
                 }
             })
@@ -367,29 +356,17 @@ exports.disableUser = function (req,res){
     })(req, res, next);
 };
 exports.deleteuser =  function(req, res){
-
-    //  NewUser.deleteOne({ _id: req.body._id }, function (err, user) {
-    //          if(err){
-    //             res.json({success:false,data:'Unable to Delete'})
-    //          }
-    //          res.json({success:true,data:'Deleted Successfully'})
-    //       });
-
-    let data= req.body;
-    console.log(data._id);
-    
-    newuserJWTUtil.findUserById(data._id,function(err,user){
+    let data= req.params.userid;
+    newuserJWTUtil.findUserById(data,function(err,user){
         if(err || !user){
-            logger.error('Something went wrong with -' + req.body.id + ', -' + JSON.stringify(err));
+            logger.error('Something went wrong with -' + data + ', -' + JSON.stringify(err));
             logger.debug('Error Message-'+JSON.stringify(err));
             res.status(400).send({
                 status: false,
-                message: 'Error updating the user with username -' + req.body._id
+                message: 'Error deleting the user with user id -' + data
             });
         }else{
             if(user){
-                console.log(user);
-                
                 User.updateOne({_id:user._id},{$set:{deleted:true}},function(err,result){                      
                     if(err || !result){
                         res.json({
@@ -399,9 +376,8 @@ exports.deleteuser =  function(req, res){
                     }else{
                         res.json({
                             status:true,
-                            message:'Successfully Deleted',
-                            data:result
-                        })  
+                            message:'User Successfully Deleted',
+                           })  
                     }
                 })
             }

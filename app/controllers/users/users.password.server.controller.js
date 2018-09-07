@@ -202,36 +202,45 @@ exports.reset = function (req, res, next) {
             }, function (err, user) {
                 if (!err && user) {
                     if (passwordDetails.newPassword === passwordDetails.verifyPassword) {
-                        let salt;
-                        salt = new Buffer(crypto.randomBytes(16).toString('base64'), 'base64');
-                        user.salt = salt;
-                        user.password = user.hashPassword(passwordDetails.newPassword);
-                        user.resetPasswordToken = undefined;
-                        user.resetPasswordExpires = undefined;
-
-                        user.save(function (err,user) {
-                            if (err) {
-                                return res.status(400).send({
-                                    status: false,
-                                    message: errorHandler.getErrorMessage(err)
-                                });
-                            } 
-                            else {
-                                 
-                                //res.json({token:usersJWTUtil.genToken(user.username, user.id)});
-                              //  if(mobileAppKey===config.bbapikey){
-
-                                //    res.send({
-                                //        status: true,
-                                //        message: 'Successfully Changed Password'
-                                //    });
-
-                                // }else {
-                                //     res.redirect('/#!/signin');
-                                // }
-                                 done(err, user);
-                            }
-                        });
+                        if(passwordDetails.username !== req.body.username){
+                        
+                            res.status(400).send({
+                                status:false,
+                                message:"Invalid Username Given"
+                            })
+                        }else{
+                            let salt;
+                            salt = new Buffer(crypto.randomBytes(16).toString('base64'), 'base64');
+                            user.salt = salt;
+                            user.password = user.hashPassword(passwordDetails.newPassword);
+                            user.resetPasswordToken = undefined;
+                            user.resetPasswordExpires = undefined;
+    
+                            user.save(function (err,user) {
+                                if (err) {
+                                    return res.status(400).send({
+                                        status: false,
+                                        message: errorHandler.getErrorMessage(err)
+                                    });
+                                } 
+                                else {
+                                     
+                                    //res.json({token:usersJWTUtil.genToken(user.username, user.id)});
+                                  //  if(mobileAppKey===config.bbapikey){
+    
+                                    //    res.send({
+                                    //        status: true,
+                                    //        message: 'Successfully Changed Password'
+                                    //    });
+    
+                                    // }else {
+                                    //     res.redirect('/#!/signin');
+                                    // }
+                                     done(err, user);
+                                }
+                            });
+                        }
+                        
                     } else {
                         return res.status(400).send({
                             status: false,
@@ -241,7 +250,7 @@ exports.reset = function (req, res, next) {
                 } else {
                     return res.json({
                         status: false,
-                        message: 'Password reset token is invalid or has expired.'
+                        message: 'Password reset Otp is invalid or has expired.'
                     });
                 }
             });
