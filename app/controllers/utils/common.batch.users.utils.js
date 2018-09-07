@@ -202,8 +202,6 @@ exports.createContactUser = function (contact,agent,done) {
         });
 
     }else if(contact.phones.length>0){
-        
-        
         ({username:contact.phones[0].phoneNumber,password:'password','registrationCategory': 'Retailer',
             'selectedSegments': ['Other'],
             'categories':['COFFE']},agent,function (userErr,user) {
@@ -230,4 +228,14 @@ exports.findId = function(id,serverRes,agent,done){
     end(function(err,result){
         done(err,result)
     }); 
+};
+
+exports.resetPassword = function (data,serverRes,agent,done){
+    agent.post('/users/resetPasswordRequest')
+    .send(data)
+    .expect(serverRes)
+    .end(function(reseterr,resetPassword){
+        done(reseterr,resetPassword)
+    })
 }
+

@@ -2279,7 +2279,7 @@ let data = req.body;
 let token = req.body.token || req.headers.token;
 hasAuthorization(token,function(err,valid){
     if(err){
-        res.status(400).send({
+        res.status(401).send({
             status:false,
             message:errorHandler.getErrorMessage(err)
         })
