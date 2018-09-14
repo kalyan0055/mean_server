@@ -18,14 +18,13 @@ module.exports = function(app) {
 		res.locals.url = req.protocol + '://' + req.headers.host + req.url;
 		var regexp = new RegExp('/api/v1/');
 		test = regexp.test(res.locals.url);
-		console.log(test,'testing');
-		
+	 
 		req.setTimeout(0);
 		next();
 	});
 
 	//if(test){
-	 
+	 //SWAGGER APIS
 		
 		router.route('/users/newuserslist/:userid').get(users.newuserslist);
 		router.route('/user/sendpresignupotp').post(users.userRegistration);
@@ -37,18 +36,19 @@ module.exports = function(app) {
 		router.route('/users/resetPassword').post(users.reset);
 		app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 		app.use('/api/v1', router);
-	
+	 //END SWAGGER APIS
 		
 	app.route('/user/sendpresignupotp').post(users.userRegistration);
 	app.route('/users/newuserslist/:userid').get(users.newuserslist);
-	app.route('/users/deleteuser/:userid').delete(users.deleteuser);
+	app.route('/users/deleteuser/:userid').delete(users.deleteuser); 
+	app.route('/users/restoreeuser/:userid').delete(users.restoreeuser);
  	app.route('/users/registervialink').post(users.registervialink);
 	app.route('/users/resetPasswordRequest').post(users.resetPasswordRequest);
 	app.route('/users/disableUser').post(users.disableUser);
 	app.route('/users/profilePicture').post(users.changeProfilePicture);
 	app.route('/users/update').put(users.update);
 	app.route('/auth/reset').post(users.reset);
-
+	app.route('/users/finduser').post(users.findUser);
 
 	app.route('/users/me').post(users.me);
 	app.route('/users/myhome').get(users.requiresLogin, users.myhome);

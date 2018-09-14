@@ -19,27 +19,34 @@ module.exports = function() {
 			User.findOne({
 				username: username
 			}, function(err, user) {
-			 console.log(user,'local js ');
+			//  console.log(user,'local js ');
 						
 				if (err) {
 					return done(err);
 				}
 				if (!user) {
 					return done(null, false, {
-						message: 'Unknown UserName "'+ username+'"'
+						//message: 'Unknown UserName "'+ username+'"'
+						message:'Entered Username or Password is incorrect'
 					});
 				}
 				else if (user.status!=='Registered') {
-					console.log('else if ');
-					
+					 	
 					return done(null, false, {
 						message: 'User is not in active state',
 						userstatus: user.status
 					});
 				}
+				else if (user.deleted ===true) {
+					 	
+					return done(null, false, {
+						message: 'User was deleted',
+						userstatus: user.status
+					});
+				}
 				else if (!user.authenticate(password)) {
 					return done(null, false, {
-						message: 'Invalid password'
+						message: 'Entered Username or Password is incorrect'
 					});
 				}
  

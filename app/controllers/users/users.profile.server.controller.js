@@ -87,9 +87,9 @@ exports.update = function (req, res) {
                     dbuser.updated = Date.now();
                     console.log(dbuser);
 
-                    if (dbuser.firstName || dbuser.lastName || dbuser.middleName) {
-                        dbuser.displayName = dbuser.firstName + (dbuser.middleName ? ' ' + dbuser.middleName : '') + (dbuser.lastName ? ' ' + dbuser.lastName : '');
-                    }
+                    // if (dbuser.firstName || dbuser.lastName || dbuser.middleName) {
+                    //     dbuser.displayName = dbuser.firstName + (dbuser.middleName ? ' ' + dbuser.middleName : '') + (dbuser.lastName ? ' ' + dbuser.lastName : '');
+                    // }
 
                     dbuser.save(function (err) {
                         if (err) {

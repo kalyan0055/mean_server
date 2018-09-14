@@ -265,9 +265,11 @@ exports.reset = function (req, res, next) {
         },
         // If valid email, send reset email using service
         function (emailHTML, user, done) {
+            console.log(user.username,'reset password link');
+            
             var smtpTransport = nodemailer.createTransport(config.mailer.options);
             var mailOptions = {
-                to: 'rambabu.e@technoxis.in',
+                to: user.username,
                 from: config.mailer.from,
                 subject: 'Your password has been changed',
                 html: emailHTML
@@ -282,7 +284,7 @@ exports.reset = function (req, res, next) {
         if (err) {return next(err)}else{
              res.send({
                 status: true,
-                message: 'Successfully Changed Password'
+                message: 'Password Successfully Changed'
                 });
         } ;
     });

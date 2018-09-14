@@ -45,7 +45,7 @@ describe('User Model Unit Tests:', function() {
             issendotp:true,
             issendemail:true,
             otp:'087303',
-            token:'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0xM1QxMzoyNjo0Ny41MjlaIn0.QAXFeUH__DMgIr302fFSg2yEhjABb45hrUqnUxkKVbg'
+            token:'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0yMVQwOTozNDowNi4wNzJaIn0.THc5_hPDe6fosNydn60bnw_LHKP3RZSEgfSzQxK58MM'
          } // }           eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wN1QxMjo1OTozOS4yMjVaIn0.KYNyfY_J7BgBTf9ZtkJ0MhsOherAZZ02bYUDeOsBTPM
         ,{
             username:'somevalue@nvipani.com',
@@ -138,7 +138,6 @@ describe('User Model Unit Tests:', function() {
                 //         validpassRes.body.status.should.equal(false);
                 //         validpassRes.body.message.should.equal('Password is less than 8 chars');
                         commonUserUtil.createEachStepUser(valusers[2],200,agent,function (sendotpErr, sendotpRes) {
-                            console.log(sendotpErr);
                             
                             should.not.exist(sendotpErr);
                             sendotpRes.body.status.should.equal(true);
@@ -199,7 +198,7 @@ describe('User Model Unit Tests:', function() {
    });
 
    it('should be able to send email by taking valid data for reset password request',function(done){
-    commonUserUtil.resetPassword({token:'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0xNFQwNjoxNjoyMy45OTRaIn0.DTwvg1okcbm6PqqwUFeSSqkEvos1jBQMFuBz0LwybdE',id:'',reset_password:false,username:'emandi1@nvipani.com'},400,agent,function(err,result){
+    commonUserUtil.resetPassword({token:'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0xNFQwNjoxNjoyMy45OTRaIn0.DTwvg1okcbm6PqqwUFeSSqkEvos1jBQMFuBz0LwybdE',id:'',reset_password:false,username:'emandi1@nvipani.com'},401,agent,function(err,result){
         should.not.exist(err);
         // console.log(result,'reset password error');
        result.body.status.should.equal(false);

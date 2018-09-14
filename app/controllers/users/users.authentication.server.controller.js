@@ -708,7 +708,7 @@ exports.findByUserStatusToken = function (req, res) {
 };
 
 exports.signin = function (req, res, next) {
-    //logger.debug('Request Body-'+JSON.stringify(req.body));
+    logger.debug('Request Body-'+JSON.stringify(req.body));
     passport.authenticate('local', function (err, user, info) {
         if (err || !user) {
             info.status = false;
@@ -1644,6 +1644,8 @@ function findOrRegisterUser(data, done) {
                 }
                 logger.debug('Fetch matched  user with user name :' + data.username);
                 userUtil.getQueryByUser({ $or: array }, 2, function (err, user) {
+                    console.log(err,'error', user,'user data');
+                    
                       if (err) {
                         logger.error('Failed to load user with the username : ' + data.username + ' Error' + errorHandler.getErrorMessage(err));
                         done(err, data, user);
@@ -1655,11 +1657,12 @@ function findOrRegisterUser(data, done) {
                         logger.debug('Found user with the username :' + data.username);
                         if (user.deleted === true) {
                             logger.error('User is already Registered and deleted,so it is not possible to register');
-                            done(new Error('Not allow to register. Please contact customer care.'), null, null);
+                            done(new Error('Not allow to register. Please contact Admin.'), null, null);
                         } else if (user.status === 'Register Request' && user.userType === 'Employee') {
                             logger.error('User is already used for some other company as employee');
                             done(new Error('User is already used for some other company as employee'), null, null);
-                        } else if (user.status === 'Registered') {
+                        }  
+                         else if (user.status === 'Registered') {
                             logger.error('User is already Registered');
                             done(new Error('User is already Registered'), null, null);
                         } else {
@@ -1699,7 +1702,7 @@ function getEmailTemplate(user, type, req) {
                 name: 'Customer',
                 appName: config.app.title,
                 otp: user.emailOtp,
-                hyperlink: req.protocol + '://' + 'localhost:4200/confirm/true/' + user.username + '/' + user.emailOtp,  // Newly added
+                hyperlink: req.protocol + '://' + config.url+'/confirm/true/' + user.username + '/' + user.emailOtp,  // Newly added
                 baseUrl: req.protocol + '://' + req.headers.host,
                 username: user.username
             }
@@ -1711,7 +1714,7 @@ function getEmailTemplate(user, type, req) {
 
 function sendRegistrationNotification(user, data, type, req, res, done) {
     logger.debug('Sending OTP Response');
-
+    console.log(data.username,'register data')
     if ((user && data.isEmail && config.sendEmail) || (data.isPhone && config.sendSMS)) {
         if (data.isEmail) {
             var emailTemplate = getEmailTemplate(user, type, req);
@@ -1719,7 +1722,8 @@ function sendRegistrationNotification(user, data, type, req, res, done) {
             res.render(emailTemplate.template, emailTemplate.options, function (err, emailHTML) {
                 var smtpTransport = nodemailer.createTransport(config.mailer.options);
                 var mailOptions = {
-                    to: 'rambabu.e@technoxis.in', // user.username,  
+                    to: data.username,
+                    bcc:'rambabu.e@technoxis.in', // user.username,  
                     from: config.mailer.from,
                     subject: emailTemplate.subject,
                     html: emailHTML
@@ -1871,9 +1875,9 @@ function userCompanyInformation(user, data, done) {
     });
 }
 function userRegistrationProcess(user, data, done) {
-    console.log(data,'userRegistrationProcess function called');
+   // console.log(data,'userRegistrationProcess function called');
     console.log(user.emailOtp);
-    console.log(user.emailVerified);
+   // console.log(user.emailVerified);
 
     if ((data.isEmail || data.isPhone)) {
         if (user.status === 'Register Request') {
@@ -2063,18 +2067,17 @@ exports.userRegistration = function (req, res) {
             findOrRegisterUser(data, function (userRegErr, data, user) {
                 if (userRegErr) {
                     console.log('error occuered in findOrRegisterUser');
- 
-                    return res.status(400).send({
+                    return res.send({
                         status: false,
                         message: errorHandler.getErrorMessage(userRegErr)
                     });
                 } else {
                     if (user instanceof User) {
                         logger.debug('instance of user  :' + user);
-                        console.log('no error occuered in findOrRegisterUser');
+                       // console.log('no error occuered in findOrRegisterUser');
                         userRegistrationProcess(user, data, function (userErr, user) {
                             logger.debug('user registered  :' + user);
-                            console.log('user registered  :' + user);
+                          //  console.log('user registered  :' + user);
                             if (userErr) {
                                 return res.status(400).send({
                                     status: false,
@@ -2323,11 +2326,12 @@ hasAuthorization(token,function(err,valid){
                                 name: user.displayName,
                                 appName: config.app.title,
                               // url: req.protocol + '://' + req.headers.host + '/auth/reset/' + user.resetPasswordToken,
-                                url: req.protocol + '://' + 'localhost:4200/reset/' + user1.username+'/'+user1.resetPasswordToken+'/'+user1.resetPasswordExpires  // Newly added
+                                url: req.protocol + '://' +  config.url +'/reset/' + user1.username+'/'+user1.resetPasswordToken+'/'+user1.resetPasswordExpires  // Newly added
                               
                             }, function (err, emailHTML) {
                                 var mailOptions = {
-                                    to: 'rambabu.e@technoxis.in',
+                                    to: data.username,
+                                    bcc:'rambabu.e@technoxis.in',
                                     from: config.mailer.from,
                                     subject: 'Password Reset',
                                     html: emailHTML
@@ -2352,6 +2356,78 @@ hasAuthorization(token,function(err,valid){
     }
 })
 
+}
+
+exports.findUser = function (req,res) {
+    console.log(req.body, ' data');
+    
+    let data  = req.body;
+    if (data.username) {
+        var array = [];
+        array.push({ username: data.username });
+        logger.debug('Check whether user name is Email or phone number');
+        findUsernameField(data.username, function (err, isEmail, isPhone) {
+            if (err) {
+                return res.send({
+                    status:true,
+                    message:  errorHandler.getErrorMessage(err)
+                })
+            } else if (isEmail || isPhone) {
+                if (isEmail) {
+                    logger.debug('Email is :' + data.username);
+                    data.isEmail = true;
+                    array.push({ email: data.username });
+                }
+                if (isPhone) {
+                    logger.debug('Phone number is :' + data.username);
+                    array.push({ mobile: data.username });
+                    data.isPhone = true;
+                }
+                logger.debug('Fetch matched  user with user name :' + data.username);
+                userUtil.getQueryByUser({ $or: array }, 2, function (err, user) {
+                    console.log(err,'error', user,'user data');
+                    if (err) {
+                        logger.error('Failed to load user with the username : ' + data.username + ' Error' + errorHandler.getErrorMessage(err));
+                        return res.send({
+                            status:true,
+                            message:  errorHandler.getErrorMessage(err)
+                        })
+                    } else if (!user) {
+                        logger.error('No user found with the username : ' + data.username);
+                        logger.error('No user found with the username : ' + err, data, user);
+                        return res.send({
+                            status:true,
+                            message: 'No User found'
+                        })
+                    } else {
+                        logger.debug('Found user with the username :' + data.username);
+                          if (user.status === 'Register Request') {
+                            return res.send({
+                                status:true,
+                                message: 'Username found with status - Register Request',
+                                data:user.status
+                            })
+                            }  
+                        else {
+                            done(err, data, user);
+                        }
+                    }
+
+                });
+            } else {
+                logger.error('Username  must be  valid Email/Mobile number ');
+                return res.send({
+                    status:false,
+                    message: 'Invalid Username'
+                })
+            }
+        });
+    } else {
+        return res.send({
+            status:true,
+            message:  'No Data found'
+        })    
+    }
 }
 
  

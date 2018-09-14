@@ -149,3 +149,19 @@ exports.findUserById = function(userId, done) {
 }
 
 
+exports.findUserByIdOnly = function(userId, done) {
+    User.findOne({
+        _id: userId,
+    }).select('-salt -password').exec(function (userErr, user) {
+        if (userErr) {
+            logger.error('Error while fetch employee user in users ' + userId + 'Error:' + userErr);
+            done(userErr, null);
+        } else if (!user) {
+            logger.error('Employee user is not found in users ' + userId);
+            done(new Error('Employee user is not found in users'), null);
+        } else {
+            done(null, user);
+        }
+    });
+}
+
