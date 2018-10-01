@@ -5,8 +5,8 @@
  */
 var mongoose = require('mongoose'),
 	jwt = require('jwt-simple'),
-	User = mongoose.model('User'),
-	//User = mongoose.model('Newuser'),
+	// User = mongoose.model('User'),
+	User = mongoose.model('Newuser'),
 	token_secret = 'nVipani-software-solutions',
 	logger = require('../../../lib/log').getLogger('USERS', 'DEBUG');
 exports.TOKEN_SECRET = token_secret;

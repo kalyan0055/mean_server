@@ -19,8 +19,8 @@ var _ = require('lodash'),
     // Order = mongoose.model('Order'),
     // Todo = mongoose.model('Todo'),
     // User = mongoose.model('User'),
-   // User = mongoose.model('Newuser'),
-    User = mongoose.model('User'),
+    User = mongoose.model('Newuser'),
+
     async = require('async');
 /**
  * Update user details

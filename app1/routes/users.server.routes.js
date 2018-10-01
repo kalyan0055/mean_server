@@ -26,7 +26,7 @@ module.exports = function(app) {
 	//if(test){
 	 //SWAGGER APIS
 		
-		router.route('/users/newuserslist/:userid').post(users.newuserslist);
+		router.route('/users/newuserslist/:userid').get(users.newuserslist);
 		router.route('/user/sendpresignupotp').post(users.userRegistration);
 		router.route('/user/verifypresignupotp').post(users.userRegistration);
 		router.route('/users/deleteuser/:userid').delete(users.deleteuser);
@@ -39,7 +39,7 @@ module.exports = function(app) {
 	 //END SWAGGER APIS
 		
 	app.route('/user/sendpresignupotp').post(users.userRegistration);
-	app.route('/users/newuserslist/:userid').post(users.newuserslist);
+	app.route('/users/newuserslist/:userid').get(users.newuserslist);
 	app.route('/users/deleteuser/:userid').delete(users.deleteuser); 
 	app.route('/users/restoreeuser/:userid').delete(users.restoreeuser);
  	app.route('/users/registervialink').post(users.registervialink);

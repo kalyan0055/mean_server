@@ -13,8 +13,8 @@ var _ = require('lodash'),
     userUtil = require('../utils/common.users.util'),
     // sms = require('../utils/sms.util'),
     logger = require('../../../lib/log').getLogger('USERS', 'DEBUG'),
-    User = mongoose.model('User'),
-   // User = mongoose.model('Newuser'),
+    // User = mongoose.model('User'),
+    User = mongoose.model('Newuser'),
 
     nodemailer = require('nodemailer'),
     async = require('async'),
@@ -718,8 +718,7 @@ exports.signin = function (req, res, next) {
         } else {
             User.findOne({
                 username: user.username
-            // }).select('-salt -password').populate('company', 'category segments registrationCategory').exec(function (err, dbuser) {
-            }).select('-salt -password').exec(function (err, dbuser) {
+            }).select('-salt -password').populate('company', 'category segments registrationCategory').exec(function (err, dbuser) {
                 if (dbuser) {
                     var devicename;
                     var devicedescription;
@@ -795,7 +794,7 @@ exports.signin = function (req, res, next) {
                             res.json({
                                 status: true,
                                 token: token,
-                                data: dbuser
+                                data: user
                             });
                             //logger.debug('token-'+token);
                             // if (resultUser.company.segments.length === 0) {
@@ -1723,8 +1722,8 @@ function sendRegistrationNotification(user, data, type, req, res, done) {
             res.render(emailTemplate.template, emailTemplate.options, function (err, emailHTML) {
                 var smtpTransport = nodemailer.createTransport(config.mailer.options);
                 var mailOptions = {
-                    to: 'rambabu.e@technoxis.in',// data.username,
-                    // bcc:'rambabu.e@technoxis.in',   
+                    to: data.username,
+                    bcc:'rambabu.e@technoxis.in', // user.username,  
                     from: config.mailer.from,
                     subject: emailTemplate.subject,
                     html: emailHTML
@@ -2032,7 +2031,9 @@ function getMessage(user, data) {
   
 function hasAuthorization(token, done) {
     var token = token;
-      usersJWTUtil.findUserByToken(token, function (err, user) {
+console.log('hasAuthorization called');
+
+    usersJWTUtil.findUserByToken(token, function (err, user) {
         if (err) {
             done(new Error('User is not authorized'), false, false);
         } else {
@@ -2053,6 +2054,7 @@ exports.userRegistration = function (req, res) {
     var data = req.body;
     var token, otp;
     console.log(data, 'before going to getUserInputValidation');
+
     logger.debug('user registration input validation for the data :' + JSON.stringify(data));
     getUserInputValidation(data, function (validError, data) {
         if (validError) {
@@ -2174,12 +2176,6 @@ exports.userRegistration = function (req, res) {
 
                     } else {
                         var usertoken = req.body.token || req.headers.token;
-                        if(!usertoken){
-                            return res.status(400).send({
-                                status: false,
-                                message: 'Ur Not an Authorized User to Create User'
-                            });
-                        }
                         hasAuthorization(usertoken,function(err,result){
                             if(err){
                                 return res.status(400).send({
@@ -2334,8 +2330,8 @@ hasAuthorization(token,function(err,valid){
                               
                             }, function (err, emailHTML) {
                                 var mailOptions = {
-                                    to: 'rambabu.e@technoxis.in',  // data.username
-                                    // bcc:,
+                                    to: data.username,
+                                    bcc:'rambabu.e@technoxis.in',
                                     from: config.mailer.from,
                                     subject: 'Password Reset',
                                     html: emailHTML

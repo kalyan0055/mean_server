@@ -386,3 +386,119 @@
 [2018-09-14 21:03:23.076] [DEBUG] USERS - user registered wiht valid authoenticaiton :info@nvipani.com
 [2018-09-14 21:03:23.090] [DEBUG] USERS - Sending OTP Response
 [2018-09-14 21:03:23.101] [DEBUG] USERS - Sending OTP Response-450236
+[2018-09-17 11:26:23.292] [DEBUG] USERS - Request Body-{"username":"info@nvipani.com","password":"techno12"}
+[2018-09-18 19:28:16.341] [DEBUG] USERS - Request Body-{"username":"info@nvipani.com","password":"techno12"}
+[2018-09-18 19:30:27.338] [DEBUG] USERS - Registration Request  - {"username":"","issendotp":true,"issendemail":true}
+[2018-09-18 19:30:27.343] [DEBUG] USERS - user registration input validation for the data :{"username":"","issendotp":true,"issendemail":true}
+[2018-09-18 19:30:27.345] [ERROR] USERS - username is empty :{"username":"","issendotp":true,"issendemail":true}
+[2018-09-18 19:30:27.374] [DEBUG] USERS - Registration Request  - {"username":"somevalue","issendotp":true,"issendemail":true}
+[2018-09-18 19:30:27.378] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue","issendotp":true,"issendemail":true}
+[2018-09-18 19:30:27.379] [ERROR] USERS - Username is not valid{"username":"somevalue","issendotp":true,"issendemail":true}
+[2018-09-18 19:30:27.392] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","issendotp":true,"issendemail":true,"otp":"087303","token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0yMVQwOTozNDowNi4wNzJaIn0.THc5_hPDe6fosNydn60bnw_LHKP3RZSEgfSzQxK58MM"}
+[2018-09-18 19:30:27.395] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","issendotp":true,"issendemail":true,"otp":"087303","token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0yMVQwOTozNDowNi4wNzJaIn0.THc5_hPDe6fosNydn60bnw_LHKP3RZSEgfSzQxK58MM"}
+[2018-09-18 19:30:27.399] [DEBUG] USERS - Username is valid
+[2018-09-18 19:30:27.400] [DEBUG] USERS - Fetching already created user with the same user name  :somevalue@nvipani.com
+[2018-09-18 19:30:27.400] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-09-18 19:30:27.406] [DEBUG] USERS - Email is :somevalue@nvipani.com
+[2018-09-18 19:30:27.406] [DEBUG] USERS - Fetch matched  user with user name :somevalue@nvipani.com
+[2018-09-18 19:30:29.293] [DEBUG] USERS - Registration Request  - {"username":"adminuser5@nvipani.com","otp":"","password":"passwrod","isverifyotp":true}
+[2018-09-18 19:30:29.295] [DEBUG] USERS - user registration input validation for the data :{"username":"adminuser5@nvipani.com","otp":"","password":"passwrod","isverifyotp":true}
+[2018-09-18 19:30:29.298] [ERROR] USERS - OTP field is empty
+[2018-09-18 19:30:29.308] [DEBUG] USERS - Registration Request  - {"username":"adminuser5@nvipani.com","password":"test1234","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-09-18 19:30:29.311] [DEBUG] USERS - user registration input validation for the data :{"username":"adminuser5@nvipani.com","password":"test1234","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-09-18 19:30:29.313] [DEBUG] USERS - Fetching already created user with the same user name  :adminuser5@nvipani.com
+[2018-09-18 19:30:29.314] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-09-18 19:30:29.315] [DEBUG] USERS - Email is :adminuser5@nvipani.com
+[2018-09-18 19:30:29.316] [DEBUG] USERS - Fetch matched  user with user name :adminuser5@nvipani.com
+[2018-09-18 19:30:29.334] [DEBUG] USERS - Found user with the username :somevalue@nvipani.com
+[2018-09-18 19:30:29.337] [DEBUG] USERS - instance of user  :{ firstName: '',
+  middleName: '',
+  lastName: '',
+  allowRegistration: true,
+  email: 'somevalue@nvipani.com',
+  profileImageURL: 'modules/users/img/profile/default.png',
+  croppedProfileImageURL: 'modules/users/img/profile/default-resize-240-240.png',
+  roles: [ 'user' ],
+  mobile: '',
+  userType: 'Adminuser',
+  emailVerified: false,
+  mobileVerified: false,
+  status: 'Register Request',
+  disabled: false,
+  deleted: false,
+  reset_password: false,
+  _id: 5b9131304e452e34d4807535,
+  username: 'somevalue@nvipani.com',
+  created: 2018-09-06T13:52:48.194Z,
+  emailOtp: '087303',
+  updated: 2018-09-06T13:52:48.197Z,
+  created_by: 5b7d1e9f1583471f04217595,
+  __v: 0 }
+[2018-09-18 19:30:29.343] [DEBUG] USERS - user registered  :{ firstName: '',
+  middleName: '',
+  lastName: '',
+  allowRegistration: true,
+  email: 'somevalue@nvipani.com',
+  profileImageURL: 'modules/users/img/profile/default.png',
+  croppedProfileImageURL: 'modules/users/img/profile/default-resize-240-240.png',
+  roles: [ 'user' ],
+  mobile: '',
+  userType: 'Adminuser',
+  emailVerified: false,
+  mobileVerified: false,
+  status: 'Register Request',
+  disabled: false,
+  deleted: false,
+  reset_password: false,
+  _id: 5b9131304e452e34d4807535,
+  username: 'somevalue@nvipani.com',
+  created: 2018-09-06T13:52:48.194Z,
+  emailOtp: '087303',
+  updated: 2018-09-06T13:52:48.197Z,
+  created_by: 5b7d1e9f1583471f04217595,
+  __v: 0 }
+[2018-09-18 19:30:29.345] [DEBUG] USERS - Sending OTP Response
+[2018-09-18 19:30:29.431] [DEBUG] USERS - Sending OTP Response-087303
+[2018-09-18 19:30:30.365] [DEBUG] USERS - Found user with the username :adminuser5@nvipani.com
+[2018-09-18 19:30:30.367] [DEBUG] USERS - instance of user  :{ firstName: '',
+  middleName: '',
+  lastName: '',
+  allowRegistration: true,
+  email: 'adminuser5@nvipani.com',
+  profileImageURL: 'modules/users/img/profile/default.png',
+  croppedProfileImageURL: 'modules/users/img/profile/default-resize-240-240.png',
+  roles: [ 'user' ],
+  mobile: '',
+  userType: 'Adminuser',
+  emailVerified: false,
+  mobileVerified: false,
+  status: 'Register Request',
+  disabled: false,
+  deleted: false,
+  reset_password: false,
+  _id: 5b89009d958727272824b1aa,
+  username: 'adminuser5@nvipani.com',
+  created: 2018-08-31T08:47:25.923Z,
+  emailOtp: '520299',
+  updated: 2018-08-31T08:47:25.926Z,
+  created_by: 5b7d1e9f1583471f04217595,
+  __v: 0 }
+[2018-09-18 19:30:30.370] [DEBUG] USERS - Verifying OTP - true
+[2018-09-18 19:30:30.371] [ERROR] USERS - Incorrect otp for the Email: adminuser5@nvipani.com
+[2018-09-18 19:30:30.377] [DEBUG] USERS - user registered  :null
+[2018-09-18 19:30:30.389] [DEBUG] USERS - Registration Request  - {"username":"adminuser5@nvipani.com","password":"","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-09-18 19:30:30.392] [DEBUG] USERS - user registration input validation for the data :{"username":"adminuser5@nvipani.com","password":"","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-09-18 19:30:30.395] [ERROR] USERS - Password is empty : {"username":"adminuser5@nvipani.com","password":"","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-09-18 19:30:30.406] [DEBUG] USERS - Registration Request  - {"username":"adminuser5@nvipani.com","password":"test123","conf_password":"test114","otp":123456,"isverifyotp":true}
+[2018-09-18 19:30:30.409] [DEBUG] USERS - user registration input validation for the data :{"username":"adminuser5@nvipani.com","password":"test123","conf_password":"test114","otp":123456,"isverifyotp":true}
+[2018-09-18 19:30:30.412] [ERROR] USERS - Password is not valid +{"username":"adminuser5@nvipani.com","password":"test123","conf_password":"test114","otp":123456,"isverifyotp":true}
+[2018-09-18 19:30:30.423] [ERROR] USERS - Error while fetch employee user in users :3232130slfkaslfksError:CastError: Cast to ObjectId failed for value ":3232130slfkaslfks" at path "_id" for model "Newuser"
+[2018-09-18 19:30:30.425] [ERROR] USERS - Something went wrong with -:3232130slfkaslfks, -{"message":"Cast to ObjectId failed for value \":3232130slfkaslfks\" at path \"_id\" for model \"Newuser\"","name":"CastError","stringValue":"\":3232130slfkaslfks\"","kind":"ObjectId","value":":3232130slfkaslfks","path":"_id"}
+[2018-09-18 19:30:30.426] [DEBUG] USERS - Error Message-{"message":"Cast to ObjectId failed for value \":3232130slfkaslfks\" at path \"_id\" for model \"Newuser\"","name":"CastError","stringValue":"\":3232130slfkaslfks\"","kind":"ObjectId","value":":3232130slfkaslfks","path":"_id"}
+[2018-10-01 19:11:41.257] [DEBUG] USERS - Request Body-{"username":"info@nvipani.com","password":"techno@12"}
+[2018-10-01 19:11:41.412] [ERROR] USERS - Error Signin with username -info@nvipani.com, -{"message":"Entered Username or Password is incorrect","status":false}
+[2018-10-01 19:11:52.793] [DEBUG] USERS - Request Body-{"username":"info@nvipani.com","password":"techno12"}
+[2018-10-01 19:16:14.874] [DEBUG] USERS - Request Body-{"username":"info@nvipani.com","password":"techno12"}
+[2018-10-01 19:17:14.083] [DEBUG] USERS - Request Body-{"username":"info@nvipani.com","password":"techno12"}
+[2018-10-01 19:21:06.772] [DEBUG] USERS - Request Body-{"username":"info@nvipani.com","password":"techno12"}
+[2018-10-01 19:23:59.513] [DEBUG] USERS - Request Body-{"username":"info@nvipani.com","password":"techno12"}

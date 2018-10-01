@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<title>Tax-Invoice</title>
+</head>
+<style>
+
+
+	.invoice-title h2, .invoice-title h3 {
+		display: inline-block;
+	}
+
+	.text-left-center{
+		text-align: start;
+		font-weight: bold;
+	}
+	.text-bold{
+		font-weight: bold;
+	}
+	.text-value{
+		font-weight: normal;
+	}
+	.tr-subtotal{
+		border-bottom: 1px solid #000;
+		border-top: 1px solid #000;
+	}
+
+	.last-table{
+		width: 100%;
+	}
+
+	.heading-style{
+		font-size: 12px;
+	}
+	.address-style{
+		font-size: 8px;
+		line-height: 0;
+	}
+	.conditions{
+		font-size: 8px;
+	}
+	.conditionsdetails{
+		font-size: 6px;
+	}
+	.table>tbody>tr>th{
+		vertical-align: middle;
+	}
+	.table>tbody>tr>td{
+		font-size: 7px;
+		padding: 4px 2px 4px 2px;
+		vertical-align: middle;
+	}
+	.table>thead>tr>th{
+		vertical-align: middle;
+		font-size: 6px;
+		font-weight: 600;
+		padding:2px;
+		border:1px solid #000;
+	}
+	table {
+		width: 100%;
+		font-size: 8px;
+		border-collapse: collapse;
+		margin-top:5px;
+		margin-bottom:5px;
+		position: relative;
+	}
+	th{
+		border: 1px solid #000;
+		text-align: center;
+		font-size: 7px;
+		font-weight: bold;
+		display: table-cell;
+		vertical-align:middle;
+		padding: 3px;
+	}
+	table>thead>tr>th{
+		position: relative;
+	}
+	table>thead>tr>th:before{
+		position: absolute;
+		content: "";
+		top: 0;
+		left: -1px;
+		background-color: black;
+		width: 1px;
+		height: 100%;
+	}
+
+	td{
+		border: 1px solid #000;
+		display: table-cell;
+		vertical-align: middle;
+		padding: 2px;
+	}
+	header strong {
+		text-align:center;
+		margin:0px auto;
+		font-size:8px;
+		color:white;
+		font-family:"ufonts com perpetua 2";
+		display:inline-block;
+	}
+	thead {
+		text-align: center;
+		vertical-align: middle;
+		border: 1px solid #000;
+		/*white-space: nowrap;*/
+	}
+	.text-nowrap{
+		white-space: nowrap;
+	}
+
+	.text-right{
+		text-align:right;
+	}
+	.text-left{
+		text-align:left;
+	}
+	.text-total{
+		font-size: 10px;
+		font-weight: 800;
+		padding-top: 5px;
+		padding-bottom:5px;
+		background: #bdd6ee;
+	}
+	.vertical-bottom{
+		vertical-align: bottom;
+	}
+	.text-center{
+		text-align: center;
+	}
+	.text-small{
+		font-size:5px;
+	}
+
+	table>thead>tr>th {
+		background: #bdd6ee;
+	}
+	.panel-title{
+		margin: 2px;
+	}
+	.col-background{
+		background: #bdd6ee;
+	}
+	strong{
+		font-size: 10px;
+	}
+	.unbreakable td.width-1{
+		width: 1% !important;
+	}
+	.unbreakable td{
+		width: 100% !important;
+        white-space: nowrap;
+	}
+	.unbreakable td.text-wrap,
+	.unbreakable th.text-wrap{
+		white-space: normal;
+	}
+	.unbreakable tr,
+    .unbreakable td{
+		page-break-inside: avoid !important;
+	}
+	table.unbreakable-table{
+		page-break-inside: avoid !important;
+	}
+    /*body {
+        transform-origin: 0 0;
+        -webkit-transform-origin: 0 0;
+        transform: scale(0.654545);
+        -webkit-transform: scale(0.654545);
+    }*/
+</style>
+
+<body>
+<div class=" address-heading text-center">
+	<b class="heading-style">{{sellercompany.name}}</b></br>
+		<span class="address-style">{{#addresses sellercompany.addresses}}{{/addresses}} <br>Phone:{{#phones sellercompany.phones}}{{/phones}}, E-mail: {{#emails sellercompany.emails}}{{/emails}}
+                </span><br><b class="text-center address-style">GSTIN :<span class="text-value">{{sellercompany.gstinNumber}}</span></b>
+</div>
+<table class="tr-subtotal last-table">
+	<!--<tr>
+        <td class="text-left-center">Order Number:<span class="text-value"> {{order.orderNumber}}</span></td>
+        <td class="text-left-center">TIN No:<span class="text-value">{{order.invoice.tinNo}}</span></td>
+        <td class="text-left-center">CST No:<span class="text-value">{{order.invoice.cstNo}}</span></td>
+    </tr>-->
+	<tr>
+		<td colspan="4" class="text-center col-background"><strong>Tax Invoice</strong></td>
+	</tr>
+	<tr>
+		<td class="text-left-center" colspan="2">Order No: <span class="text-value">{{order.orderNumber}}</span></td>
+        <td class="text-left-center" colspan="2">Order Placed: <span class="text-value">{{placedFormat}}</span></td>
+	</tr>
+	<tr>
+		<td class="text-left-center" colspan="2">Invoice No : <span class="text-value">{{order.invoice.number}}</span></td>
+		<td class="text-left-center" colspan="2">Transport Mode : <span class="text-value"></span></td>
+	</tr>
+	<tr>
+		<td class="text-left-center" colspan="2">Invoice Date : <span class="text-value">{{invoiceFormat}}</span></td>
+		<td class="text-left-center" colspan="2">Vehicle Number : <span class="text-value">{{order.transport.vehicleNumber}}</span></td>
+	</tr>
+	<tr>
+		<td class="text-left-center" colspan="2">Reverse Charge(Y/N): N</td>
+		<td class="text-left-center" colspan="2">Date of supply :<span class="text-value">{{order.dateOfSupply}}</span></td>
+	</tr>
+	<tr>
+		<td class="text-left-center">State : <span class="text-value">{{#specificaddress sellercompany.addresses false true false}}{{/specificaddress}}</span></td>
+		<td class="text-left-center">Pincode : <span class="text-value">{{#specificaddress sellercompany.addresses true false false}}{{/specificaddress}}</span></td>
+		<td class="text-left-center"colspan="2">Place of Supply : <span class="text-value">{{#specificaddress sellercompany.addresses false false true}}{{/specificaddress}}</span></td>
+	</tr>
+
+</table>
+<table class="tr-subtotal last-table">
+	<tr>
+		<th colspan="2" class="col-background">Bill to Party</th>
+		<th colspan="2" class="col-background">Ship to Party</th>
+	</tr>
+	<tr>
+		<td class="text-left-center" colspan="2">Name : <span class="text-value">{{buyercompany.name}}</span></td>
+		<td class="text-left-center" colspan="2">Name : <span class="text-value">{{buyercompany.name}}</span></td>
+	</tr>
+	<tr>
+		<td class="text-left-center" colspan="2">Address :<span class="text-value conditionsdetails">{{order.billingAddress.addressLine}},<br>{{order.billingAddress.city}},<br>{{order.billingAddress.state}},<br>{{order.billingAddress.country}}</span></td>
+		<td class="text-left-center" colspan="2">Address :<span class="text-value conditionsdetails">{{order.shippingAddress.addressLine}},<br>{{order.shippingAddress.city}},<br>{{order.shippingAddress.state}},<br>{{order.billingAddress.country}}</span></td>
+	</tr>
+    <tr>
+        <td class="text-left-center" colspan="2">GSTIN : <span class="text-value">{{buyercompany.gstinNumber}}</span></td>
+        <td class="text-left-center" colspan="2">GSTIN : <span class="text-value">{{buyercompany.gstinNumber}}</span></td>
+    </tr>
+	<tr>
+		<td class="text-left-center" >State : <span class="text-value">{{order.billingAddress.state}}</span></td>
+		<td class="text-left-center" >Pincode : <span class="text-value">{{order.billingAddress.pinCode}}</span></td>
+		<td class="text-left-center" >State : <span class="text-value">{{order.shippingAddress.state}}</span></td>
+		<td class="text-left-center" >Pincode : <span class="text-value">{{order.shippingAddress.pinCode}}</span></td>
+	</tr>
+</table>
+	<!--<div class="row">
+		<div class="col-xs-12">
+			<div class="row">
+				<div class="heading-style col-xs-6">
+					<b class="conditions">Billing Address</b></br>
+					<div class="conditionsdetails">
+					{{order.billingAddress.addressLine}},</br>
+					{{order.billingAddress.country}},{{order.billingAddress.state}},</br>
+					{{order.billingAddress.city}}-{{order.billingAddress.pinCode}}
+					</div>
+				</div>
+				<div class="heading-style col-xs-6">
+					<b class="conditions">Shipping Address</b></br>
+					<div class="conditionsdetails">
+					{{order.shippingAddress.addressLine}},</br>
+					{{order.shippingAddress.country}},{{order.shippingAddress.state}},</br>
+					{{order.shippingAddress.city}}-{{order.shippingAddress.pinCode}}
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>-->
+<div class="table-responsive">
+	<h3 class="panel-title"><b class="conditions">Order summary</b></h3>
+	<table class="table condensed unbreakable">
+		<thead>
+		<tr>
+			<th rowspan="2">S. No.</th>
+			<th rowspan="2" class="text-wrap">Product Description</th>
+			<th rowspan="2">HSN Code</th>
+			<th rowspan="2">UOM</th>
+			<th rowspan="2">Qty</th>
+			<th rowspan="2">Rate</th>
+			<th rowspan="2">Amount</th>
+			<th rowspan="2">Discount</th>
+			<th rowspan="2">Taxable Value</th>
+			<th colspan="2">CGST</th>
+			<th colspan="2">SGST</th>
+			<th rowspan="2">Total</th>
+		</tr>
+		<tr>
+			<th >Rate (%)</th>
+			<th>Amount</th>
+			<th >Rate (%)</th>
+			<th>Amount</th>
+		</tr>
+		</thead>
+		<tbody class="text-right ">
+		{{#each order.products}}
+		<tr>
+			<td class="text-center width-1">{{#sequence @index}}{{/sequence}}</td>
+			<td class="text-left text-wrap">{{inventory.productName}}</td>
+			<td class="text-left">{{inventory.hsncodeName}}</td>
+			<td class="text-nowrap">{{inventory.unitOfMeasureName}}) </td>
+			<td>{{numberOfUnits}}</td>
+			<td>{{#eachmrp unitMrpPrice inventory.MRP}}{{/eachmrp}}</td>
+			<td>{{#total numberOfUnits unitMrpPrice inventory.MRP}}{{/total}}</td>
+			<td>{{#discounttotal numberOfUnits unitMrpPrice inventory.MRP unitPrice}}{{/discounttotal}}</td>
+			<td>{{#subtotal numberOfUnits unitPrice}}{{/subtotal}}</td>
+			<td>{{inventory.taxGroup.CGST}}</td>
+			<td>{{#gsttotal inventory.taxGroup.CGST numberOfUnits unitPrice }}{{/gsttotal}}</td>
+			<td>{{inventory.taxGroup.SGST}}</td>
+			<td>{{#gsttotal inventory.taxGroup.SGST numberOfUnits unitPrice}}{{/gsttotal}}</td>
+			<td>{{#eachtotal numberOfUnits unitPrice inventory true}}{{/eachtotal}}</td>
+		</tr>
+		{{/each}}
+		</tbody>
+		<tbody class=" text-center">
+		<tr>
+			<th colspan="4" class="text-total">Total</th>
+			<td>{{#quantities order.products}}{{/quantities}}</td>
+			<td colspan="2">{{#totalmrpprice order.products}}{{/totalmrpprice}}</td>
+			<td>{{#discountttotal order.products}}{{/discountttotal}}</td>
+			<td>{{#grandnogsttotal order.products}}{{/grandnogsttotal}}</td>
+			<td colspan="2">{{#grandsgstvsgstvigst order.products true false false}}{{/grandsgstvsgstvigst}}</td>
+			<td colspan="2">{{#totalsgstpprice order.products false true false}}{{/totalsgstpprice}}</td>
+			<td>{{#grandgsttotal order.products false}}{{/grandgsttotal}}</td>
+		</tr>
+		</tbody>
+	</table>
+	<table class="unbreakable-table text-right">
+		<tbody >
+		<tr>
+			<th colspan="2" class="text-total">Total invoice amount in words</th>
+			<td class="text-left">Total Amount before Tax</td>
+			<td>{{#grandnogsttotal order.products}}{{/grandnogsttotal}}</td>
+		</tr>
+		<tr>
+			<td rowspan="4" colspan="2" class="text-wrap">{{totalAmount}}</td>
+			<td class="text-left">Add:CGST</td>
+			<td>{{#grandsgstvsgstvigst order.products true false false}}{{/grandsgstvsgstvigst}}</td>
+		</tr>
+		<tr>
+			<td class="text-left">Add:SGST</td>
+			<td>{{#grandsgstvsgstvigst order.products false true false}}{{/grandsgstvsgstvigst}}</td>
+		</tr>
+		<tr>
+			<td class="text-left">Total Tax Amount</td>
+			<td>{{#grandsgstvsgstvigst order.products true true false}}{{/grandsgstvsgstvigst}}</td>
+		</tr>
+		<tr>
+		<td class="text-left">Total Amount After Tax</td>
+		<td class="text-bold">{{#grandgsttotal order.products false}}{{/grandgsttotal}}</td></tr>
+		<tr>
+			<td class="text-center"><b>Bank Details</b></td>
+			<td rowspan="6" ></td>
+			<td class="text-left"><b>GST on Reverse charge</b></td>
+			<td>{{inventory.gst}}</td>
+		</tr>
+		<tr>
+			<td class="text-left"><b>Bank A/C:</b> {{sellercompany.bankAccountDetails.bankAccountNumber}}</td>
+			<td rowspan="6" colspan="2" class="text-center"><span class="text-small">certified that the particulars above are true and correct</span><br><span>
+				<strong>For {{sellercompany.name}}</strong><br><br><br><br><br>
+			</span><br><span class="vertical-bottom text-center" > <b>Authorised Signatory</b></span></td>
+		</tr>
+		<tr>
+			<td class="text-left"><b>Bank IFSC:</b> {{sellercompany.bankAccountDetails.ifscCode}}</td>
+		</tr>
+		<tr>
+			<td rowspan="4" class="text-center"><strong>Terms and Conditions</strong><br>
+				*Goods once sold will not be taken back or exchanged.</br>
+				*Bills not paid within due date will attract 24% p.a. interest. </br>
+				*All disputes subject to Bangalore jurisdication only.</br>
+				*Prescribed Sales Tax declaration will be given.</br></br></td>
+		</tr>
+		<tr>
+
+		</tr>
+		<tr>
+
+		</tr>
+		<tr>
+			<td class="text-center">Common Seal</td>
+		</tr>
+		</tbody>
+	</table>
+</div>
+</div>
+</body>
+</html>

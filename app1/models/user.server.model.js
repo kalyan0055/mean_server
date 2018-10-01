@@ -76,8 +76,8 @@ var UserSchema = new Schema({
         type: String,
         trim: true,
         default: '',
-        validate: [validateLength256, 'Please fill in your first name']
-         
+        validate: [validateLength256, 'Please fill in your first name'],
+        required:true
     },
     middleName: {
         type: String,
@@ -244,7 +244,7 @@ var UserSchema = new Schema({
     ],
     userType: {
         type: String,
-        enum: ['User', 'Employee', 'Other','Adminuser','Admin'],
+        enum: ['User', 'Employee', 'Other','Superadmin','Admin'],
         default: 'User'
     },
     registerOption:{
@@ -294,30 +294,37 @@ var UserSchema = new Schema({
 /**
  * Hook a pre save method to hash the password
  */
-// UserSchema.pre('save', function(next) {
-//     var doc=this;
-//     globalUtil.populateDisplayName(doc,function(displayname) {
-//         doc.displayName = displayname;
-//         if (doc.password && doc.password.length > 6) {
-//             doc.salt = new Buffer(crypto.randomBytes(16).toString('base64'), 'base64');
-//             doc.password = doc.hashPassword(doc.password);
+UserSchema.pre('save', function(next) {
+    var doc=this;
+    globalUtil.populateDisplayName(doc,function(displayname) {
+        doc.displayName = displayname;
+        if (doc.password && doc.password.length > 6) {
+            doc.salt = new Buffer(crypto.randomBytes(16).toString('base64'), 'base64');
+            doc.password = doc.hashPassword(doc.password);
 
 
-//             if (doc.profileImageURL) {
+            if (doc.profileImageURL) {
 
-//                 var fileName = doc.profileImageURL.substring(0, doc.profileImageURL.lastIndexOf('.'));
+                var fileName = doc.profileImageURL.substring(0, doc.profileImageURL.lastIndexOf('.'));
 
-//                 var croppedProfileImageURL = fileName + '-resize-240-240.png';
+                var croppedProfileImageURL = fileName + '-resize-240-240.png';
 
-//                 if (doc.croppedProfileImageURL !== croppedProfileImageURL) {
-//                     doc.croppedProfileImageURL = croppedProfileImageURL;
-//                 }
-//             }
-//             //this.userCategory.enumValues=this.fieldProperties('userCategory','enum');
-//         }
-//         next();
-//     });
-// });
+                if (doc.croppedProfileImageURL !== croppedProfileImageURL) {
+                    doc.croppedProfileImageURL = croppedProfileImageURL;
+                }
+            }
+
+
+            //this.userCategory.enumValues=this.fieldProperties('userCategory','enum');
+        }
+        next();
+    });
+
+
+
+
+
+});
 
 /*
 
