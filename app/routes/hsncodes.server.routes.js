@@ -5,8 +5,9 @@ module.exports = function (app) {
     var hsncodes = require('../controllers/hsncodes.server.controller');
 
     // UnitOfMeasures Routes
-    app.route('/hsncodes')
-        .get(hsncodes.list)
+    app.route('/hsncodeslist')
+    .post(hsncodes.list);
+     app.route('/hsncodes')
         .post(users.requiresLogin, hsncodes.createHsnCodes);
     app.route('/hsnupdate')
         .post(users.requiresLogin, hsncodes.updateHsnCode);

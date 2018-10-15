@@ -10,6 +10,7 @@ var should = require('should'),
     User = mongoose.model('User'),
     //commonUtils=require('../controllers/utils/common.util'),
     commonUserUtil = require('../controllers/utils/common.batch.users.utils'),
+    userUtils = require('../controllers/utils/common.users.util'),
 
     agent = request.agent(app);
 
@@ -36,13 +37,13 @@ describe('User Model Unit Tests:', function () {
             username: '',
             issendotp: true,
             issendemail: true,
-            token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0yMVQwOTozNDowNi4wNzJaIn0.THc5_hPDe6fosNydn60bnw_LHKP3RZSEgfSzQxK58MM'
+            token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yMlQxNDowODoxMC4zMTlaIn0.Pm0dlo-DtJuK-r83tB3BaMGEm402K5GL20J9uGbfwbY'
 
         }, {
             username: 'somevalue',
             issendotp: true,
             issendemail: true,
-            token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0yMVQwOTozNDowNi4wNzJaIn0.THc5_hPDe6fosNydn60bnw_LHKP3RZSEgfSzQxK58MM'
+            token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yMlQxNDowODoxMC4zMTlaIn0.Pm0dlo-DtJuK-r83tB3BaMGEm402K5GL20J9uGbfwbY'
 
         }, // }           eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wN1QxMjo1OTozOS4yMjVaIn0.KYNyfY_J7BgBTf9ZtkJ0MhsOherAZZ02bYUDeOsBTPM
         {
@@ -54,7 +55,7 @@ describe('User Model Unit Tests:', function () {
             username: 'somevalue@nvipani.com',
             issendotp: true,
             issendemail: true,
-            token:'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0yMVQwOTozNDowNi4wNzJaIn0.THc5_hPDe6fosNydn60bnw_LHKP3RZSEgfSzQxK58MM'
+            token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yMlQxNDowODoxMC4zMTlaIn0.Pm0dlo-DtJuK-r83tB3BaMGEm402K5GL20J9uGbfwbY'
         }
             , {
             username: 'somevalue@nvipani.com',
@@ -130,7 +131,7 @@ describe('User Model Unit Tests:', function () {
     it('should be able to send Otp only after validating the data', function (done) {
 
         commonUserUtil.createEachStepUser(valusers[0], 400, agent, function (blankusernameErr, blankusernameRes) {
-           should.not.exist(blankusernameErr);
+            should.not.exist(blankusernameErr);
             blankusernameRes.body.message.should.equal('Username (Email/Mobile) field must not be blank');
             commonUserUtil.createEachStepUser(valusers[1], 400, agent, function (validusernameErr, validusernameRes) {
                 should.not.exist(validusernameErr);
@@ -140,7 +141,7 @@ describe('User Model Unit Tests:', function () {
                     should.not.exist(blankToken);
                     noToken.body.status.should.equal(false);
                     noToken.body.message.should.equal('Ur Not an Authorized User to Create User');
-                        commonUserUtil.createEachStepUser(valusers[3], 200, agent, function (sendotpErr, sendotpRes) {
+                    commonUserUtil.createEachStepUser(valusers[3], 200, agent, function (sendotpErr, sendotpRes) {
                         should.not.exist(sendotpErr);
                         sendotpRes.body.status.should.equal(true);
                         var otp = sendotpRes.body.otp;
@@ -165,11 +166,13 @@ describe('User Model Unit Tests:', function () {
             should.not.exist(presignupotpErr);
             presignupotpRes.body.status.should.equal(false);
             presignupotpRes.body.message.should.equal('OTP field is empty for user somevalue@nvipani.com');
-           
+
             // message: 'OTP field is empty for user somevalue@nvipani.com' },
             // var otp = presignupotpRes.body.otp;
             var otpFalse = 123456;
-            commonUserUtil.createEachStepUser({ username: 'somevalue@nvipani.com', password: 'test1234', conf_password: 'test1234', otp: otpFalse, isverifyotp: true }, 400, agent, function (presignupotpverErr, presignupotpverRes) {
+            commonUserUtil.createEachStepUser({
+                username: 'somevalue@nvipani.com', password: 'test1234', conf_password: 'test1234', otp: otpFalse, isverifyotp: true, token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yMlQxNDowODoxMC4zMTlaIn0.Pm0dlo-DtJuK-r83tB3BaMGEm402K5GL20J9uGbfwbY'
+            }, 400, agent, function (presignupotpverErr, presignupotpverRes) {
                 should.not.exist(presignupotpverErr);
                 presignupotpverRes.body.status.should.equal(false);
                 presignupotpverRes.body.message.should.equal('Incorrect otp for the Email: somevalue@nvipani.com');
@@ -186,33 +189,33 @@ describe('User Model Unit Tests:', function () {
                         done();
                     });
                 });
-            
-             });
+
+            });
         });
     });
 
 
-    /* Unable delete user with invalid Id -Ve case*/ 
+    /* Unable delete user with invalid Id -Ve case*/
     it('should be delete by id only', function (done) {
-        commonUserUtil.findId("3232130slfkaslfks", 400, agent, function (err,deluser) {
+        commonUserUtil.findId("3232130slfkaslfks", 401, agent, function (err, deluser) {
             should.not.exist(err);
-            deluser.body.message.should.equal('Error deleting the user with user id -:3232130slfkaslfks');
+            deluser.body.message.should.equal('Your are not an Authorized User to delete this user');
             done();
         })
     });
 
     it('should be able to send email by taking valid data for reset password request', function (done) {
-        commonUserUtil.resetPassword({ token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0xNFQwNjoxNjoyMy45OTRaIn0.DTwvg1okcbm6PqqwUFeSSqkEvos1jBQMFuBz0LwybdE', id: '', reset_password: false, username: 'emandi1@nvipani.com' }, 401, agent, function (err, result) {
+        commonUserUtil.resetPassword({ token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yMlQxNDowODoxMC4zMTlaIn0.Pm0dlo-DtJuK-r83tB3BaMGEm402K5GL20J9uGbfwbY', id: '', reset_password: false, username: 'emandi1@nvipani.com' }, 400, agent, function (err, result) {
             should.not.exist(err);
             // console.log(result,'reset password error');
             result.body.status.should.equal(false);
-                  done();
+            done();
         })
     });
 
 
     after(function (done) {
-        User.remove({"username":"somevalue@nvipani.com"}).exec();
+        User.remove({ "username": "somevalue@nvipani.com" }).exec();
         // Company.remove().exec();
         // Contact.remove().exec();
         done();

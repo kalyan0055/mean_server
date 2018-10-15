@@ -6,20 +6,20 @@
 var mongoose = require('mongoose'),
     errorHandler = require('./errors.server.controller'),
     dbUtil = require('./utils/common.db.util'),
-    Hsncodes=mongoose.model('Hsncodes'),
+    Hsncodes = mongoose.model('Hsncodes'),
     usersJWTUtil = require('./utils/users.jwtutil'),
-    logger  = require('../../lib/log').getLogger('CATEGORIES', 'DEBUG'),
+    logger = require('../../lib/log').getLogger('CATEGORIES', 'DEBUG'),
     _ = require('lodash'),
     async = require('async');
- 
+
 /**
  * create Hsncodes
  */
 exports.createHsnCodes = function (req, res) {
     console.log(req.body);
-    
+
     var hsncode = new Hsncodes(req.body);
-    var subcategory= req.body.subcategory;
+    var subcategory = req.body.subcategory;
     var token = req.body.token || req.headers.token;
     usersJWTUtil.findUserByToken(token, function (err, user) {
         if (err) {
@@ -27,14 +27,14 @@ exports.createHsnCodes = function (req, res) {
                 message: errorHandler.getErrorMessage(err)
             });
         }
-        hsncode.save(function (err,hsnCodes) {
+        hsncode.save(function (err, hsnCodes) {
             if (err) {
                 return res.status(400).send({
                     message: errorHandler.getErrorMessage(err)
                 });
             } else {
 
-                return res.json({hsncodes:hsnCodes,messagge:'HSN Code added successfully',status:true})
+                return res.json({ hsncodes: hsnCodes, messagge: 'HSN Code added successfully', status: true })
                 // Category.findOneAndUpdate(
                 //     {_id: subcategory},
                 //     {$addToSet: {'hsncodes': {hsncode: hsncode._id}}},
@@ -65,33 +65,33 @@ exports.createHsnCodes = function (req, res) {
         });
     });
 };
- 
-exports.updateHsnCode = function (req,res){
+
+exports.updateHsnCode = function (req, res) {
     console.log('coming here');
-    
+
     var hsncodes = new Hsncodes(req.body);
     var token = req.body.token || req.headers.token;
-    usersJWTUtil.findUserByToken(token,function(err,usrs){
-        if(err){
+    usersJWTUtil.findUserByToken(token, function (err, usrs) {
+        if (err) {
             return res.status(400).send({
-                message:errorHandler.getErrorMessage(err)
+                message: errorHandler.getErrorMessage(err)
             })
-        }else{
-            Hsncodes.findOneAndUpdate({_id:hsncodes._id},{$set:hsncodes},{new:true},function(err,hsn){
-               console.log(hsn,'tttt');
-               
-                if(err){
+        } else {
+            Hsncodes.findOneAndUpdate({ _id: hsncodes._id }, { $set: hsncodes }, { new: true }, function (err, hsn) {
+                console.log(hsn, 'tttt');
+
+                if (err) {
                     return res.status(400).send({
-                        message:errorHandler.getErrorMessage(err)
+                        message: errorHandler.getErrorMessage(err)
                     })
-                }else if(!hsn){
-                       return res.status(400).send({
-                        message:errorHandler.getErrorMessage(hsn)
+                } else if (!hsn) {
+                    return res.status(400).send({
+                        message: errorHandler.getErrorMessage(hsn)
                     })
-                }else{
+                } else {
                     res.json({
-                        status:true,
-                        message:'HSN Code successfully updated'
+                        status: true,
+                        message: 'HSN Code successfully updated'
                     })
                 }
             })
@@ -99,30 +99,30 @@ exports.updateHsnCode = function (req,res){
     })
 }
 
-exports.deletehsn = function(req,res){
+exports.deletehsn = function (req, res) {
     var hsncodes = new Hsncodes(req.body);
     var token = req.body.token || req.headers.token;
-    usersJWTUtil.findUserByToken(token,function(err,usrs){
-        if(err){
+    usersJWTUtil.findUserByToken(token, function (err, usrs) {
+        if (err) {
             return res.status(400).send({
-                message:errorHandler.getErrorMessage(err)
+                message: errorHandler.getErrorMessage(err)
             })
-        }else{
-            Hsncodes.deleteOne({_id:hsncodes._id},function(err,hsn){
-               console.log(hsn,'tttt');
-               
-                if(err){
+        } else {
+            Hsncodes.deleteOne({ _id: hsncodes._id }, function (err, hsn) {
+                console.log(hsn, 'tttt');
+
+                if (err) {
                     return res.status(400).send({
-                        message:errorHandler.getErrorMessage(err)
+                        message: errorHandler.getErrorMessage(err)
                     })
-                }else if(!hsn){
-                       return res.status(400).send({
-                        message:errorHandler.getErrorMessage(hsn)
+                } else if (!hsn) {
+                    return res.status(400).send({
+                        message: errorHandler.getErrorMessage(hsn)
                     })
-                }else{
+                } else {
                     res.json({
-                        status:true,
-                        message:'HSN Code Deleted Successfully'
+                        status: true,
+                        message: 'HSN Code Deleted Successfully'
                     })
                 }
             })
@@ -132,31 +132,46 @@ exports.deletehsn = function(req,res){
 /**
  * List of Categories
  */
- exports.list =   function  (req, res) {
+exports.list = function (req, res) {
 
-       var pageSize = +req.query.pageSize;
-    var page = +req.query.page;
+
+    console.log('getSettings_ajax', req.body);
+    var fields = req.body.columns[req.body.order[0].column].name;
+    var sortBy = (req.body.order[0].dir == 'asc') ? 1 : -1;
+    let obj = {};
+    obj[`${fields}`] = sortBy
+    console.log(req.body.search.value.toLowerCase(), 'dsfsdf');
     var token = req.body.token || req.headers.token;
     if (token) {
-         usersJWTUtil.getUserByToken(token, function (err, loginuser) {  
-            if (loginuser) { 
+        usersJWTUtil.getUserByToken(token, function (err, loginuser) {
+            if (loginuser) {
                 var query;
-                query = Hsncodes.find({$or: [{$and: [{deleted: false}]}  ]}).skip(pageSize * (page - 1) ).limit(pageSize).populate('unitofmeasures', 'uqcCode').sort('-_id').exec( async function (err, hsncodes) {
+                query = Hsncodes.find({ $or: [{ $and: [{ deleted: false }] }] }).skip(req.body.start).limit(req.body.length).populate('unitofmeasures', 'uqcCode').sort(obj).exec(async function (err, hsncodes) {
                     if (err) {
-                         return res.status(400).send({
+                        return res.status(400).send({
                             message: errorHandler.getErrorMessage(err)
                         });
                     } else {
-                        let total ;
+                        if (req.body.search.value != '' || req.body.search.value != null) {
+                            var searchitem = '';
+                            searchitem = req.body.search.value.toLowerCase()
+                        }
+                        var serchdata = [];
+                        serchdata = hsncodes.filter(function (item) {
+                            return JSON.stringify(item).toLowerCase().includes(searchitem);
+                        });
+
+                        let total;
                         const number = await Hsncodes.count();
-                        res.json({hsncodes:hsncodes,count:number});
+                        res.json({ status: true, hsncodes: (!searchitem) ? hsncodes : serchdata, count: number });
+
                     }
-                });    
-           }
+                });
+            }
         });
     } else {
         var query;
-        query = Hsncodes.find({$and: [{deleted:{$exists: false}}, {user: null}]});
+        query = Hsncodes.find({ $and: [{ deleted: { $exists: false } }, { user: null }] });
         query.sort('-created').exec(function (err, hsncodes) {
             if (err) {
                 return res.status(400).send({
@@ -167,7 +182,42 @@ exports.deletehsn = function(req,res){
             }
         });
     }
+
+
+    //    var pageSize = +req.query.pageSize;
+    // var page = +req.query.page;
+    // var token = req.body.token || req.headers.token;
+    // if (token) {
+    //      usersJWTUtil.getUserByToken(token, function (err, loginuser) {  
+    //         if (loginuser) { 
+    //             var query;
+    //             query = Hsncodes.find({$or: [{$and: [{deleted: false}]}  ]}).skip(pageSize * (page - 1) ).limit(pageSize).populate('unitofmeasures', 'uqcCode').sort('-_id').exec( async function (err, hsncodes) {
+    //                 if (err) {
+    //                      return res.status(400).send({
+    //                         message: errorHandler.getErrorMessage(err)
+    //                     });
+    //                 } else {
+    //                     let total ;
+    //                     const number = await Hsncodes.count();
+    //                     res.json({hsncodes:hsncodes,count:number});
+    //                 }
+    //             });    
+    //        }
+    //     });
+    // } else {
+    //     var query;
+    //     query = Hsncodes.find({$and: [{deleted:{$exists: false}}, {user: null}]});
+    //     query.sort('-created').exec(function (err, hsncodes) {
+    //         if (err) {
+    //             return res.status(400).send({
+    //                 message: errorHandler.getErrorMessage(err)
+    //             });
+    //         } else {
+    //             res.jsonp(hsncodes);
+    //         }
+    //     });
+    // }
 };
 
- 
- 
+
+

@@ -31,15 +31,15 @@ var _ = require('lodash'),
 
 
 exports.newuserslist = function (req, res) {
- 
+
     var fields = req.body.columns[req.body.order[0].column].name;
     var sortBy = (req.body.order[0].dir == 'asc') ? 1 : -1;
 
 
     let obj = {};
     obj[`${fields}`] = sortBy
- 
-     newuserJWTUtil.findUserById(req.params.userid, function (err, result) {
+    console.log(obj);
+    newuserJWTUtil.findUserById(req.params.userid, function (err, result) {
         if (err || !result) {
             res.status(400).send({
                 status: false,
@@ -90,7 +90,6 @@ exports.newuserslist = function (req, res) {
         }
     })
 };
-
 
 function getEmailTemplate(user, type, req) {
     console.log(req.protocol + '://' + req.headers.host);
@@ -200,204 +199,54 @@ exports.disableUser = function (req, res) {
     })
 }
 
-
-//  exports.signin = function (req, res, next) {
-
-//     // console.log('Request Body-'+JSON.stringify(req.body));
-//     logger.debug('Request Body-'+JSON.stringify(req.body));
-//     passport.authenticate('local', function (err, user, info) {
-//     // console.log(user.username,'after passport');
-
-//         if (err || !user) {
-
-//             info.status = false;
-//             logger.error('Error Signin with username -' + req.body.username + ', -' + JSON.stringify(info));
-//             //logger.debug('Error Message-'+JSON.stringify(info));
-//             res.status(400).send(info);
-//         } else {
-//             User.findOne({
-//                 username: user.username
-//             }).select('-salt -password').populate('company', 'category segments registrationCategory').exec(function (err, dbuser) {
-//             //    console.log(dbuser,'query executed');
-
-//                 if (dbuser) {
-//                     var devicename;
-//                     var devicedescription;
-//                     var devicetoken;
-//                     var location;
-//                     var ipaddress;
-//                     var deviceid;
-//                     var appversion;
-//                     if (req.body.devicename) {
-//                         devicename = req.body.devicename;
-//                     }
-//                     if (req.body.appversion) {
-//                         appversion = req.body.appversion;
-//                     }
-
-//                     if (req.body.deviceid) {
-//                         deviceid = req.body.deviceid;
-//                     }
-//                     if (req.body.devicedescription) {
-//                         devicedescription = req.body.devicedescription;
-//                     }
-//                     if (req.body.devicetoken) {
-//                         devicetoken = req.body.devicetoken;
-//                     }
-
-//                     if (req.body.location) {
-//                         location = req.body.location;
-//                     }
-
-//                     if (req.body.ipaddress) {
-//                         ipaddress = req.body.ipaddress;
-//                     }
-
-//                     if (!dbuser.devices) {
-//                         dbuser.devices = [];
-//                     }
-//                     if (deviceid && devicetoken && dbuser.devices.filter(function (device) {
-//                             return device.deviceid === deviceid;
-//                         }).length === 0) {
-//                         dbuser.devices.push({
-//                             deviceid: deviceid,
-//                             name: devicename,
-//                             description: devicedescription,
-//                             token: devicetoken,
-//                             appversion: appversion
-//                         });
-//                     }
-
-//                     if (!dbuser.accountActivity) {
-//                         dbuser.accountActivity = [];
-//                     }
-//                     if (deviceid) {
-//                         dbuser.accountActivity.push({
-//                             deviceid: deviceid,
-//                             accessType: devicename + '(' + devicedescription + ')',
-//                             location: location,
-//                             ipAddress: ipaddress,
-//                             loginTime: Date.now(),
-//                             appversion: appversion
-//                         });
-//                     }
-//                     dbuser.updated = Date.now();
-//                     dbuser.save(function (err, resultUser) {
-//                         if (err) {
-//                             logger.error('Error updating the user with username -' + req.body.username);
-//                             //logger.debug('Error Message-'+JSON.stringify(info));
-//                             res.status(400).send({
-//                                 status: false,
-//                                 message: 'Error updating the user with username -' + req.body.username
-//                             });
-//                         } else {
-//                             var token = usersJWTUtil.genToken(resultUser.username, resultUser.id);
-
-//                             //logger.debug('token-'+token);
-//                             if (resultUser.company.segments.length === 0) {
-//                                 RegistrationCategory.findById(resultUser.company.registrationCategory).exec(function (registrationCErr, registrationCategory) {
-//                                     if (registrationCErr) {
-//                                         res.status(400).send({
-//                                             status: false,
-//                                             message: registrationCErr.getMessage()
-//                                         });
-//                                     } else {
-//                                         BusinessSegments.find().populate('categories.category').exec(function (businessErr, businessSegments) {
-//                                             companyUtil.findCompanyEmployeeBusinessUnits(user,function (userBusinessUnitsError,userBusinessUnits) {
-//                                                 if(userBusinessUnitsError){
-//                                                     res.status(400).send({
-//                                                         status: false,
-//                                                         message: errorHandler.getErrorMessage(userBusinessUnitsError)
-//                                                     });
-//                                                 }else {
-//                                                     res.json({
-//                                                         status: true,
-//                                                         token: token,
-//                                                         businessUnits: userBusinessUnits,
-//                                                         companySegments: resultUser.company.segments,
-//                                                         categories: resultUser.company.categories,
-//                                                         segments: businessSegments,
-//                                                         registrationCategory: registrationCategory
-//                                                     });
-//                                                 }
-//                                             });
-//                                         });
-//                                     }
-
-
-//                                 });
-//                             } else {
-//                                 companyUtil.findCompanyEmployeeBusinessUnits(user,logger,function (userBusinessUnitsError,userBusinessUnits) {
-//                                     if (userBusinessUnitsError) {
-//                                         res.status(400).send({
-//                                             status: false,
-//                                             message: errorHandler.getErrorMessage(userBusinessUnitsError)
-//                                         });
-//                                     } else {
-//                                         res.json({
-//                                             status: true,
-//                                             token: token,
-//                                             businessUnits: userBusinessUnits,
-//                                             companySegments: resultUser.company.segments,
-//                                             categories: resultUser.company.category
-//                                         });
-//                                     }
-//                                 });
-//                             }
-//                         }
-//                     });
-//                 } else {
-//                     res.status(400).send({
-//                         status: false,
-//                         message: 'Error finding the user with username -' + user.username
-//                     });
-//                 }
-//             });
-
-
-//             // Remove sensitive data before login
-//             /*user.password = undefined;
-//              user.salt = undefined;
-
-//              req.login(user, function(err) {
-//              if (err) {
-//              res.status(400).send(err);
-//              } else {
-//              res.json({token:genToken(user.username, user.id)});
-//              }
-//              });*/
-//         }
-//     })(req, res, next);
-// };
 exports.deleteuser = function (req, res) {
     let data = req.params.userid;
-    console.log(req.body, 'deleted post data');
-    newuserJWTUtil.findUserById(data, function (err, user) {
-        if (err || !user) {
-            logger.error('Something went wrong with -' + data + ', -' + JSON.stringify(err));
-            logger.debug('Error Message-' + JSON.stringify(err));
-            res.status(400).send({
-                status: false,
-                message: 'Error deleting the user with user id -' + data
-            });
-        } else {
-            if (user) {
-                User.updateOne({ _id: user._id }, { $set: { deleted: true } }, function (err, result) {
-                    if (err || !result) {
-                        res.json({
+    let token = req.body.token || req.headers.token
+    console.log(token, 'deleted post data');
+    if (token) {
+        hasAuthorization(token, function (err, validToken) {
+            if (err) {
+                return res.status(401).send({
+                    success: false,
+                    message: 'Your are not an Authorized User to delete this user',
+                })
+            } else {
+                newuserJWTUtil.findUserById(data, function (err, user) {
+                    if (err || !user) {
+                        logger.error('Something went wrong with -' + data + ', -' + JSON.stringify(err));
+                        logger.debug('Error Message-' + JSON.stringify(err));
+                        res.status(400).send({
                             status: false,
-                            message: 'Unable to Restore'
-                        })
+                            message: 'Error deleting the user with user id -' + data
+                        });
                     } else {
-                        res.json({
-                            status: true,
-                            message: 'User Successfully Deleted',
-                        })
+                        if (user) {
+                            User.updateOne({ _id: user._id }, { $set: { deleted: true } }, function (err, result) {
+                                if (err || !result) {
+                                    res.json({
+                                        status: false,
+                                        message: 'Unable to Restore'
+                                    })
+                                } else {
+                                    res.json({
+                                        status: true,
+                                        message: 'User Successfully Deleted',
+                                    })
+                                }
+                            })
+                        }
                     }
                 })
             }
-        }
-    })
+        })
+    } else {
+        return res.status(401).send({
+            success: false,
+            message: 'Session Expired or Invalid Token',
+        })
+    }
+
+
 };
 
 exports.restoreeuser = function (req, res) {
@@ -430,6 +279,23 @@ exports.restoreeuser = function (req, res) {
             }
         }
     })
+};
+
+function hasAuthorization(token, done) {
+    var token = token;
+    usersJWTUtil.findUserByToken(token, function (err, user) {
+        if (err) {
+            done(new Error('User is not authorized'), false, false);
+        } else {
+            if (user.userType == config.authType || user.userType == config.authType1) {
+                done(null, user)
+            } else {
+                done(new Error('User is not authorized'), false, false);
+            }
+
+        }
+    });
+
 };
 /**
  * Update profile picture

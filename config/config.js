@@ -93,7 +93,7 @@ module.exports.mailer = {
 module.exports.sendEmail = true;
 module.exports.authType1='Adminuser';
 module.exports.authType='Admin';
-module.exports.url='localhost:4300';
+module.exports.url='localhost:4200';
 
 /**
  * Get the modules CSS files

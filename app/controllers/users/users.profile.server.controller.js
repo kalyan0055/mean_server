@@ -12,14 +12,6 @@ var _ = require('lodash'),
     usersJWTUtil = require('../utils/users.jwtutil'),
     // businessUnitUtil =require('../utils/common.businessunit.util'),
     dbUtil = require('../utils/common.db.util'),
-    // Notification = mongoose.model('Notification'),
-    // UserGroup = mongoose.model('UserGroup'),
-    // Company = mongoose.model('Company'),
-    // Category = mongoose.model('Category'),
-    // Order = mongoose.model('Order'),
-    // Todo = mongoose.model('Todo'),
-    // User = mongoose.model('User'),
-   // User = mongoose.model('Newuser'),
     User = mongoose.model('User'),
     async = require('async');
 /**
@@ -53,9 +45,7 @@ function InputValidation(data, done) {
 
 exports.update = function (req, res) {
     // Init Variables
-
     var message = null;
-
     // For security measurement we remove the roles from the req.body object
     delete req.body.roles;
     delete req.body.password;
@@ -86,12 +76,7 @@ exports.update = function (req, res) {
                     dbuser.userVersionKey = versionKey;
                     dbuser.updated = Date.now();
                     console.log(dbuser);
-
-                    // if (dbuser.firstName || dbuser.lastName || dbuser.middleName) {
-                    //     dbuser.displayName = dbuser.firstName + (dbuser.middleName ? ' ' + dbuser.middleName : '') + (dbuser.lastName ? ' ' + dbuser.lastName : '');
-                    // }
-
-                    dbuser.save(function (err) {
+                       dbuser.save(function (err) {
                         if (err) {
                             return res.status(400).send({
                                 status: false,
@@ -121,8 +106,6 @@ exports.update = function (req, res) {
  * Update profile picture
  */
 exports.changeProfilePicture = function (req, res) {
-
-
     var token = req.body.token || req.headers.token;
     if (token) {
         logger.debug('Profile Picture [name:' + req.files.file.name + ', fieldname:' + req.files.file.fieldname + ', originalname:' + req.files.file.originalname + ']');
