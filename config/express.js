@@ -32,8 +32,6 @@ var fs = require('fs'),
 
 module.exports = function (db) {
 	// Initialize express app
-	console.log('express js files s');
-
 	var app = express();
 	app.use(cors())
 	// Globbing model files

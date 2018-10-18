@@ -9,7 +9,7 @@
         "url": "https://opensource.org/licenses/MIT"
       }
     },
-    "host": "localhost:8081",
+    "host": "localhost:8082",
     "basePath": "/api/v1",
     "tags": [
       {
@@ -27,7 +27,7 @@
       "application/json"
     ],
     "paths": {
-      "/user/sendpresignupotp": {
+      "/user/userRegistration": {
         "post": {
           "tags": [
             "Users"
@@ -301,7 +301,7 @@
           }
         }
       },
-      "/users/resetPassword": {
+      "/users/setPassword": {
         "post": {
           "tags": [
             "Users"

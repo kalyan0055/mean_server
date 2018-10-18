@@ -1,0 +1,464 @@
+[2018-10-17 13:55:27.576] [DEBUG] USERS - instance of user  :{ firstName: '',
+  middleName: '',
+  lastName: '',
+  allowRegistration: true,
+  email: 'somevalue@nvipani.com',
+  profileImageURL: 'modules/users/img/profile/default.png',
+  croppedProfileImageURL: 'modules/users/img/profile/default-resize-240-240.png',
+  roles: [ 'user' ],
+  mobile: '',
+  userType: 'Adminuser',
+  registerOption: false,
+  emailVerified: false,
+  mobileVerified: false,
+  acceptTerms: false,
+  status: 'Register Request',
+  digitalSignature: '',
+  disabled: false,
+  deleted: false,
+  _id: 5bc6f1f52f90f625fc06bc8c,
+  username: 'somevalue@nvipani.com',
+  devices: [],
+  accountActivity: [],
+  created: 2018-10-17T08:25:25.282Z,
+  companies: [],
+  emailOtp: '235839',
+  serverUrl: 'http://127.0.0.1:61408',
+  provider: 'local',
+  updated: 2018-10-17T08:25:25.284Z,
+  userVersionKey: 0 }
+[2018-10-17 13:55:27.578] [DEBUG] USERS - Verifying OTP - true
+[2018-10-17 13:55:27.579] [ERROR] USERS - Incorrect otp for the Email: somevalue@nvipani.com
+[2018-10-17 13:55:27.581] [DEBUG] USERS - user registered  :null
+[2018-10-17 13:55:27.595] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","password":"","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-10-17 13:55:27.596] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","password":"","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-10-17 13:55:27.599] [ERROR] USERS - Password is empty : {"username":"somevalue@nvipani.com","password":"","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-10-17 13:55:27.608] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","password":"test123","conf_password":"test114","otp":123456,"isverifyotp":true}
+[2018-10-17 13:55:27.610] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","password":"test123","conf_password":"test114","otp":123456,"isverifyotp":true}
+[2018-10-17 13:55:27.612] [ERROR] USERS - Password is not valid +{"username":"somevalue@nvipani.com","password":"test123","conf_password":"test114","otp":123456,"isverifyotp":true}
+[2018-10-17 13:55:27.628] [ERROR] USERS - Something went wrong with -:5ba35bdd5b70ad2d00615562, -{"message":"Cast to ObjectId failed for value \":5ba35bdd5b70ad2d00615562\" at path \"_id\" for model \"User\"","name":"CastError","stringValue":"\":5ba35bdd5b70ad2d00615562\"","kind":"ObjectId","value":":5ba35bdd5b70ad2d00615562","path":"_id"}
+[2018-10-17 13:55:27.631] [DEBUG] USERS - Error Message-{"message":"Cast to ObjectId failed for value \":5ba35bdd5b70ad2d00615562\" at path \"_id\" for model \"User\"","name":"CastError","stringValue":"\":5ba35bdd5b70ad2d00615562\"","kind":"ObjectId","value":":5ba35bdd5b70ad2d00615562","path":"_id"}
+[2018-10-17 13:57:34.960] [DEBUG] USERS - Registration Request  - {"username":"","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA"}
+[2018-10-17 13:57:34.961] [DEBUG] USERS - user registration input validation for the data :{"username":"","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA"}
+[2018-10-17 13:57:34.962] [ERROR] USERS - username is empty :{"username":"","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA"}
+[2018-10-17 13:57:34.983] [DEBUG] USERS - Registration Request  - {"username":"somevalue","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA"}
+[2018-10-17 13:57:34.984] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA"}
+[2018-10-17 13:57:34.985] [ERROR] USERS - Username is not valid{"username":"somevalue","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA"}
+[2018-10-17 13:57:34.996] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","issendotp":true,"issendemail":true,"token":""}
+[2018-10-17 13:57:34.998] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","issendotp":true,"issendemail":true,"token":""}
+[2018-10-17 13:57:34.999] [DEBUG] USERS - Username is valid
+[2018-10-17 13:57:34.999] [DEBUG] USERS - Fetching already created user with the same user name  :somevalue@nvipani.com
+[2018-10-17 13:57:35.001] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-10-17 13:57:35.005] [DEBUG] USERS - Email is :somevalue@nvipani.com
+[2018-10-17 13:57:35.006] [DEBUG] USERS - Fetch matched  user with user name :somevalue@nvipani.com
+[2018-10-17 13:57:35.022] [ERROR] USERS - No user found with the username : somevalue@nvipani.com
+[2018-10-17 13:57:35.023] [ERROR] USERS - No user found with the username : null { username: 'somevalue@nvipani.com',
+  issendotp: true,
+  issendemail: true,
+  token: '',
+  isEmail: true } null
+[2018-10-17 13:57:35.036] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA"}
+[2018-10-17 13:57:35.038] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA"}
+[2018-10-17 13:57:35.039] [DEBUG] USERS - Username is valid
+[2018-10-17 13:57:35.040] [DEBUG] USERS - Fetching already created user with the same user name  :somevalue@nvipani.com
+[2018-10-17 13:57:35.041] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-10-17 13:57:35.041] [DEBUG] USERS - Email is :somevalue@nvipani.com
+[2018-10-17 13:57:35.042] [DEBUG] USERS - Fetch matched  user with user name :somevalue@nvipani.com
+[2018-10-17 13:57:35.048] [ERROR] USERS - No user found with the username : somevalue@nvipani.com
+[2018-10-17 13:57:35.049] [ERROR] USERS - No user found with the username : null { username: 'somevalue@nvipani.com',
+  issendotp: true,
+  issendemail: true,
+  token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA',
+  isEmail: true } null
+[2018-10-17 13:57:35.065] [DEBUG] USERS - user registered wiht valid authoenticaiton :info@nvipani.com
+[2018-10-17 13:57:35.088] [DEBUG] USERS - Sending OTP Response
+[2018-10-17 13:57:35.138] [DEBUG] USERS - Sending OTP Response-053481
+[2018-10-17 13:57:37.424] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","otp":"","password":"passwrod","isverifyotp":true}
+[2018-10-17 13:57:37.426] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","otp":"","password":"passwrod","isverifyotp":true}
+[2018-10-17 13:57:37.428] [ERROR] USERS - OTP field is empty
+[2018-10-17 13:57:37.445] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","password":"test1234","conf_password":"test1234","otp":123456,"isverifyotp":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA"}
+[2018-10-17 13:57:37.446] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","password":"test1234","conf_password":"test1234","otp":123456,"isverifyotp":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA"}
+[2018-10-17 13:57:37.448] [DEBUG] USERS - Fetching already created user with the same user name  :somevalue@nvipani.com
+[2018-10-17 13:57:37.454] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-10-17 13:57:37.457] [DEBUG] USERS - Email is :somevalue@nvipani.com
+[2018-10-17 13:57:37.458] [DEBUG] USERS - Fetch matched  user with user name :somevalue@nvipani.com
+[2018-10-17 13:57:37.463] [DEBUG] USERS - Found user with the username :somevalue@nvipani.com
+[2018-10-17 13:57:37.465] [DEBUG] USERS - instance of user  :{ firstName: '',
+  middleName: '',
+  lastName: '',
+  allowRegistration: true,
+  email: 'somevalue@nvipani.com',
+  profileImageURL: 'modules/users/img/profile/default.png',
+  croppedProfileImageURL: 'modules/users/img/profile/default-resize-240-240.png',
+  roles: [ 'user' ],
+  mobile: '',
+  userType: 'Adminuser',
+  registerOption: false,
+  emailVerified: false,
+  mobileVerified: false,
+  acceptTerms: false,
+  status: 'Register Request',
+  digitalSignature: '',
+  disabled: false,
+  deleted: false,
+  _id: 5bc6f27734fd3a2a7c8adfd7,
+  username: 'somevalue@nvipani.com',
+  devices: [],
+  accountActivity: [],
+  created: 2018-10-17T08:27:35.070Z,
+  companies: [],
+  emailOtp: '053481',
+  serverUrl: 'http://127.0.0.1:61452',
+  provider: 'local',
+  updated: 2018-10-17T08:27:35.072Z,
+  userVersionKey: 0 }
+[2018-10-17 13:57:37.467] [DEBUG] USERS - Verifying OTP - true
+[2018-10-17 13:57:37.469] [ERROR] USERS - Incorrect otp for the Email: somevalue@nvipani.com
+[2018-10-17 13:57:37.470] [DEBUG] USERS - user registered  :null
+[2018-10-17 13:57:37.484] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","password":"","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-10-17 13:57:37.485] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","password":"","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-10-17 13:57:37.488] [ERROR] USERS - Password is empty : {"username":"somevalue@nvipani.com","password":"","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-10-17 13:57:37.499] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","password":"test123","conf_password":"test114","otp":123456,"isverifyotp":true}
+[2018-10-17 13:57:37.500] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","password":"test123","conf_password":"test114","otp":123456,"isverifyotp":true}
+[2018-10-17 13:57:37.502] [ERROR] USERS - Password is not valid +{"username":"somevalue@nvipani.com","password":"test123","conf_password":"test114","otp":123456,"isverifyotp":true}
+[2018-10-17 13:57:37.516] [ERROR] USERS - Something went wrong with -:5ba35bdd5b70ad2d00615562, -{"message":"Cast to ObjectId failed for value \":5ba35bdd5b70ad2d00615562\" at path \"_id\" for model \"User\"","name":"CastError","stringValue":"\":5ba35bdd5b70ad2d00615562\"","kind":"ObjectId","value":":5ba35bdd5b70ad2d00615562","path":"_id"}
+[2018-10-17 13:57:37.517] [DEBUG] USERS - Error Message-{"message":"Cast to ObjectId failed for value \":5ba35bdd5b70ad2d00615562\" at path \"_id\" for model \"User\"","name":"CastError","stringValue":"\":5ba35bdd5b70ad2d00615562\"","kind":"ObjectId","value":":5ba35bdd5b70ad2d00615562","path":"_id"}
+[2018-10-17 13:58:30.363] [DEBUG] USERS - Registration Request  - {"username":"","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA"}
+[2018-10-17 13:58:30.365] [DEBUG] USERS - user registration input validation for the data :{"username":"","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA"}
+[2018-10-17 13:58:30.366] [ERROR] USERS - username is empty :{"username":"","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA"}
+[2018-10-17 13:58:30.386] [DEBUG] USERS - Registration Request  - {"username":"somevalue","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA"}
+[2018-10-17 13:58:30.386] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA"}
+[2018-10-17 13:58:30.387] [ERROR] USERS - Username is not valid{"username":"somevalue","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA"}
+[2018-10-17 13:58:30.398] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","issendotp":true,"issendemail":true,"token":""}
+[2018-10-17 13:58:30.400] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","issendotp":true,"issendemail":true,"token":""}
+[2018-10-17 13:58:30.401] [DEBUG] USERS - Username is valid
+[2018-10-17 13:58:30.401] [DEBUG] USERS - Fetching already created user with the same user name  :somevalue@nvipani.com
+[2018-10-17 13:58:30.403] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-10-17 13:58:30.404] [DEBUG] USERS - Email is :somevalue@nvipani.com
+[2018-10-17 13:58:30.405] [DEBUG] USERS - Fetch matched  user with user name :somevalue@nvipani.com
+[2018-10-17 13:58:30.422] [ERROR] USERS - No user found with the username : somevalue@nvipani.com
+[2018-10-17 13:58:30.424] [ERROR] USERS - No user found with the username : null { username: 'somevalue@nvipani.com',
+  issendotp: true,
+  issendemail: true,
+  token: '',
+  isEmail: true } null
+[2018-10-17 13:58:30.436] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA"}
+[2018-10-17 13:58:30.437] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA"}
+[2018-10-17 13:58:30.439] [DEBUG] USERS - Username is valid
+[2018-10-17 13:58:30.440] [DEBUG] USERS - Fetching already created user with the same user name  :somevalue@nvipani.com
+[2018-10-17 13:58:30.441] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-10-17 13:58:30.442] [DEBUG] USERS - Email is :somevalue@nvipani.com
+[2018-10-17 13:58:30.443] [DEBUG] USERS - Fetch matched  user with user name :somevalue@nvipani.com
+[2018-10-17 13:58:30.450] [ERROR] USERS - No user found with the username : somevalue@nvipani.com
+[2018-10-17 13:58:30.451] [ERROR] USERS - No user found with the username : null { username: 'somevalue@nvipani.com',
+  issendotp: true,
+  issendemail: true,
+  token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA',
+  isEmail: true } null
+[2018-10-17 13:58:30.467] [DEBUG] USERS - user registered wiht valid authoenticaiton :info@nvipani.com
+[2018-10-17 13:58:30.491] [DEBUG] USERS - Sending OTP Response
+[2018-10-17 13:58:30.542] [DEBUG] USERS - Sending OTP Response-687145
+[2018-10-17 13:58:32.785] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","otp":"","password":"passwrod","isverifyotp":true}
+[2018-10-17 13:58:32.786] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","otp":"","password":"passwrod","isverifyotp":true}
+[2018-10-17 13:58:32.788] [ERROR] USERS - OTP field is empty
+[2018-10-17 13:58:32.802] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","password":"test1234","conf_password":"test1234","otp":123456,"isverifyotp":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA"}
+[2018-10-17 13:58:32.804] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","password":"test1234","conf_password":"test1234","otp":123456,"isverifyotp":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA"}
+[2018-10-17 13:58:32.806] [DEBUG] USERS - Fetching already created user with the same user name  :somevalue@nvipani.com
+[2018-10-17 13:58:32.807] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-10-17 13:58:32.808] [DEBUG] USERS - Email is :somevalue@nvipani.com
+[2018-10-17 13:58:32.809] [DEBUG] USERS - Fetch matched  user with user name :somevalue@nvipani.com
+[2018-10-17 13:58:32.814] [DEBUG] USERS - Found user with the username :somevalue@nvipani.com
+[2018-10-17 13:58:32.817] [DEBUG] USERS - instance of user  :{ firstName: '',
+  middleName: '',
+  lastName: '',
+  allowRegistration: true,
+  email: 'somevalue@nvipani.com',
+  profileImageURL: 'modules/users/img/profile/default.png',
+  croppedProfileImageURL: 'modules/users/img/profile/default-resize-240-240.png',
+  roles: [ 'user' ],
+  mobile: '',
+  userType: 'Adminuser',
+  registerOption: false,
+  emailVerified: false,
+  mobileVerified: false,
+  acceptTerms: false,
+  status: 'Register Request',
+  digitalSignature: '',
+  disabled: false,
+  deleted: false,
+  _id: 5bc6f2aee5dacc20a042cfda,
+  username: 'somevalue@nvipani.com',
+  devices: [],
+  accountActivity: [],
+  created: 2018-10-17T08:28:30.474Z,
+  companies: [],
+  emailOtp: '687145',
+  serverUrl: 'http://127.0.0.1:61488',
+  provider: 'local',
+  updated: 2018-10-17T08:28:30.476Z,
+  userVersionKey: 0 }
+[2018-10-17 13:58:32.819] [DEBUG] USERS - Verifying OTP - true
+[2018-10-17 13:58:32.820] [ERROR] USERS - Incorrect otp for the Email: somevalue@nvipani.com
+[2018-10-17 13:58:32.821] [DEBUG] USERS - user registered  :null
+[2018-10-17 13:58:32.832] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","password":"","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-10-17 13:58:32.833] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","password":"","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-10-17 13:58:32.834] [ERROR] USERS - Password is empty : {"username":"somevalue@nvipani.com","password":"","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-10-17 13:58:32.843] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","password":"test123","conf_password":"test114","otp":123456,"isverifyotp":true}
+[2018-10-17 13:58:32.844] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","password":"test123","conf_password":"test114","otp":123456,"isverifyotp":true}
+[2018-10-17 13:58:32.845] [ERROR] USERS - Password is not valid +{"username":"somevalue@nvipani.com","password":"test123","conf_password":"test114","otp":123456,"isverifyotp":true}
+[2018-10-17 13:58:32.861] [ERROR] USERS - Something went wrong with -:5ba35bdd5b70ad2d00615562, -{"message":"Parameter \"filter\" to find() must be an object, got :5ba35bdd5b70ad2d00615562","name":"ObjectParameterError"}
+[2018-10-17 13:58:32.862] [DEBUG] USERS - Error Message-{"message":"Parameter \"filter\" to find() must be an object, got :5ba35bdd5b70ad2d00615562","name":"ObjectParameterError"}
+[2018-10-17 13:59:32.666] [DEBUG] USERS - Registration Request  - {"username":"","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA"}
+[2018-10-17 13:59:32.669] [DEBUG] USERS - user registration input validation for the data :{"username":"","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA"}
+[2018-10-17 13:59:32.671] [ERROR] USERS - username is empty :{"username":"","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA"}
+[2018-10-17 13:59:32.697] [DEBUG] USERS - Registration Request  - {"username":"somevalue","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA"}
+[2018-10-17 13:59:32.698] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA"}
+[2018-10-17 13:59:32.700] [ERROR] USERS - Username is not valid{"username":"somevalue","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA"}
+[2018-10-17 13:59:32.714] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","issendotp":true,"issendemail":true,"token":""}
+[2018-10-17 13:59:32.715] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","issendotp":true,"issendemail":true,"token":""}
+[2018-10-17 13:59:32.716] [DEBUG] USERS - Username is valid
+[2018-10-17 13:59:32.717] [DEBUG] USERS - Fetching already created user with the same user name  :somevalue@nvipani.com
+[2018-10-17 13:59:32.718] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-10-17 13:59:32.719] [DEBUG] USERS - Email is :somevalue@nvipani.com
+[2018-10-17 13:59:32.722] [DEBUG] USERS - Fetch matched  user with user name :somevalue@nvipani.com
+[2018-10-17 13:59:32.737] [ERROR] USERS - No user found with the username : somevalue@nvipani.com
+[2018-10-17 13:59:32.738] [ERROR] USERS - No user found with the username : null { username: 'somevalue@nvipani.com',
+  issendotp: true,
+  issendemail: true,
+  token: '',
+  isEmail: true } null
+[2018-10-17 13:59:32.752] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA"}
+[2018-10-17 13:59:32.753] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA"}
+[2018-10-17 13:59:32.755] [DEBUG] USERS - Username is valid
+[2018-10-17 13:59:32.756] [DEBUG] USERS - Fetching already created user with the same user name  :somevalue@nvipani.com
+[2018-10-17 13:59:32.757] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-10-17 13:59:32.758] [DEBUG] USERS - Email is :somevalue@nvipani.com
+[2018-10-17 13:59:32.759] [DEBUG] USERS - Fetch matched  user with user name :somevalue@nvipani.com
+[2018-10-17 13:59:32.764] [ERROR] USERS - No user found with the username : somevalue@nvipani.com
+[2018-10-17 13:59:32.765] [ERROR] USERS - No user found with the username : null { username: 'somevalue@nvipani.com',
+  issendotp: true,
+  issendemail: true,
+  token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA',
+  isEmail: true } null
+[2018-10-17 13:59:32.781] [DEBUG] USERS - user registered wiht valid authoenticaiton :info@nvipani.com
+[2018-10-17 13:59:32.805] [DEBUG] USERS - Sending OTP Response
+[2018-10-17 13:59:32.854] [DEBUG] USERS - Sending OTP Response-935000
+[2018-10-17 13:59:35.286] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","otp":"","password":"passwrod","isverifyotp":true}
+[2018-10-17 13:59:35.288] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","otp":"","password":"passwrod","isverifyotp":true}
+[2018-10-17 13:59:35.290] [ERROR] USERS - OTP field is empty
+[2018-10-17 13:59:35.302] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","password":"test1234","conf_password":"test1234","otp":123456,"isverifyotp":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA"}
+[2018-10-17 13:59:35.303] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","password":"test1234","conf_password":"test1234","otp":123456,"isverifyotp":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA"}
+[2018-10-17 13:59:35.305] [DEBUG] USERS - Fetching already created user with the same user name  :somevalue@nvipani.com
+[2018-10-17 13:59:35.306] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-10-17 13:59:35.307] [DEBUG] USERS - Email is :somevalue@nvipani.com
+[2018-10-17 13:59:35.308] [DEBUG] USERS - Fetch matched  user with user name :somevalue@nvipani.com
+[2018-10-17 13:59:35.313] [DEBUG] USERS - Found user with the username :somevalue@nvipani.com
+[2018-10-17 13:59:35.317] [DEBUG] USERS - instance of user  :{ firstName: '',
+  middleName: '',
+  lastName: '',
+  allowRegistration: true,
+  email: 'somevalue@nvipani.com',
+  profileImageURL: 'modules/users/img/profile/default.png',
+  croppedProfileImageURL: 'modules/users/img/profile/default-resize-240-240.png',
+  roles: [ 'user' ],
+  mobile: '',
+  userType: 'Adminuser',
+  registerOption: false,
+  emailVerified: false,
+  mobileVerified: false,
+  acceptTerms: false,
+  status: 'Register Request',
+  digitalSignature: '',
+  disabled: false,
+  deleted: false,
+  _id: 5bc6f2ecd1a8c319dc30c68f,
+  username: 'somevalue@nvipani.com',
+  devices: [],
+  accountActivity: [],
+  created: 2018-10-17T08:29:32.786Z,
+  companies: [],
+  emailOtp: '935000',
+  serverUrl: 'http://127.0.0.1:61513',
+  provider: 'local',
+  updated: 2018-10-17T08:29:32.788Z,
+  userVersionKey: 0 }
+[2018-10-17 13:59:35.319] [DEBUG] USERS - Verifying OTP - true
+[2018-10-17 13:59:35.320] [ERROR] USERS - Incorrect otp for the Email: somevalue@nvipani.com
+[2018-10-17 13:59:35.321] [DEBUG] USERS - user registered  :null
+[2018-10-17 13:59:35.335] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","password":"","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-10-17 13:59:35.336] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","password":"","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-10-17 13:59:35.339] [ERROR] USERS - Password is empty : {"username":"somevalue@nvipani.com","password":"","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-10-17 13:59:35.349] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","password":"test123","conf_password":"test114","otp":123456,"isverifyotp":true}
+[2018-10-17 13:59:35.351] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","password":"test123","conf_password":"test114","otp":123456,"isverifyotp":true}
+[2018-10-17 13:59:35.352] [ERROR] USERS - Password is not valid +{"username":"somevalue@nvipani.com","password":"test123","conf_password":"test114","otp":123456,"isverifyotp":true}
+[2018-10-17 13:59:35.365] [ERROR] USERS - Something went wrong with -:5ba35bdd5b70ad2d00615562, -{"message":"Cast to ObjectId failed for value \":5ba35bdd5b70ad2d00615562\" at path \"_id\" for model \"User\"","name":"CastError","stringValue":"\":5ba35bdd5b70ad2d00615562\"","kind":"ObjectId","value":":5ba35bdd5b70ad2d00615562","path":"_id"}
+[2018-10-17 13:59:35.366] [DEBUG] USERS - Error Message-{"message":"Cast to ObjectId failed for value \":5ba35bdd5b70ad2d00615562\" at path \"_id\" for model \"User\"","name":"CastError","stringValue":"\":5ba35bdd5b70ad2d00615562\"","kind":"ObjectId","value":":5ba35bdd5b70ad2d00615562","path":"_id"}
+[2018-10-17 14:00:09.404] [DEBUG] USERS - Registration Request  - {"username":"","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA"}
+[2018-10-17 14:00:09.408] [DEBUG] USERS - user registration input validation for the data :{"username":"","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA"}
+[2018-10-17 14:00:09.409] [ERROR] USERS - username is empty :{"username":"","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA"}
+[2018-10-17 14:00:09.434] [DEBUG] USERS - Registration Request  - {"username":"somevalue","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA"}
+[2018-10-17 14:00:09.436] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA"}
+[2018-10-17 14:00:09.439] [ERROR] USERS - Username is not valid{"username":"somevalue","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA"}
+[2018-10-17 14:00:09.451] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","issendotp":true,"issendemail":true,"token":""}
+[2018-10-17 14:00:09.452] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","issendotp":true,"issendemail":true,"token":""}
+[2018-10-17 14:00:09.453] [DEBUG] USERS - Username is valid
+[2018-10-17 14:00:09.454] [DEBUG] USERS - Fetching already created user with the same user name  :somevalue@nvipani.com
+[2018-10-17 14:00:09.455] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-10-17 14:00:09.457] [DEBUG] USERS - Email is :somevalue@nvipani.com
+[2018-10-17 14:00:09.461] [DEBUG] USERS - Fetch matched  user with user name :somevalue@nvipani.com
+[2018-10-17 14:00:09.476] [ERROR] USERS - No user found with the username : somevalue@nvipani.com
+[2018-10-17 14:00:09.477] [ERROR] USERS - No user found with the username : null { username: 'somevalue@nvipani.com',
+  issendotp: true,
+  issendemail: true,
+  token: '',
+  isEmail: true } null
+[2018-10-17 14:00:09.493] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA"}
+[2018-10-17 14:00:09.494] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA"}
+[2018-10-17 14:00:09.496] [DEBUG] USERS - Username is valid
+[2018-10-17 14:00:09.498] [DEBUG] USERS - Fetching already created user with the same user name  :somevalue@nvipani.com
+[2018-10-17 14:00:09.499] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-10-17 14:00:09.504] [DEBUG] USERS - Email is :somevalue@nvipani.com
+[2018-10-17 14:00:09.505] [DEBUG] USERS - Fetch matched  user with user name :somevalue@nvipani.com
+[2018-10-17 14:00:09.510] [ERROR] USERS - No user found with the username : somevalue@nvipani.com
+[2018-10-17 14:00:09.512] [ERROR] USERS - No user found with the username : null { username: 'somevalue@nvipani.com',
+  issendotp: true,
+  issendemail: true,
+  token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA',
+  isEmail: true } null
+[2018-10-17 14:00:09.533] [DEBUG] USERS - user registered wiht valid authoenticaiton :info@nvipani.com
+[2018-10-17 14:00:09.565] [DEBUG] USERS - Sending OTP Response
+[2018-10-17 14:00:09.720] [DEBUG] USERS - Sending OTP Response-624503
+[2018-10-17 14:00:12.058] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","otp":"","password":"passwrod","isverifyotp":true}
+[2018-10-17 14:00:12.059] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","otp":"","password":"passwrod","isverifyotp":true}
+[2018-10-17 14:00:12.061] [ERROR] USERS - OTP field is empty
+[2018-10-17 14:00:12.078] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","password":"test1234","conf_password":"test1234","otp":123456,"isverifyotp":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA"}
+[2018-10-17 14:00:12.085] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","password":"test1234","conf_password":"test1234","otp":123456,"isverifyotp":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA"}
+[2018-10-17 14:00:12.087] [DEBUG] USERS - Fetching already created user with the same user name  :somevalue@nvipani.com
+[2018-10-17 14:00:12.088] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-10-17 14:00:12.089] [DEBUG] USERS - Email is :somevalue@nvipani.com
+[2018-10-17 14:00:12.090] [DEBUG] USERS - Fetch matched  user with user name :somevalue@nvipani.com
+[2018-10-17 14:00:12.099] [DEBUG] USERS - Found user with the username :somevalue@nvipani.com
+[2018-10-17 14:00:12.110] [DEBUG] USERS - instance of user  :{ firstName: '',
+  middleName: '',
+  lastName: '',
+  allowRegistration: true,
+  email: 'somevalue@nvipani.com',
+  profileImageURL: 'modules/users/img/profile/default.png',
+  croppedProfileImageURL: 'modules/users/img/profile/default-resize-240-240.png',
+  roles: [ 'user' ],
+  mobile: '',
+  userType: 'Adminuser',
+  registerOption: false,
+  emailVerified: false,
+  mobileVerified: false,
+  acceptTerms: false,
+  status: 'Register Request',
+  digitalSignature: '',
+  disabled: false,
+  deleted: false,
+  _id: 5bc6f3117220f00894cfbab2,
+  username: 'somevalue@nvipani.com',
+  devices: [],
+  accountActivity: [],
+  created: 2018-10-17T08:30:09.542Z,
+  companies: [],
+  emailOtp: '624503',
+  serverUrl: 'http://127.0.0.1:61537',
+  provider: 'local',
+  updated: 2018-10-17T08:30:09.545Z,
+  userVersionKey: 0 }
+[2018-10-17 14:00:12.114] [DEBUG] USERS - Verifying OTP - true
+[2018-10-17 14:00:12.123] [ERROR] USERS - Incorrect otp for the Email: somevalue@nvipani.com
+[2018-10-17 14:00:12.125] [DEBUG] USERS - user registered  :null
+[2018-10-17 14:00:12.135] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","password":"","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-10-17 14:00:12.137] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","password":"","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-10-17 14:00:12.139] [ERROR] USERS - Password is empty : {"username":"somevalue@nvipani.com","password":"","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-10-17 14:00:12.150] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","password":"test123","conf_password":"test114","otp":123456,"isverifyotp":true}
+[2018-10-17 14:00:12.151] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","password":"test123","conf_password":"test114","otp":123456,"isverifyotp":true}
+[2018-10-17 14:00:12.153] [ERROR] USERS - Password is not valid +{"username":"somevalue@nvipani.com","password":"test123","conf_password":"test114","otp":123456,"isverifyotp":true}
+[2018-10-17 14:00:12.171] [ERROR] USERS - Something went wrong with -:5ba35bdd5b70ad2d00615562, -{"message":"Cast to ObjectId failed for value \":5ba35bdd5b70ad2d00615562\" at path \"_id\" for model \"User\"","name":"CastError","stringValue":"\":5ba35bdd5b70ad2d00615562\"","kind":"ObjectId","value":":5ba35bdd5b70ad2d00615562","path":"_id"}
+[2018-10-17 14:00:12.173] [DEBUG] USERS - Error Message-{"message":"Cast to ObjectId failed for value \":5ba35bdd5b70ad2d00615562\" at path \"_id\" for model \"User\"","name":"CastError","stringValue":"\":5ba35bdd5b70ad2d00615562\"","kind":"ObjectId","value":":5ba35bdd5b70ad2d00615562","path":"_id"}
+[2018-10-17 14:04:04.840] [DEBUG] USERS - Registration Request  - {"username":"","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA"}
+[2018-10-17 14:04:04.843] [DEBUG] USERS - user registration input validation for the data :{"username":"","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA"}
+[2018-10-17 14:04:04.845] [ERROR] USERS - username is empty :{"username":"","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA"}
+[2018-10-17 14:04:04.869] [DEBUG] USERS - Registration Request  - {"username":"somevalue","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA"}
+[2018-10-17 14:04:04.871] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA"}
+[2018-10-17 14:04:04.872] [ERROR] USERS - Username is not valid{"username":"somevalue","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA"}
+[2018-10-17 14:04:04.885] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","issendotp":true,"issendemail":true,"token":""}
+[2018-10-17 14:04:04.886] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","issendotp":true,"issendemail":true,"token":""}
+[2018-10-17 14:04:04.888] [DEBUG] USERS - Username is valid
+[2018-10-17 14:04:04.889] [DEBUG] USERS - Fetching already created user with the same user name  :somevalue@nvipani.com
+[2018-10-17 14:04:04.890] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-10-17 14:04:04.892] [DEBUG] USERS - Email is :somevalue@nvipani.com
+[2018-10-17 14:04:04.892] [DEBUG] USERS - Fetch matched  user with user name :somevalue@nvipani.com
+[2018-10-17 14:04:04.907] [ERROR] USERS - No user found with the username : somevalue@nvipani.com
+[2018-10-17 14:04:04.909] [ERROR] USERS - No user found with the username : null { username: 'somevalue@nvipani.com',
+  issendotp: true,
+  issendemail: true,
+  token: '',
+  isEmail: true } null
+[2018-10-17 14:04:04.922] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA"}
+[2018-10-17 14:04:04.923] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA"}
+[2018-10-17 14:04:04.924] [DEBUG] USERS - Username is valid
+[2018-10-17 14:04:04.925] [DEBUG] USERS - Fetching already created user with the same user name  :somevalue@nvipani.com
+[2018-10-17 14:04:04.926] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-10-17 14:04:04.927] [DEBUG] USERS - Email is :somevalue@nvipani.com
+[2018-10-17 14:04:04.928] [DEBUG] USERS - Fetch matched  user with user name :somevalue@nvipani.com
+[2018-10-17 14:04:04.934] [ERROR] USERS - No user found with the username : somevalue@nvipani.com
+[2018-10-17 14:04:04.935] [ERROR] USERS - No user found with the username : null { username: 'somevalue@nvipani.com',
+  issendotp: true,
+  issendemail: true,
+  token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA',
+  isEmail: true } null
+[2018-10-17 14:04:04.951] [DEBUG] USERS - user registered wiht valid authoenticaiton :info@nvipani.com
+[2018-10-17 14:04:04.975] [DEBUG] USERS - Sending OTP Response
+[2018-10-17 14:04:05.027] [DEBUG] USERS - Sending OTP Response-634483
+[2018-10-17 14:04:07.434] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","otp":"","password":"passwrod","isverifyotp":true}
+[2018-10-17 14:04:07.436] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","otp":"","password":"passwrod","isverifyotp":true}
+[2018-10-17 14:04:07.438] [ERROR] USERS - OTP field is empty
+[2018-10-17 14:04:07.452] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","password":"test1234","conf_password":"test1234","otp":123456,"isverifyotp":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA"}
+[2018-10-17 14:04:07.453] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","password":"test1234","conf_password":"test1234","otp":123456,"isverifyotp":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA"}
+[2018-10-17 14:04:07.456] [DEBUG] USERS - Fetching already created user with the same user name  :somevalue@nvipani.com
+[2018-10-17 14:04:07.456] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-10-17 14:04:07.457] [DEBUG] USERS - Email is :somevalue@nvipani.com
+[2018-10-17 14:04:07.459] [DEBUG] USERS - Fetch matched  user with user name :somevalue@nvipani.com
+[2018-10-17 14:04:07.464] [DEBUG] USERS - Found user with the username :somevalue@nvipani.com
+[2018-10-17 14:04:07.466] [DEBUG] USERS - instance of user  :{ firstName: '',
+  middleName: '',
+  lastName: '',
+  allowRegistration: true,
+  email: 'somevalue@nvipani.com',
+  profileImageURL: 'modules/users/img/profile/default.png',
+  croppedProfileImageURL: 'modules/users/img/profile/default-resize-240-240.png',
+  roles: [ 'user' ],
+  mobile: '',
+  userType: 'Adminuser',
+  registerOption: false,
+  emailVerified: false,
+  mobileVerified: false,
+  acceptTerms: false,
+  status: 'Register Request',
+  digitalSignature: '',
+  disabled: false,
+  deleted: false,
+  _id: 5bc6f3fc4821f708f0c60cb9,
+  username: 'somevalue@nvipani.com',
+  devices: [],
+  accountActivity: [],
+  created: 2018-10-17T08:34:04.958Z,
+  companies: [],
+  emailOtp: '634483',
+  serverUrl: 'http://127.0.0.1:61600',
+  provider: 'local',
+  updated: 2018-10-17T08:34:04.960Z,
+  userVersionKey: 0 }
+[2018-10-17 14:04:07.468] [DEBUG] USERS - Verifying OTP - true
+[2018-10-17 14:04:07.469] [ERROR] USERS - Incorrect otp for the Email: somevalue@nvipani.com
+[2018-10-17 14:04:07.471] [DEBUG] USERS - user registered  :null
+[2018-10-17 14:04:07.482] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","password":"","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-10-17 14:04:07.483] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","password":"","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-10-17 14:04:07.484] [ERROR] USERS - Password is empty : {"username":"somevalue@nvipani.com","password":"","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-10-17 14:04:07.493] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","password":"test123","conf_password":"test114","otp":123456,"isverifyotp":true}
+[2018-10-17 14:04:07.495] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","password":"test123","conf_password":"test114","otp":123456,"isverifyotp":true}
+[2018-10-17 14:04:07.496] [ERROR] USERS - Password is not valid +{"username":"somevalue@nvipani.com","password":"test123","conf_password":"test114","otp":123456,"isverifyotp":true}
+[2018-10-17 14:04:34.964] [DEBUG] USERS - Registration Request  - {"username":"","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA"}

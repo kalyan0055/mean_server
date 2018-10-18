@@ -33,7 +33,7 @@ module.exports = function(app) {
 		router.route('/users/update').put(users.update);
 		router.route('/users/disableOrEnableUser').post(users.disableUser);
 		router.route('/users/resetPasswordRequest').post(users.resetPasswordRequest);
-		router.route('/users/resetPassword').post(users.reset);
+		router.route('/users/setPassword').post(users.reset);
 		app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 		app.use('/api/v1', router);
 	 //END SWAGGER APIS

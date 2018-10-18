@@ -1500,14 +1500,14 @@ function getBusinessSegmentsCategories(done) {
 function getUserInputValidation(data, done) {
     // var reg = /^(?:\d{10,11}|([_a-zA-Z0-9]+(\.[_a-zA-Z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})))$/;
     var reg = /^\w+([\.-]?\w+)*@(nvipani.com)/;
-    console.log(data.issendemail, 'inputvlaidation');
+   
 
     if (!data) {
-        console.log(1, 'inputvlaidation');
+    
         done(new Error('Username (Email/Mobile) field must not be blank'), null);
     }
     else if (data.issendotp && data.issendemail) {
-        console.log(2, 'inputvlaidation', !reg.test(data.username));
+         
         if (!data.username) {
             logger.error('username is empty :' + JSON.stringify(data));
             done(new Error('Username (Email/Mobile) field must not be blank'), null);
@@ -1515,16 +1515,14 @@ function getUserInputValidation(data, done) {
             if(!reg.test(data.username)){
                 logger.error('Username is not valid' + JSON.stringify(data));
                 done(new Error('Username is not valid, Enter valid Email/Phone'), null);
-            }else{
-                console.log('come here finallyss');
-                
+            }else{               
                 logger.debug('Username is valid');
                 done(null, data);
             }           
         }
     } 
      else if (data.isverifyotp) {
-        console.log(3, 'inputvlaidation');
+       
         if (!data.otp) {
             logger.error('OTP field is empty');
             done(new Error('OTP field is empty for user ' + data.username), null);
@@ -1644,9 +1642,7 @@ function findOrRegisterUser(data, done) {
                     data.isPhone = true;
                 }
                 logger.debug('Fetch matched  user with user name :' + data.username);
-                userUtil.getQueryByUser({ $or: array }, 2, function (err, user) {
-                    console.log(err,'error', user,'user data');
-                    
+                userUtil.getQueryByUser({ $or: array }, 2, function (err, user) {                   
                       if (err) {
                         logger.error('Failed to load user with the username : ' + data.username + ' Error' + errorHandler.getErrorMessage(err));
                         done(err, data, user);
@@ -1685,9 +1681,7 @@ function findOrRegisterUser(data, done) {
 function getEmailTemplate(user, type, req) {
     let a = '';
     a = new Buffer(user.username).toString('base64');
-    console.log(user, type, 'from sendnotifcation fn');
-
-    if (type === 'Registered') {
+      if (type === 'Registered') {
         return {
             template: 'templates/success-user', subject: 'You are successfully Activated', options: {
                 name: 'Customer',
@@ -1715,7 +1709,7 @@ function getEmailTemplate(user, type, req) {
 
 function sendRegistrationNotification(user, data, type, req, res, done) {
     logger.debug('Sending OTP Response');
-    console.log(data.username,'register data')
+ 
     if ((user && data.isEmail && config.sendEmail) || (data.isPhone && config.sendSMS)) {
         if (data.isEmail) {
             var emailTemplate = getEmailTemplate(user, type, req);
@@ -1877,7 +1871,7 @@ function userCompanyInformation(user, data, done) {
 }
 function userRegistrationProcess(user, data, done) {
    // console.log(data,'userRegistrationProcess function called');
-    console.log(user.emailOtp);
+   
    // console.log(user.emailVerified);
 
     if ((data.isEmail || data.isPhone)) {
@@ -2052,7 +2046,7 @@ exports.userRegistration = function (req, res) {
     logger.debug('Registration Request  - ' + JSON.stringify(req.body));
     var data = req.body;
     var token, otp;
-    console.log(data, 'before going to getUserInputValidation');
+     
     logger.debug('user registration input validation for the data :' + JSON.stringify(data));
     getUserInputValidation(data, function (validError, data) {
         if (validError) {
@@ -2064,7 +2058,7 @@ exports.userRegistration = function (req, res) {
             logger.debug('Fetching already created user with the same user name  :' + data.username);
             findOrRegisterUser(data, function (userRegErr, data, user) {
                 if (userRegErr) {
-                    console.log('error occuered in findOrRegisterUser');
+                    
                     return res.send({
                         status: false,
                         message: errorHandler.getErrorMessage(userRegErr)
@@ -2223,7 +2217,7 @@ exports.userRegistration = function (req, res) {
                                         
                                         reqUser.save(function (err) {
                                             if (err) {
-                                                console.log('error occuered in saving');
+                                               
                                                 return res.status(400).send({
                                                     status: false,
                                                     message: errorHandler.getErrorMessage(err)
@@ -2363,7 +2357,6 @@ hasAuthorization(token,function(err,valid){
 }
 
 exports.findUser = function (req,res) {
-    console.log(req.body, ' data');
     
     let data  = req.body;
     if (data.username) {
@@ -2388,8 +2381,8 @@ exports.findUser = function (req,res) {
                     data.isPhone = true;
                 }
                 logger.debug('Fetch matched  user with user name :' + data.username);
-                userUtil.getQueryByUser({ $or: array }, 2, function (err, user) {
-                    console.log(err,'error', user,'user data');
+                userUtil.getQueryByUser({ $or: array }, 2, function (err, user,done) {
+                  
                     if (err) {
                         logger.error('Failed to load user with the username : ' + data.username + ' Error' + errorHandler.getErrorMessage(err));
                         return res.send({
@@ -2411,7 +2404,14 @@ exports.findUser = function (req,res) {
                                 message: 'Username found with status - Register Request',
                                 data:user.status
                             })
-                            }  
+                            }
+                         if(user.status === 'Registered'){
+                             return res.send({
+                                status:true,
+                                message: 'Username found with status - Registered',
+                                data:user.status
+                            })
+                         }
                         else {
                             done(err, data, user);
                         }

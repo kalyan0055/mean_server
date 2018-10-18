@@ -132,8 +132,9 @@ exports.findUserByStatusToken = function(satusToken, done) {
 };
 
 exports.findUserById = function(userId, done) {
+	var id=userId;
     User.findOne({
-        _id: userId,
+        _id: id,
         'deleted': false
     }).select('-salt -password').exec(function (userErr, user) {
         if (userErr) {

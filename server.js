@@ -16,8 +16,8 @@ var init = require('./config/init')(),
 
 // Bootstrap db connection
 console.log(config.db);
-
-var db = mongoose.connect(config.db, function(err) {
+mongoose.set('useCreateIndex', true);
+var db = mongoose.connect(config.db, { useNewUrlParser: true } , function(err) {
 	if (err) {
 		console.error(chalk.red('Could not connect to MongoDB!'));
 		console.log(chalk.red(err));
@@ -25,8 +25,7 @@ var db = mongoose.connect(config.db, function(err) {
 });
 //db.set('debug', true);
 // Init the express application
-console.log(db);
-
+ 
 var app = require('./config/express')(db);
 
 // Bootstrap passport configs

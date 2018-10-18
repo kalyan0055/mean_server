@@ -20,15 +20,12 @@ var _ = require('lodash'),
     config = require('../../../config/config'),
 
     nodemailer = require('nodemailer');
-// User = require('../models/user');
+
+// Usevar ObjectId = require('mongoose').ObjectID;r = require('../models/user');
 // bCrypt = require('bcrypt-nodejs');;
-
-
-
 /**
  * Update user details
  */
-
 
 exports.newuserslist = function (req, res) {
 
@@ -38,7 +35,7 @@ exports.newuserslist = function (req, res) {
 
     let obj = {};
     obj[`${fields}`] = sortBy
-    console.log(obj);
+
     newuserJWTUtil.findUserById(req.params.userid, function (err, result) {
         if (err || !result) {
             res.status(400).send({
@@ -92,12 +89,8 @@ exports.newuserslist = function (req, res) {
 };
 
 function getEmailTemplate(user, type, req) {
-    console.log(req.protocol + '://' + req.headers.host);
-
-
-    let a = '';
+    let a =null;
     a = new Buffer(user).toString('base64');
-
     if (type === 'Registered') {
         return {
             template: 'templates/success-user', subject: 'You are successfully Activated', options: {
@@ -125,12 +118,12 @@ function getEmailTemplate(user, type, req) {
 }
 exports.registervialink = function (req, res, done) {
 
-    console.log(req.body.username, 'resssdfsf');
+
     var emailTemplate = getEmailTemplate(req.body.username, 'Register Request', req);
 
 
     res.render(emailTemplate.template, emailTemplate.options, function (err, emailHTML) {
-        console.log(err);
+
 
         var smtpTransport = nodemailer.createTransport(config.mailer.options);
         var mailOptions = {
@@ -182,7 +175,6 @@ exports.disableUser = function (req, res) {
             (data.type === 'disable') ? type = true : type = false;
 
             User.updateOne({ _id: data.id }, { $set: { disabled: type } }, function (err, result) {
-                console.log(result);
                 if (err) {
                     return res.json({
                         status: false,
@@ -200,27 +192,27 @@ exports.disableUser = function (req, res) {
 }
 
 exports.deleteuser = function (req, res) {
-    let data = req.params.userid;
-    let token = req.body.token || req.headers.token
-    console.log(token, 'deleted post data');
-    if (token) {
-        hasAuthorization(token, function (err, validToken) {
-            if (err) {
-                return res.status(401).send({
-                    success: false,
-                    message: 'Your are not an Authorized User to delete this user',
-                })
-            } else {
-                newuserJWTUtil.findUserById(data, function (err, user) {
-                    if (err || !user) {
-                        logger.error('Something went wrong with -' + data + ', -' + JSON.stringify(err));
-                        logger.debug('Error Message-' + JSON.stringify(err));
-                        res.status(400).send({
-                            status: false,
-                            message: 'Error deleting the user with user id -' + data
-                        });
+    let data=null;
+    data = req.params.userid;
+    let token = req.body.token || req.headers.token;
+        User.findOne({'_id':(data)  }, function(err, user) {
+        if (err || !user) {
+            logger.error('Something went wrong with -' + data + ', -' + JSON.stringify(err));
+            logger.debug('Error Message-' + JSON.stringify(err));
+            res.status(400).send({
+                status: false,
+                message: 'Error deleting the user with user id -' + data
+            });
+        } else {
+            if (token) {
+                hasAuthorization(token, function (err, validToken) {
+                    if (err) {
+                        return res.status(401).send({
+                            success: false,
+                            message: 'Your are not an Authorized User to delete this user',
+                        })
                     } else {
-                        if (user) {
+                        if (user && validToken) {
                             User.updateOne({ _id: user._id }, { $set: { deleted: true } }, function (err, result) {
                                 if (err || !result) {
                                     res.json({
@@ -234,24 +226,29 @@ exports.deleteuser = function (req, res) {
                                     })
                                 }
                             })
+                        } else {
+                            return res.status(401).send({
+                                success: false,
+                                message: 'Session Expired or Invalid Token',
+                            })
                         }
                     }
                 })
+            } else {
+                return res.status(401).send({
+                    success: false,
+                    message: 'Session Expired or Invalid Token',
+                })
             }
-        })
-    } else {
-        return res.status(401).send({
-            success: false,
-            message: 'Session Expired or Invalid Token',
-        })
-    }
 
+        }
+    })
 
 };
 
 exports.restoreeuser = function (req, res) {
     let data = req.params.userid;
-    console.log(data, 'delete id');
+
 
     newuserJWTUtil.findUserByIdOnly(data, function (err, user) {
         if (err || !user) {
@@ -301,7 +298,7 @@ function hasAuthorization(token, done) {
  * Update profile picture
  */
 exports.changeProfilePicture = function (req, res) {
-    console.log(req.files, 'ttttttttttttttttttttttt');
+
 
     var token = req.body.token || req.headers.token;
     if (token) {
@@ -315,7 +312,7 @@ exports.changeProfilePicture = function (req, res) {
                 //             message: 'Error occurred while uploading profile picture'
                 //         });
                 //     } 
-                console.log(user.profileImageURL);
+
 
                 var exist_image = './public/' + user.profileImageURL;
                 var path = './public/modules/users/img/profile/uploads/' + req.files[0].filename;

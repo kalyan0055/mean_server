@@ -20,6 +20,7 @@ var should = require('should'),
 var valusers;
 var contact;
 var regUsers;
+var token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA'
 /**
  * Unit tests
  */
@@ -37,13 +38,13 @@ describe('User Model Unit Tests:', function () {
             username: '',
             issendotp: true,
             issendemail: true,
-            token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yMlQxNDowODoxMC4zMTlaIn0.Pm0dlo-DtJuK-r83tB3BaMGEm402K5GL20J9uGbfwbY'
+            token: token
 
         }, {
             username: 'somevalue',
             issendotp: true,
             issendemail: true,
-            token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yMlQxNDowODoxMC4zMTlaIn0.Pm0dlo-DtJuK-r83tB3BaMGEm402K5GL20J9uGbfwbY'
+            token: token
 
         }, // }           eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0wN1QxMjo1OTozOS4yMjVaIn0.KYNyfY_J7BgBTf9ZtkJ0MhsOherAZZ02bYUDeOsBTPM
         {
@@ -55,7 +56,7 @@ describe('User Model Unit Tests:', function () {
             username: 'somevalue@nvipani.com',
             issendotp: true,
             issendemail: true,
-            token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yMlQxNDowODoxMC4zMTlaIn0.Pm0dlo-DtJuK-r83tB3BaMGEm402K5GL20J9uGbfwbY'
+            token: token
         }
             , {
             username: 'somevalue@nvipani.com',
@@ -158,7 +159,7 @@ describe('User Model Unit Tests:', function () {
     /*
     *  Case 1: it should able to accept any otp -ve test case
     *  Case 2: it should be able to verify otp for non registered user -ve test case
-    *  case 3: it should able to accept the generated otp and populate categories and segments +ve test case
+    *  case 3: it should able to accept the generated otp a
     * */
 
     it('should be able accept the generated OTP and verify the user', function (done) {
@@ -171,7 +172,7 @@ describe('User Model Unit Tests:', function () {
             // var otp = presignupotpRes.body.otp;
             var otpFalse = 123456;
             commonUserUtil.createEachStepUser({
-                username: 'somevalue@nvipani.com', password: 'test1234', conf_password: 'test1234', otp: otpFalse, isverifyotp: true, token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yMlQxNDowODoxMC4zMTlaIn0.Pm0dlo-DtJuK-r83tB3BaMGEm402K5GL20J9uGbfwbY'
+                username: 'somevalue@nvipani.com', password: 'test1234', conf_password: 'test1234', otp: otpFalse, isverifyotp: true, token: token
             }, 400, agent, function (presignupotpverErr, presignupotpverRes) {
                 should.not.exist(presignupotpverErr);
                 presignupotpverRes.body.status.should.equal(false);
@@ -195,27 +196,35 @@ describe('User Model Unit Tests:', function () {
     });
 
 
+   
+
     /* Unable delete user with invalid Id -Ve case*/
-    it('should be delete by id only', function (done) {
-        commonUserUtil.findId("3232130slfkaslfks", 401, agent, function (err, deluser) {
+    it('should be delete user by id with valid token only', function (done) {
+        let data = { id: "5ba35bdd5b70ad2d00615562", token: token }
+        commonUserUtil.findId(data, 400, agent, function (err, deluser) {
             should.not.exist(err);
-            deluser.body.message.should.equal('Your are not an Authorized User to delete this user');
-            done();
+            deluser.body.message.should.equal('Error deleting the user with user id -5ba35bdd5b70ad2d00615562');
+            let data1 = { id: "5ba367a8f13009084436c2f1", token: '' }
+            commonUserUtil.findId(data1, 401, agent, function (err, deluser) {
+                should.not.exist(err);
+                deluser.body.message.should.equal('Session Expired or Invalid Token');
+                done();
+             })
         })
     });
 
-    it('should be able to send email by taking valid data for reset password request', function (done) {
-        commonUserUtil.resetPassword({ token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yMlQxNDowODoxMC4zMTlaIn0.Pm0dlo-DtJuK-r83tB3BaMGEm402K5GL20J9uGbfwbY', id: '', reset_password: false, username: 'emandi1@nvipani.com' }, 400, agent, function (err, result) {
-            should.not.exist(err);
-            // console.log(result,'reset password error');
-            result.body.status.should.equal(false);
-            done();
-        })
-    });
+    // it('should be able to send email by taking valid data for reset password request', function (done) {
+    //     commonUserUtil.resetPassword({ token: token, id: '', reset_password: false, username: 'emandi1@nvipani.com' }, 400, agent, function (err, result) {
+    //         should.not.exist(err);
+    //         // console.log(result,'reset password error');
+    //         result.body.status.should.equal(false);
+    //         done();
+    //     })
+    // });
 
 
     after(function (done) {
-        User.remove({ "username": "somevalue@nvipani.com" }).exec();
+        User.deleteOne({ "username": "somevalue@nvipani.com" }).exec();
         // Company.remove().exec();
         // Contact.remove().exec();
         done();

@@ -253,7 +253,7 @@ exports.reset = function (req, res, next) {
         },
         // If valid email, send reset email using service
         function (emailHTML, user, done) {
-            console.log(user.username, 'reset password link');
+            
 
             var smtpTransport = nodemailer.createTransport(config.mailer.options);
             var mailOptions = {

@@ -52,8 +52,8 @@ exports.update = function (req, res) {
     delete req.body.salt;
     var token = req.body.token || req.headers.token;
 
-    usersJWTUtil.findUserByToken(token, function (err, user) {
-        console.log(err);
+    usersJWTUtil.findUserByToken(token, function (err, tokenUser) {
+       
         if (err) {
             return res.status(400).send({
                 status: false,
@@ -67,6 +67,8 @@ exports.update = function (req, res) {
                     message: errorHandler.getErrorMessage(err)
                 });
             }
+            if(tokenUser.username == req.body.username || tokenUser.userType == 'Admin' ||tokenUser.userType == 'Adminuser' )
+            {
             User.findOne({
                 username: req.body.username
             }, '-salt -password', function (err, dbuser) {
@@ -75,7 +77,7 @@ exports.update = function (req, res) {
                     dbuser = _.extend(dbuser, req.body);
                     dbuser.userVersionKey = versionKey;
                     dbuser.updated = Date.now();
-                    console.log(dbuser);
+                   
                        dbuser.save(function (err) {
                         if (err) {
                             return res.status(400).send({
@@ -97,6 +99,13 @@ exports.update = function (req, res) {
                     });
                 }
             });
+            }else{
+                res.status(400).send({
+                    status: false,
+                    message: 'Your not an Authorized user'
+                });
+            }
+
         })
 
     });
@@ -183,7 +192,7 @@ exports.me = function (req, res) {
     //         message: 'User is not signed in'
     //     });
     // }
-    console.log('finally testing');
+  
 
 };
 
@@ -212,7 +221,7 @@ exports.register = function (req, res) {
         data: req.body
     });
 
-    console.log('finally testing');
+ 
 
 };
 

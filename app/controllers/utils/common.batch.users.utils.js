@@ -7,6 +7,7 @@ var async = require('async'),
     retailers = [],
     users = [],
     distributors = [];
+ 
 function setDistributors(user) {
     distributors.push(user);
 }
@@ -229,19 +230,21 @@ exports.getUser = function (user, agent, done) {
 
 };
 
-exports.findId = function (id, serverRes, agent, done) {
-    agent.delete(`/users/deleteuser/:${id}`).
-        set('token', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0wOS0xNFQwNjoxNjoyMy45OTRaIn0.DTwvg1okcbm6PqqwUFeSSqkEvos1jBQMFuBz0LwybdE').
+exports.findId = function (data, serverRes, agent, done) {  
+    agent.delete(`/users/deleteuser/${data.id}`).
         send()
+        .set({'token':data.token})
         .expect(serverRes).
         end(function (err, result) {
             done(err, result)
         });
 };
+ 
 
 exports.resetPassword = function (data, serverRes, agent, done) {
     agent.post('/users/resetPasswordRequest')
         .send(data)
+        .set('token','')
         .expect(serverRes)
         .end(function (reseterr, resetPassword) {
             done(reseterr, resetPassword)

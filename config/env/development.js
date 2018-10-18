@@ -4,7 +4,7 @@ module.exports = {
 
     //db: 'mongodb://localhost/nvipani-dev1',
 //	db: 'mongodb://localhost/nvipani-dev', just commented
-	db: 'mongodb://localhost:27017/mean',
+	db: 'mongodb://127.0.0.1:27017/mean',
     //db: 'mongodb://localhost/nvipani-test',
    /* db: {
         uri: process.env.MONGOHQ_URL || process.env.MONGODB_URI || 'mongodb://' + (process.env.DB_1_PORT_27017_TCP_ADDR || 'localhost') + '/nvipani-dev',
