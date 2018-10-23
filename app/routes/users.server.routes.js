@@ -42,6 +42,8 @@ module.exports = function(app) {
 	app.route('/users/newuserslist/:userid').post(users.newuserslist);
 	app.route('/users/deleteuser/:userid').delete(users.deleteuser); 
 	app.route('/users/restoreeuser/:userid').delete(users.restoreeuser);
+	app.route('/users/getUser/:userid').get(users.getUserById);
+ 
  	app.route('/users/registervialink').post(users.registervialink);
 	app.route('/users/resetPasswordRequest').post(users.resetPasswordRequest);
 	app.route('/users/disableUser').post(users.disableUser);

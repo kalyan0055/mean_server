@@ -166,64 +166,7 @@ exports.changeProfilePicture = function (req, res) {
     }
 };
 
-/**
- * Send User
- */
-exports.me = function (req, res) {
-    /*logger.debug('req.token-'+req.token);
-    logger.debug('req.body-'+JSON.stringify(req.body));
-    logger.debug('req.body.token-'+req.body.token);*/
-    // var token = req.body.token || req.headers.token;
-    // if (token) {
-    //     usersJWTUtil.findUserByToken(token, function (err, user) {
-    //         if (err) {
-    //             return res.status(400).send({
-    //                 status: false,
-    //                 message: errorHandler.getErrorMessage(err)
-    //             });
-    //         }
-    //         res.json(user || null);
-
-
-    //     });
-    // } else {
-    //     res.status(400).send({
-    //         status: false,
-    //         message: 'User is not signed in'
-    //     });
-    // }
   
-
-};
-
-exports.register = function (req, res) {
-
-    /*logger.debug('req.token-'+req.token);
-    logger.debug('req.body-'+JSON.stringify(req.body));
-    logger.debug('req.body.token-'+req.body.token);*/
-    // var token = req.body.token || req.headers.token;
-    // if (token) {
-    //     usersJWTUtil.findUserByToken(token, function (err, user) {
-    //         if (err) {
-    //             return res.status(400).send({
-    //                 status: false,
-    //                 message: errorHandler.getErrorMessage(err)
-    //             });
-    //         }
-    //         res.json(user || null);
-
-
-    //     });
-    // } else {
-    res.status(400).send({
-        status: false,
-        message: 'User is not signed in',
-        data: req.body
-    });
-
- 
-
-};
 
 function removeDuplicates(businessUnitArray, done) {
     var unique_array = [];

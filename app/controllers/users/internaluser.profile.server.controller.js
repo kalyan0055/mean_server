@@ -10,7 +10,7 @@ var _ = require('lodash'),
     logger = require('../../../lib/log.js').getLogger('USERS', 'DEBUG'),
     passport = require('passport'),
     LocalStrategy = require('passport-local').Strategy,
-    // usersJWTUtil = require('../utils/users.jwtutil.js'),
+    usersJWTUtil = require('../utils/users.jwtutil.js'),
     // businessUnitUtil =require('../utils/common.businessunit.util'),
     dbUtil = require('../utils/common.db.util.js'),
     User = mongoose.model('InternalUser'),
@@ -88,7 +88,7 @@ exports.newuserslist = function (req, res) {
 };
 
 function getEmailTemplate(user, type, req) {
-    let a =null;
+    let a = null;
     a = new Buffer(user).toString('base64');
     if (type === 'Registered') {
         return {
@@ -191,10 +191,10 @@ exports.disableUser = function (req, res) {
 }
 
 exports.deleteuser = function (req, res) {
-    let data=null;
+    let data = null;
     data = req.params.userid;
     let token = req.body.token || req.headers.token;
-        User.findOne({'_id':(data)  }, function(err, user) {
+    User.findOne({ '_id': (data) }, function (err, user) {
         if (err || !user) {
             logger.error('Something went wrong with -' + data + ', -' + JSON.stringify(err));
             logger.debug('Error Message-' + JSON.stringify(err));
@@ -370,5 +370,27 @@ exports.changeProfilePicture = function (req, res) {
         });
     }
 };
+
+exports.getUserById = function (req, res) {
+    let data = null;
+    data = req.params.userid;
+    let token = req.body.token || req.headers.token;
+    usersJWTUtil.findUserByIdOnly(data, function (err, user) {
+        if (err || !user) {
+            logger.error('Something went wrong with -' + data + ', -' + JSON.stringify(err));
+            logger.debug('Error Message-' + JSON.stringify(err));
+            res.status(400).send({
+                status: false,
+                message: 'Error deleting the user with user id -' + data
+            });
+        }else {
+            res.status(200).send({
+                status: true,
+                userData:user
+            });
+               
+        }
+    });
+}
 
 
