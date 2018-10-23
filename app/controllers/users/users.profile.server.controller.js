@@ -12,7 +12,7 @@ var _ = require('lodash'),
     usersJWTUtil = require('../utils/users.jwtutil'),
     // businessUnitUtil =require('../utils/common.businessunit.util'),
     dbUtil = require('../utils/common.db.util'),
-    User = mongoose.model('User'),
+    User = mongoose.model('InternalUser'),
     async = require('async');
 /**
  * Update user details

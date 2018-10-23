@@ -1,5 +1,170 @@
-[2018-10-18 20:28:00.025] [DEBUG] USERS - Sending OTP Response
-[2018-10-18 20:28:00.255] [DEBUG] USERS - Sending OTP Response-052435
-[2018-10-18 20:28:03.219] [DEBUG] USERS - requiresLogin - Request -{"name":"Added - NewUser - vamsikiran@nvipani.com","target":"5bc89f784cce692c60883519","eventType":"Add","eventTargetType":"User","user":"5b7d1e9f1583471f04217595"}
-[2018-10-18 20:28:03.220] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-10-18 20:28:03.221] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yNVQxNDo1NzoyMS4zMzFaIn0.ryX7ouFinY6anaM6iToS5HclOQ7DmjhW2B_sVb0eV-g
+[2018-10-22 18:58:46.598] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 18:58:46.599] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzowNzozMS4xODRaIn0.WPcGit-nETskHBUbC7_UGcCqnbLA5V9C-KRb_aQAR8g
+[2018-10-22 19:00:07.410] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","target":null,"eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595"}
+[2018-10-22 19:00:07.410] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 19:00:07.411] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzowNzozMS4xODRaIn0.WPcGit-nETskHBUbC7_UGcCqnbLA5V9C-KRb_aQAR8g
+[2018-10-22 19:00:07.508] [DEBUG] USERS - requiresLogin - Request -{"name":"Searched in Users table - ","target":null,"eventType":"Search","eventTargetType":"User","user":"5b7d1e9f1583471f04217595"}
+[2018-10-22 19:00:07.511] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 19:00:07.512] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzowNzozMS4xODRaIn0.WPcGit-nETskHBUbC7_UGcCqnbLA5V9C-KRb_aQAR8g
+[2018-10-22 19:00:34.644] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","target":null,"eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595"}
+[2018-10-22 19:00:34.653] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 19:00:34.653] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzowNzozMS4xODRaIn0.WPcGit-nETskHBUbC7_UGcCqnbLA5V9C-KRb_aQAR8g
+[2018-10-22 19:00:34.742] [DEBUG] USERS - requiresLogin - Request -{"name":"Searched in Users table - ","target":null,"eventType":"Search","eventTargetType":"User","user":"5b7d1e9f1583471f04217595"}
+[2018-10-22 19:00:34.745] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 19:00:34.745] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzowNzozMS4xODRaIn0.WPcGit-nETskHBUbC7_UGcCqnbLA5V9C-KRb_aQAR8g
+[2018-10-22 19:00:42.793] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","target":null,"eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595"}
+[2018-10-22 19:00:42.795] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 19:00:42.795] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzowNzozMS4xODRaIn0.WPcGit-nETskHBUbC7_UGcCqnbLA5V9C-KRb_aQAR8g
+[2018-10-22 19:00:42.846] [DEBUG] USERS - requiresLogin - Request -{"name":"Searched in Users table - ","target":null,"eventType":"Search","eventTargetType":"User","user":"5b7d1e9f1583471f04217595"}
+[2018-10-22 19:00:42.847] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 19:00:42.847] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzowNzozMS4xODRaIn0.WPcGit-nETskHBUbC7_UGcCqnbLA5V9C-KRb_aQAR8g
+[2018-10-22 19:03:42.995] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","target":null,"eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595"}
+[2018-10-22 19:03:42.996] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 19:03:42.996] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzowNzozMS4xODRaIn0.WPcGit-nETskHBUbC7_UGcCqnbLA5V9C-KRb_aQAR8g
+[2018-10-22 19:03:43.223] [DEBUG] USERS - requiresLogin - Request -{"name":"Searched in Users table - ","target":null,"eventType":"Search","eventTargetType":"User","user":"5b7d1e9f1583471f04217595"}
+[2018-10-22 19:03:43.224] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 19:03:43.224] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzowNzozMS4xODRaIn0.WPcGit-nETskHBUbC7_UGcCqnbLA5V9C-KRb_aQAR8g
+[2018-10-22 19:03:49.713] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","target":null,"eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595"}
+[2018-10-22 19:03:49.715] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 19:03:49.715] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzowNzozMS4xODRaIn0.WPcGit-nETskHBUbC7_UGcCqnbLA5V9C-KRb_aQAR8g
+[2018-10-22 19:03:49.768] [DEBUG] USERS - requiresLogin - Request -{"name":"Searched in Users table - ","target":null,"eventType":"Search","eventTargetType":"User","user":"5b7d1e9f1583471f04217595"}
+[2018-10-22 19:03:49.770] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 19:03:49.772] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzowNzozMS4xODRaIn0.WPcGit-nETskHBUbC7_UGcCqnbLA5V9C-KRb_aQAR8g
+[2018-10-22 19:11:21.352] [DEBUG] USERS - requiresLogin - Request -{"name":"User Logged out atMon Oct 22 2018 19:11:21 GMT+0530 (India Standard Time)","target":null,"eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","lastUpdatedUser":null}
+[2018-10-22 19:11:21.353] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 19:11:21.354] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzowNzozMS4xODRaIn0.WPcGit-nETskHBUbC7_UGcCqnbLA5V9C-KRb_aQAR8g
+[2018-10-22 19:11:27.777] [DEBUG] USERS - Request Body-{"username":"info@nvipani.com","password":"TECHNO12"}
+[2018-10-22 19:11:27.822] [ERROR] USERS - Error Signin with username -info@nvipani.com, -{"message":"Entered Username or Password is incorrect","status":false}
+[2018-10-22 19:11:32.505] [DEBUG] USERS - Request Body-{"username":"info@nvipani.com","password":"techno12"}
+[2018-10-22 19:11:32.672] [DEBUG] USERS - requiresLogin - Request -{"name":"User Logged in atMon Oct 22 2018 19:11:32 GMT+0530 (India Standard Time)","target":null,"eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","lastUpdatedUser":null}
+[2018-10-22 19:11:32.674] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 19:11:32.674] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzo0MTozMi41NTZaIn0.0vS6mPNALdlqzTkxNvzcWx-UrewAOy8ViNuvmCU1hqU
+[2018-10-22 19:12:10.917] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","target":null,"eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595"}
+[2018-10-22 19:12:10.931] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 19:12:10.934] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzo0MTozMi41NTZaIn0.0vS6mPNALdlqzTkxNvzcWx-UrewAOy8ViNuvmCU1hqU
+[2018-10-22 19:12:10.975] [DEBUG] USERS - requiresLogin - Request -{"name":"Searched in Users table - ","target":null,"eventType":"Search","eventTargetType":"User","user":"5b7d1e9f1583471f04217595"}
+[2018-10-22 19:12:10.976] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 19:12:10.977] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzo0MTozMi41NTZaIn0.0vS6mPNALdlqzTkxNvzcWx-UrewAOy8ViNuvmCU1hqU
+[2018-10-22 19:12:15.157] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","target":null,"eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595"}
+[2018-10-22 19:12:15.158] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 19:12:15.158] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzo0MTozMi41NTZaIn0.0vS6mPNALdlqzTkxNvzcWx-UrewAOy8ViNuvmCU1hqU
+[2018-10-22 19:12:15.234] [DEBUG] USERS - requiresLogin - Request -{"name":"Searched in Users table - ","target":null,"eventType":"Search","eventTargetType":"User","user":"5b7d1e9f1583471f04217595"}
+[2018-10-22 19:12:15.237] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 19:12:15.238] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzo0MTozMi41NTZaIn0.0vS6mPNALdlqzTkxNvzcWx-UrewAOy8ViNuvmCU1hqU
+[2018-10-22 19:13:44.013] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","target":null,"eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595"}
+[2018-10-22 19:13:44.014] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 19:13:44.014] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzo0MTozMi41NTZaIn0.0vS6mPNALdlqzTkxNvzcWx-UrewAOy8ViNuvmCU1hqU
+[2018-10-22 19:13:44.111] [DEBUG] USERS - requiresLogin - Request -{"name":"Searched in Users table - ","target":null,"eventType":"Search","eventTargetType":"User","user":"5b7d1e9f1583471f04217595"}
+[2018-10-22 19:13:44.119] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 19:13:44.120] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzo0MTozMi41NTZaIn0.0vS6mPNALdlqzTkxNvzcWx-UrewAOy8ViNuvmCU1hqU
+[2018-10-22 19:13:49.295] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","target":null,"eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595"}
+[2018-10-22 19:13:49.296] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 19:13:49.296] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzo0MTozMi41NTZaIn0.0vS6mPNALdlqzTkxNvzcWx-UrewAOy8ViNuvmCU1hqU
+[2018-10-22 19:13:49.396] [DEBUG] USERS - requiresLogin - Request -{"name":"Searched in Users table - ","target":null,"eventType":"Search","eventTargetType":"User","user":"5b7d1e9f1583471f04217595"}
+[2018-10-22 19:13:49.396] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 19:13:49.396] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzo0MTozMi41NTZaIn0.0vS6mPNALdlqzTkxNvzcWx-UrewAOy8ViNuvmCU1hqU
+[2018-10-22 19:13:54.747] [DEBUG] USERS - requiresLogin - Request -{"name":"User Logged out atMon Oct 22 2018 19:13:54 GMT+0530 (India Standard Time)","target":null,"eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","lastUpdatedUser":null}
+[2018-10-22 19:13:54.748] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 19:13:54.749] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzo0MTozMi41NTZaIn0.0vS6mPNALdlqzTkxNvzcWx-UrewAOy8ViNuvmCU1hqU
+[2018-10-22 19:13:58.776] [DEBUG] USERS - Request Body-{"username":"info@nvipani.com","password":"techno12"}
+[2018-10-22 19:13:58.878] [DEBUG] USERS - requiresLogin - Request -{"name":"User Logged in atMon Oct 22 2018 19:13:58 GMT+0530 (India Standard Time)","target":null,"eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","lastUpdatedUser":null}
+[2018-10-22 19:13:58.880] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 19:13:58.880] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzo0Mzo1OC44MjFaIn0.DPrz_0-OphhdNllkLs6owd8SDI0yKpTB8Ay0SXIqgGM
+[2018-10-22 19:14:03.923] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","target":null,"eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595"}
+[2018-10-22 19:14:03.924] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 19:14:03.924] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzo0Mzo1OC44MjFaIn0.DPrz_0-OphhdNllkLs6owd8SDI0yKpTB8Ay0SXIqgGM
+[2018-10-22 19:14:04.013] [DEBUG] USERS - requiresLogin - Request -{"name":"Searched in Users table - ","target":null,"eventType":"Search","eventTargetType":"User","user":"5b7d1e9f1583471f04217595"}
+[2018-10-22 19:14:04.013] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 19:14:04.014] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzo0Mzo1OC44MjFaIn0.DPrz_0-OphhdNllkLs6owd8SDI0yKpTB8Ay0SXIqgGM
+[2018-10-22 19:16:28.434] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","target":null,"eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595"}
+[2018-10-22 19:16:28.435] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 19:16:28.436] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzo0Mzo1OC44MjFaIn0.DPrz_0-OphhdNllkLs6owd8SDI0yKpTB8Ay0SXIqgGM
+[2018-10-22 19:16:28.503] [DEBUG] USERS - requiresLogin - Request -{"name":"Searched in Users table - ","target":null,"eventType":"Search","eventTargetType":"User","user":"5b7d1e9f1583471f04217595"}
+[2018-10-22 19:16:28.505] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 19:16:28.508] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzo0Mzo1OC44MjFaIn0.DPrz_0-OphhdNllkLs6owd8SDI0yKpTB8Ay0SXIqgGM
+[2018-10-22 19:16:31.136] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","target":null,"eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595"}
+[2018-10-22 19:16:31.136] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 19:16:31.137] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzo0Mzo1OC44MjFaIn0.DPrz_0-OphhdNllkLs6owd8SDI0yKpTB8Ay0SXIqgGM
+[2018-10-22 19:16:31.266] [DEBUG] USERS - requiresLogin - Request -{"name":"Searched in Users table - ","target":null,"eventType":"Search","eventTargetType":"User","user":"5b7d1e9f1583471f04217595"}
+[2018-10-22 19:16:31.267] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 19:16:31.267] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzo0Mzo1OC44MjFaIn0.DPrz_0-OphhdNllkLs6owd8SDI0yKpTB8Ay0SXIqgGM
+[2018-10-22 19:17:34.197] [DEBUG] USERS - requiresLogin - Request -{"name":"User Logged out atMon Oct 22 2018 19:17:34 GMT+0530 (India Standard Time)","target":null,"eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","lastUpdatedUser":null}
+[2018-10-22 19:17:34.199] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 19:17:34.199] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzo0Mzo1OC44MjFaIn0.DPrz_0-OphhdNllkLs6owd8SDI0yKpTB8Ay0SXIqgGM
+[2018-10-22 19:17:38.856] [DEBUG] USERS - Request Body-{"username":"info@nvipani.com","password":"techno12"}
+[2018-10-22 19:17:38.962] [DEBUG] USERS - requiresLogin - Request -{"name":"User Logged in atMon Oct 22 2018 19:17:38 GMT+0530 (India Standard Time)","target":null,"eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","lastUpdatedUser":null}
+[2018-10-22 19:17:38.962] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 19:17:38.968] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzo0NzozOC45MDRaIn0.DAt84XBB0iauQQ9vgs9BGWiroSQ7udyU3U6hY5yU2Wk
+[2018-10-22 19:18:32.530] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","target":null,"eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595"}
+[2018-10-22 19:18:32.531] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 19:18:32.531] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzo0NzozOC45MDRaIn0.DAt84XBB0iauQQ9vgs9BGWiroSQ7udyU3U6hY5yU2Wk
+[2018-10-22 19:18:32.783] [DEBUG] USERS - requiresLogin - Request -{"name":"Searched in Users table - ","target":null,"eventType":"Search","eventTargetType":"User","user":"5b7d1e9f1583471f04217595"}
+[2018-10-22 19:18:32.784] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 19:18:32.784] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzo0NzozOC45MDRaIn0.DAt84XBB0iauQQ9vgs9BGWiroSQ7udyU3U6hY5yU2Wk
+[2018-10-22 19:19:08.059] [DEBUG] USERS - requiresLogin - Request -{"name":"User Logged out atMon Oct 22 2018 19:19:07 GMT+0530 (India Standard Time)","target":null,"eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","lastUpdatedUser":null}
+[2018-10-22 19:19:08.060] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 19:19:08.061] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzo0NzozOC45MDRaIn0.DAt84XBB0iauQQ9vgs9BGWiroSQ7udyU3U6hY5yU2Wk
+[2018-10-22 19:19:13.255] [DEBUG] USERS - Request Body-{"username":"info@nvipani.com","password":"techno12"}
+[2018-10-22 19:19:13.455] [DEBUG] USERS - requiresLogin - Request -{"name":"User Logged in atMon Oct 22 2018 19:19:13 GMT+0530 (India Standard Time)","target":null,"eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","lastUpdatedUser":null}
+[2018-10-22 19:19:13.457] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 19:19:13.457] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzo0OToxMy4zMDFaIn0.aMmymwNjPUoiMg5ibdCH5MzCCLWA5OBGNjLwBry-F80
+[2018-10-22 19:19:13.465] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","target":null,"eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595"}
+[2018-10-22 19:19:13.466] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 19:19:13.466] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzo0OToxMy4zMDFaIn0.aMmymwNjPUoiMg5ibdCH5MzCCLWA5OBGNjLwBry-F80
+[2018-10-22 19:19:13.608] [DEBUG] USERS - requiresLogin - Request -{"name":"Searched in Users table - ","target":null,"eventType":"Search","eventTargetType":"User","user":"5b7d1e9f1583471f04217595"}
+[2018-10-22 19:19:13.608] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 19:19:13.609] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzo0OToxMy4zMDFaIn0.aMmymwNjPUoiMg5ibdCH5MzCCLWA5OBGNjLwBry-F80
+[2018-10-22 19:19:20.216] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","target":null,"eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595"}
+[2018-10-22 19:19:20.217] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 19:19:20.217] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzo0OToxMy4zMDFaIn0.aMmymwNjPUoiMg5ibdCH5MzCCLWA5OBGNjLwBry-F80
+[2018-10-22 19:19:20.338] [DEBUG] USERS - requiresLogin - Request -{"name":"Searched in Users table - ","target":null,"eventType":"Search","eventTargetType":"User","user":"5b7d1e9f1583471f04217595"}
+[2018-10-22 19:19:20.338] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 19:19:20.339] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzo0OToxMy4zMDFaIn0.aMmymwNjPUoiMg5ibdCH5MzCCLWA5OBGNjLwBry-F80
+[2018-10-22 19:19:25.628] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","target":null,"eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595"}
+[2018-10-22 19:19:25.629] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 19:19:25.629] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzo0OToxMy4zMDFaIn0.aMmymwNjPUoiMg5ibdCH5MzCCLWA5OBGNjLwBry-F80
+[2018-10-22 19:19:25.703] [DEBUG] USERS - requiresLogin - Request -{"name":"Searched in Users table - ","target":null,"eventType":"Search","eventTargetType":"User","user":"5b7d1e9f1583471f04217595"}
+[2018-10-22 19:19:25.703] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 19:19:25.707] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzo0OToxMy4zMDFaIn0.aMmymwNjPUoiMg5ibdCH5MzCCLWA5OBGNjLwBry-F80
+[2018-10-22 19:19:29.084] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","target":null,"eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595"}
+[2018-10-22 19:19:29.085] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 19:19:29.086] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzo0OToxMy4zMDFaIn0.aMmymwNjPUoiMg5ibdCH5MzCCLWA5OBGNjLwBry-F80
+[2018-10-22 19:19:29.159] [DEBUG] USERS - requiresLogin - Request -{"name":"Searched in Users table - ","target":null,"eventType":"Search","eventTargetType":"User","user":"5b7d1e9f1583471f04217595"}
+[2018-10-22 19:19:29.160] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 19:19:29.160] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzo0OToxMy4zMDFaIn0.aMmymwNjPUoiMg5ibdCH5MzCCLWA5OBGNjLwBry-F80
+[2018-10-22 19:48:10.568] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","target":null,"eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595"}
+[2018-10-22 19:48:10.570] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 19:48:10.572] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzo0OToxMy4zMDFaIn0.aMmymwNjPUoiMg5ibdCH5MzCCLWA5OBGNjLwBry-F80
+[2018-10-22 19:48:10.677] [DEBUG] USERS - requiresLogin - Request -{"name":"Searched in Users table - ","target":null,"eventType":"Search","eventTargetType":"User","user":"5b7d1e9f1583471f04217595"}
+[2018-10-22 19:48:10.679] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 19:48:10.682] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzo0OToxMy4zMDFaIn0.aMmymwNjPUoiMg5ibdCH5MzCCLWA5OBGNjLwBry-F80
+[2018-10-22 19:50:00.516] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","target":null,"eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595"}
+[2018-10-22 19:50:00.517] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 19:50:00.518] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzo0OToxMy4zMDFaIn0.aMmymwNjPUoiMg5ibdCH5MzCCLWA5OBGNjLwBry-F80
+[2018-10-22 19:50:00.927] [DEBUG] USERS - requiresLogin - Request -{"name":"Searched in Users table - ","target":null,"eventType":"Search","eventTargetType":"User","user":"5b7d1e9f1583471f04217595"}
+[2018-10-22 19:50:00.928] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 19:50:00.929] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzo0OToxMy4zMDFaIn0.aMmymwNjPUoiMg5ibdCH5MzCCLWA5OBGNjLwBry-F80
+[2018-10-22 19:51:09.650] [DEBUG] USERS - requiresLogin - Request -{"name":"Updated - Users","target":null,"eventType":"Edit","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","effectedData":{"firstName":"Somesh","lastName":"Kollu","middleName":"Rao","mobile":"9865995569","username":"test_admin2@nvipani.com"}}
+[2018-10-22 19:51:09.653] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 19:51:09.654] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzo0OToxMy4zMDFaIn0.aMmymwNjPUoiMg5ibdCH5MzCCLWA5OBGNjLwBry-F80
+[2018-10-22 19:51:09.787] [DEBUG] USERS - requiresLogin - Request -{"name":"Searched in Users table - ","target":null,"eventType":"Search","eventTargetType":"User","user":"5b7d1e9f1583471f04217595"}
+[2018-10-22 19:51:09.789] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 19:51:09.796] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzo0OToxMy4zMDFaIn0.aMmymwNjPUoiMg5ibdCH5MzCCLWA5OBGNjLwBry-F80
+[2018-10-22 19:54:52.139] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","target":null,"eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595"}
+[2018-10-22 19:54:52.154] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 19:54:52.156] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzo0OToxMy4zMDFaIn0.aMmymwNjPUoiMg5ibdCH5MzCCLWA5OBGNjLwBry-F80
+[2018-10-22 19:54:52.609] [DEBUG] USERS - requiresLogin - Request -{"name":"Searched in Users table - ","target":null,"eventType":"Search","eventTargetType":"User","user":"5b7d1e9f1583471f04217595"}
+[2018-10-22 19:54:52.610] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 19:54:52.612] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzo0OToxMy4zMDFaIn0.aMmymwNjPUoiMg5ibdCH5MzCCLWA5OBGNjLwBry-F80
+[2018-10-22 19:55:23.746] [DEBUG] USERS - requiresLogin - Request -{"name":"Updated - Users","target":null,"eventType":"Edit","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","effectedData":{"firstName":"Test","lastName":"User","middleName":"","mobile":"9865995569","username":"test_admin2@nvipani.com"}}
+[2018-10-22 19:55:23.747] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 19:55:23.748] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzo0OToxMy4zMDFaIn0.aMmymwNjPUoiMg5ibdCH5MzCCLWA5OBGNjLwBry-F80
+[2018-10-22 19:55:23.877] [DEBUG] USERS - requiresLogin - Request -{"name":"Searched in Users table - ","target":null,"eventType":"Search","eventTargetType":"User","user":"5b7d1e9f1583471f04217595"}
+[2018-10-22 19:55:23.879] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 19:55:23.880] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzo0OToxMy4zMDFaIn0.aMmymwNjPUoiMg5ibdCH5MzCCLWA5OBGNjLwBry-F80
+[2018-10-22 20:04:29.160] [DEBUG] USERS - requiresLogin - Request -{"name":"Searched in Users table - user","target":null,"eventType":"Search","eventTargetType":"User","user":"5b7d1e9f1583471f04217595"}
+[2018-10-22 20:04:29.165] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 20:04:29.168] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzo0OToxMy4zMDFaIn0.aMmymwNjPUoiMg5ibdCH5MzCCLWA5OBGNjLwBry-F80
+[2018-10-22 20:13:11.868] [DEBUG] USERS - requiresLogin - Request -{"name":"User Logged out atMon Oct 22 2018 20:13:11 GMT+0530 (India Standard Time)","target":null,"eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","lastUpdatedUser":null}
+[2018-10-22 20:13:11.879] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-22 20:13:11.880] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yOVQxMzo0OToxMy4zMDFaIn0.aMmymwNjPUoiMg5ibdCH5MzCCLWA5OBGNjLwBry-F80

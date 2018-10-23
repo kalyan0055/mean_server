@@ -10,7 +10,7 @@ var express = require('express');
 var router = express.Router();
 module.exports = function(app) {
 	// User Routes
-	var users = require('../../app/controllers/users.server.controller'),
+	var users = require('../../app/controllers/internaluser.server.controller'),
 	 fileupload = require('../../app/controllers/utils/fileupload.util');
 	 
 	var test;

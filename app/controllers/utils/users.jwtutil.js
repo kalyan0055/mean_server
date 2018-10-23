@@ -5,8 +5,7 @@
  */
 var mongoose = require('mongoose'),
 	jwt = require('jwt-simple'),
-	User = mongoose.model('User'),
-	// User = mongoose.model('Newuser'),
+	User = mongoose.model('InternalUser'),
 	token_secret = 'nVipani-software-solutions';
 
 exports.TOKEN_SECRET = token_secret;
@@ -60,6 +59,7 @@ exports.findUserByToken = function(token, done) {
 		done(new Error('Session Expired.'));
 	}
 };
+
 exports.findUserCompanyByToken = function(token, done) {
 	var reqUser = this.isValidToken(token);
 	if(reqUser) {
@@ -101,5 +101,40 @@ exports.findUserByStatusToken = function(satusToken, done) {
         done(new Error('Invalid Token.'));
     }
 };
+
+exports.findUserById = function(userId, done) {
+	var id=userId;
+    User.findOne({
+        _id: id,
+        'deleted': false
+    }).select('-salt -password').exec(function (userErr, user) {
+        if (userErr) {
+            logger.error('Error while fetch employee user in users ' + userId + 'Error:' + userErr);
+            done(userErr, null);
+        } else if (!user) {
+            logger.error('Employee user is not found in users ' + userId);
+            done(new Error('Employee user is not found in users'), null);
+        } else {
+            done(null, user);
+        }
+    });
+}
+
+
+exports.findUserByIdOnly = function(userId, done) {
+    User.findOne({
+        _id: userId,
+    }).select('-salt -password').exec(function (userErr, user) {
+        if (userErr) {
+            logger.error('Error while fetch employee user in users ' + userId + 'Error:' + userErr);
+            done(userErr, null);
+        } else if (!user) {
+            logger.error('Employee user is not found in users ' + userId);
+            done(new Error('Employee user is not found in users'), null);
+        } else {
+            done(null, user);
+        }
+    });
+}
 
 

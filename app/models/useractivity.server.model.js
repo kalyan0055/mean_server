@@ -107,11 +107,21 @@ var UserActivitySchema = new Schema({
         default: 'User'
     },
 
-    effectedData:[
-        {column:''},
-        {oldata:''},
-        {newdata:''}
-    ],
+    effectedData: [{ 
+        column: {
+            type:String,
+            default:null
+        },
+        oldData: {
+            type:String,
+            default:null
+        },
+         newData: {
+            type:String,
+            default:null
+        }
+        }],
+
     disabled: {
         type: Boolean,
         required: 'Please set disabled flag',
@@ -134,7 +144,7 @@ var UserActivitySchema = new Schema({
     //     type: Schema.ObjectId,
     //     ref: 'User'
     // },
-  
+
     user: {
         type: Schema.ObjectId,
         ref: 'User'
