@@ -1,74 +1,68 @@
-[2018-10-24 19:45:33.615] [ERROR] USERS - Username is not valid{"username":"somevalue","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
-[2018-10-24 19:45:33.629] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","issendotp":true,"issendemail":true,"token":""}
-[2018-10-24 19:45:33.631] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","issendotp":true,"issendemail":true,"token":""}
-[2018-10-24 19:45:33.632] [DEBUG] USERS - Username is valid
-[2018-10-24 19:45:33.632] [DEBUG] USERS - Fetching already created user with the same user name  :somevalue@nvipani.com
-[2018-10-24 19:45:33.633] [DEBUG] USERS - Check whether user name is Email or phone number
-[2018-10-24 19:45:33.635] [DEBUG] USERS - Email is :somevalue@nvipani.com
-[2018-10-24 19:45:33.638] [DEBUG] USERS - Fetch matched  user with user name :somevalue@nvipani.com
-[2018-10-24 19:45:33.653] [ERROR] USERS - No user found with the username : somevalue@nvipani.com
-[2018-10-24 19:45:33.654] [ERROR] USERS - No user found with the username : null { username: 'somevalue@nvipani.com',
+[2018-10-26 19:01:58.691] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-26 19:01:58.693] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMS0wMlQxMzoyOTo1MS44MzNaIn0.TYQqHq7ffN3GRt6Y7WnSEemltpp5wlTUzPIpr7zSaZk
+[2018-10-26 19:02:11.155] [DEBUG] USERS - Request Body-{"username":"info@nvipani.com","password":"techno12"}
+[2018-10-26 19:02:11.390] [DEBUG] USERS - requiresLogin - Request -{"name":"User Logged in atFri Oct 26 2018 19:02:11 GMT+0530 (India Standard Time)","eventType":"Accessed","eventTargetType":"User","user":null,"lastUpdatedUser":null}
+[2018-10-26 19:02:11.392] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-26 19:02:11.394] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMS0wMlQxMzozMjoxMS4yNDBaIn0.06opDMKId3DAco_cuzPmo7S6VvgQtBinBkn8mLktdcY
+[2018-10-26 19:02:11.405] [DEBUG] USERS - requiresLogin - Request -{"name":"Accessed  - Users List Page","eventType":"Accessed","eventTargetType":"User","user":null}
+[2018-10-26 19:02:11.428] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-26 19:02:11.433] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMS0wMlQxMzozMjoxMS4yNDBaIn0.06opDMKId3DAco_cuzPmo7S6VvgQtBinBkn8mLktdcY
+[2018-10-26 19:02:15.227] [DEBUG] USERS - requiresLogin - Request -{"name":"User Logged out atFri Oct 26 2018 19:02:15 GMT+0530 (India Standard Time)","eventType":"Accessed","eventTargetType":"User","user":null,"lastUpdatedUser":null}
+[2018-10-26 19:02:15.236] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-26 19:02:15.237] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMS0wMlQxMzozMjoxMS4yNDBaIn0.06opDMKId3DAco_cuzPmo7S6VvgQtBinBkn8mLktdcY
+[2018-10-26 19:02:18.959] [DEBUG] USERS - Request Body-{"username":"info@nvipani.com","password":"techno12"}
+[2018-10-26 19:02:19.169] [DEBUG] USERS - requiresLogin - Request -{"name":"User Logged in atFri Oct 26 2018 19:02:19 GMT+0530 (India Standard Time)","eventType":"Accessed","eventTargetType":"User","user":null,"lastUpdatedUser":null}
+[2018-10-26 19:02:19.171] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-26 19:02:19.176] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMS0wMlQxMzozMjoxOS4wMTFaIn0.RqbcxA682qJQZo9nzwY8VGqa7iinE9QfnfMM3gySlt4
+[2018-10-26 19:02:19.186] [DEBUG] USERS - requiresLogin - Request -{"name":"Accessed  - Users List Page","eventType":"Accessed","eventTargetType":"User","user":null}
+[2018-10-26 19:02:19.190] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-26 19:02:19.191] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMS0wMlQxMzozMjoxOS4wMTFaIn0.RqbcxA682qJQZo9nzwY8VGqa7iinE9QfnfMM3gySlt4
+[2018-10-26 19:02:44.308] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-10-26 19:02:44.310] [DEBUG] USERS - Email is :raja_rao@nvipani.com
+[2018-10-26 19:02:44.311] [DEBUG] USERS - Fetch matched  user with user name :raja_rao@nvipani.com
+[2018-10-26 19:02:44.314] [ERROR] USERS - No user found with the username : raja_rao@nvipani.com
+[2018-10-26 19:02:44.318] [ERROR] USERS - No user found with the username : null { username: 'raja_rao@nvipani.com', isEmail: true } null
+[2018-10-26 19:02:44.356] [DEBUG] USERS - Registration Request  - {"username":"raja_rao@nvipani.com","issendotp":true,"issendemail":true}
+[2018-10-26 19:02:44.357] [DEBUG] USERS - user registration input validation for the data :{"username":"raja_rao@nvipani.com","issendotp":true,"issendemail":true}
+[2018-10-26 19:02:44.361] [DEBUG] USERS - Username is valid
+[2018-10-26 19:02:44.363] [DEBUG] USERS - Fetching already created user with the same user name  :raja_rao@nvipani.com
+[2018-10-26 19:02:44.369] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-10-26 19:02:44.373] [DEBUG] USERS - Email is :raja_rao@nvipani.com
+[2018-10-26 19:02:44.374] [DEBUG] USERS - Fetch matched  user with user name :raja_rao@nvipani.com
+[2018-10-26 19:02:44.379] [ERROR] USERS - No user found with the username : raja_rao@nvipani.com
+[2018-10-26 19:02:44.383] [ERROR] USERS - No user found with the username : null { username: 'raja_rao@nvipani.com',
   issendotp: true,
   issendemail: true,
-  token: '',
   isEmail: true } null
-[2018-10-24 19:45:33.667] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
-[2018-10-24 19:45:33.669] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
-[2018-10-24 19:45:33.679] [DEBUG] USERS - Username is valid
-[2018-10-24 19:45:33.680] [DEBUG] USERS - Fetching already created user with the same user name  :somevalue@nvipani.com
-[2018-10-24 19:45:33.681] [DEBUG] USERS - Check whether user name is Email or phone number
-[2018-10-24 19:45:33.682] [DEBUG] USERS - Email is :somevalue@nvipani.com
-[2018-10-24 19:45:33.683] [DEBUG] USERS - Fetch matched  user with user name :somevalue@nvipani.com
-[2018-10-24 19:45:33.694] [ERROR] USERS - No user found with the username : somevalue@nvipani.com
-[2018-10-24 19:45:33.697] [ERROR] USERS - No user found with the username : null { username: 'somevalue@nvipani.com',
+[2018-10-26 19:02:44.389] [DEBUG] USERS - user registered wiht valid authoenticaiton :info@nvipani.com
+[2018-10-26 19:02:44.404] [DEBUG] USERS - Sending OTP Response
+[2018-10-26 19:02:44.488] [DEBUG] USERS - Sending OTP Response-299596
+[2018-10-26 19:02:46.692] [DEBUG] USERS - requiresLogin - Request -{"name":"Added - NewUser - raja_rao@nvipani.com","eventType":"Add","eventTargetType":"User","user":null,"target":"5bd3177c36301c0fbc388423","effectedData":[{"column":"username","newData":"raja_rao@nvipani.com","oldData":""},{"column":"email","newData":"raja_rao@nvipani.com","oldData":""},{"column":"status","newData":"Register Request","oldData":""},{"column":"emailOtp","newData":"299596","oldData":""}]}
+[2018-10-26 19:02:46.693] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-26 19:02:46.723] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMS0wMlQxMzozMjoxOS4wMTFaIn0.RqbcxA682qJQZo9nzwY8VGqa7iinE9QfnfMM3gySlt4
+[2018-10-26 19:16:42.871] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-10-26 19:16:42.875] [DEBUG] USERS - Email is :deepika@nvipani.com
+[2018-10-26 19:16:42.877] [DEBUG] USERS - Fetch matched  user with user name :deepika@nvipani.com
+[2018-10-26 19:16:42.896] [ERROR] USERS - No user found with the username : deepika@nvipani.com
+[2018-10-26 19:16:42.900] [ERROR] USERS - No user found with the username : null { username: 'deepika@nvipani.com', isEmail: true } null
+[2018-10-26 19:16:42.954] [DEBUG] USERS - Registration Request  - {"username":"deepika@nvipani.com","issendotp":true,"issendemail":true}
+[2018-10-26 19:16:42.964] [DEBUG] USERS - user registration input validation for the data :{"username":"deepika@nvipani.com","issendotp":true,"issendemail":true}
+[2018-10-26 19:16:42.966] [DEBUG] USERS - Username is valid
+[2018-10-26 19:16:42.968] [DEBUG] USERS - Fetching already created user with the same user name  :deepika@nvipani.com
+[2018-10-26 19:16:42.970] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-10-26 19:16:42.971] [DEBUG] USERS - Email is :deepika@nvipani.com
+[2018-10-26 19:16:42.972] [DEBUG] USERS - Fetch matched  user with user name :deepika@nvipani.com
+[2018-10-26 19:16:42.978] [ERROR] USERS - No user found with the username : deepika@nvipani.com
+[2018-10-26 19:16:42.980] [ERROR] USERS - No user found with the username : null { username: 'deepika@nvipani.com',
   issendotp: true,
   issendemail: true,
-  token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg',
   isEmail: true } null
-[2018-10-24 19:45:33.712] [DEBUG] USERS - user registered wiht valid authoenticaiton :info@nvipani.com
-[2018-10-24 19:45:33.735] [DEBUG] USERS - Sending OTP Response
-[2018-10-24 19:45:33.788] [DEBUG] USERS - Sending OTP Response-509550
-[2018-10-24 19:45:36.458] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","otp":"","password":"passwrod","isverifyotp":true}
-[2018-10-24 19:45:36.459] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","otp":"","password":"passwrod","isverifyotp":true}
-[2018-10-24 19:45:36.461] [ERROR] USERS - OTP field is empty
-[2018-10-24 19:45:36.478] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","password":"test1234","conf_password":"test1234","otp":123456,"isverifyotp":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
-[2018-10-24 19:45:36.480] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","password":"test1234","conf_password":"test1234","otp":123456,"isverifyotp":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
-[2018-10-24 19:45:36.486] [DEBUG] USERS - Fetching already created user with the same user name  :somevalue@nvipani.com
-[2018-10-24 19:45:36.488] [DEBUG] USERS - Check whether user name is Email or phone number
-[2018-10-24 19:45:36.489] [DEBUG] USERS - Email is :somevalue@nvipani.com
-[2018-10-24 19:45:36.491] [DEBUG] USERS - Fetch matched  user with user name :somevalue@nvipani.com
-[2018-10-24 19:45:36.497] [DEBUG] USERS - Found user with the username :somevalue@nvipani.com
-[2018-10-24 19:45:36.499] [DEBUG] USERS - instance of user  :{ firstName: '',
-  middleName: '',
-  lastName: '',
-  allowRegistration: true,
-  email: 'somevalue@nvipani.com',
-  profileImageURL: 'modules/users/img/profile/default.png',
-  croppedProfileImageURL: 'modules/users/img/profile/default-resize-240-240.png',
-  roles: [ 'user' ],
-  mobile: '',
-  userType: 'Adminuser',
-  emailVerified: false,
-  mobileVerified: false,
-  status: 'Register Request',
-  disabled: false,
-  deleted: false,
-  reset_password: false,
-  _id: 5bd07e85fcf5dd15104b2797,
-  username: 'somevalue@nvipani.com',
-  created: 2018-10-24T14:15:33.718Z,
-  emailOtp: '509550',
-  updated: 2018-10-24T14:15:33.719Z,
-  created_by: 5b7d1e9f1583471f04217595,
-  __v: 0 }
-[2018-10-24 19:45:36.501] [DEBUG] USERS - Verifying OTP - true
-[2018-10-24 19:45:36.502] [ERROR] USERS - Incorrect otp for the Email: somevalue@nvipani.com
-[2018-10-24 19:45:36.504] [DEBUG] USERS - user registered  :null
-[2018-10-24 19:45:36.518] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","password":"","conf_password":"test1234","otp":123456,"isverifyotp":true}
-[2018-10-24 19:45:36.519] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","password":"","conf_password":"test1234","otp":123456,"isverifyotp":true}
-[2018-10-24 19:45:36.521] [ERROR] USERS - Password is empty : {"username":"somevalue@nvipani.com","password":"","conf_password":"test1234","otp":123456,"isverifyotp":true}
-[2018-10-24 19:45:36.531] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","password":"test123","conf_password":"test114","otp":123456,"isverifyotp":true}
-[2018-10-24 19:45:36.533] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","password":"test123","conf_password":"test114","otp":123456,"isverifyotp":true}
-[2018-10-24 19:45:36.534] [ERROR] USERS - Password is not valid +{"username":"somevalue@nvipani.com","password":"test123","conf_password":"test114","otp":123456,"isverifyotp":true}
-[2018-10-24 19:45:36.551] [ERROR] USERS - Employee user is not found in users 5b7d1e9f1583471f04217543
-[2018-10-24 19:45:36.554] [ERROR] USERS - Employee is not found in users 5b7d1e9f1583471f04217543
+[2018-10-26 19:16:42.995] [DEBUG] USERS - user registered wiht valid authoenticaiton :info@nvipani.com
+[2018-10-26 19:16:43.021] [DEBUG] USERS - Sending OTP Response
+[2018-10-26 19:16:43.128] [DEBUG] USERS - Sending OTP Response-255419
+[2018-10-26 19:16:45.672] [DEBUG] USERS - requiresLogin - Request -{"name":"Added - NewUser - deepika@nvipani.com","eventType":"Add","eventTargetType":"User","user":null,"target":"5bd31ac2c8924c1710c93b0b","effectedData":[{"column":"username","newData":"deepika@nvipani.com","oldData":""},{"column":"email","newData":"deepika@nvipani.com","oldData":""},{"column":"status","newData":"Register Request","oldData":""},{"column":"emailOtp","newData":"255419","oldData":""}]}
+[2018-10-26 19:16:45.673] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-26 19:16:45.674] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMS0wMlQxMzozMjoxOS4wMTFaIn0.RqbcxA682qJQZo9nzwY8VGqa7iinE9QfnfMM3gySlt4
+[2018-10-26 19:26:02.656] [DEBUG] USERS - requiresLogin - Request -{"name":"Accessed  - Users List Page","eventType":"Accessed","eventTargetType":"User","user":"5b7d1e9f1583471f04217595"}
+[2018-10-26 19:26:02.657] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-26 19:26:02.658] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMS0wMlQxMzozMjoxOS4wMTFaIn0.RqbcxA682qJQZo9nzwY8VGqa7iinE9QfnfMM3gySlt4

@@ -8,30 +8,52 @@ var _ = require('lodash'),
     UserActivity = mongoose.model('UserActivity'),
     User = mongoose.model('InternalUser');
 var diff = require('deep-diff').diff;
+var emptyModel = null;
+var nonEmptymodel = null;
+var totData = { lhs: null, rhs: null };
 
 exports.saveActivity = function (req, res) {
-   
-    if ('edit' == req.body['eventType'].toLowerCase()) {  
-               
-                let lhs = req.body.effectedData.oldData;
-                let rhs = req.body.effectedData.newData;
-                 var test = (_.pick(lhs, _.keys(rhs)))
-                console.log(test, 'testing');
-                console.log(rhs, 'testing');
+    let originalData = req.body;
+    if ('edit' == req.body['eventType'].toLowerCase()) {
 
-                var differences = diff(test, rhs);
-                let effectedData =[];
-                console.log(differences, 'deep diff example');
-                 for (let i = 0; i < differences.length; i++) {
-                     const element = differences[i].path.toString();
-                     effectedData.push({column:element,oldData:differences[i].lhs,newData:differences[i].rhs})
-                 }
-                 console.log(effectedData);
-                 var data = new UserActivity(req.body)
-                  data.effectedData = effectedData; 
-      
+        let lhs = req.body.effectedData.oldData;
+        let rhs = req.body.effectedData.newData;
+        var test = (_.pick(lhs, _.keys(rhs)))
+        console.log(test, 'testing');
+        console.log(rhs, 'testing');
+
+        var differences = diff(test, rhs);
+        let effectedData = [];
+        console.log(differences, 'deep diff example');
+        for (let i = 0; i < differences.length; i++) {
+            const element = differences[i].path.toString();
+            effectedData.push({ column: element, oldData: differences[i].lhs, newData: differences[i].rhs })
+        }
+        console.log(effectedData);
+        var data = new UserActivity(req.body)
+        data.effectedData = effectedData;
+
     }
-    else{
+    else if ('add' == req.body['eventType'].toLowerCase()) {
+        let emptyData = getEmptyModel(req.body['eventTargetType'], originalData)
+        let lhs = emptyData.lhs;
+        let rhs = emptyData.rhs;
+        var test = (_.pick(lhs, _.keys(rhs)))
+        // console.log(test, 'testing');
+
+        var differences = diff(test, rhs);
+        let effectedData = [];
+        console.log(differences, 'deep diff example');
+        for (let i = 0; i < differences.length; i++) {
+            const element = differences[i].path.toString();
+            effectedData.push({ column: element, oldData: differences[i].lhs, newData: differences[i].rhs })
+        }
+        console.log(effectedData);
+        var data = new UserActivity(req.body)
+        data.effectedData = effectedData;
+
+    }
+    else {
         var data = new UserActivity(req.body)
     }
 
@@ -52,19 +74,32 @@ exports.saveActivity = function (req, res) {
     })
 
 }
- 
- 
+
+
 
 function getDataById(targetTable, id, done) {
-    
-      usersJWTUtil.findUserByIdOnly(id, function (err, user) {
+
+    usersJWTUtil.findUserByIdOnly(id, function (err, user) {
         if (err || !user) {
             done(new Error('User is not authorized'), false, false);
         } else {
-             done(null,user)    
+            done(null, user)
         }
     });
 
-   
+}
 
+function getEmptyModel(model, orgData) {
+
+    switch (model) {
+        case 'User':    emptyModel = new User(); totData.lhs = emptyModel;
+                        nonEmptymodel = new User(orgData); totData.rhs = nonEmptymodel;
+            break;
+
+        default: totData = null;
+            break;
+    }
+    console.log(totData);
+
+    return totData;
 }

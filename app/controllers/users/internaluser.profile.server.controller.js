@@ -89,7 +89,7 @@ exports.newuserslist = function (req, res) {
 
 function getEmailTemplate(user, type, req) {
     let a = null;
-    a = new Buffer(user).toString('base64');
+    a = new Buffer(user).toString('base64');  
     if (type === 'Registered') {
         return {
             template: 'templates/success-user', subject: 'You are successfully Activated', options: {

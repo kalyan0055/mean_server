@@ -1679,8 +1679,10 @@ function findOrRegisterUser(data, done) {
     }
 }
 function getEmailTemplate(user, type, req) {
-    let a = '';
+    let a = null;
     a = new Buffer(user.username).toString('base64');
+    console.log(a,'buffered data');
+    let queryParams = {refcode:a,otp:user.emailOtp}
       if (type === 'Registered') {
         return {
             template: 'templates/success-user', subject: 'You are successfully Activated', options: {
@@ -1697,7 +1699,8 @@ function getEmailTemplate(user, type, req) {
                 name: 'Customer',
                 appName: config.app.title,
                 otp: user.emailOtp,
-                hyperlink: req.protocol + '://' + config.url+'/confirm/true/' + user.username + '/' + user.emailOtp,  // Newly added
+                // hyperlink: req.protocol + '://' + config.url+'/confirm/true/' + user.username + '/' + user.emailOtp,  // Newly added 
+                hyperlink: req.protocol + `://${config.url}/confirm?refcode=${a}&otp=${user.emailOtp}`,  // Newly added
                 baseUrl: req.protocol + '://' + req.headers.host,
                 username: user.username
             }
