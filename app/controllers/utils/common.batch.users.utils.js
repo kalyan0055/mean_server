@@ -244,7 +244,6 @@ exports.findId = function (data, serverRes, agent, done) {
 exports.resetPassword = function (data, serverRes, agent, done) {
     agent.post('/users/resetPasswordRequest')
         .send(data)
-        .set('token','')
         .expect(serverRes)
         .end(function (reseterr, resetPassword) {
             done(reseterr, resetPassword)

@@ -97,7 +97,7 @@ var UserActivitySchema = new Schema({
     },
     eventType: {
         type: String,
-        enum: ['LogOut', 'Login', 'Add', 'Edit', 'Delete', 'Disable', 'View', 'List', 'Search'],
+        enum: ['LogOut', 'Login', 'Add', 'Edit', 'Delete', 'Disable', 'View', 'Accessed', 'Search'],
         default: 'Login'
     },
 

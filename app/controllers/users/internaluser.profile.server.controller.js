@@ -46,7 +46,7 @@ exports.newuserslist = function (req, res) {
             let query = {};
             (result.userType === 'Admin') ? query = { 'username': { $ne: 'info@nvipani.com' } } : query = { 'created_by': req.params.userid, 'username': { $ne: 'info@nvipani.com' } }
 
-            User.find(query).select('displayName userType email username disabled deleted resetPasswordToken mobile status').skip(req.body.start).limit(req.body.length).sort(obj).populate('created_by', 'username').exec(function (err, users) {
+            User.find(query).select('-salt -password').skip(req.body.start).limit(req.body.length).sort(obj).populate('created_by', 'username').exec(function (err, users) {
                 if (err) {
                     res.status(400).send({
                         status: false,

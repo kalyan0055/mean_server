@@ -20,7 +20,8 @@ var should = require('should'),
 var valusers;
 var contact;
 var regUsers;
-var token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0yM1QwNToxMjoxMS4yNjlaIn0.AbxJ_Ka2cFSwDsrXZGX3MZzLGddiRMZMI32Kf7AMFgA'
+var token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg'
+var id;
 /**
  * Unit tests
  */
@@ -146,6 +147,7 @@ describe('User Model Unit Tests:', function () {
                         should.not.exist(sendotpErr);
                         sendotpRes.body.status.should.equal(true);
                         var otp = sendotpRes.body.otp;
+                        id= sendotpRes.body._id;
                         sendotpRes.body.message.should.equal('An OTP has been sent to Email :' + valusers[2].username + '. ' + otp + ' is your One Time Password (OTP)');
                         done();
 
@@ -156,6 +158,9 @@ describe('User Model Unit Tests:', function () {
             });
         });
     });
+
+
+
     /*
     *  Case 1: it should able to accept any otp -ve test case
     *  Case 2: it should be able to verify otp for non registered user -ve test case
@@ -199,29 +204,43 @@ describe('User Model Unit Tests:', function () {
    
 
     /* Unable delete user with invalid Id -Ve case*/
-    it('should be delete user by id with valid token only', function (done) {
-        let data = { id: "5ba35bdd5b70ad2d00615562", token: token }
-        commonUserUtil.findId(data, 400, agent, function (err, deluser) {
-            should.not.exist(err);
-            deluser.body.message.should.equal('Error deleting the user with user id -5ba35bdd5b70ad2d00615562');
-            let data1 = { id: "5ba367a8f13009084436c2f1", token: '' }
-            commonUserUtil.findId(data1, 401, agent, function (err, deluser) {
-                should.not.exist(err);
-                deluser.body.message.should.equal('Session Expired or Invalid Token');
-                done();
-             })
-        })
-    });
-
-    // it('should be able to send email by taking valid data for reset password request', function (done) {
-    //     commonUserUtil.resetPassword({ token: token, id: '', reset_password: false, username: 'emandi1@nvipani.com' }, 400, agent, function (err, result) {
+    // it('should be delete user by id with valid token only', function (done) {
+    //     let data = { id: "5ba35bdd5b70ad2d00615562", token: token }
+    //     commonUserUtil.findId(data, 400, agent, function (err, deluser) {
     //         should.not.exist(err);
-    //         // console.log(result,'reset password error');
-    //         result.body.status.should.equal(false);
-    //         done();
+    //         deluser.body.message.should.equal('Error deleting the user with user id -5ba35bdd5b70ad2d00615562');
+    //         let data1 = { id: "5ba367a8f13009084436c2f1", token: '' }
+    //         commonUserUtil.findId(data1, 401, agent, function (err, deluser) {
+    //             should.not.exist(err);
+    //             deluser.body.message.should.equal('Session Expired or Invalid Token');
+    //             done();
+    //          })
     //     })
     // });
 
+    it('should be able to send email by taking valid data for reset password request', function (done) {
+        // var temp = mongoose.Types.ObjectId("5bd044b3cfbec236945c332");
+        commonUserUtil.resetPassword({ token: token, id:'5b7d1e9f1583471f04217543', reset_password: false, username: 'emandi1@nvipani.com' }, 400, agent, function (err, result) {
+            should.not.exist(err);
+            result.body.status.should.equal(false);
+            result.body.message.should.equal('Employee is not found in users');
+            
+                commonUserUtil.resetPassword({ token: token, id:'5b7d1e9f1583471f04217595', reset_password: true, username: 'emandi1@nvipani.com'}, 400, agent, function (err, invalidData) {
+                    should.not.exist(err);
+                    invalidData.body.status.should.equal(false);
+                    invalidData.body.message.should.equal('Invalid Input Data');
+                    done();
+                        commonUserUtil.resetPassword({ token: token, id: '5b7d1e9f1583471f04217595', reset_password: false, username: 'emandi1@nvipani.com' }, 400, agent, function (err, invalidUsername) {
+                            should.not.exist(err);
+                            invalidUsername.body.status.should.equal(false);
+                            invalidUsername.body.message.should.equal(`Invalid Username emandi1@nvipani.com`);
+                            done();
+                        })
+                  })
+            
+        })
+    });
+     
 
     after(function (done) {
         User.deleteOne({ "username": "somevalue@nvipani.com" }).exec();

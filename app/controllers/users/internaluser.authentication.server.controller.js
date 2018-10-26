@@ -2276,6 +2276,8 @@ exports.userRegistration = function (req, res) {
 
 
 exports.resetPasswordRequest = function (req,res){
+  
+    
 let data = req.body;
 let token = req.body.token || req.headers.token;
 hasAuthorization(token,function(err,valid){
@@ -2286,11 +2288,14 @@ hasAuthorization(token,function(err,valid){
         })
     }else{
         findUserById(data.id, function (userError, user) {
-            if (userError) {
+            console.log(user,'user data found');
+            
+            if (userError || !user) {
                 logger.error('Employee is not found in users ' + data.id);
-                res.status(400).send({
+                    res.status(400).send({
                     status:false,
-                    message:errorHandler.getErrorMessage(userError)
+                    data:errorHandler.getErrorMessage(userError),
+                    message:'Employee is not found in users'
                 })
             } else {
                 if(data.reset_password === true){
@@ -2299,10 +2304,10 @@ hasAuthorization(token,function(err,valid){
                         message:'Invalid Input Data'
                     })
                 }
-                if(data.username !== user.username){
+                else if(data.username !== user.username){
                     res.status(400).send({
                         status:false,
-                        message:'Invalid Username'
+                        message:`Invalid Username ${data.username}`
                     })
                 }else{
                     var K = '12345678901234567890';
@@ -3160,6 +3165,7 @@ function getCompanyEmployee(removeEmployee, companyEmployees, done) {
         return eachEmployee.user._id.toString() === removeEmployee.toString();
     }));
 }
+
 function findUserById(userId, done) {
     User.findOne({
         _id: userId,

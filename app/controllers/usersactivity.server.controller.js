@@ -11,11 +11,8 @@ var diff = require('deep-diff').diff;
 
 exports.saveActivity = function (req, res) {
    
-
-    
-
     if ('edit' == req.body['eventType'].toLowerCase()) {  
-                 
+               
                 let lhs = req.body.effectedData.oldData;
                 let rhs = req.body.effectedData.newData;
                  var test = (_.pick(lhs, _.keys(rhs)))

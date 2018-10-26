@@ -1,499 +1,153 @@
-[2018-10-23 15:38:27.226] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":{"type":null},"order":{"type":null},"offer":{"type":null},"user":{"type":null},"contact":{"type":null},"group":{"type":null},"itemMaster":{"type":null},"importFile":{"type":null},"inventory":{"type":null},"paymentTerm":{"type":null},"productBrand":{"type":null},"category":{"type":null},"report":{"type":null},"stockMaster":{"type":null},"taxGroup":{"type":null},"unitOfMeasure":{"type":null},"businessUnit":{"type":null},"notification":{"type":null},"todo":{"type":null}}}
-[2018-10-23 15:38:27.229] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-10-23 15:38:27.231] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMFQwNDo1NTo0Ny43ODVaIn0.MK1TBFmf_7mlVOqPQl7VF6RzvTv4LeANK-XM2CSczNg
-[2018-10-23 15:38:27.244] [ERROR] ACTIVITIES - Eroor occured  {"errors":{"target.message":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.message\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.message","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.message\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.message"}},"target.order":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.order\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.order","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.order\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.order"}},"target.offer":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.offer\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.offer","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.offer\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.offer"}},"target.user":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.user\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.user","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.user\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.user"}},"target.contact":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.contact\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.contact","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.contact\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.contact"}},"target.group":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.group\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.group","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.group\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.group"}},"target.itemMaster":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.itemMaster\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.itemMaster","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.itemMaster\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.itemMaster"}},"target.importFile":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.importFile\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.importFile","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.importFile\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.importFile"}},"target.inventory":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.inventory\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.inventory","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.inventory\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.inventory"}},"target.paymentTerm":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.paymentTerm\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.paymentTerm","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.paymentTerm\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.paymentTerm"}},"target.productBrand":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.productBrand\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.productBrand","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.productBrand\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.productBrand"}},"target.category":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.category\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.category","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.category\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.category"}},"target.report":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.report\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.report","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.report\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.report"}},"target.stockMaster":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.stockMaster\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.stockMaster","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.stockMaster\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.stockMaster"}},"target.taxGroup":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.taxGroup\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.taxGroup","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.taxGroup\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.taxGroup"}},"target.unitOfMeasure":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.unitOfMeasure\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.unitOfMeasure","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.unitOfMeasure\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.unitOfMeasure"}},"target.businessUnit":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.businessUnit\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.businessUnit","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.businessUnit\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.businessUnit"}},"target.notification":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.notification\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.notification","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.notification\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.notification"}},"target.todo":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.todo\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.todo","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.todo\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.todo"}}},"_message":"UserActivity validation failed","message":"UserActivity validation failed: target.message: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.message\", target.order: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.order\", target.offer: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.offer\", target.user: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.user\", target.contact: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.contact\", target.group: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.group\", target.itemMaster: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.itemMaster\", target.importFile: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.importFile\", target.inventory: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.inventory\", target.paymentTerm: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.paymentTerm\", target.productBrand: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.productBrand\", target.category: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.category\", target.report: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.report\", target.stockMaster: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.stockMaster\", target.taxGroup: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.taxGroup\", target.unitOfMeasure: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.unitOfMeasure\", target.businessUnit: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.businessUnit\", target.notification: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.notification\", target.todo: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.todo\"","name":"ValidationError"}
-[2018-10-23 15:38:27.250] [DEBUG] ACTIVITIES - { ValidationError: UserActivity validation failed: target.message: Cast to ObjectID failed for value "{ type: null }" at path "target.message", target.order: Cast to ObjectID failed for value "{ type: null }" at path "target.order", target.offer: Cast to ObjectID failed for value "{ type: null }" at path "target.offer", target.user: Cast to ObjectID failed for value "{ type: null }" at path "target.user", target.contact: Cast to ObjectID failed for value "{ type: null }" at path "target.contact", target.group: Cast to ObjectID failed for value "{ type: null }" at path "target.group", target.itemMaster: Cast to ObjectID failed for value "{ type: null }" at path "target.itemMaster", target.importFile: Cast to ObjectID failed for value "{ type: null }" at path "target.importFile", target.inventory: Cast to ObjectID failed for value "{ type: null }" at path "target.inventory", target.paymentTerm: Cast to ObjectID failed for value "{ type: null }" at path "target.paymentTerm", target.productBrand: Cast to ObjectID failed for value "{ type: null }" at path "target.productBrand", target.category: Cast to ObjectID failed for value "{ type: null }" at path "target.category", target.report: Cast to ObjectID failed for value "{ type: null }" at path "target.report", target.stockMaster: Cast to ObjectID failed for value "{ type: null }" at path "target.stockMaster", target.taxGroup: Cast to ObjectID failed for value "{ type: null }" at path "target.taxGroup", target.unitOfMeasure: Cast to ObjectID failed for value "{ type: null }" at path "target.unitOfMeasure", target.businessUnit: Cast to ObjectID failed for value "{ type: null }" at path "target.businessUnit", target.notification: Cast to ObjectID failed for value "{ type: null }" at path "target.notification", target.todo: Cast to ObjectID failed for value "{ type: null }" at path "target.todo"
-    at ValidationError.inspect (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\validation.js:59:24)
-    at formatValue (util.js:400:38)
-    at inspect (util.js:294:10)
-    at Object.format (util.js:161:12)
-    at Object.inspect (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\log4js\lib\layouts.js:34:23)
-    at formatValue (util.js:400:38)
-    at inspect (util.js:294:10)
-    at Object.format (util.js:161:12)
-    at formatLogData (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\log4js\lib\layouts.js:47:22)
-    at basicLayout (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\log4js\lib\layouts.js:109:7)
-    at Logger.<anonymous> (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\log4js\lib\appenders\file.js:68:19)
-    at emitOne (events.js:121:20)
-    at Logger.emit (events.js:211:7)
-    at Logger._log (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\log4js\lib\logger.js:100:8)
-    at Logger.(anonymous function) [as debug] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\log4js\lib\logger.js:93:12)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:35:20
-  errors: 
-   { 'target.message': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.message"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:14:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.message"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.message',
-        reason: [Object] },
-     'target.order': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.order"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:14:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.order"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.order',
-        reason: [Object] },
-     'target.offer': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.offer"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:14:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.offer"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.offer',
-        reason: [Object] },
-     'target.user': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.user"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:14:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.user"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.user',
-        reason: [Object] },
-     'target.contact': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.contact"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:14:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.contact"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.contact',
-        reason: [Object] },
-     'target.group': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.group"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:14:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.group"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.group',
-        reason: [Object] },
-     'target.itemMaster': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.itemMaster"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:14:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.itemMaster"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.itemMaster',
-        reason: [Object] },
-     'target.importFile': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.importFile"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:14:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.importFile"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.importFile',
-        reason: [Object] },
-     'target.inventory': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.inventory"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:14:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.inventory"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.inventory',
-        reason: [Object] },
-     'target.paymentTerm': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.paymentTerm"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:14:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.paymentTerm"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.paymentTerm',
-        reason: [Object] },
-     'target.productBrand': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.productBrand"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:14:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.productBrand"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.productBrand',
-        reason: [Object] },
-     'target.category': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.category"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:14:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.category"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.category',
-        reason: [Object] },
-     'target.report': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.report"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:14:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.report"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.report',
-        reason: [Object] },
-     'target.stockMaster': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.stockMaster"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:14:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.stockMaster"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.stockMaster',
-        reason: [Object] },
-     'target.taxGroup': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.taxGroup"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:14:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.taxGroup"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.taxGroup',
-        reason: [Object] },
-     'target.unitOfMeasure': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.unitOfMeasure"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:14:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.unitOfMeasure"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.unitOfMeasure',
-        reason: [Object] },
-     'target.businessUnit': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.businessUnit"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:14:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.businessUnit"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.businessUnit',
-        reason: [Object] },
-     'target.notification': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.notification"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:14:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.notification"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.notification',
-        reason: [Object] },
-     'target.todo': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.todo"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:14:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.todo"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.todo',
-        reason: [Object] } },
-  _message: 'UserActivity validation failed',
-  name: 'ValidationError' }
+[2018-10-24 11:24:19.640] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 11:24:19.641] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwNToxNzoxMy4xMThaIn0.ac0SI2p4lYIWBZkI8fQLb5PmvRVN1N0cqiT3ibD9FAA
+[2018-10-24 11:28:22.309] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-24 11:28:22.314] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 11:28:22.320] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwNToxNzoxMy4xMThaIn0.ac0SI2p4lYIWBZkI8fQLb5PmvRVN1N0cqiT3ibD9FAA
+[2018-10-24 11:33:30.237] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-24 11:33:30.240] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 11:33:30.241] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwNToxNzoxMy4xMThaIn0.ac0SI2p4lYIWBZkI8fQLb5PmvRVN1N0cqiT3ibD9FAA
+[2018-10-24 11:33:56.777] [DEBUG] USERS - requiresLogin - Request -{"name":"admin1@nvipani.com- is Deleted","eventType":"Delete","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"user":"5bcdaaa0eedbc434ac5fa1d1"}}
+[2018-10-24 11:33:56.780] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 11:33:56.781] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwNToxNzoxMy4xMThaIn0.ac0SI2p4lYIWBZkI8fQLb5PmvRVN1N0cqiT3ibD9FAA
+[2018-10-24 11:47:57.802] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-24 11:47:57.806] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 11:47:57.808] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwNToxNzoxMy4xMThaIn0.ac0SI2p4lYIWBZkI8fQLb5PmvRVN1N0cqiT3ibD9FAA
+[2018-10-24 11:54:52.849] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-24 11:54:52.851] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 11:54:52.852] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwNToxNzoxMy4xMThaIn0.ac0SI2p4lYIWBZkI8fQLb5PmvRVN1N0cqiT3ibD9FAA
+[2018-10-24 12:01:48.131] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-24 12:01:48.133] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 12:01:48.134] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwNToxNzoxMy4xMThaIn0.ac0SI2p4lYIWBZkI8fQLb5PmvRVN1N0cqiT3ibD9FAA
+[2018-10-24 12:02:09.689] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-24 12:02:09.691] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 12:02:09.693] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwNToxNzoxMy4xMThaIn0.ac0SI2p4lYIWBZkI8fQLb5PmvRVN1N0cqiT3ibD9FAA
+[2018-10-24 12:02:59.118] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-24 12:02:59.121] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 12:02:59.123] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwNToxNzoxMy4xMThaIn0.ac0SI2p4lYIWBZkI8fQLb5PmvRVN1N0cqiT3ibD9FAA
+[2018-10-24 12:03:10.313] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-24 12:03:10.314] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 12:03:10.316] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwNToxNzoxMy4xMThaIn0.ac0SI2p4lYIWBZkI8fQLb5PmvRVN1N0cqiT3ibD9FAA
+[2018-10-24 12:03:34.219] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-24 12:03:34.221] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 12:03:34.222] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwNToxNzoxMy4xMThaIn0.ac0SI2p4lYIWBZkI8fQLb5PmvRVN1N0cqiT3ibD9FAA
+[2018-10-24 12:03:51.438] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-24 12:03:51.439] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 12:03:51.443] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwNToxNzoxMy4xMThaIn0.ac0SI2p4lYIWBZkI8fQLb5PmvRVN1N0cqiT3ibD9FAA
+[2018-10-24 12:04:21.820] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-24 12:04:21.821] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 12:04:21.822] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwNToxNzoxMy4xMThaIn0.ac0SI2p4lYIWBZkI8fQLb5PmvRVN1N0cqiT3ibD9FAA
+[2018-10-24 12:04:27.367] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-24 12:04:27.368] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 12:04:27.369] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwNToxNzoxMy4xMThaIn0.ac0SI2p4lYIWBZkI8fQLb5PmvRVN1N0cqiT3ibD9FAA
+[2018-10-24 12:04:44.606] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-24 12:04:44.608] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 12:04:44.609] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwNToxNzoxMy4xMThaIn0.ac0SI2p4lYIWBZkI8fQLb5PmvRVN1N0cqiT3ibD9FAA
+[2018-10-24 12:09:45.242] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-24 12:09:45.244] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 12:09:45.245] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwNToxNzoxMy4xMThaIn0.ac0SI2p4lYIWBZkI8fQLb5PmvRVN1N0cqiT3ibD9FAA
+[2018-10-24 12:10:05.766] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-24 12:10:05.768] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 12:10:05.769] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwNToxNzoxMy4xMThaIn0.ac0SI2p4lYIWBZkI8fQLb5PmvRVN1N0cqiT3ibD9FAA
+[2018-10-24 12:13:50.572] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-24 12:13:50.585] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 12:13:50.587] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwNToxNzoxMy4xMThaIn0.ac0SI2p4lYIWBZkI8fQLb5PmvRVN1N0cqiT3ibD9FAA
+[2018-10-24 12:14:57.259] [DEBUG] USERS - requiresLogin - Request -{"name":"test_admin2@nvipani.com- is Disabled","eventType":"Disable","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"user":"5bcdad6799fa9f2a18dadb6e"}}
+[2018-10-24 12:14:57.259] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 12:14:57.260] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwNToxNzoxMy4xMThaIn0.ac0SI2p4lYIWBZkI8fQLb5PmvRVN1N0cqiT3ibD9FAA
+[2018-10-24 12:15:01.690] [DEBUG] USERS - requiresLogin - Request -{"name":"admin1@nvipani.com- is Disabled","eventType":"Disable","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"user":"5bcdaaa0eedbc434ac5fa1d1"}}
+[2018-10-24 12:15:01.691] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 12:15:01.692] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwNToxNzoxMy4xMThaIn0.ac0SI2p4lYIWBZkI8fQLb5PmvRVN1N0cqiT3ibD9FAA
+[2018-10-24 12:15:25.133] [DEBUG] USERS - requiresLogin - Request -{"name":"admin1@nvipani.com- is Disabled","eventType":"Disable","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"user":"5bcdaaa0eedbc434ac5fa1d1"}}
+[2018-10-24 12:15:25.134] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 12:15:25.134] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwNToxNzoxMy4xMThaIn0.ac0SI2p4lYIWBZkI8fQLb5PmvRVN1N0cqiT3ibD9FAA
+[2018-10-24 12:46:18.596] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-24 12:46:18.597] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 12:46:18.598] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwNToxNzoxMy4xMThaIn0.ac0SI2p4lYIWBZkI8fQLb5PmvRVN1N0cqiT3ibD9FAA
+[2018-10-24 12:48:56.056] [DEBUG] USERS - requiresLogin - Request -{"name":null,"eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-24 12:48:56.101] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 12:48:56.105] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwNToxNzoxMy4xMThaIn0.ac0SI2p4lYIWBZkI8fQLb5PmvRVN1N0cqiT3ibD9FAA
+[2018-10-24 12:48:56.262] [ERROR] ACTIVITIES - Eroor occured  {"errors":{"name":{"message":"Please fill activity name","name":"ValidatorError","properties":{"message":"Please fill activity name","type":"required","path":"name","value":null},"kind":"required","path":"name","value":null},"eventType":{"message":"`List` is not a valid enum value for path `eventType`.","name":"ValidatorError","properties":{"message":"`List` is not a valid enum value for path `eventType`.","type":"enum","enumValues":["LogOut","Login","Add","Edit","Delete","Disable","View","Accessed","Search"],"path":"eventType","value":"List"},"kind":"enum","path":"eventType","value":"List"}},"_message":"UserActivity validation failed","message":"UserActivity validation failed: name: Please fill activity name, eventType: `List` is not a valid enum value for path `eventType`.","name":"ValidationError"}
+[2018-10-24 12:49:40.846] [DEBUG] USERS - requiresLogin - Request -{"name":"Accessed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-24 12:49:40.847] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 12:49:40.847] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwNToxNzoxMy4xMThaIn0.ac0SI2p4lYIWBZkI8fQLb5PmvRVN1N0cqiT3ibD9FAA
+[2018-10-24 12:49:40.868] [ERROR] ACTIVITIES - Eroor occured  {"errors":{"eventType":{"message":"`List` is not a valid enum value for path `eventType`.","name":"ValidatorError","properties":{"message":"`List` is not a valid enum value for path `eventType`.","type":"enum","enumValues":["LogOut","Login","Add","Edit","Delete","Disable","View","Accessed","Search"],"path":"eventType","value":"List"},"kind":"enum","path":"eventType","value":"List"}},"_message":"UserActivity validation failed","message":"UserActivity validation failed: eventType: `List` is not a valid enum value for path `eventType`.","name":"ValidationError"}
+[2018-10-24 13:15:10.748] [DEBUG] USERS - requiresLogin - Request -{"name":"Accessed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-24 13:15:10.749] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 13:15:10.749] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwNToxNzoxMy4xMThaIn0.ac0SI2p4lYIWBZkI8fQLb5PmvRVN1N0cqiT3ibD9FAA
+[2018-10-24 13:15:10.783] [ERROR] ACTIVITIES - Eroor occured  {"errors":{"eventType":{"message":"`List` is not a valid enum value for path `eventType`.","name":"ValidatorError","properties":{"message":"`List` is not a valid enum value for path `eventType`.","type":"enum","enumValues":["LogOut","Login","Add","Edit","Delete","Disable","View","Accessed","Search"],"path":"eventType","value":"List"},"kind":"enum","path":"eventType","value":"List"}},"_message":"UserActivity validation failed","message":"UserActivity validation failed: eventType: `List` is not a valid enum value for path `eventType`.","name":"ValidationError"}
+[2018-10-24 13:15:39.138] [DEBUG] USERS - requiresLogin - Request -{"name":"Accessed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-24 13:15:39.139] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 13:15:39.140] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwNToxNzoxMy4xMThaIn0.ac0SI2p4lYIWBZkI8fQLb5PmvRVN1N0cqiT3ibD9FAA
+[2018-10-24 13:15:39.147] [ERROR] ACTIVITIES - Eroor occured  {"errors":{"eventType":{"message":"`List` is not a valid enum value for path `eventType`.","name":"ValidatorError","properties":{"message":"`List` is not a valid enum value for path `eventType`.","type":"enum","enumValues":["LogOut","Login","Add","Edit","Delete","Disable","View","Accessed","Search"],"path":"eventType","value":"List"},"kind":"enum","path":"eventType","value":"List"}},"_message":"UserActivity validation failed","message":"UserActivity validation failed: eventType: `List` is not a valid enum value for path `eventType`.","name":"ValidationError"}
+[2018-10-24 13:16:06.158] [DEBUG] USERS - requiresLogin - Request -{"name":"Accessed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-24 13:16:06.158] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 13:16:06.159] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwNToxNzoxMy4xMThaIn0.ac0SI2p4lYIWBZkI8fQLb5PmvRVN1N0cqiT3ibD9FAA
+[2018-10-24 13:16:06.165] [ERROR] ACTIVITIES - Eroor occured  {"errors":{"eventType":{"message":"`List` is not a valid enum value for path `eventType`.","name":"ValidatorError","properties":{"message":"`List` is not a valid enum value for path `eventType`.","type":"enum","enumValues":["LogOut","Login","Add","Edit","Delete","Disable","View","Accessed","Search"],"path":"eventType","value":"List"},"kind":"enum","path":"eventType","value":"List"}},"_message":"UserActivity validation failed","message":"UserActivity validation failed: eventType: `List` is not a valid enum value for path `eventType`.","name":"ValidationError"}
+[2018-10-24 13:18:03.228] [DEBUG] USERS - requiresLogin - Request -{"name":"Accessed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-24 13:18:03.229] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 13:18:03.244] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwNToxNzoxMy4xMThaIn0.ac0SI2p4lYIWBZkI8fQLb5PmvRVN1N0cqiT3ibD9FAA
+[2018-10-24 13:18:03.251] [ERROR] ACTIVITIES - Eroor occured  {"errors":{"eventType":{"message":"`List` is not a valid enum value for path `eventType`.","name":"ValidatorError","properties":{"message":"`List` is not a valid enum value for path `eventType`.","type":"enum","enumValues":["LogOut","Login","Add","Edit","Delete","Disable","View","Accessed","Search"],"path":"eventType","value":"List"},"kind":"enum","path":"eventType","value":"List"}},"_message":"UserActivity validation failed","message":"UserActivity validation failed: eventType: `List` is not a valid enum value for path `eventType`.","name":"ValidationError"}
+[2018-10-24 13:20:34.903] [DEBUG] USERS - requiresLogin - Request -{"name":"User Logged out atWed Oct 24 2018 13:20:34 GMT+0530 (India Standard Time)","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null},"lastUpdatedUser":null}
+[2018-10-24 13:20:34.905] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 13:20:34.906] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwNToxNzoxMy4xMThaIn0.ac0SI2p4lYIWBZkI8fQLb5PmvRVN1N0cqiT3ibD9FAA
+[2018-10-24 13:20:34.914] [ERROR] ACTIVITIES - Eroor occured  {"errors":{"eventType":{"message":"`List` is not a valid enum value for path `eventType`.","name":"ValidatorError","properties":{"message":"`List` is not a valid enum value for path `eventType`.","type":"enum","enumValues":["LogOut","Login","Add","Edit","Delete","Disable","View","Accessed","Search"],"path":"eventType","value":"List"},"kind":"enum","path":"eventType","value":"List"}},"_message":"UserActivity validation failed","message":"UserActivity validation failed: eventType: `List` is not a valid enum value for path `eventType`.","name":"ValidationError"}
+[2018-10-24 14:07:56.507] [DEBUG] USERS - Request Body-{"username":"info@nvipani.com","password":"techno12"}
+[2018-10-24 14:07:56.838] [DEBUG] USERS - requiresLogin - Request -{"name":"User Logged in atWed Oct 24 2018 14:07:56 GMT+0530 (India Standard Time)","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null},"lastUpdatedUser":null}
+[2018-10-24 14:07:56.839] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 14:07:56.840] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwODozNzo1Ni42NTBaIn0.rMSrVe3JJeO2-qsh_5kiYdNVCwXaQQrAml5OcPsDYck
+[2018-10-24 14:07:56.847] [ERROR] ACTIVITIES - Eroor occured  {"errors":{"eventType":{"message":"`List` is not a valid enum value for path `eventType`.","name":"ValidatorError","properties":{"message":"`List` is not a valid enum value for path `eventType`.","type":"enum","enumValues":["LogOut","Login","Add","Edit","Delete","Disable","View","Accessed","Search"],"path":"eventType","value":"List"},"kind":"enum","path":"eventType","value":"List"}},"_message":"UserActivity validation failed","message":"UserActivity validation failed: eventType: `List` is not a valid enum value for path `eventType`.","name":"ValidationError"}
+[2018-10-24 14:07:56.852] [DEBUG] USERS - requiresLogin - Request -{"name":"Accessed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-24 14:07:56.853] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 14:07:56.853] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwODozNzo1Ni42NTBaIn0.rMSrVe3JJeO2-qsh_5kiYdNVCwXaQQrAml5OcPsDYck
+[2018-10-24 14:07:56.861] [ERROR] ACTIVITIES - Eroor occured  {"errors":{"eventType":{"message":"`List` is not a valid enum value for path `eventType`.","name":"ValidatorError","properties":{"message":"`List` is not a valid enum value for path `eventType`.","type":"enum","enumValues":["LogOut","Login","Add","Edit","Delete","Disable","View","Accessed","Search"],"path":"eventType","value":"List"},"kind":"enum","path":"eventType","value":"List"}},"_message":"UserActivity validation failed","message":"UserActivity validation failed: eventType: `List` is not a valid enum value for path `eventType`.","name":"ValidationError"}
+[2018-10-24 14:10:09.137] [DEBUG] USERS - requiresLogin - Request -{"name":"Accessed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-24 14:10:09.141] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 14:10:09.141] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwODozNzo1Ni42NTBaIn0.rMSrVe3JJeO2-qsh_5kiYdNVCwXaQQrAml5OcPsDYck
+[2018-10-24 14:10:09.147] [ERROR] ACTIVITIES - Eroor occured  {"errors":{"eventType":{"message":"`List` is not a valid enum value for path `eventType`.","name":"ValidatorError","properties":{"message":"`List` is not a valid enum value for path `eventType`.","type":"enum","enumValues":["LogOut","Login","Add","Edit","Delete","Disable","View","Accessed","Search"],"path":"eventType","value":"List"},"kind":"enum","path":"eventType","value":"List"}},"_message":"UserActivity validation failed","message":"UserActivity validation failed: eventType: `List` is not a valid enum value for path `eventType`.","name":"ValidationError"}
+[2018-10-24 14:22:25.690] [DEBUG] USERS - requiresLogin - Request -{"name":"Accessed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-24 14:22:25.691] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 14:22:25.692] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwODozNzo1Ni42NTBaIn0.rMSrVe3JJeO2-qsh_5kiYdNVCwXaQQrAml5OcPsDYck
+[2018-10-24 14:22:25.698] [ERROR] ACTIVITIES - Eroor occured  {"errors":{"eventType":{"message":"`List` is not a valid enum value for path `eventType`.","name":"ValidatorError","properties":{"message":"`List` is not a valid enum value for path `eventType`.","type":"enum","enumValues":["LogOut","Login","Add","Edit","Delete","Disable","View","Accessed","Search"],"path":"eventType","value":"List"},"kind":"enum","path":"eventType","value":"List"}},"_message":"UserActivity validation failed","message":"UserActivity validation failed: eventType: `List` is not a valid enum value for path `eventType`.","name":"ValidationError"}
+[2018-10-24 14:23:33.495] [DEBUG] USERS - requiresLogin - Request -{"name":"Accessed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-24 14:23:33.500] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 14:23:33.501] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwODozNzo1Ni42NTBaIn0.rMSrVe3JJeO2-qsh_5kiYdNVCwXaQQrAml5OcPsDYck
+[2018-10-24 14:23:33.507] [ERROR] ACTIVITIES - Eroor occured  {"errors":{"eventType":{"message":"`List` is not a valid enum value for path `eventType`.","name":"ValidatorError","properties":{"message":"`List` is not a valid enum value for path `eventType`.","type":"enum","enumValues":["LogOut","Login","Add","Edit","Delete","Disable","View","Accessed","Search"],"path":"eventType","value":"List"},"kind":"enum","path":"eventType","value":"List"}},"_message":"UserActivity validation failed","message":"UserActivity validation failed: eventType: `List` is not a valid enum value for path `eventType`.","name":"ValidationError"}
+[2018-10-24 14:24:16.218] [DEBUG] USERS - requiresLogin - Request -{"name":"Accessed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-24 14:24:16.218] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 14:24:16.219] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwODozNzo1Ni42NTBaIn0.rMSrVe3JJeO2-qsh_5kiYdNVCwXaQQrAml5OcPsDYck
+[2018-10-24 14:24:16.226] [ERROR] ACTIVITIES - Eroor occured  {"errors":{"eventType":{"message":"`List` is not a valid enum value for path `eventType`.","name":"ValidatorError","properties":{"message":"`List` is not a valid enum value for path `eventType`.","type":"enum","enumValues":["LogOut","Login","Add","Edit","Delete","Disable","View","Accessed","Search"],"path":"eventType","value":"List"},"kind":"enum","path":"eventType","value":"List"}},"_message":"UserActivity validation failed","message":"UserActivity validation failed: eventType: `List` is not a valid enum value for path `eventType`.","name":"ValidationError"}
+[2018-10-24 14:25:51.599] [DEBUG] USERS - requiresLogin - Request -{"name":"Accessed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-24 14:25:51.599] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 14:25:51.600] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwODozNzo1Ni42NTBaIn0.rMSrVe3JJeO2-qsh_5kiYdNVCwXaQQrAml5OcPsDYck
+[2018-10-24 14:25:51.605] [ERROR] ACTIVITIES - Eroor occured  {"errors":{"eventType":{"message":"`List` is not a valid enum value for path `eventType`.","name":"ValidatorError","properties":{"message":"`List` is not a valid enum value for path `eventType`.","type":"enum","enumValues":["LogOut","Login","Add","Edit","Delete","Disable","View","Accessed","Search"],"path":"eventType","value":"List"},"kind":"enum","path":"eventType","value":"List"}},"_message":"UserActivity validation failed","message":"UserActivity validation failed: eventType: `List` is not a valid enum value for path `eventType`.","name":"ValidationError"}
+[2018-10-24 14:39:00.948] [DEBUG] USERS - requiresLogin - Request -{"name":"Accessed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-24 14:39:00.960] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 14:39:00.961] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwODozNzo1Ni42NTBaIn0.rMSrVe3JJeO2-qsh_5kiYdNVCwXaQQrAml5OcPsDYck
+[2018-10-24 14:39:00.968] [ERROR] ACTIVITIES - Eroor occured  {"errors":{"eventType":{"message":"`List` is not a valid enum value for path `eventType`.","name":"ValidatorError","properties":{"message":"`List` is not a valid enum value for path `eventType`.","type":"enum","enumValues":["LogOut","Login","Add","Edit","Delete","Disable","View","Accessed","Search"],"path":"eventType","value":"List"},"kind":"enum","path":"eventType","value":"List"}},"_message":"UserActivity validation failed","message":"UserActivity validation failed: eventType: `List` is not a valid enum value for path `eventType`.","name":"ValidationError"}
+[2018-10-24 14:42:32.298] [DEBUG] USERS - requiresLogin - Request -{"name":"Accessed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-24 14:42:32.299] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 14:42:32.300] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwODozNzo1Ni42NTBaIn0.rMSrVe3JJeO2-qsh_5kiYdNVCwXaQQrAml5OcPsDYck
+[2018-10-24 14:42:32.310] [ERROR] ACTIVITIES - Eroor occured  {"errors":{"eventType":{"message":"`List` is not a valid enum value for path `eventType`.","name":"ValidatorError","properties":{"message":"`List` is not a valid enum value for path `eventType`.","type":"enum","enumValues":["LogOut","Login","Add","Edit","Delete","Disable","View","Accessed","Search"],"path":"eventType","value":"List"},"kind":"enum","path":"eventType","value":"List"}},"_message":"UserActivity validation failed","message":"UserActivity validation failed: eventType: `List` is not a valid enum value for path `eventType`.","name":"ValidationError"}
+[2018-10-24 14:43:21.334] [DEBUG] USERS - requiresLogin - Request -{"name":"Accessed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-24 14:43:21.336] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 14:43:21.337] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwODozNzo1Ni42NTBaIn0.rMSrVe3JJeO2-qsh_5kiYdNVCwXaQQrAml5OcPsDYck
+[2018-10-24 14:43:21.343] [ERROR] ACTIVITIES - Eroor occured  {"errors":{"eventType":{"message":"`List` is not a valid enum value for path `eventType`.","name":"ValidatorError","properties":{"message":"`List` is not a valid enum value for path `eventType`.","type":"enum","enumValues":["LogOut","Login","Add","Edit","Delete","Disable","View","Accessed","Search"],"path":"eventType","value":"List"},"kind":"enum","path":"eventType","value":"List"}},"_message":"UserActivity validation failed","message":"UserActivity validation failed: eventType: `List` is not a valid enum value for path `eventType`.","name":"ValidationError"}
+[2018-10-24 14:49:56.104] [DEBUG] USERS - requiresLogin - Request -{"name":"Accessed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-24 14:49:56.105] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 14:49:56.107] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwODozNzo1Ni42NTBaIn0.rMSrVe3JJeO2-qsh_5kiYdNVCwXaQQrAml5OcPsDYck
+[2018-10-24 14:49:56.112] [ERROR] ACTIVITIES - Eroor occured  {"errors":{"eventType":{"message":"`List` is not a valid enum value for path `eventType`.","name":"ValidatorError","properties":{"message":"`List` is not a valid enum value for path `eventType`.","type":"enum","enumValues":["LogOut","Login","Add","Edit","Delete","Disable","View","Accessed","Search"],"path":"eventType","value":"List"},"kind":"enum","path":"eventType","value":"List"}},"_message":"UserActivity validation failed","message":"UserActivity validation failed: eventType: `List` is not a valid enum value for path `eventType`.","name":"ValidationError"}
+[2018-10-24 14:52:21.648] [DEBUG] USERS - requiresLogin - Request -{"name":"Accessed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-24 14:52:21.649] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 14:52:21.649] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwODozNzo1Ni42NTBaIn0.rMSrVe3JJeO2-qsh_5kiYdNVCwXaQQrAml5OcPsDYck
+[2018-10-24 14:52:21.657] [ERROR] ACTIVITIES - Eroor occured  {"errors":{"eventType":{"message":"`List` is not a valid enum value for path `eventType`.","name":"ValidatorError","properties":{"message":"`List` is not a valid enum value for path `eventType`.","type":"enum","enumValues":["LogOut","Login","Add","Edit","Delete","Disable","View","Accessed","Search"],"path":"eventType","value":"List"},"kind":"enum","path":"eventType","value":"List"}},"_message":"UserActivity validation failed","message":"UserActivity validation failed: eventType: `List` is not a valid enum value for path `eventType`.","name":"ValidationError"}
+[2018-10-24 14:58:51.135] [DEBUG] USERS - requiresLogin - Request -{"name":"Accessed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-24 14:58:51.136] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 14:58:51.137] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwODozNzo1Ni42NTBaIn0.rMSrVe3JJeO2-qsh_5kiYdNVCwXaQQrAml5OcPsDYck
+[2018-10-24 14:58:51.157] [ERROR] ACTIVITIES - Eroor occured  {"errors":{"eventType":{"message":"`List` is not a valid enum value for path `eventType`.","name":"ValidatorError","properties":{"message":"`List` is not a valid enum value for path `eventType`.","type":"enum","enumValues":["LogOut","Login","Add","Edit","Delete","Disable","View","Accessed","Search"],"path":"eventType","value":"List"},"kind":"enum","path":"eventType","value":"List"}},"_message":"UserActivity validation failed","message":"UserActivity validation failed: eventType: `List` is not a valid enum value for path `eventType`.","name":"ValidationError"}
+[2018-10-24 15:01:38.873] [DEBUG] USERS - requiresLogin - Request -{"name":"Accessed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-24 15:01:38.874] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 15:01:38.875] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwODozNzo1Ni42NTBaIn0.rMSrVe3JJeO2-qsh_5kiYdNVCwXaQQrAml5OcPsDYck
+[2018-10-24 15:01:38.881] [ERROR] ACTIVITIES - Eroor occured  {"errors":{"eventType":{"message":"`List` is not a valid enum value for path `eventType`.","name":"ValidatorError","properties":{"message":"`List` is not a valid enum value for path `eventType`.","type":"enum","enumValues":["LogOut","Login","Add","Edit","Delete","Disable","View","Accessed","Search"],"path":"eventType","value":"List"},"kind":"enum","path":"eventType","value":"List"}},"_message":"UserActivity validation failed","message":"UserActivity validation failed: eventType: `List` is not a valid enum value for path `eventType`.","name":"ValidationError"}
+[2018-10-24 15:02:07.914] [DEBUG] USERS - requiresLogin - Request -{"name":"Accessed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-24 15:02:07.948] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 15:02:07.949] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwODozNzo1Ni42NTBaIn0.rMSrVe3JJeO2-qsh_5kiYdNVCwXaQQrAml5OcPsDYck

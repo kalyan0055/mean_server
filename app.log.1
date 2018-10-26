@@ -1,548 +1,445 @@
-[2018-10-23 15:40:40.075] [DEBUG] USERS - requiresLogin - Request -{"name":"Updated - Users","eventType":"Edit","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"user":{"type":"5bcdaca499fa9f2a18dadb64"}},"effectedData":{"firstName":"admin3","lastName":"","middleName":"","mobile":"9898989899","username":"admin3@nvipani.com","_id":"5bcdaca499fa9f2a18dadb64"}}
-[2018-10-23 15:40:40.079] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-10-23 15:40:40.086] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMFQwNDo1NTo0Ny43ODVaIn0.MK1TBFmf_7mlVOqPQl7VF6RzvTv4LeANK-XM2CSczNg
-[2018-10-23 15:40:40.129] [ERROR] ACTIVITIES - Eroor occured  {"errors":{"target.user":{"message":"Cast to ObjectID failed for value \"{ type: '5bcdaca499fa9f2a18dadb64' }\" at path \"target.user\"","name":"CastError","stringValue":"\"{ type: '5bcdaca499fa9f2a18dadb64' }\"","kind":"ObjectID","value":{"type":"5bcdaca499fa9f2a18dadb64"},"path":"target.user","reason":{"message":"Cast to ObjectId failed for value \"{ type: '5bcdaca499fa9f2a18dadb64' }\" at path \"target.user\"","name":"CastError","stringValue":"\"{ type: '5bcdaca499fa9f2a18dadb64' }\"","kind":"ObjectId","value":{"type":"5bcdaca499fa9f2a18dadb64"},"path":"target.user"}}},"_message":"UserActivity validation failed","message":"UserActivity validation failed: target.user: Cast to ObjectID failed for value \"{ type: '5bcdaca499fa9f2a18dadb64' }\" at path \"target.user\"","name":"ValidationError"}
-[2018-10-23 15:40:40.131] [DEBUG] ACTIVITIES - { ValidationError: UserActivity validation failed: target.user: Cast to ObjectID failed for value "{ type: '5bcdaca499fa9f2a18dadb64' }" at path "target.user"
-    at ValidationError.inspect (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\validation.js:59:24)
-    at formatValue (util.js:400:38)
-    at inspect (util.js:294:10)
-    at Object.format (util.js:161:12)
-    at Object.inspect (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\log4js\lib\layouts.js:34:23)
-    at formatValue (util.js:400:38)
-    at inspect (util.js:294:10)
-    at Object.format (util.js:161:12)
-    at formatLogData (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\log4js\lib\layouts.js:47:22)
-    at basicLayout (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\log4js\lib\layouts.js:109:7)
-    at Logger.<anonymous> (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\log4js\lib\appenders\file.js:68:19)
-    at emitOne (events.js:121:20)
-    at Logger.emit (events.js:211:7)
-    at Logger._log (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\log4js\lib\logger.js:100:8)
-    at Logger.(anonymous function) [as debug] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\log4js\lib\logger.js:93:12)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:37:20
-  errors: 
-   { 'target.user': 
-      { CastError: Cast to ObjectID failed for value "{ type: '5bcdaca499fa9f2a18dadb64' }" at path "target.user"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:16:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: \'5bcdaca499fa9f2a18dadb64\' }" at path "target.user"',
-        name: 'CastError',
-        stringValue: '"{ type: \'5bcdaca499fa9f2a18dadb64\' }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.user',
-        reason: [Object] } },
-  _message: 'UserActivity validation failed',
-  name: 'ValidationError' }
-[2018-10-23 16:07:42.502] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":{"type":null},"order":{"type":null},"offer":{"type":null},"user":{"type":null},"contact":{"type":null},"group":{"type":null},"itemMaster":{"type":null},"importFile":{"type":null},"inventory":{"type":null},"paymentTerm":{"type":null},"productBrand":{"type":null},"category":{"type":null},"report":{"type":null},"stockMaster":{"type":null},"taxGroup":{"type":null},"unitOfMeasure":{"type":null},"businessUnit":{"type":null},"notification":{"type":null},"todo":{"type":null}}}
-[2018-10-23 16:07:42.504] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-10-23 16:07:42.506] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMFQwNDo1NTo0Ny43ODVaIn0.MK1TBFmf_7mlVOqPQl7VF6RzvTv4LeANK-XM2CSczNg
-[2018-10-23 16:07:42.524] [ERROR] ACTIVITIES - Eroor occured  {"errors":{"target.message":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.message\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.message","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.message\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.message"}},"target.order":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.order\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.order","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.order\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.order"}},"target.offer":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.offer\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.offer","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.offer\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.offer"}},"target.user":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.user\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.user","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.user\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.user"}},"target.contact":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.contact\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.contact","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.contact\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.contact"}},"target.group":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.group\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.group","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.group\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.group"}},"target.itemMaster":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.itemMaster\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.itemMaster","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.itemMaster\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.itemMaster"}},"target.importFile":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.importFile\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.importFile","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.importFile\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.importFile"}},"target.inventory":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.inventory\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.inventory","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.inventory\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.inventory"}},"target.paymentTerm":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.paymentTerm\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.paymentTerm","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.paymentTerm\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.paymentTerm"}},"target.productBrand":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.productBrand\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.productBrand","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.productBrand\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.productBrand"}},"target.category":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.category\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.category","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.category\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.category"}},"target.report":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.report\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.report","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.report\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.report"}},"target.stockMaster":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.stockMaster\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.stockMaster","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.stockMaster\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.stockMaster"}},"target.taxGroup":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.taxGroup\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.taxGroup","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.taxGroup\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.taxGroup"}},"target.unitOfMeasure":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.unitOfMeasure\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.unitOfMeasure","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.unitOfMeasure\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.unitOfMeasure"}},"target.businessUnit":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.businessUnit\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.businessUnit","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.businessUnit\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.businessUnit"}},"target.notification":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.notification\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.notification","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.notification\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.notification"}},"target.todo":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.todo\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.todo","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.todo\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.todo"}}},"_message":"UserActivity validation failed","message":"UserActivity validation failed: target.message: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.message\", target.order: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.order\", target.offer: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.offer\", target.user: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.user\", target.contact: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.contact\", target.group: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.group\", target.itemMaster: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.itemMaster\", target.importFile: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.importFile\", target.inventory: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.inventory\", target.paymentTerm: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.paymentTerm\", target.productBrand: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.productBrand\", target.category: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.category\", target.report: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.report\", target.stockMaster: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.stockMaster\", target.taxGroup: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.taxGroup\", target.unitOfMeasure: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.unitOfMeasure\", target.businessUnit: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.businessUnit\", target.notification: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.notification\", target.todo: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.todo\"","name":"ValidationError"}
-[2018-10-23 16:07:42.530] [DEBUG] ACTIVITIES - { ValidationError: UserActivity validation failed: target.message: Cast to ObjectID failed for value "{ type: null }" at path "target.message", target.order: Cast to ObjectID failed for value "{ type: null }" at path "target.order", target.offer: Cast to ObjectID failed for value "{ type: null }" at path "target.offer", target.user: Cast to ObjectID failed for value "{ type: null }" at path "target.user", target.contact: Cast to ObjectID failed for value "{ type: null }" at path "target.contact", target.group: Cast to ObjectID failed for value "{ type: null }" at path "target.group", target.itemMaster: Cast to ObjectID failed for value "{ type: null }" at path "target.itemMaster", target.importFile: Cast to ObjectID failed for value "{ type: null }" at path "target.importFile", target.inventory: Cast to ObjectID failed for value "{ type: null }" at path "target.inventory", target.paymentTerm: Cast to ObjectID failed for value "{ type: null }" at path "target.paymentTerm", target.productBrand: Cast to ObjectID failed for value "{ type: null }" at path "target.productBrand", target.category: Cast to ObjectID failed for value "{ type: null }" at path "target.category", target.report: Cast to ObjectID failed for value "{ type: null }" at path "target.report", target.stockMaster: Cast to ObjectID failed for value "{ type: null }" at path "target.stockMaster", target.taxGroup: Cast to ObjectID failed for value "{ type: null }" at path "target.taxGroup", target.unitOfMeasure: Cast to ObjectID failed for value "{ type: null }" at path "target.unitOfMeasure", target.businessUnit: Cast to ObjectID failed for value "{ type: null }" at path "target.businessUnit", target.notification: Cast to ObjectID failed for value "{ type: null }" at path "target.notification", target.todo: Cast to ObjectID failed for value "{ type: null }" at path "target.todo"
-    at ValidationError.inspect (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\validation.js:59:24)
-    at formatValue (util.js:400:38)
-    at inspect (util.js:294:10)
-    at Object.format (util.js:161:12)
-    at Object.inspect (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\log4js\lib\layouts.js:34:23)
-    at formatValue (util.js:400:38)
-    at inspect (util.js:294:10)
-    at Object.format (util.js:161:12)
-    at formatLogData (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\log4js\lib\layouts.js:47:22)
-    at basicLayout (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\log4js\lib\layouts.js:109:7)
-    at Logger.<anonymous> (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\log4js\lib\appenders\file.js:68:19)
-    at emitOne (events.js:121:20)
-    at Logger.emit (events.js:211:7)
-    at Logger._log (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\log4js\lib\logger.js:100:8)
-    at Logger.(anonymous function) [as debug] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\log4js\lib\logger.js:93:12)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:37:20
-  errors: 
-   { 'target.message': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.message"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:16:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.message"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.message',
-        reason: [Object] },
-     'target.order': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.order"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:16:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.order"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.order',
-        reason: [Object] },
-     'target.offer': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.offer"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:16:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.offer"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.offer',
-        reason: [Object] },
-     'target.user': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.user"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:16:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.user"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.user',
-        reason: [Object] },
-     'target.contact': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.contact"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:16:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.contact"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.contact',
-        reason: [Object] },
-     'target.group': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.group"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:16:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.group"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.group',
-        reason: [Object] },
-     'target.itemMaster': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.itemMaster"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:16:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.itemMaster"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.itemMaster',
-        reason: [Object] },
-     'target.importFile': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.importFile"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:16:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.importFile"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.importFile',
-        reason: [Object] },
-     'target.inventory': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.inventory"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:16:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.inventory"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.inventory',
-        reason: [Object] },
-     'target.paymentTerm': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.paymentTerm"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:16:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.paymentTerm"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.paymentTerm',
-        reason: [Object] },
-     'target.productBrand': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.productBrand"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:16:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.productBrand"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.productBrand',
-        reason: [Object] },
-     'target.category': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.category"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:16:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.category"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.category',
-        reason: [Object] },
-     'target.report': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.report"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:16:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.report"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.report',
-        reason: [Object] },
-     'target.stockMaster': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.stockMaster"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:16:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.stockMaster"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.stockMaster',
-        reason: [Object] },
-     'target.taxGroup': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.taxGroup"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:16:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.taxGroup"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.taxGroup',
-        reason: [Object] },
-     'target.unitOfMeasure': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.unitOfMeasure"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:16:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.unitOfMeasure"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.unitOfMeasure',
-        reason: [Object] },
-     'target.businessUnit': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.businessUnit"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:16:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.businessUnit"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.businessUnit',
-        reason: [Object] },
-     'target.notification': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.notification"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:16:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.notification"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.notification',
-        reason: [Object] },
-     'target.todo': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.todo"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:16:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.todo"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.todo',
-        reason: [Object] } },
-  _message: 'UserActivity validation failed',
-  name: 'ValidationError' }
+[2018-10-24 18:14:12.122] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","issendotp":true,"issendemail":true,"token":""}
+[2018-10-24 18:14:12.124] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","issendotp":true,"issendemail":true,"token":""}
+[2018-10-24 18:14:12.125] [DEBUG] USERS - Username is valid
+[2018-10-24 18:14:12.126] [DEBUG] USERS - Fetching already created user with the same user name  :somevalue@nvipani.com
+[2018-10-24 18:14:12.127] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-10-24 18:14:12.128] [DEBUG] USERS - Email is :somevalue@nvipani.com
+[2018-10-24 18:14:12.129] [DEBUG] USERS - Fetch matched  user with user name :somevalue@nvipani.com
+[2018-10-24 18:14:12.150] [ERROR] USERS - No user found with the username : somevalue@nvipani.com
+[2018-10-24 18:14:12.151] [ERROR] USERS - No user found with the username : null { username: 'somevalue@nvipani.com',
+  issendotp: true,
+  issendemail: true,
+  token: '',
+  isEmail: true } null
+[2018-10-24 18:14:12.166] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
+[2018-10-24 18:14:12.167] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
+[2018-10-24 18:14:12.168] [DEBUG] USERS - Username is valid
+[2018-10-24 18:14:12.169] [DEBUG] USERS - Fetching already created user with the same user name  :somevalue@nvipani.com
+[2018-10-24 18:14:12.170] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-10-24 18:14:12.171] [DEBUG] USERS - Email is :somevalue@nvipani.com
+[2018-10-24 18:14:12.172] [DEBUG] USERS - Fetch matched  user with user name :somevalue@nvipani.com
+[2018-10-24 18:14:12.179] [ERROR] USERS - No user found with the username : somevalue@nvipani.com
+[2018-10-24 18:14:12.180] [ERROR] USERS - No user found with the username : null { username: 'somevalue@nvipani.com',
+  issendotp: true,
+  issendemail: true,
+  token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg',
+  isEmail: true } null
+[2018-10-24 18:14:12.194] [DEBUG] USERS - user registered wiht valid authoenticaiton :info@nvipani.com
+[2018-10-24 18:14:12.218] [DEBUG] USERS - Sending OTP Response
+[2018-10-24 18:14:12.270] [DEBUG] USERS - Sending OTP Response-909013
+[2018-10-24 18:14:14.679] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","otp":"","password":"passwrod","isverifyotp":true}
+[2018-10-24 18:14:14.681] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","otp":"","password":"passwrod","isverifyotp":true}
+[2018-10-24 18:14:14.684] [ERROR] USERS - OTP field is empty
+[2018-10-24 18:14:14.702] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","password":"test1234","conf_password":"test1234","otp":123456,"isverifyotp":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
+[2018-10-24 18:14:14.704] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","password":"test1234","conf_password":"test1234","otp":123456,"isverifyotp":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
+[2018-10-24 18:14:14.705] [DEBUG] USERS - Fetching already created user with the same user name  :somevalue@nvipani.com
+[2018-10-24 18:14:14.706] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-10-24 18:14:14.707] [DEBUG] USERS - Email is :somevalue@nvipani.com
+[2018-10-24 18:14:14.711] [DEBUG] USERS - Fetch matched  user with user name :somevalue@nvipani.com
+[2018-10-24 18:14:14.717] [DEBUG] USERS - Found user with the username :somevalue@nvipani.com
+[2018-10-24 18:14:14.719] [DEBUG] USERS - instance of user  :{ firstName: '',
+  middleName: '',
+  lastName: '',
+  allowRegistration: true,
+  email: 'somevalue@nvipani.com',
+  profileImageURL: 'modules/users/img/profile/default.png',
+  croppedProfileImageURL: 'modules/users/img/profile/default-resize-240-240.png',
+  roles: [ 'user' ],
+  mobile: '',
+  userType: 'Adminuser',
+  emailVerified: false,
+  mobileVerified: false,
+  status: 'Register Request',
+  disabled: false,
+  deleted: false,
+  reset_password: false,
+  _id: 5bd0691c73207f03e0075363,
+  username: 'somevalue@nvipani.com',
+  created: 2018-10-24T12:44:12.200Z,
+  emailOtp: '909013',
+  updated: 2018-10-24T12:44:12.201Z,
+  created_by: 5b7d1e9f1583471f04217595,
+  __v: 0 }
+[2018-10-24 18:14:14.726] [DEBUG] USERS - Verifying OTP - true
+[2018-10-24 18:14:14.728] [ERROR] USERS - Incorrect otp for the Email: somevalue@nvipani.com
+[2018-10-24 18:14:14.729] [DEBUG] USERS - user registered  :null
+[2018-10-24 18:14:14.738] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","password":"","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-10-24 18:14:14.740] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","password":"","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-10-24 18:14:14.741] [ERROR] USERS - Password is empty : {"username":"somevalue@nvipani.com","password":"","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-10-24 18:14:14.751] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","password":"test123","conf_password":"test114","otp":123456,"isverifyotp":true}
+[2018-10-24 18:14:14.752] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","password":"test123","conf_password":"test114","otp":123456,"isverifyotp":true}
+[2018-10-24 18:14:14.753] [ERROR] USERS - Password is not valid +{"username":"somevalue@nvipani.com","password":"test123","conf_password":"test114","otp":123456,"isverifyotp":true}
+[2018-10-24 18:15:00.880] [DEBUG] USERS - Registration Request  - {"username":"","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
+[2018-10-24 18:15:00.882] [DEBUG] USERS - user registration input validation for the data :{"username":"","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
+[2018-10-24 18:15:00.883] [ERROR] USERS - username is empty :{"username":"","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
+[2018-10-24 18:15:00.927] [DEBUG] USERS - Registration Request  - {"username":"somevalue","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
+[2018-10-24 18:15:00.929] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
+[2018-10-24 18:15:00.930] [ERROR] USERS - Username is not valid{"username":"somevalue","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
+[2018-10-24 18:15:00.941] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","issendotp":true,"issendemail":true,"token":""}
+[2018-10-24 18:15:00.942] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","issendotp":true,"issendemail":true,"token":""}
+[2018-10-24 18:15:00.944] [DEBUG] USERS - Username is valid
+[2018-10-24 18:15:00.945] [DEBUG] USERS - Fetching already created user with the same user name  :somevalue@nvipani.com
+[2018-10-24 18:15:00.946] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-10-24 18:15:00.949] [DEBUG] USERS - Email is :somevalue@nvipani.com
+[2018-10-24 18:15:00.951] [DEBUG] USERS - Fetch matched  user with user name :somevalue@nvipani.com
+[2018-10-24 18:15:00.966] [ERROR] USERS - No user found with the username : somevalue@nvipani.com
+[2018-10-24 18:15:00.967] [ERROR] USERS - No user found with the username : null { username: 'somevalue@nvipani.com',
+  issendotp: true,
+  issendemail: true,
+  token: '',
+  isEmail: true } null
+[2018-10-24 18:15:00.981] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
+[2018-10-24 18:15:00.982] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
+[2018-10-24 18:15:00.983] [DEBUG] USERS - Username is valid
+[2018-10-24 18:15:00.984] [DEBUG] USERS - Fetching already created user with the same user name  :somevalue@nvipani.com
+[2018-10-24 18:15:00.985] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-10-24 18:15:00.986] [DEBUG] USERS - Email is :somevalue@nvipani.com
+[2018-10-24 18:15:00.987] [DEBUG] USERS - Fetch matched  user with user name :somevalue@nvipani.com
+[2018-10-24 18:15:00.991] [ERROR] USERS - No user found with the username : somevalue@nvipani.com
+[2018-10-24 18:15:00.992] [ERROR] USERS - No user found with the username : null { username: 'somevalue@nvipani.com',
+  issendotp: true,
+  issendemail: true,
+  token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg',
+  isEmail: true } null
+[2018-10-24 18:15:01.010] [DEBUG] USERS - user registered wiht valid authoenticaiton :info@nvipani.com
+[2018-10-24 18:15:01.048] [DEBUG] USERS - Sending OTP Response
+[2018-10-24 18:15:01.152] [DEBUG] USERS - Sending OTP Response-066859
+[2018-10-24 18:15:03.282] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","otp":"","password":"passwrod","isverifyotp":true}
+[2018-10-24 18:15:03.283] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","otp":"","password":"passwrod","isverifyotp":true}
+[2018-10-24 18:15:03.283] [ERROR] USERS - OTP field is empty
+[2018-10-24 18:15:03.296] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","password":"test1234","conf_password":"test1234","otp":123456,"isverifyotp":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
+[2018-10-24 18:15:03.298] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","password":"test1234","conf_password":"test1234","otp":123456,"isverifyotp":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
+[2018-10-24 18:15:03.305] [DEBUG] USERS - Fetching already created user with the same user name  :somevalue@nvipani.com
+[2018-10-24 18:15:03.306] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-10-24 18:15:03.308] [DEBUG] USERS - Email is :somevalue@nvipani.com
+[2018-10-24 18:15:03.309] [DEBUG] USERS - Fetch matched  user with user name :somevalue@nvipani.com
+[2018-10-24 18:15:03.313] [DEBUG] USERS - Found user with the username :somevalue@nvipani.com
+[2018-10-24 18:15:03.317] [DEBUG] USERS - instance of user  :{ firstName: '',
+  middleName: '',
+  lastName: '',
+  allowRegistration: true,
+  email: 'somevalue@nvipani.com',
+  profileImageURL: 'modules/users/img/profile/default.png',
+  croppedProfileImageURL: 'modules/users/img/profile/default-resize-240-240.png',
+  roles: [ 'user' ],
+  mobile: '',
+  userType: 'Adminuser',
+  emailVerified: false,
+  mobileVerified: false,
+  status: 'Register Request',
+  disabled: false,
+  deleted: false,
+  reset_password: false,
+  _id: 5bd0694dd993d90478a674ec,
+  username: 'somevalue@nvipani.com',
+  created: 2018-10-24T12:45:01.016Z,
+  emailOtp: '066859',
+  updated: 2018-10-24T12:45:01.018Z,
+  created_by: 5b7d1e9f1583471f04217595,
+  __v: 0 }
+[2018-10-24 18:15:03.319] [DEBUG] USERS - Verifying OTP - true
+[2018-10-24 18:15:03.320] [ERROR] USERS - Incorrect otp for the Email: somevalue@nvipani.com
+[2018-10-24 18:15:03.322] [DEBUG] USERS - user registered  :null
+[2018-10-24 18:15:03.332] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","password":"","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-10-24 18:15:03.334] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","password":"","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-10-24 18:15:03.335] [ERROR] USERS - Password is empty : {"username":"somevalue@nvipani.com","password":"","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-10-24 18:15:03.344] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","password":"test123","conf_password":"test114","otp":123456,"isverifyotp":true}
+[2018-10-24 18:15:03.346] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","password":"test123","conf_password":"test114","otp":123456,"isverifyotp":true}
+[2018-10-24 18:15:03.347] [ERROR] USERS - Password is not valid +{"username":"somevalue@nvipani.com","password":"test123","conf_password":"test114","otp":123456,"isverifyotp":true}
+[2018-10-24 18:15:03.363] [ERROR] USERS - Error while fetch employee user in users 5bd044b3cfbec236945c332Error:CastError: Cast to ObjectId failed for value "5bd044b3cfbec236945c332" at path "_id" for model "InternalUser"
+[2018-10-24 18:15:03.364] [ERROR] USERS - Employee is not found in users 5bd044b3cfbec236945c332
+[2018-10-24 18:15:03.378] [ERROR] USERS - Employee user is not found in users undefined
+[2018-10-24 18:15:03.380] [ERROR] USERS - Employee is not found in users undefined
+[2018-10-24 18:20:10.864] [DEBUG] USERS - Registration Request  - {"username":"","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
+[2018-10-24 18:20:10.866] [DEBUG] USERS - user registration input validation for the data :{"username":"","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
+[2018-10-24 18:20:10.867] [ERROR] USERS - username is empty :{"username":"","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
+[2018-10-24 18:20:10.888] [DEBUG] USERS - Registration Request  - {"username":"somevalue","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
+[2018-10-24 18:20:10.888] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
+[2018-10-24 18:20:10.889] [ERROR] USERS - Username is not valid{"username":"somevalue","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
+[2018-10-24 18:20:10.901] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","issendotp":true,"issendemail":true,"token":""}
+[2018-10-24 18:20:10.902] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","issendotp":true,"issendemail":true,"token":""}
+[2018-10-24 18:20:10.904] [DEBUG] USERS - Username is valid
+[2018-10-24 18:20:10.905] [DEBUG] USERS - Fetching already created user with the same user name  :somevalue@nvipani.com
+[2018-10-24 18:20:10.906] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-10-24 18:20:10.907] [DEBUG] USERS - Email is :somevalue@nvipani.com
+[2018-10-24 18:20:10.911] [DEBUG] USERS - Fetch matched  user with user name :somevalue@nvipani.com
+[2018-10-24 18:20:10.928] [ERROR] USERS - No user found with the username : somevalue@nvipani.com
+[2018-10-24 18:20:10.930] [ERROR] USERS - No user found with the username : null { username: 'somevalue@nvipani.com',
+  issendotp: true,
+  issendemail: true,
+  token: '',
+  isEmail: true } null
+[2018-10-24 18:20:10.944] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
+[2018-10-24 18:20:10.946] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
+[2018-10-24 18:20:10.947] [DEBUG] USERS - Username is valid
+[2018-10-24 18:20:10.947] [DEBUG] USERS - Fetching already created user with the same user name  :somevalue@nvipani.com
+[2018-10-24 18:20:10.948] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-10-24 18:20:10.949] [DEBUG] USERS - Email is :somevalue@nvipani.com
+[2018-10-24 18:20:10.954] [DEBUG] USERS - Fetch matched  user with user name :somevalue@nvipani.com
+[2018-10-24 18:20:10.957] [ERROR] USERS - No user found with the username : somevalue@nvipani.com
+[2018-10-24 18:20:10.958] [ERROR] USERS - No user found with the username : null { username: 'somevalue@nvipani.com',
+  issendotp: true,
+  issendemail: true,
+  token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg',
+  isEmail: true } null
+[2018-10-24 18:20:10.972] [DEBUG] USERS - user registered wiht valid authoenticaiton :info@nvipani.com
+[2018-10-24 18:20:10.998] [DEBUG] USERS - Sending OTP Response
+[2018-10-24 18:20:11.055] [DEBUG] USERS - Sending OTP Response-100012
+[2018-10-24 18:20:13.306] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","otp":"","password":"passwrod","isverifyotp":true}
+[2018-10-24 18:20:13.307] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","otp":"","password":"passwrod","isverifyotp":true}
+[2018-10-24 18:20:13.307] [ERROR] USERS - OTP field is empty
+[2018-10-24 18:20:13.320] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","password":"test1234","conf_password":"test1234","otp":123456,"isverifyotp":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
+[2018-10-24 18:20:13.322] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","password":"test1234","conf_password":"test1234","otp":123456,"isverifyotp":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
+[2018-10-24 18:20:13.324] [DEBUG] USERS - Fetching already created user with the same user name  :somevalue@nvipani.com
+[2018-10-24 18:20:13.328] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-10-24 18:20:13.330] [DEBUG] USERS - Email is :somevalue@nvipani.com
+[2018-10-24 18:20:13.331] [DEBUG] USERS - Fetch matched  user with user name :somevalue@nvipani.com
+[2018-10-24 18:20:13.335] [DEBUG] USERS - Found user with the username :somevalue@nvipani.com
+[2018-10-24 18:20:13.337] [DEBUG] USERS - instance of user  :{ firstName: '',
+  middleName: '',
+  lastName: '',
+  allowRegistration: true,
+  email: 'somevalue@nvipani.com',
+  profileImageURL: 'modules/users/img/profile/default.png',
+  croppedProfileImageURL: 'modules/users/img/profile/default-resize-240-240.png',
+  roles: [ 'user' ],
+  mobile: '',
+  userType: 'Adminuser',
+  emailVerified: false,
+  mobileVerified: false,
+  status: 'Register Request',
+  disabled: false,
+  deleted: false,
+  reset_password: false,
+  _id: 5bd06a8299e5981e30a27bf0,
+  username: 'somevalue@nvipani.com',
+  created: 2018-10-24T12:50:10.978Z,
+  emailOtp: '100012',
+  updated: 2018-10-24T12:50:10.980Z,
+  created_by: 5b7d1e9f1583471f04217595,
+  __v: 0 }
+[2018-10-24 18:20:13.340] [DEBUG] USERS - Verifying OTP - true
+[2018-10-24 18:20:13.342] [ERROR] USERS - Incorrect otp for the Email: somevalue@nvipani.com
+[2018-10-24 18:20:13.343] [DEBUG] USERS - user registered  :null
+[2018-10-24 18:20:13.354] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","password":"","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-10-24 18:20:13.355] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","password":"","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-10-24 18:20:13.357] [ERROR] USERS - Password is empty : {"username":"somevalue@nvipani.com","password":"","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-10-24 18:20:13.366] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","password":"test123","conf_password":"test114","otp":123456,"isverifyotp":true}
+[2018-10-24 18:20:13.367] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","password":"test123","conf_password":"test114","otp":123456,"isverifyotp":true}
+[2018-10-24 18:20:13.368] [ERROR] USERS - Password is not valid +{"username":"somevalue@nvipani.com","password":"test123","conf_password":"test114","otp":123456,"isverifyotp":true}
+[2018-10-24 18:21:07.624] [DEBUG] USERS - Registration Request  - {"username":"","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
+[2018-10-24 18:21:07.627] [DEBUG] USERS - user registration input validation for the data :{"username":"","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
+[2018-10-24 18:21:07.627] [ERROR] USERS - username is empty :{"username":"","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
+[2018-10-24 18:21:07.649] [DEBUG] USERS - Registration Request  - {"username":"somevalue","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
+[2018-10-24 18:21:07.649] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
+[2018-10-24 18:21:07.649] [ERROR] USERS - Username is not valid{"username":"somevalue","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
+[2018-10-24 18:21:07.661] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","issendotp":true,"issendemail":true,"token":""}
+[2018-10-24 18:21:07.662] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","issendotp":true,"issendemail":true,"token":""}
+[2018-10-24 18:21:07.663] [DEBUG] USERS - Username is valid
+[2018-10-24 18:21:07.664] [DEBUG] USERS - Fetching already created user with the same user name  :somevalue@nvipani.com
+[2018-10-24 18:21:07.666] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-10-24 18:21:07.667] [DEBUG] USERS - Email is :somevalue@nvipani.com
+[2018-10-24 18:21:07.668] [DEBUG] USERS - Fetch matched  user with user name :somevalue@nvipani.com
+[2018-10-24 18:21:07.686] [ERROR] USERS - No user found with the username : somevalue@nvipani.com
+[2018-10-24 18:21:07.687] [ERROR] USERS - No user found with the username : null { username: 'somevalue@nvipani.com',
+  issendotp: true,
+  issendemail: true,
+  token: '',
+  isEmail: true } null
+[2018-10-24 18:21:07.700] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
+[2018-10-24 18:21:07.701] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
+[2018-10-24 18:21:07.704] [DEBUG] USERS - Username is valid
+[2018-10-24 18:21:07.705] [DEBUG] USERS - Fetching already created user with the same user name  :somevalue@nvipani.com
+[2018-10-24 18:21:07.706] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-10-24 18:21:07.707] [DEBUG] USERS - Email is :somevalue@nvipani.com
+[2018-10-24 18:21:07.709] [DEBUG] USERS - Fetch matched  user with user name :somevalue@nvipani.com
+[2018-10-24 18:21:07.712] [ERROR] USERS - No user found with the username : somevalue@nvipani.com
+[2018-10-24 18:21:07.716] [ERROR] USERS - No user found with the username : null { username: 'somevalue@nvipani.com',
+  issendotp: true,
+  issendemail: true,
+  token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg',
+  isEmail: true } null
+[2018-10-24 18:21:07.729] [DEBUG] USERS - user registered wiht valid authoenticaiton :info@nvipani.com
+[2018-10-24 18:21:07.752] [DEBUG] USERS - Sending OTP Response
+[2018-10-24 18:21:07.803] [DEBUG] USERS - Sending OTP Response-381036
+[2018-10-24 18:21:09.951] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","otp":"","password":"passwrod","isverifyotp":true}
+[2018-10-24 18:21:09.953] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","otp":"","password":"passwrod","isverifyotp":true}
+[2018-10-24 18:21:09.955] [ERROR] USERS - OTP field is empty
+[2018-10-24 18:21:09.971] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","password":"test1234","conf_password":"test1234","otp":123456,"isverifyotp":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
+[2018-10-24 18:21:09.972] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","password":"test1234","conf_password":"test1234","otp":123456,"isverifyotp":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
+[2018-10-24 18:21:09.973] [DEBUG] USERS - Fetching already created user with the same user name  :somevalue@nvipani.com
+[2018-10-24 18:21:09.974] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-10-24 18:21:09.975] [DEBUG] USERS - Email is :somevalue@nvipani.com
+[2018-10-24 18:21:09.976] [DEBUG] USERS - Fetch matched  user with user name :somevalue@nvipani.com
+[2018-10-24 18:21:09.984] [DEBUG] USERS - Found user with the username :somevalue@nvipani.com
+[2018-10-24 18:21:09.986] [DEBUG] USERS - instance of user  :{ firstName: '',
+  middleName: '',
+  lastName: '',
+  allowRegistration: true,
+  email: 'somevalue@nvipani.com',
+  profileImageURL: 'modules/users/img/profile/default.png',
+  croppedProfileImageURL: 'modules/users/img/profile/default-resize-240-240.png',
+  roles: [ 'user' ],
+  mobile: '',
+  userType: 'Adminuser',
+  emailVerified: false,
+  mobileVerified: false,
+  status: 'Register Request',
+  disabled: false,
+  deleted: false,
+  reset_password: false,
+  _id: 5bd06abbbb1ac704987b4481,
+  username: 'somevalue@nvipani.com',
+  created: 2018-10-24T12:51:07.734Z,
+  emailOtp: '381036',
+  updated: 2018-10-24T12:51:07.736Z,
+  created_by: 5b7d1e9f1583471f04217595,
+  __v: 0 }
+[2018-10-24 18:21:09.988] [DEBUG] USERS - Verifying OTP - true
+[2018-10-24 18:21:09.994] [ERROR] USERS - Incorrect otp for the Email: somevalue@nvipani.com
+[2018-10-24 18:21:09.996] [DEBUG] USERS - user registered  :null
+[2018-10-24 18:21:10.007] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","password":"","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-10-24 18:21:10.009] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","password":"","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-10-24 18:21:10.010] [ERROR] USERS - Password is empty : {"username":"somevalue@nvipani.com","password":"","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-10-24 18:21:10.018] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","password":"test123","conf_password":"test114","otp":123456,"isverifyotp":true}
+[2018-10-24 18:21:10.020] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","password":"test123","conf_password":"test114","otp":123456,"isverifyotp":true}
+[2018-10-24 18:21:10.021] [ERROR] USERS - Password is not valid +{"username":"somevalue@nvipani.com","password":"test123","conf_password":"test114","otp":123456,"isverifyotp":true}
+[2018-10-24 18:21:10.039] [ERROR] USERS - Error while fetch employee user in users 5bd044b3cfbec236945c332Error:CastError: Cast to ObjectId failed for value "5bd044b3cfbec236945c332" at path "_id" for model "InternalUser"
+[2018-10-24 18:21:10.041] [ERROR] USERS - Employee is not found in users 5bd044b3cfbec236945c332
+[2018-10-24 18:21:10.055] [ERROR] USERS - Employee user is not found in users undefined
+[2018-10-24 18:21:10.056] [ERROR] USERS - Employee is not found in users undefined
+[2018-10-24 18:48:09.707] [ERROR] USERS - Error while fetch employee user in users 5bd044b3cfbec236945c332Error:CastError: Cast to ObjectId failed for value "5bd044b3cfbec236945c332" at path "_id" for model "InternalUser"
+[2018-10-24 18:48:09.711] [ERROR] USERS - Employee is not found in users 5bd044b3cfbec236945c332
+[2018-10-24 18:48:09.740] [ERROR] USERS - Employee user is not found in users undefined
+[2018-10-24 18:48:09.741] [ERROR] USERS - Employee is not found in users undefined
+[2018-10-24 18:50:11.078] [ERROR] USERS - Error while fetch employee user in users 5bd044b3cfbec236945c332Error:CastError: Cast to ObjectId failed for value "5bd044b3cfbec236945c332" at path "_id" for model "InternalUser"
+[2018-10-24 18:50:11.080] [ERROR] USERS - Employee is not found in users 5bd044b3cfbec236945c332
+[2018-10-24 18:50:11.105] [ERROR] USERS - Employee user is not found in users undefined
+[2018-10-24 18:50:11.106] [ERROR] USERS - Employee is not found in users undefined
+[2018-10-24 18:53:07.286] [ERROR] USERS - Error while fetch employee user in users 5bd044b3cfbec236945c332Error:CastError: Cast to ObjectId failed for value "5bd044b3cfbec236945c332" at path "_id" for model "InternalUser"
+[2018-10-24 18:53:07.290] [ERROR] USERS - Employee is not found in users 5bd044b3cfbec236945c332
+[2018-10-24 18:53:07.320] [ERROR] USERS - Employee user is not found in users undefined
+[2018-10-24 18:53:07.321] [ERROR] USERS - Employee is not found in users undefined
+[2018-10-24 18:53:59.027] [ERROR] USERS - Error while fetch employee user in users 5bd044b3cfbec236945c332Error:CastError: Cast to ObjectId failed for value "5bd044b3cfbec236945c332" at path "_id" for model "InternalUser"
+[2018-10-24 18:53:59.030] [ERROR] USERS - Employee is not found in users 5bd044b3cfbec236945c332
+[2018-10-24 18:53:59.061] [ERROR] USERS - Employee user is not found in users undefined
+[2018-10-24 18:53:59.062] [ERROR] USERS - Employee is not found in users undefined
+[2018-10-24 19:09:26.298] [ERROR] USERS - Employee user is not found in users 5b7d1e9f1583471f04217543
+[2018-10-24 19:09:26.301] [ERROR] USERS - Employee is not found in users 5b7d1e9f1583471f04217543
+[2018-10-24 19:09:26.301] [ERROR] USERS - Employee is not found in usersfgf [object Object]
+[2018-10-24 19:09:26.325] [ERROR] USERS - Employee user is not found in users undefined
+[2018-10-24 19:09:26.326] [ERROR] USERS - Employee is not found in users undefined
+[2018-10-24 19:09:26.326] [ERROR] USERS - Employee is not found in usersfgf [object Object]
+[2018-10-24 19:10:51.936] [ERROR] USERS - Employee user is not found in users 5b7d1e9f1583471f04217543
+[2018-10-24 19:10:51.939] [ERROR] USERS - Employee is not found in users 5b7d1e9f1583471f04217543
+[2018-10-24 19:10:51.939] [ERROR] USERS - Employee is not found in usersfgf [object Object]
+[2018-10-24 19:11:44.004] [ERROR] USERS - Employee user is not found in users 5b7d1e9f1583471f04217543
+[2018-10-24 19:11:44.007] [ERROR] USERS - Employee is not found in users 5b7d1e9f1583471f04217543
+[2018-10-24 19:11:44.008] [ERROR] USERS - Employee is not found in usersfgf [object Object]
+[2018-10-24 19:11:44.037] [ERROR] USERS - Employee user is not found in users undefined
+[2018-10-24 19:11:44.039] [ERROR] USERS - Employee is not found in users undefined
+[2018-10-24 19:11:44.041] [ERROR] USERS - Employee is not found in usersfgf [object Object]
+[2018-10-24 19:12:46.578] [DEBUG] USERS - Registration Request  - {"username":"","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
+[2018-10-24 19:12:46.579] [DEBUG] USERS - user registration input validation for the data :{"username":"","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
+[2018-10-24 19:12:46.580] [ERROR] USERS - username is empty :{"username":"","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
+[2018-10-24 19:12:46.602] [DEBUG] USERS - Registration Request  - {"username":"somevalue","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
+[2018-10-24 19:12:46.602] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
+[2018-10-24 19:12:46.603] [ERROR] USERS - Username is not valid{"username":"somevalue","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
+[2018-10-24 19:12:46.614] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","issendotp":true,"issendemail":true,"token":""}
+[2018-10-24 19:12:46.616] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","issendotp":true,"issendemail":true,"token":""}
+[2018-10-24 19:12:46.617] [DEBUG] USERS - Username is valid
+[2018-10-24 19:12:46.618] [DEBUG] USERS - Fetching already created user with the same user name  :somevalue@nvipani.com
+[2018-10-24 19:12:46.619] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-10-24 19:12:46.621] [DEBUG] USERS - Email is :somevalue@nvipani.com
+[2018-10-24 19:12:46.625] [DEBUG] USERS - Fetch matched  user with user name :somevalue@nvipani.com
+[2018-10-24 19:12:46.641] [ERROR] USERS - No user found with the username : somevalue@nvipani.com
+[2018-10-24 19:12:46.642] [ERROR] USERS - No user found with the username : null { username: 'somevalue@nvipani.com',
+  issendotp: true,
+  issendemail: true,
+  token: '',
+  isEmail: true } null
+[2018-10-24 19:12:46.656] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
+[2018-10-24 19:12:46.657] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
+[2018-10-24 19:12:46.659] [DEBUG] USERS - Username is valid
+[2018-10-24 19:12:46.660] [DEBUG] USERS - Fetching already created user with the same user name  :somevalue@nvipani.com
+[2018-10-24 19:12:46.661] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-10-24 19:12:46.662] [DEBUG] USERS - Email is :somevalue@nvipani.com
+[2018-10-24 19:12:46.662] [DEBUG] USERS - Fetch matched  user with user name :somevalue@nvipani.com
+[2018-10-24 19:12:46.667] [ERROR] USERS - No user found with the username : somevalue@nvipani.com
+[2018-10-24 19:12:46.668] [ERROR] USERS - No user found with the username : null { username: 'somevalue@nvipani.com',
+  issendotp: true,
+  issendemail: true,
+  token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg',
+  isEmail: true } null
+[2018-10-24 19:12:46.682] [DEBUG] USERS - user registered wiht valid authoenticaiton :info@nvipani.com
+[2018-10-24 19:12:46.706] [DEBUG] USERS - Sending OTP Response
+[2018-10-24 19:12:46.758] [DEBUG] USERS - Sending OTP Response-065418
+[2018-10-24 19:12:49.615] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","otp":"","password":"passwrod","isverifyotp":true}
+[2018-10-24 19:12:49.618] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","otp":"","password":"passwrod","isverifyotp":true}
+[2018-10-24 19:12:49.620] [ERROR] USERS - OTP field is empty
+[2018-10-24 19:12:49.634] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","password":"test1234","conf_password":"test1234","otp":123456,"isverifyotp":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
+[2018-10-24 19:12:49.635] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","password":"test1234","conf_password":"test1234","otp":123456,"isverifyotp":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
+[2018-10-24 19:12:49.636] [DEBUG] USERS - Fetching already created user with the same user name  :somevalue@nvipani.com
+[2018-10-24 19:12:49.639] [DEBUG] USERS - Check whether user name is Email or phone number
+[2018-10-24 19:12:49.641] [DEBUG] USERS - Email is :somevalue@nvipani.com
+[2018-10-24 19:12:49.643] [DEBUG] USERS - Fetch matched  user with user name :somevalue@nvipani.com
+[2018-10-24 19:12:49.647] [DEBUG] USERS - Found user with the username :somevalue@nvipani.com
+[2018-10-24 19:12:49.650] [DEBUG] USERS - instance of user  :{ firstName: '',
+  middleName: '',
+  lastName: '',
+  allowRegistration: true,
+  email: 'somevalue@nvipani.com',
+  profileImageURL: 'modules/users/img/profile/default.png',
+  croppedProfileImageURL: 'modules/users/img/profile/default-resize-240-240.png',
+  roles: [ 'user' ],
+  mobile: '',
+  userType: 'Adminuser',
+  emailVerified: false,
+  mobileVerified: false,
+  status: 'Register Request',
+  disabled: false,
+  deleted: false,
+  reset_password: false,
+  _id: 5bd076d62cc10635186b2593,
+  username: 'somevalue@nvipani.com',
+  created: 2018-10-24T13:42:46.688Z,
+  emailOtp: '065418',
+  updated: 2018-10-24T13:42:46.690Z,
+  created_by: 5b7d1e9f1583471f04217595,
+  __v: 0 }
+[2018-10-24 19:12:49.652] [DEBUG] USERS - Verifying OTP - true
+[2018-10-24 19:12:49.653] [ERROR] USERS - Incorrect otp for the Email: somevalue@nvipani.com
+[2018-10-24 19:12:49.654] [DEBUG] USERS - user registered  :null
+[2018-10-24 19:12:49.666] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","password":"","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-10-24 19:12:49.667] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","password":"","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-10-24 19:12:49.668] [ERROR] USERS - Password is empty : {"username":"somevalue@nvipani.com","password":"","conf_password":"test1234","otp":123456,"isverifyotp":true}
+[2018-10-24 19:12:49.679] [DEBUG] USERS - Registration Request  - {"username":"somevalue@nvipani.com","password":"test123","conf_password":"test114","otp":123456,"isverifyotp":true}
+[2018-10-24 19:12:49.680] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue@nvipani.com","password":"test123","conf_password":"test114","otp":123456,"isverifyotp":true}
+[2018-10-24 19:12:49.680] [ERROR] USERS - Password is not valid +{"username":"somevalue@nvipani.com","password":"test123","conf_password":"test114","otp":123456,"isverifyotp":true}
+[2018-10-24 19:12:49.700] [ERROR] USERS - Employee user is not found in users 5b7d1e9f1583471f04217543
+[2018-10-24 19:12:49.703] [ERROR] USERS - Employee is not found in users 5b7d1e9f1583471f04217543
+[2018-10-24 19:12:49.717] [ERROR] USERS - Employee user is not found in users undefined
+[2018-10-24 19:12:49.720] [ERROR] USERS - Employee is not found in users undefined
+[2018-10-24 19:17:45.994] [ERROR] USERS - Employee user is not found in users 5b7d1e9f1583471f04217543
+[2018-10-24 19:17:45.997] [ERROR] USERS - Employee is not found in users 5b7d1e9f1583471f04217543
+[2018-10-24 19:18:22.852] [ERROR] USERS - Employee user is not found in users 5b7d1e9f1583471f04217543
+[2018-10-24 19:18:22.855] [ERROR] USERS - Employee is not found in users 5b7d1e9f1583471f04217543
+[2018-10-24 19:20:15.308] [ERROR] USERS - Employee user is not found in users 5b7d1e9f1583471f04217543
+[2018-10-24 19:20:15.311] [ERROR] USERS - Employee is not found in users 5b7d1e9f1583471f04217543
+[2018-10-24 19:21:16.719] [ERROR] USERS - Employee user is not found in users 5b7d1e9f1583471f04217543
+[2018-10-24 19:21:16.722] [ERROR] USERS - Employee is not found in users 5b7d1e9f1583471f04217543
+[2018-10-24 19:23:34.968] [ERROR] USERS - Employee user is not found in users 5b7d1e9f1583471f04217543
+[2018-10-24 19:23:34.973] [ERROR] USERS - Employee is not found in users 5b7d1e9f1583471f04217543
+[2018-10-24 19:28:29.559] [ERROR] USERS - Employee user is not found in users 5b7d1e9f1583471f04217543
+[2018-10-24 19:28:29.562] [ERROR] USERS - Employee is not found in users 5b7d1e9f1583471f04217543
+[2018-10-24 19:37:20.451] [ERROR] USERS - Employee user is not found in users 5b7d1e9f1583471f04217543
+[2018-10-24 19:37:20.454] [ERROR] USERS - Employee is not found in users 5b7d1e9f1583471f04217543
+[2018-10-24 19:41:46.748] [ERROR] USERS - Employee user is not found in users 5b7d1e9f1583471f04217543
+[2018-10-24 19:41:46.751] [ERROR] USERS - Employee is not found in users 5b7d1e9f1583471f04217543
+[2018-10-24 19:44:38.152] [ERROR] USERS - Employee user is not found in users 5b7d1e9f1583471f04217543
+[2018-10-24 19:44:38.164] [ERROR] USERS - Employee is not found in users 5b7d1e9f1583471f04217543
+[2018-10-24 19:45:33.590] [DEBUG] USERS - Registration Request  - {"username":"","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
+[2018-10-24 19:45:33.592] [DEBUG] USERS - user registration input validation for the data :{"username":"","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
+[2018-10-24 19:45:33.593] [ERROR] USERS - username is empty :{"username":"","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
+[2018-10-24 19:45:33.615] [DEBUG] USERS - Registration Request  - {"username":"somevalue","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}
+[2018-10-24 19:45:33.615] [DEBUG] USERS - user registration input validation for the data :{"username":"somevalue","issendotp":true,"issendemail":true,"token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQxMjoyNzo0MC44NDdaIn0.B_sucKo4Q_r6lDrihwiLs_Tr048YsWwqV3zin-D9EDg"}

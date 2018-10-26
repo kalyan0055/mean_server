@@ -1,499 +1,162 @@
-[2018-10-23 15:33:45.243] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","target":{"message":{"type":null},"order":{"type":null},"offer":{"type":null},"user":{"type":null},"contact":{"type":null},"group":{"type":null},"itemMaster":{"type":null},"importFile":{"type":null},"inventory":{"type":null},"paymentTerm":{"type":null},"productBrand":{"type":null},"category":{"type":null},"report":{"type":null},"stockMaster":{"type":null},"taxGroup":{"type":null},"unitOfMeasure":{"type":null},"businessUnit":{"type":null},"notification":{"type":null},"todo":{"type":null}},"eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595"}
-[2018-10-23 15:33:45.246] [DEBUG] USERS - requiresLogin - req.body.token -undefined
-[2018-10-23 15:33:45.247] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMFQwNDo1NTo0Ny43ODVaIn0.MK1TBFmf_7mlVOqPQl7VF6RzvTv4LeANK-XM2CSczNg
-[2018-10-23 15:33:45.268] [ERROR] ACTIVITIES - Eroor occured  {"errors":{"target.message":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.message\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.message","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.message\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.message"}},"target.order":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.order\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.order","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.order\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.order"}},"target.offer":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.offer\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.offer","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.offer\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.offer"}},"target.user":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.user\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.user","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.user\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.user"}},"target.contact":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.contact\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.contact","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.contact\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.contact"}},"target.group":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.group\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.group","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.group\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.group"}},"target.itemMaster":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.itemMaster\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.itemMaster","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.itemMaster\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.itemMaster"}},"target.importFile":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.importFile\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.importFile","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.importFile\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.importFile"}},"target.inventory":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.inventory\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.inventory","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.inventory\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.inventory"}},"target.paymentTerm":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.paymentTerm\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.paymentTerm","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.paymentTerm\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.paymentTerm"}},"target.productBrand":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.productBrand\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.productBrand","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.productBrand\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.productBrand"}},"target.category":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.category\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.category","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.category\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.category"}},"target.report":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.report\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.report","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.report\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.report"}},"target.stockMaster":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.stockMaster\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.stockMaster","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.stockMaster\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.stockMaster"}},"target.taxGroup":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.taxGroup\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.taxGroup","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.taxGroup\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.taxGroup"}},"target.unitOfMeasure":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.unitOfMeasure\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.unitOfMeasure","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.unitOfMeasure\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.unitOfMeasure"}},"target.businessUnit":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.businessUnit\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.businessUnit","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.businessUnit\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.businessUnit"}},"target.notification":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.notification\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.notification","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.notification\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.notification"}},"target.todo":{"message":"Cast to ObjectID failed for value \"{ type: null }\" at path \"target.todo\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectID","value":{"type":null},"path":"target.todo","reason":{"message":"Cast to ObjectId failed for value \"{ type: null }\" at path \"target.todo\"","name":"CastError","stringValue":"\"{ type: null }\"","kind":"ObjectId","value":{"type":null},"path":"target.todo"}}},"_message":"UserActivity validation failed","message":"UserActivity validation failed: target.message: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.message\", target.order: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.order\", target.offer: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.offer\", target.user: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.user\", target.contact: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.contact\", target.group: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.group\", target.itemMaster: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.itemMaster\", target.importFile: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.importFile\", target.inventory: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.inventory\", target.paymentTerm: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.paymentTerm\", target.productBrand: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.productBrand\", target.category: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.category\", target.report: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.report\", target.stockMaster: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.stockMaster\", target.taxGroup: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.taxGroup\", target.unitOfMeasure: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.unitOfMeasure\", target.businessUnit: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.businessUnit\", target.notification: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.notification\", target.todo: Cast to ObjectID failed for value \"{ type: null }\" at path \"target.todo\"","name":"ValidationError"}
-[2018-10-23 15:33:45.279] [DEBUG] ACTIVITIES - { ValidationError: UserActivity validation failed: target.message: Cast to ObjectID failed for value "{ type: null }" at path "target.message", target.order: Cast to ObjectID failed for value "{ type: null }" at path "target.order", target.offer: Cast to ObjectID failed for value "{ type: null }" at path "target.offer", target.user: Cast to ObjectID failed for value "{ type: null }" at path "target.user", target.contact: Cast to ObjectID failed for value "{ type: null }" at path "target.contact", target.group: Cast to ObjectID failed for value "{ type: null }" at path "target.group", target.itemMaster: Cast to ObjectID failed for value "{ type: null }" at path "target.itemMaster", target.importFile: Cast to ObjectID failed for value "{ type: null }" at path "target.importFile", target.inventory: Cast to ObjectID failed for value "{ type: null }" at path "target.inventory", target.paymentTerm: Cast to ObjectID failed for value "{ type: null }" at path "target.paymentTerm", target.productBrand: Cast to ObjectID failed for value "{ type: null }" at path "target.productBrand", target.category: Cast to ObjectID failed for value "{ type: null }" at path "target.category", target.report: Cast to ObjectID failed for value "{ type: null }" at path "target.report", target.stockMaster: Cast to ObjectID failed for value "{ type: null }" at path "target.stockMaster", target.taxGroup: Cast to ObjectID failed for value "{ type: null }" at path "target.taxGroup", target.unitOfMeasure: Cast to ObjectID failed for value "{ type: null }" at path "target.unitOfMeasure", target.businessUnit: Cast to ObjectID failed for value "{ type: null }" at path "target.businessUnit", target.notification: Cast to ObjectID failed for value "{ type: null }" at path "target.notification", target.todo: Cast to ObjectID failed for value "{ type: null }" at path "target.todo"
-    at ValidationError.inspect (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\validation.js:59:24)
-    at formatValue (util.js:400:38)
-    at inspect (util.js:294:10)
-    at Object.format (util.js:161:12)
-    at Object.inspect (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\log4js\lib\layouts.js:34:23)
-    at formatValue (util.js:400:38)
-    at inspect (util.js:294:10)
-    at Object.format (util.js:161:12)
-    at formatLogData (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\log4js\lib\layouts.js:47:22)
-    at basicLayout (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\log4js\lib\layouts.js:109:7)
-    at Logger.<anonymous> (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\log4js\lib\appenders\file.js:68:19)
-    at emitOne (events.js:121:20)
-    at Logger.emit (events.js:211:7)
-    at Logger._log (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\log4js\lib\logger.js:100:8)
-    at Logger.(anonymous function) [as debug] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\log4js\lib\logger.js:93:12)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:35:20
-  errors: 
-   { 'target.message': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.message"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:14:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.message"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.message',
-        reason: [Object] },
-     'target.order': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.order"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:14:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.order"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.order',
-        reason: [Object] },
-     'target.offer': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.offer"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:14:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.offer"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.offer',
-        reason: [Object] },
-     'target.user': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.user"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:14:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.user"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.user',
-        reason: [Object] },
-     'target.contact': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.contact"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:14:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.contact"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.contact',
-        reason: [Object] },
-     'target.group': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.group"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:14:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.group"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.group',
-        reason: [Object] },
-     'target.itemMaster': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.itemMaster"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:14:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.itemMaster"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.itemMaster',
-        reason: [Object] },
-     'target.importFile': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.importFile"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:14:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.importFile"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.importFile',
-        reason: [Object] },
-     'target.inventory': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.inventory"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:14:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.inventory"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.inventory',
-        reason: [Object] },
-     'target.paymentTerm': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.paymentTerm"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:14:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.paymentTerm"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.paymentTerm',
-        reason: [Object] },
-     'target.productBrand': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.productBrand"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:14:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.productBrand"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.productBrand',
-        reason: [Object] },
-     'target.category': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.category"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:14:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.category"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.category',
-        reason: [Object] },
-     'target.report': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.report"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:14:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.report"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.report',
-        reason: [Object] },
-     'target.stockMaster': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.stockMaster"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:14:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.stockMaster"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.stockMaster',
-        reason: [Object] },
-     'target.taxGroup': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.taxGroup"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:14:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.taxGroup"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.taxGroup',
-        reason: [Object] },
-     'target.unitOfMeasure': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.unitOfMeasure"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:14:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.unitOfMeasure"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.unitOfMeasure',
-        reason: [Object] },
-     'target.businessUnit': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.businessUnit"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:14:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.businessUnit"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.businessUnit',
-        reason: [Object] },
-     'target.notification': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.notification"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:14:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.notification"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.notification',
-        reason: [Object] },
-     'target.todo': 
-      { CastError: Cast to ObjectID failed for value "{ type: null }" at path "target.todo"
-    at new CastError (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\error\cast.js:29:11)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:953:7)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:756:14)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model._handleIndex (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:736:12)
-    at model.$set (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:702:22)
-    at model.Document (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\document.js:117:12)
-    at model.Model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:90:12)
-    at new model (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4360:13)
-    at exports.saveActivity (E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\usersactivity.server.controller.js:14:16)
-    at Layer.handle [as handle_request] (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\layer.js:95:5)
-    at next (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\express\lib\router\route.js:137:13)
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\users\internaluser.authorization.server.controller.js:49:17
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\app\controllers\utils\users.jwtutil.js:53:5
-    at E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\model.js:4511:16
-    at process.nextTick (E:\Ram Working Folder\nvipani-master\demo_server - Copy\node_modules\mongoose\lib\query.js:2579:28)
-        message: 'Cast to ObjectID failed for value "{ type: null }" at path "target.todo"',
-        name: 'CastError',
-        stringValue: '"{ type: null }"',
-        kind: 'ObjectID',
-        value: [Object],
-        path: 'target.todo',
-        reason: [Object] } },
-  _message: 'UserActivity validation failed',
-  name: 'ValidationError' }
+[2018-10-23 16:08:23.889] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":{"type":null},"order":{"type":null},"offer":{"type":null},"user":null,"contact":{"type":null},"group":{"type":null},"itemMaster":{"type":null},"importFile":{"type":null},"inventory":{"type":null},"paymentTerm":{"type":null},"productBrand":{"type":null},"category":{"type":null},"report":{"type":null},"stockMaster":{"type":null},"taxGroup":{"type":null},"unitOfMeasure":{"type":null},"businessUnit":{"type":null},"notification":{"type":null},"todo":{"type":null}}}
+[2018-10-23 16:08:23.902] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-23 16:08:23.904] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMFQwNDo1NTo0Ny43ODVaIn0.MK1TBFmf_7mlVOqPQl7VF6RzvTv4LeANK-XM2CSczNg
+[2018-10-23 16:08:59.146] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":{"type":null},"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-23 16:08:59.147] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-23 16:08:59.148] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMFQwNDo1NTo0Ny43ODVaIn0.MK1TBFmf_7mlVOqPQl7VF6RzvTv4LeANK-XM2CSczNg
+[2018-10-23 16:09:11.938] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-23 16:09:11.941] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-23 16:09:11.942] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMFQwNDo1NTo0Ny43ODVaIn0.MK1TBFmf_7mlVOqPQl7VF6RzvTv4LeANK-XM2CSczNg
+[2018-10-23 16:09:28.740] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-23 16:09:28.740] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-23 16:09:28.740] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMFQwNDo1NTo0Ny43ODVaIn0.MK1TBFmf_7mlVOqPQl7VF6RzvTv4LeANK-XM2CSczNg
+[2018-10-23 16:10:53.264] [DEBUG] USERS - requiresLogin - Request -{"name":"Updated - Users","eventType":"Edit","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"user":"5bcdac8899fa9f2a18dadb5d"},"effectedData":{"firstName":"hello","lastName":"","middleName":"","mobile":"9866563790","username":"admin2@nvipani.com","_id":"5bcdac8899fa9f2a18dadb5d"}}
+[2018-10-23 16:10:53.279] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-23 16:10:53.289] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMFQwNDo1NTo0Ny43ODVaIn0.MK1TBFmf_7mlVOqPQl7VF6RzvTv4LeANK-XM2CSczNg
+[2018-10-23 16:16:01.854] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-23 16:16:01.857] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-23 16:16:01.857] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMFQwNDo1NTo0Ny43ODVaIn0.MK1TBFmf_7mlVOqPQl7VF6RzvTv4LeANK-XM2CSczNg
+[2018-10-23 16:16:25.696] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-23 16:16:25.700] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-23 16:16:25.702] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMFQwNDo1NTo0Ny43ODVaIn0.MK1TBFmf_7mlVOqPQl7VF6RzvTv4LeANK-XM2CSczNg
+[2018-10-23 16:17:08.068] [DEBUG] USERS - requiresLogin - Request -{"name":"Updated - Users","eventType":"Edit","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"user":"5bcdac8899fa9f2a18dadb5d"},"effectedData":{"firstName":"test","lastName":"","middleName":"","mobile":"9866563790","username":"admin2@nvipani.com","_id":"5bcdac8899fa9f2a18dadb5d"}}
+[2018-10-23 16:17:08.089] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-23 16:17:08.104] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMFQwNDo1NTo0Ny43ODVaIn0.MK1TBFmf_7mlVOqPQl7VF6RzvTv4LeANK-XM2CSczNg
+[2018-10-23 16:39:28.015] [DEBUG] USERS - Request Body-{"username":"info@nvipani.com","password":"techno12"}
+[2018-10-23 16:39:28.694] [DEBUG] USERS - requiresLogin - Request -{"name":"User Logged in atTue Oct 23 2018 16:39:28 GMT+0530 (India Standard Time)","eventType":"List","eventTargetType":"User","user":null,"target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null},"lastUpdatedUser":null}
+[2018-10-23 16:39:28.695] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-23 16:39:28.695] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMFQxMTowOToyOC4xOTBaIn0.CQOs6KQlwHdTJtBrxiUFmDB7VEZA6HKdAY171mnb0bQ
+[2018-10-23 16:39:28.713] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","eventType":"List","eventTargetType":"User","user":null,"target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-23 16:39:28.715] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-23 16:39:28.719] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMFQxMTowOToyOC4xOTBaIn0.CQOs6KQlwHdTJtBrxiUFmDB7VEZA6HKdAY171mnb0bQ
+[2018-10-23 16:44:36.787] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-23 16:44:36.789] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-23 16:44:36.847] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMFQxMTowOToyOC4xOTBaIn0.CQOs6KQlwHdTJtBrxiUFmDB7VEZA6HKdAY171mnb0bQ
+[2018-10-23 16:45:19.031] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-23 16:45:19.033] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-23 16:45:19.035] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMFQxMTowOToyOC4xOTBaIn0.CQOs6KQlwHdTJtBrxiUFmDB7VEZA6HKdAY171mnb0bQ
+[2018-10-23 16:46:15.352] [DEBUG] USERS - requiresLogin - Request -{"name":"Updated - Users","eventType":"Edit","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"user":"5bcdad6799fa9f2a18dadb6e"},"effectedData":{"firstName":"testd","lastName":"","middleName":"","mobile":"9865995570","username":"test_admin2@nvipani.com","_id":"5bcdad6799fa9f2a18dadb6e"}}
+[2018-10-23 16:46:15.353] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-23 16:46:15.356] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMFQxMTowOToyOC4xOTBaIn0.CQOs6KQlwHdTJtBrxiUFmDB7VEZA6HKdAY171mnb0bQ
+[2018-10-23 17:02:11.949] [DEBUG] USERS - requiresLogin - Request -{"name":"Updated - Users","eventType":"Edit","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"user":"5bcdad6799fa9f2a18dadb6e"},"effectedData":{"firstName":"test","lastName":null,"middleName":null,"mobile":"9865995570","username":"test_admin2@nvipani.com","_id":"5bcdad6799fa9f2a18dadb6e"}}
+[2018-10-23 17:02:11.953] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-23 17:02:11.966] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMFQxMTowOToyOC4xOTBaIn0.CQOs6KQlwHdTJtBrxiUFmDB7VEZA6HKdAY171mnb0bQ
+[2018-10-23 17:13:18.222] [DEBUG] USERS - requiresLogin - Request -{"name":"Updated - Users","eventType":"Edit","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"user":"5bcdac8899fa9f2a18dadb5d"},"effectedData":{"firstName":"sdfdsfsd","lastName":null,"middleName":null,"mobile":"9866563790","username":"admin2@nvipani.com","_id":"5bcdac8899fa9f2a18dadb5d"}}
+[2018-10-23 17:13:18.226] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-23 17:13:18.227] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMFQxMTowOToyOC4xOTBaIn0.CQOs6KQlwHdTJtBrxiUFmDB7VEZA6HKdAY171mnb0bQ
+[2018-10-23 17:22:56.629] [DEBUG] USERS - requiresLogin - Request -{"name":"Updated - Users","eventType":"Edit","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"user":"5bcdaca499fa9f2a18dadb64"},"effectedData":{"firstName":"sdfsdfs","lastName":null,"middleName":null,"mobile":"9898989899","username":"admin3@nvipani.com","_id":"5bcdaca499fa9f2a18dadb64"}}
+[2018-10-23 17:22:56.630] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-23 17:22:56.630] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMFQxMTowOToyOC4xOTBaIn0.CQOs6KQlwHdTJtBrxiUFmDB7VEZA6HKdAY171mnb0bQ
+[2018-10-23 17:31:54.761] [DEBUG] USERS - requiresLogin - Request -{"name":"Updated - Users","eventType":"Edit","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"user":"5bcdaca499fa9f2a18dadb64"},"effectedData":{"firstName":"sdsd","lastName":null,"middleName":null,"mobile":"9898989899","username":"admin3@nvipani.com","_id":"5bcdaca499fa9f2a18dadb64"}}
+[2018-10-23 17:31:54.763] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-23 17:31:54.764] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMFQxMTowOToyOC4xOTBaIn0.CQOs6KQlwHdTJtBrxiUFmDB7VEZA6HKdAY171mnb0bQ
+[2018-10-23 17:39:13.169] [DEBUG] USERS - requiresLogin - Request -{"name":"Updated - Users","eventType":"Edit","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"user":"5bcdac8899fa9f2a18dadb5d"},"effectedData":{"firstName":"info test","lastName":null,"middleName":null,"mobile":"9866563790","username":"admin2@nvipani.com","_id":"5bcdac8899fa9f2a18dadb5d"}}
+[2018-10-23 17:39:13.172] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-23 17:39:13.172] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMFQxMTowOToyOC4xOTBaIn0.CQOs6KQlwHdTJtBrxiUFmDB7VEZA6HKdAY171mnb0bQ
+[2018-10-23 17:41:29.225] [DEBUG] USERS - requiresLogin - Request -{"name":"Updated - Users","eventType":"Edit","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"user":"5bcdaaa0eedbc434ac5fa1d1"},"effectedData":{"firstName":"nani","lastName":null,"middleName":null,"mobile":"9665595999","username":"admin1@nvipani.com","_id":"5bcdaaa0eedbc434ac5fa1d1"}}
+[2018-10-23 17:41:29.252] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-23 17:41:29.253] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMFQxMTowOToyOC4xOTBaIn0.CQOs6KQlwHdTJtBrxiUFmDB7VEZA6HKdAY171mnb0bQ
+[2018-10-23 18:15:49.993] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-23 18:15:49.998] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-23 18:15:50.001] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMFQxMTowOToyOC4xOTBaIn0.CQOs6KQlwHdTJtBrxiUFmDB7VEZA6HKdAY171mnb0bQ
+[2018-10-23 18:16:57.786] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-23 18:16:57.787] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-23 18:16:57.790] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMFQxMTowOToyOC4xOTBaIn0.CQOs6KQlwHdTJtBrxiUFmDB7VEZA6HKdAY171mnb0bQ
+[2018-10-23 18:16:57.853] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-23 18:16:57.854] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-23 18:16:57.855] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMFQxMTowOToyOC4xOTBaIn0.CQOs6KQlwHdTJtBrxiUFmDB7VEZA6HKdAY171mnb0bQ
+[2018-10-23 18:19:05.486] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-23 18:19:05.490] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-23 18:19:05.493] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMFQxMTowOToyOC4xOTBaIn0.CQOs6KQlwHdTJtBrxiUFmDB7VEZA6HKdAY171mnb0bQ
+[2018-10-23 18:29:12.465] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-23 18:29:12.467] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-23 18:29:12.468] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMFQxMTowOToyOC4xOTBaIn0.CQOs6KQlwHdTJtBrxiUFmDB7VEZA6HKdAY171mnb0bQ
+[2018-10-23 18:33:40.931] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-23 18:33:40.933] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-23 18:33:40.960] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMFQxMTowOToyOC4xOTBaIn0.CQOs6KQlwHdTJtBrxiUFmDB7VEZA6HKdAY171mnb0bQ
+[2018-10-23 18:34:42.785] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-23 18:34:42.786] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-23 18:34:42.830] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMFQxMTowOToyOC4xOTBaIn0.CQOs6KQlwHdTJtBrxiUFmDB7VEZA6HKdAY171mnb0bQ
+[2018-10-23 18:35:11.099] [DEBUG] USERS - requiresLogin - Request -{"name":"Updated - Users","eventType":"Edit","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"user":"5bcdad6799fa9f2a18dadb6e"},"effectedData":{"column":null,"newData":{"firstName":null,"lastName":null,"middleName":null,"mobile":null},"oldData":{"firstName":"test","middleName":null,"lastName":null,"allowRegistration":true,"email":"test_admin2@nvipani.com","profileImageURL":"modules/users/img/profile/default.png","croppedProfileImageURL":"modules/users/img/profile/default-resize-240-240.png","roles":["user"],"mobile":"9865995570","userType":"User","emailVerified":false,"mobileVerified":false,"status":"Register Request","disabled":false,"deleted":false,"reset_password":false,"_id":"5bcdad6799fa9f2a18dadb6e","username":"test_admin2@nvipani.com","created":"2018-10-22T10:58:47.338Z","emailOtp":"762179","updated":"2018-10-23T11:32:11.884Z","created_by":"5bcdac8899fa9f2a18dadb5d","__v":0}}}
+[2018-10-23 18:35:11.100] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-23 18:35:11.106] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMFQxMTowOToyOC4xOTBaIn0.CQOs6KQlwHdTJtBrxiUFmDB7VEZA6HKdAY171mnb0bQ
+[2018-10-23 18:39:59.408] [DEBUG] USERS - requiresLogin - Request -{"name":"Updated - Users","eventType":"Edit","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"user":"5bcdaaa0eedbc434ac5fa1d1"},"effectedData":{"column":null,"newData":{"firstName":null,"lastName":null,"middleName":null,"mobile":null},"oldData":{"firstName":"nani","middleName":null,"lastName":null,"allowRegistration":true,"email":"admin1@nvipani.com","profileImageURL":"modules/users/img/profile/default.png","croppedProfileImageURL":"modules/users/img/profile/default-resize-240-240.png","roles":["user"],"mobile":"9665595999","userType":"Adminuser","emailVerified":false,"mobileVerified":false,"status":"Register Request","disabled":false,"deleted":false,"reset_password":false,"_id":"5bcdaaa0eedbc434ac5fa1d1","username":"admin1@nvipani.com","created":"2018-10-22T10:46:56.196Z","emailOtp":"467049","updated":"2018-10-23T12:11:29.138Z","created_by":"5b7d1e9f1583471f04217595","__v":0}}}
+[2018-10-23 18:39:59.417] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-23 18:39:59.418] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMFQxMTowOToyOC4xOTBaIn0.CQOs6KQlwHdTJtBrxiUFmDB7VEZA6HKdAY171mnb0bQ
+[2018-10-23 18:46:31.983] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-23 18:46:31.985] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-23 18:46:31.988] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMFQxMTowOToyOC4xOTBaIn0.CQOs6KQlwHdTJtBrxiUFmDB7VEZA6HKdAY171mnb0bQ
+[2018-10-23 18:46:31.992] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-23 18:46:31.997] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-23 18:46:31.999] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMFQxMTowOToyOC4xOTBaIn0.CQOs6KQlwHdTJtBrxiUFmDB7VEZA6HKdAY171mnb0bQ
+[2018-10-23 18:46:38.285] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-23 18:46:38.292] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-23 18:46:38.293] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMFQxMTowOToyOC4xOTBaIn0.CQOs6KQlwHdTJtBrxiUFmDB7VEZA6HKdAY171mnb0bQ
+[2018-10-23 18:47:12.090] [DEBUG] USERS - requiresLogin - Request -{"name":"Updated - Users","eventType":"Edit","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"user":"5bcdac8899fa9f2a18dadb5d"},"effectedData":{"column":null,"newData":{"firstName":null,"lastName":null,"middleName":null,"mobile":null},"oldData":{"firstName":"info test","middleName":null,"lastName":null,"allowRegistration":true,"email":"admin2@nvipani.com","profileImageURL":"modules/users/img/profile/default.png","croppedProfileImageURL":"modules/users/img/profile/default-resize-240-240.png","roles":["user"],"mobile":"9866563790","userType":"Adminuser","emailVerified":true,"mobileVerified":false,"status":"Registered","disabled":false,"deleted":false,"reset_password":false,"_id":"5bcdac8899fa9f2a18dadb5d","username":"admin2@nvipani.com","created":"2018-10-22T10:55:04.082Z","emailOtp":"845937","updated":"2018-10-23T12:09:13.076Z","created_by":"5b7d1e9f1583471f04217595","__v":0,"displayName":"admin2@nvipani.com"}}}
+[2018-10-23 18:47:12.092] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-23 18:47:12.094] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMFQxMTowOToyOC4xOTBaIn0.CQOs6KQlwHdTJtBrxiUFmDB7VEZA6HKdAY171mnb0bQ
+[2018-10-23 18:54:11.728] [DEBUG] USERS - requiresLogin - Request -{"name":"Updated - Users","eventType":"Edit","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"user":"5bcdad6799fa9f2a18dadb6e"},"effectedData":{"column":null,"newData":{"firstName":null,"lastName":null,"middleName":null,"mobile":null},"oldData":{"firstName":"test","middleName":null,"lastName":"some","allowRegistration":true,"email":"test_admin2@nvipani.com","profileImageURL":"modules/users/img/profile/default.png","croppedProfileImageURL":"modules/users/img/profile/default-resize-240-240.png","roles":["user"],"mobile":"9865995570","userType":"User","emailVerified":false,"mobileVerified":false,"status":"Register Request","disabled":false,"deleted":false,"reset_password":false,"_id":"5bcdad6799fa9f2a18dadb6e","username":"test_admin2@nvipani.com","created":"2018-10-22T10:58:47.338Z","emailOtp":"762179","updated":"2018-10-23T13:05:10.981Z","created_by":"5bcdac8899fa9f2a18dadb5d","__v":0}}}
+[2018-10-23 18:54:11.736] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-23 18:54:11.737] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMFQxMTowOToyOC4xOTBaIn0.CQOs6KQlwHdTJtBrxiUFmDB7VEZA6HKdAY171mnb0bQ
+[2018-10-23 18:59:46.454] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-23 18:59:46.456] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-23 18:59:46.457] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMFQxMTowOToyOC4xOTBaIn0.CQOs6KQlwHdTJtBrxiUFmDB7VEZA6HKdAY171mnb0bQ
+[2018-10-23 18:59:46.483] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-23 18:59:46.485] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-23 18:59:46.486] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMFQxMTowOToyOC4xOTBaIn0.CQOs6KQlwHdTJtBrxiUFmDB7VEZA6HKdAY171mnb0bQ
+[2018-10-23 18:59:59.232] [DEBUG] USERS - requiresLogin - Request -{"name":"Updated - Users","eventType":"Edit","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"user":"5bcdaaa0eedbc434ac5fa1d1"},"effectedData":{"column":null,"newData":{"firstName":null,"lastName":null,"middleName":null,"mobile":null},"oldData":{"firstName":"nani","middleName":null,"lastName":"aripaka","allowRegistration":true,"email":"admin1@nvipani.com","profileImageURL":"modules/users/img/profile/default.png","croppedProfileImageURL":"modules/users/img/profile/default-resize-240-240.png","roles":["user"],"mobile":"9665595999","userType":"Adminuser","emailVerified":false,"mobileVerified":false,"status":"Register Request","disabled":false,"deleted":false,"reset_password":false,"_id":"5bcdaaa0eedbc434ac5fa1d1","username":"admin1@nvipani.com","created":"2018-10-22T10:46:56.196Z","emailOtp":"467049","updated":"2018-10-23T13:09:59.317Z","created_by":"5b7d1e9f1583471f04217595","__v":0}}}
+[2018-10-23 18:59:59.235] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-23 18:59:59.237] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMFQxMTowOToyOC4xOTBaIn0.CQOs6KQlwHdTJtBrxiUFmDB7VEZA6HKdAY171mnb0bQ
+[2018-10-23 19:04:06.944] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-23 19:04:06.950] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-23 19:04:06.953] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMFQxMTowOToyOC4xOTBaIn0.CQOs6KQlwHdTJtBrxiUFmDB7VEZA6HKdAY171mnb0bQ
+[2018-10-23 19:04:15.266] [DEBUG] USERS - requiresLogin - Request -{"name":"Updated - Users","eventType":"Edit","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"user":"5bcdad6799fa9f2a18dadb6e"},"effectedData":{"column":null,"newData":{"firstName":"test","lastName":"ones","middleName":null,"mobile":"9865995570","username":"test_admin2@nvipani.com","_id":"5bcdad6799fa9f2a18dadb6e"},"oldData":{"firstName":"test","middleName":null,"lastName":"one","allowRegistration":true,"email":"test_admin2@nvipani.com","profileImageURL":"modules/users/img/profile/default.png","croppedProfileImageURL":"modules/users/img/profile/default-resize-240-240.png","roles":["user"],"mobile":"9865995570","userType":"User","emailVerified":false,"mobileVerified":false,"status":"Register Request","disabled":false,"deleted":false,"reset_password":false,"_id":"5bcdad6799fa9f2a18dadb6e","username":"test_admin2@nvipani.com","created":"2018-10-22T10:58:47.338Z","emailOtp":"762179","updated":"2018-10-23T13:24:11.661Z","created_by":"5bcdac8899fa9f2a18dadb5d","__v":0}}}
+[2018-10-23 19:04:15.270] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-23 19:04:15.272] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMFQxMTowOToyOC4xOTBaIn0.CQOs6KQlwHdTJtBrxiUFmDB7VEZA6HKdAY171mnb0bQ
+[2018-10-23 19:23:25.205] [DEBUG] USERS - requiresLogin - Request -{"name":"Updated - Users","eventType":"Edit","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"user":"5bcdad6799fa9f2a18dadb6e"},"effectedData":{"column":null,"newData":{"firstName":"test","lastName":"ones","middleName":"new ","mobile":"9865995570","username":"test_admin2@nvipani.com","_id":"5bcdad6799fa9f2a18dadb6e"},"oldData":{"firstName":"test","middleName":null,"lastName":"ones","allowRegistration":true,"email":"test_admin2@nvipani.com","profileImageURL":"modules/users/img/profile/default.png","croppedProfileImageURL":"modules/users/img/profile/default-resize-240-240.png","roles":["user"],"mobile":"9865995570","userType":"User","emailVerified":false,"mobileVerified":false,"status":"Register Request","disabled":false,"deleted":false,"reset_password":false,"_id":"5bcdad6799fa9f2a18dadb6e","username":"test_admin2@nvipani.com","created":"2018-10-22T10:58:47.338Z","emailOtp":"762179","updated":"2018-10-23T13:34:15.194Z","created_by":"5bcdac8899fa9f2a18dadb5d","__v":0}}}
+[2018-10-23 19:23:25.238] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-23 19:23:25.243] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMFQxMTowOToyOC4xOTBaIn0.CQOs6KQlwHdTJtBrxiUFmDB7VEZA6HKdAY171mnb0bQ
+[2018-10-23 19:25:18.348] [DEBUG] USERS - requiresLogin - Request -{"name":"Updated - Users","eventType":"Edit","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"user":"5bcdad6799fa9f2a18dadb6e"},"effectedData":{"column":null,"newData":{"firstName":"test","lastName":"ones","middleName":"CHANGE","mobile":"9865995570","username":"test_admin2@nvipani.com","_id":"5bcdad6799fa9f2a18dadb6e"},"oldData":{"firstName":"test","middleName":"new","lastName":"ones","allowRegistration":true,"email":"test_admin2@nvipani.com","profileImageURL":"modules/users/img/profile/default.png","croppedProfileImageURL":"modules/users/img/profile/default-resize-240-240.png","roles":["user"],"mobile":"9865995570","userType":"User","emailVerified":false,"mobileVerified":false,"status":"Register Request","disabled":false,"deleted":false,"reset_password":false,"_id":"5bcdad6799fa9f2a18dadb6e","username":"test_admin2@nvipani.com","created":"2018-10-22T10:58:47.338Z","emailOtp":"762179","updated":"2018-10-23T13:53:25.099Z","created_by":"5bcdac8899fa9f2a18dadb5d","__v":0}}}
+[2018-10-23 19:25:18.351] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-23 19:25:18.353] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMFQxMTowOToyOC4xOTBaIn0.CQOs6KQlwHdTJtBrxiUFmDB7VEZA6HKdAY171mnb0bQ
+[2018-10-23 19:27:55.032] [DEBUG] USERS - requiresLogin - Request -{"name":"Updated - Users","eventType":"Edit","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"user":"5bcdac8899fa9f2a18dadb5d"},"effectedData":{"column":null,"newData":{"firstName":"ram","lastName":"emandi","middleName":"babu","mobile":"7989009408","username":"admin2@nvipani.com","_id":"5bcdac8899fa9f2a18dadb5d"},"oldData":{"firstName":"info test","middleName":null,"lastName":"df","allowRegistration":true,"email":"admin2@nvipani.com","profileImageURL":"modules/users/img/profile/default.png","croppedProfileImageURL":"modules/users/img/profile/default-resize-240-240.png","roles":["user"],"mobile":"9866563790","userType":"Adminuser","emailVerified":true,"mobileVerified":false,"status":"Registered","disabled":false,"deleted":false,"reset_password":false,"_id":"5bcdac8899fa9f2a18dadb5d","username":"admin2@nvipani.com","created":"2018-10-22T10:55:04.082Z","emailOtp":"845937","updated":"2018-10-23T13:17:12.001Z","created_by":"5b7d1e9f1583471f04217595","__v":0,"displayName":"admin2@nvipani.com"}}}
+[2018-10-23 19:27:55.036] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-23 19:27:55.037] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMFQxMTowOToyOC4xOTBaIn0.CQOs6KQlwHdTJtBrxiUFmDB7VEZA6HKdAY171mnb0bQ
+[2018-10-23 19:42:52.329] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-23 19:42:52.390] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-23 19:42:52.391] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMFQxMTowOToyOC4xOTBaIn0.CQOs6KQlwHdTJtBrxiUFmDB7VEZA6HKdAY171mnb0bQ
+[2018-10-24 10:47:13.016] [DEBUG] USERS - Request Body-{"username":"info@nvipani.com","password":"techno12"}
+[2018-10-24 10:47:13.518] [DEBUG] USERS - requiresLogin - Request -{"name":"User Logged in atWed Oct 24 2018 10:47:13 GMT+0530 (India Standard Time)","eventType":"List","eventTargetType":"User","user":null,"target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null},"lastUpdatedUser":null}
+[2018-10-24 10:47:13.520] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 10:47:13.522] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwNToxNzoxMy4xMThaIn0.ac0SI2p4lYIWBZkI8fQLb5PmvRVN1N0cqiT3ibD9FAA
+[2018-10-24 10:47:13.535] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","eventType":"List","eventTargetType":"User","user":null,"target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-24 10:47:13.541] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 10:47:13.543] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwNToxNzoxMy4xMThaIn0.ac0SI2p4lYIWBZkI8fQLb5PmvRVN1N0cqiT3ibD9FAA
+[2018-10-24 10:56:20.458] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-24 10:56:20.460] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 10:56:20.461] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwNToxNzoxMy4xMThaIn0.ac0SI2p4lYIWBZkI8fQLb5PmvRVN1N0cqiT3ibD9FAA
+[2018-10-24 11:04:50.066] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-24 11:04:50.088] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 11:04:50.089] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwNToxNzoxMy4xMThaIn0.ac0SI2p4lYIWBZkI8fQLb5PmvRVN1N0cqiT3ibD9FAA
+[2018-10-24 11:05:21.386] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-24 11:05:21.388] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 11:05:21.390] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwNToxNzoxMy4xMThaIn0.ac0SI2p4lYIWBZkI8fQLb5PmvRVN1N0cqiT3ibD9FAA
+[2018-10-24 11:13:32.216] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-24 11:13:32.218] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 11:13:32.313] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwNToxNzoxMy4xMThaIn0.ac0SI2p4lYIWBZkI8fQLb5PmvRVN1N0cqiT3ibD9FAA
+[2018-10-24 11:17:01.739] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-24 11:17:01.752] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 11:17:01.753] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwNToxNzoxMy4xMThaIn0.ac0SI2p4lYIWBZkI8fQLb5PmvRVN1N0cqiT3ibD9FAA
+[2018-10-24 11:17:10.183] [DEBUG] USERS - requiresLogin - Request -{"name":"admin1@nvipani.com-UserDeleted","eventType":"Delete","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":"5bcdaaa0eedbc434ac5fa1d1"}
+[2018-10-24 11:17:10.186] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 11:17:10.203] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwNToxNzoxMy4xMThaIn0.ac0SI2p4lYIWBZkI8fQLb5PmvRVN1N0cqiT3ibD9FAA
+[2018-10-24 11:21:17.231] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-24 11:21:17.233] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 11:21:17.234] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwNToxNzoxMy4xMThaIn0.ac0SI2p4lYIWBZkI8fQLb5PmvRVN1N0cqiT3ibD9FAA
+[2018-10-24 11:23:36.890] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-24 11:23:36.892] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 11:23:36.893] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwNToxNzoxMy4xMThaIn0.ac0SI2p4lYIWBZkI8fQLb5PmvRVN1N0cqiT3ibD9FAA
+[2018-10-24 11:24:10.964] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
+[2018-10-24 11:24:10.967] [DEBUG] USERS - requiresLogin - req.body.token -undefined
+[2018-10-24 11:24:11.046] [DEBUG] USERS - requiresLogin - req.headers[token] -eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOnsidXNlcm5hbWUiOiJpbmZvQG52aXBhbmkuY29tIiwiaWQiOiI1YjdkMWU5ZjE1ODM0NzFmMDQyMTc1OTUifSwiZXhwIjoiMjAxOC0xMC0zMVQwNToxNzoxMy4xMThaIn0.ac0SI2p4lYIWBZkI8fQLb5PmvRVN1N0cqiT3ibD9FAA
+[2018-10-24 11:24:19.639] [DEBUG] USERS - requiresLogin - Request -{"name":"Viewed  - Users List Page","eventType":"List","eventTargetType":"User","user":"5b7d1e9f1583471f04217595","target":{"message":null,"order":null,"offer":null,"user":null,"contact":null,"group":null,"itemMaster":null,"importFile":null,"inventory":null,"paymentTerm":null,"productBrand":null,"category":null,"report":null,"stockMaster":null,"taxGroup":null,"unitOfMeasure":null,"businessUnit":null,"notification":null,"todo":null}}
