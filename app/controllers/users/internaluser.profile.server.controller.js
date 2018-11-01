@@ -27,7 +27,8 @@ var _ = require('lodash'),
  */
 
 exports.newuserslist = function (req, res) {
-
+     
+    
     var fields = req.body.columns[req.body.order[0].column].name;
     var sortBy = (req.body.order[0].dir == 'asc') ? 1 : -1;
 
@@ -62,16 +63,16 @@ exports.newuserslist = function (req, res) {
                     })
                 }
                 else {
+                    let serchdata = [];
                     if (req.body.search.value != '' || req.body.search.value != null) {
                         var searchitem = '';
-                        searchitem = req.body.search.value.toLowerCase()
-                    }
-                    let serchdata = [];
-                    serchdata = users.filter(function (item) {
-                        return JSON.stringify(item).toLowerCase().includes(searchitem);
-                    });
-
-                    User.find(query).count().populate('created_by', 'username').exec(function (err, tot_count) {
+                        searchitem = req.body.search.value.toLowerCase();
+                        console.log(req.body.search,'ddddddddddddddddddd');                  
+                        serchdata = users.filter(function (item) {
+                            return JSON.stringify(item).toLowerCase().includes(searchitem);
+                        });
+                    }                 
+                    User.find(query).countDocuments().populate('created_by', 'username').exec(function (err, tot_count) {
                         var count = tot_count;
                         res.status(200).send({
                             status: true,
