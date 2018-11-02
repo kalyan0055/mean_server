@@ -32,7 +32,7 @@ var UserActivitySchema = new Schema({
         },
         user: {
             type: Schema.ObjectId,
-            ref: 'User'
+            ref: 'InternalUser'
         },
         contact: {
             type: Schema.ObjectId,
@@ -107,20 +107,20 @@ var UserActivitySchema = new Schema({
         default: 'User'
     },
 
-    effectedData: [{ 
+    effectedData: [{
         column: {
-            type:String,
-            default:null
+            type: String,
+            default: null
         },
         oldData: {
-            type:String,
-            default:null
+            type: String,
+            default: null
         },
-         newData: {
-            type:String,
-            default:null
+        newData: {
+            type: String,
+            default: null
         }
-        }],
+    }],
 
     disabled: {
         type: Boolean,
@@ -147,7 +147,7 @@ var UserActivitySchema = new Schema({
 
     user: {
         type: Schema.ObjectId,
-        ref: 'User'
+        ref: 'InternalUser'
     }
 });
 

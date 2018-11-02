@@ -7,6 +7,7 @@ module.exports = function(app){
     app.route('/saveActivity').post(users.requiresLogin,useractivity.saveActivity)
     app.route('/getUserActivities').post(users.requiresLogin,useractivity.getUserActivities)
     app.route('/getActivitiesByType').post(useractivity.getActivitiesByType)
+    app.route('/getUniqColVal').post(useractivity.getUniqColVal)
     
     
 }
